@@ -35,11 +35,30 @@ public class HomePage {
 
     //WonderWorldCollege twitter link in the header section of the homepage.
     @FindBy(xpath = "(//i[@class='fa fa-twitter'])[1]")
-    public WebElement teitteLink_header;
+    public WebElement twitteLink_header;
 
     //WonderWorldCollege twitter link in the footer section of the homepage.
     @FindBy(xpath = "(//i[@class='fa fa-twitter'])[2]")
     public WebElement twitterLink_footer;
+
+
+    //WonderWorldCollege google-plus link in the header section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-google-plus'])[1]")
+    public WebElement googlePlusLink_header;
+
+    //WonderWorldCollege google-plus link in the footer section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-google-plus'])[2]")
+    public WebElement googlePlusLink_footer;
+
+    //WonderWorldCollege YouTube link in the header section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-google-plus'])[1]")
+    public WebElement youTubeLink_header;
+
+    //WonderWorldCollege YouTube link in the footer section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-google-plus'])[2]")
+    public WebElement youTubeLink_footer;
+
+
 
 
 

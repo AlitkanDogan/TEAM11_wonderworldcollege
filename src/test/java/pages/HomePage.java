@@ -11,7 +11,7 @@ public class HomePage {
     }
 
 
-    //======================ortak============================
+    //======================ortak==============================
 
     //WonderWorldCollege logo in the header section of the homepage.
     @FindBy(xpath = "//img)[1]")

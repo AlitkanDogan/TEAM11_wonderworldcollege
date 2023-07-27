@@ -22,8 +22,8 @@
 ***
 
 # Class Isimlendirmeleri
->  PAGES paketinde isimlendirme **LoginPages** şeklinde isimlendiriliyor!
+>  PAGES paketinde isimlendirme **AdminPage** şeklinde isimlendiriliyor!
 >
->  STEPDEFINITIONS paketinde isimlendirme **US_001_stepDefinitions** seklinde olacak!
+>  STEPDEFINITIONS paketinde isimlendirme **Admin** seklinde olacak!
 >
 >  FEATURE paketinde isimlendirme **US_001.feature** seklinde olacak!

@@ -1,11 +1,15 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import pages.HomePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Home {
+
+    HomePage homePage=new HomePage();
 
     WebDriver driver= Driver.getDriver();
 
@@ -18,6 +22,9 @@ public class Home {
 
     @Given("It verifies that the logo is visible on the homepage")
     public void it_verifies_that_the_is_visible_on_the_homepage() {
+        Assert.assertTrue(homePage.logoCollege_header.isDisplayed());
+
+
 
     }
 

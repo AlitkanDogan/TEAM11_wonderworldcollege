@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@TC1_US1",
+        tags = "@TC1_US16",
 
         dryRun = false
 )
@@ -75,4 +75,7 @@ public class Runner {
                 ve Testleri normal olarak calistirmamizi saglar
 
      */
+        public Runner(){
+
+        }
 }

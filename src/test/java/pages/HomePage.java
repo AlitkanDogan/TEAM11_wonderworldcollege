@@ -13,12 +13,40 @@ public class HomePage {
 
     //======================ortak============================
 
+    //WonderWorldCollege logo in the header section of the homepage.
+    @FindBy(xpath = "(//img)[1])")
+    public WebElement logoCollege_header;
+
+    //WonderWorldCollege logo in the header section of the homepage.
+    @FindBy(xpath = "//div[text()='Latest News']")
+    public WebElement latestNewsText_header;
+
+    //WonderWorldCollege "Follow Us" text in the header section of the homepage.
+    @FindBy(xpath = "//li[text()='Follow Us']")
+    public WebElement FoollowUsText_header;
+
+    //WonderWorldCollege facebook link in the header section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-facebook'])[1]")
+    public WebElement facebookLink_header;
+
+    //WonderWorldCollege facebook link in the footer section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-facebook'])[2]")
+    public WebElement facebookLink_footer;
+
+    //WonderWorldCollege twitter link in the header section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-twitter'])[1]")
+    public WebElement teitteLink_header;
+
+    //WonderWorldCollege twitter link in the footer section of the homepage.
+    @FindBy(xpath = "(//i[@class='fa fa-twitter'])[2]")
+    public WebElement twitterLink_footer;
 
 
 
-    //Home page logo
-    @FindBy(xpath = "//div[@name='name']")
-    public WebElement logo;
+
+
+
+
 
 
 

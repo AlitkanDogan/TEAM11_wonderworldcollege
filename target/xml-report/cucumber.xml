@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="9.577" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I want to be able to access the website to use it" name="The user should be able to access the website from the browser using the given URL and" time="9.37">
+<testsuite name="Cucumber" time="13.344" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="On the homepage navbar, it should be verified that the school's email address is visible." time="13.088">
+<failure/>
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
-When It verifies that the logo is visible on the homepage...................passed
-And User closes the page....................................................passed
+Given The user verifies that the 'college mail address' is visible in the navbar section.undefined
+Given User closes the page..................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -29,6 +29,12 @@ public class Home {
         Driver.quitDriver();
     }
 
-    //=====================================================
+    //========================US02=============================
+
+    @Given("The user verifies that the {string} is visible in the navbar section")
+    public void the_user_verifies_that_the_is_visible_in_the_navbar_section(String string) {
+        
+
+    }
 
 }

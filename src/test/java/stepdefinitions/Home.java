@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
@@ -14,21 +15,30 @@ public class Home {
     WebDriver driver= Driver.getDriver();
 
 //VVVVVVVVVVVVVVVV  US01 VVVVVVVVVVVVVVVVVVV
-    @Given("The user goes to the {string} address")
-    public void the_user_goes_to_the_address(String url) {
-        driver.get(ConfigReader.getProperty(url));
 
-    }
-
-    @Given("It verifies that the logo is visible on the homepage")
-    public void it_verifies_that_the_is_visible_on_the_homepage() {
-        Assert.assertTrue(homePage.logoCollege_header.isDisplayed());
+    @Given("The user verifies that  {string} is displayed in  the Follow Us section")
+    public void the_user_verifies_that_is_displayed_in_the_follow_us_sectionD(String string) {
 
 
 
     }
+    @Given("The user verifies that {string} is displayed in the Follow Us section")
+    public void the_user_verifies_that_is_displayed_in_the_follow_us_sectionA(String string) {
+
+    }
+    @Given("The user verifies that  {string} is displayed in the Follow Us section")
+    public void the_user_verifies_that_is_displayed_in_the_follow_us_sectionS(String string) {
+
+    }
+    @Given("The user verifies that {string} is dispalyed in the Follow Us section")
+    public void the_user_verifies_that_is_dispalyed_in_the_follow_us_section(String string) {
+
+    }
+    @Given("The user verifies that {string} is redirected to itself")
+    public void the_user_verifies_that_is_redirected_to_itself(String string) {
+
+    }
 
 
-    //=====================================================
 
 }

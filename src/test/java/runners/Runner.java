@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@TC1_US1",
+        tags = "@TC1_US12",
 
-        dryRun = false
+        dryRun = true
 )
 
 public class Runner {

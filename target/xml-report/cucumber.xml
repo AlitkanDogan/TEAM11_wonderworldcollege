@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="10.682" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="The Login button should be visible in the top bar of the homepage," time="10.419">
+<testsuite name="Cucumber" time="9.362" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;userlogin&quot; page, there should be a login window on the left side" time="9.067">
 <system-out><![CDATA[
-Given The user goes to the "url" address....................................passed
-Then The user verifies that, the Login button is visible on the homepage....passed
+Given The user goes to the 'url' address....................................passed
 When The user clicks on the Login button....................................passed
-Then The user verifies that Login button redirects to the userlogin page....passed
+Then The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side..passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -84,6 +84,12 @@ public class Home {
         Assert.assertTrue(homePage.userLoginPageStudentParent.isDisplayed());
     }
 
+    @Then("The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side.")
+    public void theUserVerifiesThatThereAreALoginWindowOnTheLeftSideAndInformationAboutOnTheRightSide() {
+        Assert.assertTrue(homePage.userLoginPageStudentParent.isDisplayed());
+        Assert.assertTrue(homePage.whatSNewInWonderWorldCollege.isDisplayed());
+    }
+
     //=====================================================
 
 }

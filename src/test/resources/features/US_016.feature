@@ -15,8 +15,8 @@ Feature: As a registered user (student/parent), I want to have access to the log
   and information about "What's New In Wonder World College" on the right side.
 
     Given The user goes to the 'url' address
-    When the user clicks on the Login button
-    Then verifies that  there is a login window on the left side and information about What's New In Wonder World College on the right side.
+    When The user clicks on the Login button
+    Then The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side.
 
   @TC3_US16
   Scenario: On the "userlogin" page, it should be verified

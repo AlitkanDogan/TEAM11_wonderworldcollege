@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="8.434" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="The &quot;userlogin&quot; page should contain a &quot;forget password&quot; link, and when clicked, it should redirect to the &quot;ufpassword&quot; page." time="8.156">
+<testsuite name="Cucumber" time="8.393" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;ufpassword&quot; (forgot password) page, it should be verified that users can enter" time="8.084">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
 When The user clicks on the Login button....................................passed
-Then The user verifies that Login button redirects to the userlogin page....passed
-And The user clicks on forget password link.................................passed
-Then The user verifies that the forget password link redirects to the ufpassword page..passed
+And The user clicks on forgot password link.................................passed
+Then The user verifies that they can enter their email addresses in the relavent textbox on the ufpassword page to reset their password and select the appropriate panels..passed
 ]]></system-out>
 </testcase>
 </testsuite>

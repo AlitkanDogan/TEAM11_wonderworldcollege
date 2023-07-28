@@ -1,0 +1,89 @@
+package stepdefinitions;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import pages.LoginPage;
+import utilities.Driver;
+
+public class Login {
+
+    LoginPage loginPage = new LoginPage();
+
+    WebDriver driver = Driver.getDriver();
+
+    Actions actions=new Actions(driver);
+
+    //VVVVVVVVVVVVVVVV  US016 VVVVVVVVVVVVVVVVVVV
+
+    @Then("The user verifies that, the Login button is visible on the homepage.")
+    public void the_user_verifies_that_the_login_button_is_visible_on_the_homepage() {
+        Assert.assertTrue(loginPage.loginButtonStudentParent.isDisplayed());
+    }
+    @When("The user clicks on the Login button")
+    public void the_user_clicks_on_the_login_button() {
+        loginPage.loginButtonStudentParent.click();
+    }
+    @Then("The user verifies that Login button redirects to the userlogin page.")
+    public void the_user_verifies_that_login_button_redirects_to_the_page() {
+
+        Assert.assertTrue(loginPage.userLoginPageStudentParent.isDisplayed());
+    }
+
+    @Then("The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side.")
+    public void theUserVerifiesThatThereAreALoginWindowOnTheLeftSideAndInformationAboutOnTheRightSide() {
+        Assert.assertTrue(loginPage.userLoginPageStudentParent.isDisplayed());
+        Assert.assertTrue(loginPage.whatsNewInWonderWorldCollege.isDisplayed());
+    }
+
+    @When("The user enters their username in to the username textbox")
+    public void the_user_enters_their_username_in_to_the_username_textbox() {
+        loginPage.userNameTextbox.sendKeys("std140");
+    }
+    @When("The user enters their password in to the password textbox")
+    public void the_user_enters_their_password_in_to_the_password_textbox() {
+        loginPage.passwordTextbox.sendKeys("wonderworld123");
+    }
+    @When("The user clicks on the Sign In button")
+    public void the_user_clicks_on_the_sign_in_button() {
+        loginPage.signInButtonUserLogin.click();
+    }
+
+
+    @And("The user enters incorrect username in to the username textbox")
+    public void theUserEntersIncorrectUsernameInToTheUsernameTextbox() {
+        loginPage.userNameTextbox.sendKeys("fatma");
+    }
+
+    @And("The user enters incorrect password in to the password textbox")
+    public void theUserEntersIncorrectPasswordInToThePasswordTextbox() {
+        loginPage.passwordTextbox.sendKeys("fatma");
+    }
+
+    @Then("The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information.\"")
+    public void theUserVerifiesThatTheyCanNotLogInInToTheirPanelsIfTheyEnterIncorrectMissingOrUnregisteredInformation(){
+        Assert.assertTrue(loginPage.invalidUsernameOrPasswordAlert.isDisplayed());
+    }
+
+    @And("The user clicks on forgot password link")
+    public void theUserClicksOnForgetPasswordLink() {
+        loginPage.forgotPasswordLinkStudentParent.click();
+    }
+
+    @Then("The user verifies that the forgot password link redirects to the ufpassword page.")
+    public void theUserVerifiesThatTheForgetPasswordLinkRedirectsToTheUfpasswordPage() {
+        Assert.assertTrue(loginPage.ufPasswordPageStudentParent.isDisplayed());
+    }
+
+    @Then("The user verifies that they can enter their email addresses in the relavent textbox on the ufpassword page to reset their password and select the appropriate panels.")
+    public void theUserVerifiesThatTheyCanEnterTheirEmailAddressesInTheRelaventTextboxOnTheUfpasswordPageToResetTheirPasswordAndSelectTheAppropriatePanels() {
+        Assert.assertTrue(loginPage.resetPasswordEmailTextbox.isEnabled());
+        Assert.assertTrue(loginPage.resetPasswordEmailRadioButton.isEnabled());
+    }
+
+
+    //=====================================================
+}

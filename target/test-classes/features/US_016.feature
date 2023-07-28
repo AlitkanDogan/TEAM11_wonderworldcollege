@@ -46,6 +46,16 @@ Feature: As a registered user (student/parent), I want to have access to the log
 
     When The user clicks on the Login button
     Then The user verifies that Login button redirects to the userlogin page.
-    And The user clicks on forget password link
-    Then The user verifies that the forget password link redirects to the ufpassword page.
+    And The user clicks on forgot password link
+    Then The user verifies that the forgot password link redirects to the ufpassword page.
+
+  @TC6_US16
+  Scenario: On the "ufpassword" (forgot password) page, it should be verified that users can enter
+  their email address in the relevant textbox to reset their password and select the appropriate panels.
+
+    When The user clicks on the Login button
+    And The user clicks on forgot password link
+    Then The user verifies that they can enter their email addresses in the relavent textbox on the ufpassword page to reset their password and select the appropriate panels.
+
+
 

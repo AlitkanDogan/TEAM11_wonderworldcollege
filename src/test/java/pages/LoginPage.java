@@ -133,4 +133,8 @@ public class LoginPage {
 
     @FindBy(xpath = "//*[@class='alert alert-danger']")
     public  WebElement resetEmailSendingFailAlert;
+
+    @FindBy(xpath = "//*[@class='forgot']")
+    public  WebElement ufpasswordPageUserLoginLink;
+
 }

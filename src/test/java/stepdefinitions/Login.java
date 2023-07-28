@@ -104,6 +104,21 @@ public class Login {
         Assert.assertTrue(loginPage.resetEmailSendingFailAlert.isDisplayed());
     }
 
+    @And("The user verifies that  there is a user login link on the ufpassword page to return to the login page")
+    public void theUserVerifiesThatThereIsAUserLoginLinkOnTheUfpasswordPageToReturnToTheLoginPage() {
+        Assert.assertTrue(loginPage.ufpasswordPageUserLoginLink.isDisplayed());
+    }
+
+    @And("The user clicks on the user login link")
+    public void theUserClicksOnTheUserLoginLink() {
+        loginPage.ufpasswordPageUserLoginLink.click();
+    }
+
+    @Then("The user verifies that the link redirects to the userlogin page.")
+    public void theUserVerifiesThatTheLinkRedirectsToTheUserloginPage() {
+        Assert.assertTrue(loginPage.userLoginPageStudentParent.isDisplayed());
+    }
+
 
     //=====================================================
 }

@@ -69,5 +69,15 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And clicks on submit button.
     Then the user verifies that they receive 'password reset email.
 
+  @TC8_US16
+  Scenario: The "ufpassword" (forgot password) page should contain a "user login" link to return to the login page,
+  and when clicked, it should redirect to the "userlogin" page.
+
+  When The user clicks on the Login button
+  And The user clicks on forgot password link
+  And The user verifies that  there is a user login link on the ufpassword page to return to the login page
+  And The user clicks on the user login link
+  Then The user verifies that the link redirects to the userlogin page.
+
 
 

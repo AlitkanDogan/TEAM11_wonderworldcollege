@@ -68,4 +68,22 @@ public class Home {
         Assert.assertTrue(homePage.addressLink_footer.isDisplayed());
     }
 
+    //VVVVVVVVVVVVVVVV  US016 VVVVVVVVVVVVVVVVVVV
+
+    @Then("The user verifies that, the Login button is visible on the homepage.")
+    public void the_user_verifies_that_the_login_button_is_visible_on_the_homepage() {
+       Assert.assertTrue(homePage.loginButtonStudentParent.isDisplayed());
+    }
+    @When("The user clicks on the Login button")
+    public void the_user_clicks_on_the_login_button() {
+        homePage.loginButtonStudentParent.click();
+    }
+    @Then("The user verifies that Login button redirects to the userlogin page.")
+    public void the_user_verifies_that_login_button_redirects_to_the_page() {
+
+        Assert.assertTrue(homePage.userLoginPageStudentParent.isDisplayed());
+    }
+
+    //=====================================================
+
 }

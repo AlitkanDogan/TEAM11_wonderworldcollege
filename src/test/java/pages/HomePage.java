@@ -168,6 +168,26 @@ public class HomePage {
     @FindBy(xpath = "(//div[@class='cright'])[3]")
     public WebElement addressLink_footer;
 
+    //WonderWorldCollege homepage Login button Student/Parent
+    @FindBy(xpath ="//*[@class='complainbtn']")
+    public WebElement loginButtonStudentParent;
+
+    //WonderWorldCollege userlogin page student-parent
+    @FindBy(xpath = "//*[@class='loginbg']")
+    public WebElement userLoginPageStudentParent;
+
+    @FindBy(xpath = "//*[@class = ' bg-shadow-remove ']")
+    public WebElement whatSNewInWonderWorldCollege;
+
+    @FindBy(id ="email")
+    public  WebElement userNameTextbox;
+
+    @FindBy(id ="password")
+    public  WebElement passwordTextbox;
+
+    @FindBy(xpath = "//*[@class='btn']")
+    public WebElement signInButtonUserLogin;
+
     //=========================================================
 
 

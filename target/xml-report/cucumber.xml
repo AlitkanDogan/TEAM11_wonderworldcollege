@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="9.37" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="The &quot;ufpassword&quot; (forgot password) page should contain a &quot;user login&quot; link to return to the login page," time="9.069">
+<testsuite name="Cucumber" time="9.256" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;userlogin&quot; page, there should be a link for returning to the Front Site," time="8.926">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
 When The user clicks on the Login button....................................passed
-And The user clicks on forgot password link.................................passed
-And The user verifies that  there is a user login link on the ufpassword page to return to the login page.passed
-And The user clicks on the user login link..................................passed
-Then The user verifies that the link redirects to the userlogin page........passed
+And The user clicks on the Front Site link..................................passed
+Then The user verifies that the Front Site link redirects to the homepage...passed
 ]]></system-out>
 </testcase>
 </testsuite>

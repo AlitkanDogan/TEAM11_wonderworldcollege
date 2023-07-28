@@ -79,5 +79,14 @@ Feature: As a registered user (student/parent), I want to have access to the log
   And The user clicks on the user login link
   Then The user verifies that the link redirects to the userlogin page.
 
+  @TC9_US16
+  Scenario: On the "userlogin" page, there should be a link for returning to the Front Site,
+  and when clicked, it should redirect to the homepage.
+
+
+    When The user clicks on the Login button
+    And The user clicks on the Front Site link
+    Then The user verifies that the Front Site link redirects to the homepage.
+
 
 

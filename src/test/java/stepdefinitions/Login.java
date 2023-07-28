@@ -6,12 +6,15 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.Driver;
 
 public class Login {
 
     LoginPage loginPage = new LoginPage();
+
+    HomePage homePage = new HomePage();
 
     WebDriver driver = Driver.getDriver();
 
@@ -117,6 +120,17 @@ public class Login {
     @Then("The user verifies that the link redirects to the userlogin page.")
     public void theUserVerifiesThatTheLinkRedirectsToTheUserloginPage() {
         Assert.assertTrue(loginPage.userLoginPageStudentParent.isDisplayed());
+    }
+
+    @And("The user clicks on the Front Site link")
+    public void theUserClicksOnTheFrontSiteLink() {
+
+        loginPage.frontSiteLink.click();
+    }
+
+    @Then("The user verifies that the Front Site link redirects to the homepage.")
+    public void theUserVerifiesThatTheFrontSiteLinkRedirectsToTheHomepage() {
+        Assert.assertTrue(homePage.logoCollege_header.isDisplayed());
     }
 
 

@@ -137,4 +137,7 @@ public class LoginPage {
     @FindBy(xpath = "//*[@class='forgot']")
     public  WebElement ufpasswordPageUserLoginLink;
 
+    @FindBy(xpath = "//*[@class='forgot pull-right']")
+    public  WebElement frontSiteLink;
+
 }

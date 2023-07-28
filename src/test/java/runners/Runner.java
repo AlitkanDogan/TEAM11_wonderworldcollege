@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@TC1_US13",
+        tags = "@TC2_US13",
 
         dryRun = false
 )

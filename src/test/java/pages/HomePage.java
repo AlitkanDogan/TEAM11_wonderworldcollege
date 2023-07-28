@@ -83,7 +83,7 @@ public class HomePage {
     public WebElement pinterestLink_footer;
 
     //WonderWorldCollege "mail address" in the header section of the homepage.
-    @FindBy(xpath = "(//i[@class='fa fa-pinterest'])[1]")
+    @FindBy(xpath = "//a[@href='mailto:info@wonderworldcollege.com']")
     public WebElement mailInfo_header;
 
     //WonderWorldCollege "Call Us" in the header section of the homepage.
@@ -152,11 +152,11 @@ public class HomePage {
     public WebElement contactLink_header;
 
     //WonderWorldCollege "Gallery" link in the footer section of the homepage.
-    @FindBy(xpath = "(//a[text()='Contact'])[2]")
+    @FindBy(xpath = "(//div[@class='cright'])[1]")
     public WebElement contactLink_footer;
 
     //WonderWorldCollege "email Us" link in the footer section of the homepage.
-    @FindBy(xpath = "//a[text()='Email Us']")
+    @FindBy(xpath = "(//div[@class='cright'])[2]")
     public WebElement emailUsLink_footer;
 
 
@@ -165,18 +165,17 @@ public class HomePage {
     public WebElement contactUs_footer;
 
     //WonderWorldCollege "adress" link in the footer section of the homepage.
-    @FindBy(xpath = "//a[text()='Address']")
+    @FindBy(xpath = "(//div[@class='cright'])[3]")
     public WebElement addressLink_footer;
 
-
     //=========================================================
 
 
-    //====================us005=========================
 
 
 
-    //=========================================================
+
+
 
 
 }

@@ -39,3 +39,13 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user enters incorrect password in to the password textbox
     When The user clicks on the Sign In button
     Then The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information."
+
+  @TC5_US16
+  Scenario: The "userlogin" page should contain a "forget password" link, and when clicked, it should redirect to the "ufpassword" page.
+
+
+    When The user clicks on the Login button
+    Then The user verifies that Login button redirects to the userlogin page.
+    And The user clicks on forget password link
+    Then The user verifies that the forget password link redirects to the ufpassword page.
+

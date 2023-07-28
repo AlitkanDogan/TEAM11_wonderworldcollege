@@ -87,7 +87,7 @@ public class Home {
     @Then("The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side.")
     public void theUserVerifiesThatThereAreALoginWindowOnTheLeftSideAndInformationAboutOnTheRightSide() {
         Assert.assertTrue(homePage.userLoginPageStudentParent.isDisplayed());
-        Assert.assertTrue(homePage.whatSNewInWonderWorldCollege.isDisplayed());
+        Assert.assertTrue(homePage.whatsNewInWonderWorldCollege.isDisplayed());
     }
 
     @When("The user enters their username in to the username textbox")
@@ -118,6 +118,19 @@ public class Home {
     public void theUserVerifiesThatTheyCanNotLogInInToTheirPanelsIfTheyEnterIncorrectMissingOrUnregisteredInformation(){
         Assert.assertTrue(homePage.invalidUsernameOrPasswordAlert.isDisplayed());
     }
+
+    @And("The user clicks on forget password link")
+    public void theUserClicksOnForgetPasswordLink() {
+        homePage.forgotPasswordLinkStudentParent.click();
+    }
+
+    @Then("The user verifies that the forget password link redirects to the ufpassword page.")
+    public void theUserVerifiesThatTheForgetPasswordLinkRedirectsToTheUfpasswordPage() {
+        Assert.assertTrue(homePage.ufPasswordPageStudentParent.isDisplayed());
+    }
+
+
+
 
     //=====================================================
 

@@ -177,7 +177,7 @@ public class HomePage {
     public WebElement userLoginPageStudentParent;
 
     @FindBy(xpath = "//*[@class = ' bg-shadow-remove ']")
-    public WebElement whatSNewInWonderWorldCollege;
+    public WebElement whatsNewInWonderWorldCollege;
 
     @FindBy(id ="email")
     public  WebElement userNameTextbox;
@@ -190,6 +190,12 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@class='alert alert-danger']")
     public WebElement invalidUsernameOrPasswordAlert;
+
+    @FindBy(xpath = "//*[@class='forgot']")
+    public  WebElement forgotPasswordLinkStudentParent;
+
+    @FindBy(xpath = "//*[text()='Forgot Password']")
+    public  WebElement ufPasswordPageStudentParent;
 
     //=========================================================
 

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="9.362" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;userlogin&quot; page, there should be a login window on the left side" time="9.067">
+<testsuite name="Cucumber" time="13.061" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;userlogin&quot; page, it should be verified" time="12.795">
 <system-out><![CDATA[
 Given The user goes to the 'url' address....................................passed
 When The user clicks on the Login button....................................passed
-Then The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side..passed
+And The user enters their username in to the username textbox...............passed
+And The user enters their password in to the password textbox...............passed
+When The user clicks on the Sign In button..................................passed
+Then The user verifies that they can log in to their panels by enterin their (previously registered) information..passed
 ]]></system-out>
 </testcase>
 </testsuite>

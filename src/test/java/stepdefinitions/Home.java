@@ -90,6 +90,19 @@ public class Home {
         Assert.assertTrue(homePage.whatSNewInWonderWorldCollege.isDisplayed());
     }
 
+    @When("The user enters their username in to the username textbox")
+    public void the_user_enters_their_username_in_to_the_username_textbox() {
+        homePage.userNameTextbox.sendKeys("std140");
+    }
+    @When("The user enters their password in to the password textbox")
+    public void the_user_enters_their_password_in_to_the_password_textbox() {
+        homePage.passwordTextbox.sendKeys("wonderworld123");
+    }
+    @When("The user clicks on the Sign In button")
+    public void the_user_clicks_on_the_sign_in_button() {
+        homePage.signInButtonUserLogin.click();
+    }
+
     //=====================================================
 
 }

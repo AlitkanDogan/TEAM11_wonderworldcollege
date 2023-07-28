@@ -57,5 +57,17 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user clicks on forgot password link
     Then The user verifies that they can enter their email addresses in the relavent textbox on the ufpassword page to reset their password and select the appropriate panels.
 
+  @TC7_US16
+  Scenario: On the "ufpassword" (forgot password) page,
+  it should be verified that a password reset email is sent to the email address entered in the textbox.
+
+
+    When The user clicks on the Login button
+    And The user clicks on forgot password link
+    And The user enters their emailadress in to the mailtextbox
+    And The user selects the appropriate panel.
+    And clicks on submit button.
+    Then the user verifies that they receive 'password reset email.
+
 
 

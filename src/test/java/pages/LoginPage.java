@@ -128,4 +128,9 @@ public class LoginPage {
     @FindBy(xpath = "(//*[@class='radio-inline'])[1]")
     public  WebElement resetPasswordEmailRadioButton;
 
+    @FindBy(xpath = "//*[@class='btn']")
+    public  WebElement resetEmailSubmitButton;
+
+    @FindBy(xpath = "//*[@class='alert alert-danger']")
+    public  WebElement resetEmailSendingFailAlert;
 }

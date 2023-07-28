@@ -84,6 +84,26 @@ public class Login {
         Assert.assertTrue(loginPage.resetPasswordEmailRadioButton.isEnabled());
     }
 
+    @And("The user enters their emailadress in to the mailtextbox")
+    public void theUserEntersTheirEmailadressInToTheMailtextbox() {
+        loginPage.resetPasswordEmailTextbox.sendKeys("fatma.aydin@student.wonderworldcollege.com");
+    }
+
+    @And("The user selects the appropriate panel.")
+    public void theUserSelectsTheAppropriatePanel() {
+        loginPage.resetPasswordEmailRadioButton.click();
+    }
+
+    @And("clicks on submit button.")
+    public void clicksOnSubmitButton() {
+        loginPage.resetEmailSubmitButton.click();
+    }
+
+    @Then("the user verifies that they receive 'password reset email.")
+    public void theUserVerifiesThatTheyReceivePasswordResetEmail() {
+        Assert.assertTrue(loginPage.resetEmailSendingFailAlert.isDisplayed());
+    }
+
 
     //=====================================================
 }

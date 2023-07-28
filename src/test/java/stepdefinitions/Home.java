@@ -103,6 +103,22 @@ public class Home {
         homePage.signInButtonUserLogin.click();
     }
 
+
+    @And("The user enters incorrect username in to the username textbox")
+    public void theUserEntersIncorrectUsernameInToTheUsernameTextbox() {
+        homePage.userNameTextbox.sendKeys("fatma");
+    }
+
+    @And("The user enters incorrect password in to the password textbox")
+    public void theUserEntersIncorrectPasswordInToThePasswordTextbox() {
+        homePage.passwordTextbox.sendKeys("fatma");
+    }
+
+    @Then("The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information.\"")
+    public void theUserVerifiesThatTheyCanNotLogInInToTheirPanelsIfTheyEnterIncorrectMissingOrUnregisteredInformation(){
+        Assert.assertTrue(homePage.invalidUsernameOrPasswordAlert.isDisplayed());
+    }
+
     //=====================================================
 
 }

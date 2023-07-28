@@ -188,6 +188,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='btn']")
     public WebElement signInButtonUserLogin;
 
+    @FindBy(xpath = "//*[@class='alert alert-danger']")
+    public WebElement invalidUsernameOrPasswordAlert;
+
     //=========================================================
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="35.775" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Payroll page, the Payslip List should be displayed with columns" time="35.472">
+<testsuite name="Cucumber" time="24.021" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Payroll page, the Payslip List should be displayed with columns" time="23.683">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed
 And The user clicks on the Admin Login button...............................passed
-Then The user verifies that they are on the "adminSiteLoginUrl" page........passed
+And The user switchs to an other new Admin Login page.......................passed
 And The user enters their mail address and password to the mailtextbox and passwordtextbox.passed
 And The user clicks on the Sign In button...................................passed
 And The user clicks on the profile icon on the admin panels top bar.........passed

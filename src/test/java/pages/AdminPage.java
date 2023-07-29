@@ -93,6 +93,11 @@ public class AdminPage {
     @FindBy(xpath = "(//*[@class='text-right noExport sorting'])")
     public WebElement payrollAction;
 
+    @FindBy(xpath = "(//*[@class='btn btn-primary btn-xs checkbox-toggle edit_setting'])[1]")
+    public WebElement payrollViewPayslipButton;
+
+    @FindBy(id = "html-2-pdfwrapper")
+    public WebElement payrollPayslipDetails;
 
 
 

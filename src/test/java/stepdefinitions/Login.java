@@ -10,6 +10,9 @@ import pages.HomePage;
 import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.util.Set;
 
 public class Login {
 
@@ -154,11 +157,29 @@ public class Login {
 
     }
 
+    @Then("The user switchs to an other new Admin Login page")
+    public void theUserNavigatesToAnOtherNewAdminLoginPage() {
+        String firstWindowHV= Driver.getDriver().getWindowHandle();
+        Set<String> whv=Driver.getDriver().getWindowHandles();
+        String secondWHV= "";
+        for (String each:whv
+             ) {
+            if (!each.equals(firstWindowHV)){
+                secondWHV=each;
+            }
+
+        }
+        Driver.getDriver().switchTo().window(secondWHV);
+
+    }
+
     @When("The user enters their mail address and password to the mailtextbox and passwordtextbox")
     public void the_user_enters_their_mail_address_and_password_to_the_mailtextbox_and_passwordtextbox(){
         loginPage.adminLoginUsernameTextbox.sendKeys("fatma.aydin@admin.wonderworldcollege.com");
         loginPage.adminLoginPasswordTextbox.sendKeys("wonderworld123");
     }
+
+
 
 
     //=====================================================

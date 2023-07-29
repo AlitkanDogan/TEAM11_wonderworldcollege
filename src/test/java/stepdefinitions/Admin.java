@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -74,6 +75,17 @@ public class Admin {
         Assert.assertTrue(adminPage.payrollAction.isDisplayed());
 
     }
+
+    @And("The user clicks on the View Payslip link under the Action column on the Payslip List")
+    public void theUserClicksOnTheLinkUnderTheActionColumnOnThePayslipList() {
+        adminPage.payrollViewPayslipButton.click();
+    }
+
+    @Then("The user verifies that, the corresponding payslip for that period is displayed.")
+    public void theUserVerifiesThatTheCorrespondingPayslipForThatPeriodIsDisplayed() {
+        Assert.assertTrue(adminPage.payrollPayslipDetails.isDisplayed());
+    }
+
 
     //=====================================================
 }

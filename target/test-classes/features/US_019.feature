@@ -9,7 +9,7 @@
 
       When The user verifies that they are on the mainLogin page
       And The user clicks on the Admin Login button.
-      Then The user verifies that they are on the "adminSiteLoginUrl" page
+      And The user switchs to an other new Admin Login page
       And The user enters their mail address and password to the mailtextbox and passwordtextbox
       And The user clicks on the Sign In button
       Then The user verifies that the admin panel s top bar has a visible profile icon
@@ -20,7 +20,7 @@
 
       When The user verifies that they are on the mainLogin page
       And The user clicks on the Admin Login button.
-      Then The user verifies that they are on the "adminSiteLoginUrl" page
+      And The user switchs to an other new Admin Login page
       And The user enters their mail address and password to the mailtextbox and passwordtextbox
       And The user clicks on the Sign In button
       Then The user verifies that the admin panel s top bar has a visible profile icon
@@ -34,7 +34,7 @@
 
       When The user verifies that they are on the mainLogin page
       And The user clicks on the Admin Login button.
-      Then The user verifies that they are on the "adminSiteLoginUrl" page
+      And The user switchs to an other new Admin Login page
       And The user enters their mail address and password to the mailtextbox and passwordtextbox
       And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
@@ -48,7 +48,7 @@
 
       When The user verifies that they are on the mainLogin page
       And The user clicks on the Admin Login button.
-      Then The user verifies that they are on the "adminSiteLoginUrl" page
+      And The user switchs to an other new Admin Login page
       And The user enters their mail address and password to the mailtextbox and passwordtextbox
       And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
@@ -63,7 +63,7 @@
 
       When The user verifies that they are on the mainLogin page
       And The user clicks on the Admin Login button.
-      Then The user verifies that they are on the "adminSiteLoginUrl" page
+      And The user switchs to an other new Admin Login page
       And The user enters their mail address and password to the mailtextbox and passwordtextbox
       And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
@@ -72,6 +72,22 @@
       When The user clicks on the payroll link button
       Then The user verifies that, on the Payroll page, the Payslip List are displayed with columns (Month-Year, Date, Mode, Status, Net Salary, Action).
 
+    @TC6_US19
+    Scenario: When clicking on the "View Payslip" link under the Action column on the Payslip List,
+    the corresponding payslip for that period should be displayed.
+
+
+      When The user verifies that they are on the mainLogin page
+      And The user clicks on the Admin Login button.
+      And The user switchs to an other new Admin Login page
+      And The user enters their mail address and password to the mailtextbox and passwordtextbox
+      And The user clicks on the Sign In button
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the profile link
+      And The user verifies that they are linked to the profile page
+      When The user clicks on the payroll link button
+      And The user clicks on the View Payslip link under the Action column on the Payslip List
+      Then The user verifies that, the corresponding payslip for that period is displayed.
 
 
 

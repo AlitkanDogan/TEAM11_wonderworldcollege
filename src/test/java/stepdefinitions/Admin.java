@@ -9,6 +9,7 @@ public class Admin {
 
     AdminPage adminPage = new AdminPage();
 
+    //=======================US_19==============================
     @Then("The user verifies that the admin panel s top bar has a visible profile icon")
     public void the_user_verifies_that_the_admin_panel_s_top_bar_has_a_visible_profile_icon() {
         Assert.assertTrue(adminPage.topBarAdminProfileIcon.isDisplayed());
@@ -49,4 +50,18 @@ public class Admin {
 
     }
 
+    @When("The user clicks on the payroll link button")
+    public void theUserClicksOnThePayrollLinkButton() {
+        adminPage.adminProfilePagePayroll.click();
+    }
+
+    @Then("The user verifies that on the Payroll page info boards \\(Total Net Salary Paid, Total Gross Salary, Total Earning, Total Deduction) are visible.")
+    public void theUserVerifiesThatOnThePayrollPageInfoBoardsTotalNetSalaryPaidTotalGrossSalaryTotalEarningTotalDeductionAreVisible() {
+        Assert.assertTrue(adminPage.payrollTotalNetSalaryPaid.isDisplayed());
+        Assert.assertTrue(adminPage.payrollTotalGrossSalary.isDisplayed());
+        Assert.assertTrue(adminPage.payrollTotalEarning.isDisplayed());
+        Assert.assertTrue(adminPage.payrollTotalDeduction.isDisplayed());
+    }
+
+    //=====================================================
 }

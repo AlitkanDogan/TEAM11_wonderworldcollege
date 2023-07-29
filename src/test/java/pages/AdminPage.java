@@ -60,5 +60,16 @@ public class AdminPage {
     @FindBy(xpath = "(//div[@class='tshadow mb25  bozero'])")
     public WebElement adminProfileSocialMediaLinkDetails;
 
+    @FindBy(xpath = "(//div[@class='staffprofile'])[1]")
+    public WebElement payrollTotalNetSalaryPaid;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[2]")
+    public WebElement payrollTotalGrossSalary;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[3]")
+    public WebElement payrollTotalEarning;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[4]")
+    public WebElement payrollTotalDeduction;
 
 }

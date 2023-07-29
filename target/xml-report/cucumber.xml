@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="18.446" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Profile page, when clicked, there should be transitions" time="18.108">
+<testsuite name="Cucumber" time="18.798" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="The Payroll page should have info boards" time="18.437">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed
@@ -11,7 +11,8 @@ And The user clicks on the Sign In button...................................pass
 And The user clicks on the profile icon on the admin panels top bar.........passed
 And The user clicks on the profile link.....................................passed
 And The user verifies that they are linked to the profile page..............passed
-Then The user verifies that there are  transitions to the Profile, Payroll, Leaves, Attendance, Documents pages and the General Information, Address Details, Bank Account Details, and Social Media Link information should be displayed..passed
+When The user clicks on the payroll link button.............................passed
+Then The user verifies that on the Payroll page info boards (Total Net Salary Paid, Total Gross Salary, Total Earning, Total Deduction) are visible..passed
 ]]></system-out>
 </testcase>
 </testsuite>

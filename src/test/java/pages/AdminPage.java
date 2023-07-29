@@ -126,6 +126,21 @@ public class AdminPage {
     @FindBy(xpath = "(//*[@class='modal-content'])[1]")
     public WebElement leavesViewDetails;
 
+    @FindBy(xpath = "(//div[@class='staffprofile'])[5]")
+    public WebElement attendanceTotalPresent;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[6]")
+    public WebElement attendanceTotalLate;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[7]")
+    public WebElement attendanceTotalAbsent;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[8]")
+    public WebElement attendanceTotalHalfDay;
+
+    @FindBy(xpath = "(//div[@class='staffprofile'])[9]")
+    public WebElement attendanceTotalHoliday;
+
 
 
 

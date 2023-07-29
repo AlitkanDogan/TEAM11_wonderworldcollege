@@ -127,6 +127,20 @@ public class Admin {
         adminPage.leavesViewDetails.isDisplayed();
     }
 
+    @When("The user clicks on the Attendance link button")
+    public void theUserClicksOnTheAttendanceLinkButton() {
+        adminPage.adminProfilePageAttendance.click();
+    }
+
+    @Then("The user verifies that on the Attendance page, info boards \\(Total Present, Total Late, Total Absent, Total Half Day, Total Holiday) are visible.")
+    public void theUserVerifiesThatOnTheAttendancePageInfoBoardsTotalPresentTotalLateTotalAbsentTotalHalfDayTotalHolidayAreVisible() {
+        Assert.assertTrue(adminPage.attendanceTotalPresent.isDisplayed());
+        Assert.assertTrue(adminPage.attendanceTotalLate.isDisplayed());
+        Assert.assertTrue(adminPage.attendanceTotalAbsent.isDisplayed());
+        Assert.assertTrue(adminPage.attendanceTotalHalfDay.isDisplayed());
+        Assert.assertTrue(adminPage.attendanceTotalHoliday.isDisplayed());
+    }
+
 
     //=====================================================
 }

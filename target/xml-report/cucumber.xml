@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="18.372" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="When clicking on the &quot;view&quot; icon under the Action column on the Leave List," time="18.045">
+<testsuite name="Cucumber" time="19.143" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="The Attendance page should have info boards (Total Present, Total Late, Total Absent, Total Half Day, Total Holiday) visible." time="18.817">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed
@@ -11,9 +11,8 @@ And The user clicks on the Sign In button...................................pass
 And The user clicks on the profile icon on the admin panels top bar.........passed
 And The user clicks on the profile link.....................................passed
 And The user verifies that they are linked to the profile page..............passed
-When The user clicks on the Leaves link button..............................passed
-And The user clicks on the view icon on the Leaves page below the Action column.passed
-Then The user verifies that, the relevant leave information is displayed....passed
+When The user clicks on the Attendance link button..........................passed
+Then The user verifies that on the Attendance page, info boards (Total Present, Total Late, Total Absent, Total Half Day, Total Holiday) are visible..passed
 ]]></system-out>
 </testcase>
 </testsuite>

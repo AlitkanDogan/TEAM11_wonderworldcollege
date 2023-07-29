@@ -102,6 +102,23 @@ public class AdminPage {
     @FindBy(xpath = "(//*[@type='search'])[1]")
     public WebElement payrollSearchBox;
 
+    @FindBy(xpath = "(//*[@class='sorting'])[1]")
+    public WebElement leavesLeaveType;
+
+    @FindBy(xpath = "(//*[@class='sorting'])[2]")
+    public WebElement leavesLeaveDate;
+
+    @FindBy(xpath = "(//*[@class='sorting'])[3]")
+    public WebElement leavesDays;
+
+    @FindBy(xpath = "(//*[@class='sorting'])[4]")
+    public WebElement leavesApplyDate;
+
+    @FindBy(xpath = "(//*[@class='sorting'])[5]")
+    public WebElement leavesStatus;
+
+    @FindBy(xpath = "(//*[@class='text-right noExport sorting'])[2]")
+    public WebElement leavesAction;
 
 
 

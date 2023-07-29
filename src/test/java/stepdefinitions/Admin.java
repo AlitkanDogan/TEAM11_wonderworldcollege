@@ -101,6 +101,21 @@ public class Admin {
         Assert.assertTrue(adminPage.payrollNetSalary.isEnabled());
     }
 
+    @When("The user clicks on the Leaves link button")
+    public void theUserClicksOnTheLeavesLinkButton() {
+        adminPage.adminProfilePageLeaves.click();
+    }
+
+    @Then("The user verifies that,  on the Leaves page, the Leave List is displayed with columns \\(Leave Type, Leave Date, Days, Apply Date, Status, Action).")
+    public void theUserVerifiesThatOnTheLeavesPageTheLeaveListIsDisplayedWithColumnsLeaveTypeLeaveDateDaysApplyDateStatusAction() {
+        Assert.assertTrue(adminPage.leavesLeaveType.isDisplayed());
+        Assert.assertTrue(adminPage.leavesLeaveDate.isDisplayed());
+        Assert.assertTrue(adminPage.leavesDays.isDisplayed());
+        Assert.assertTrue(adminPage.leavesApplyDate.isDisplayed());
+        Assert.assertTrue(adminPage.leavesStatus.isDisplayed());
+        Assert.assertTrue(adminPage.leavesAction.isDisplayed());
+    }
+
 
     //=====================================================
 }

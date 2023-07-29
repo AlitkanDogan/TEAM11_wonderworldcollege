@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="26.105" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="The Payroll page should allow filtering within the Paylist using menu headings." time="25.709">
+<testsuite name="Cucumber" time="18.566" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Leaves page," time="18.247">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed
@@ -11,8 +11,8 @@ And The user clicks on the Sign In button...................................pass
 And The user clicks on the profile icon on the admin panels top bar.........passed
 And The user clicks on the profile link.....................................passed
 And The user verifies that they are linked to the profile page..............passed
-When The user clicks on the payroll link button.............................passed
-Then the user verifies that,  the Payroll page allows filtering within the Paylist using menu headings..passed
+When The user clicks on the Leaves link button..............................passed
+Then The user verifies that,  on the Leaves page, the Leave List is displayed with columns (Leave Type, Leave Date, Days, Apply Date, Status, Action)..passed
 ]]></system-out>
 </testcase>
 </testsuite>

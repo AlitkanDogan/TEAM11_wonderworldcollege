@@ -68,4 +68,6 @@ public class Home {
         Assert.assertTrue(homePage.addressLink_footer.isDisplayed());
     }
 
+
+
 }

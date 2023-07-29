@@ -93,4 +93,51 @@ public class LoginPage {
     @FindBy(xpath = "(//a[@target='_blank'])[1]")
     public WebElement adminLoginUserLoginLink;
 
+    //WonderWorldCollege homepage Login button Student/Parent
+    @FindBy(xpath ="//*[@class='complainbtn']")
+    public WebElement loginButtonStudentParent;
+
+    //WonderWorldCollege userlogin page student-parent
+    @FindBy(xpath = "//*[@class='loginbg']")
+    public WebElement userLoginPageStudentParent;
+
+    @FindBy(xpath = "//*[@class = ' bg-shadow-remove ']")
+    public WebElement whatsNewInWonderWorldCollege;
+
+    @FindBy(id ="email")
+    public  WebElement userNameTextbox;
+
+    @FindBy(id ="password")
+    public  WebElement passwordTextbox;
+
+    @FindBy(xpath = "//*[@class='btn']")
+    public WebElement signInButtonUserLogin;
+
+    @FindBy(xpath = "//*[@class='alert alert-danger']")
+    public WebElement invalidUsernameOrPasswordAlert;
+
+    @FindBy(xpath = "//*[@class='forgot']")
+    public  WebElement forgotPasswordLinkStudentParent;
+
+    @FindBy(xpath = "//*[text()='Forgot Password']")
+    public  WebElement ufPasswordPageStudentParent;
+
+    @FindBy(id="form-username")
+    public  WebElement resetPasswordEmailTextbox;
+
+    @FindBy(xpath = "(//*[@class='radio-inline'])[1]")
+    public  WebElement resetPasswordEmailRadioButton;
+
+    @FindBy(xpath = "//*[@class='btn']")
+    public  WebElement resetEmailSubmitButton;
+
+    @FindBy(xpath = "//*[@class='alert alert-danger']")
+    public  WebElement resetEmailSendingFailAlert;
+
+    @FindBy(xpath = "//*[@class='forgot']")
+    public  WebElement ufpasswordPageUserLoginLink;
+
+    @FindBy(xpath = "//*[@class='forgot pull-right']")
+    public  WebElement frontSiteLink;
+
 }

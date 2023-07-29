@@ -89,6 +89,20 @@
       And The user clicks on the View Payslip link under the Action column on the Payslip List
       Then The user verifies that, the corresponding payslip for that period is displayed.
 
+    @TC7_US19
+    Scenario: The Payroll page should have a search textBox for searching within the Paylist.
+
+      When The user verifies that they are on the mainLogin page
+      And The user clicks on the Admin Login button.
+      And The user switchs to an other new Admin Login page
+      And The user enters their mail address and password to the mailtextbox and passwordtextbox
+      And The user clicks on the Sign In button
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the profile link
+      And The user verifies that they are linked to the profile page
+      When The user clicks on the payroll link button
+      Then The user verifies that,  the Payroll page has a search textBox for searching within the Paylist.
+
 
 
 

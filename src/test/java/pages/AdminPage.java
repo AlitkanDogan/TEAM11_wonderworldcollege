@@ -99,6 +99,9 @@ public class AdminPage {
     @FindBy(id = "html-2-pdfwrapper")
     public WebElement payrollPayslipDetails;
 
+    @FindBy(xpath = "(//*[@type='search'])[1]")
+    public WebElement payrollSearchBox;
+
 
 
 

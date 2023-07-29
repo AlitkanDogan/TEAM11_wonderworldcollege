@@ -86,6 +86,11 @@ public class Admin {
         Assert.assertTrue(adminPage.payrollPayslipDetails.isDisplayed());
     }
 
+    @Then("The user verifies that,  the Payroll page has a search textBox for searching within the Paylist.")
+    public void theUserVerifiesThatThePayrollPageHasASearchTextBoxForSearchingWithinThePaylist() {
+        Assert.assertTrue(adminPage.payrollSearchBox.isDisplayed());
+    }
+
 
     //=====================================================
 }

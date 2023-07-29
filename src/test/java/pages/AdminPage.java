@@ -120,6 +120,14 @@ public class AdminPage {
     @FindBy(xpath = "(//*[@class='text-right noExport sorting'])[2]")
     public WebElement leavesAction;
 
+    @FindBy(xpath = "(//*[@class='fa fa-eye'])[1]")
+    public WebElement leavesViewButton;
+
+    @FindBy(xpath = "(//*[@class='modal-content'])[1]")
+    public WebElement leavesViewDetails;
+
+
+
 
 
 }

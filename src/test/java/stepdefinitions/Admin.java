@@ -116,6 +116,17 @@ public class Admin {
         Assert.assertTrue(adminPage.leavesAction.isDisplayed());
     }
 
+    @And("The user clicks on the view icon on the Leaves page below the Action column")
+    public void theUserClicksOnTheViewIconOnTheLeavesPageBelowTheActionColumn() {
+        adminPage.leavesViewButton.click();
+
+    }
+
+    @Then("The user verifies that, the relevant leave information is displayed.")
+    public void theUserVerifiesThatTheRelevantLeaveInformationIsDisplayed() {
+        adminPage.leavesViewDetails.isDisplayed();
+    }
+
 
     //=====================================================
 }

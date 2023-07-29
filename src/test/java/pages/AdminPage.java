@@ -141,6 +141,9 @@ public class AdminPage {
     @FindBy(xpath = "(//div[@class='staffprofile'])[9]")
     public WebElement attendanceTotalHoliday;
 
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")
+    public WebElement selectableAttendanceYear;
+
 
 
 

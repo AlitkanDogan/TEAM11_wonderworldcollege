@@ -141,6 +141,11 @@ public class Admin {
         Assert.assertTrue(adminPage.attendanceTotalHoliday.isDisplayed());
     }
 
+    @Then("The user verifies that on the Attendance page, a selectable attendance year is available.")
+    public void theUserVerifiesThatOnTheAttendancePageASelectableAttendanceYearIsAvailable() {
+        Assert.assertTrue(adminPage.selectableAttendanceYear.isEnabled());
+    }
+
 
     //=====================================================
 }

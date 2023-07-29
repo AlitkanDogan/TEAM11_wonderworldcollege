@@ -72,4 +72,29 @@ public class AdminPage {
     @FindBy(xpath = "(//div[@class='staffprofile'])[4]")
     public WebElement payrollTotalDeduction;
 
+    @FindBy(xpath = "(//*[@class='text text-left sorting'])[1]")
+    public WebElement payrollPayslip;
+
+    @FindBy(xpath = "(//*[@class='text text-left sorting'])[2]")
+    public WebElement payrollMonthYear;
+
+    @FindBy(xpath = "(//*[@class='text text-left sorting'])[3]")
+    public WebElement payrollDate;
+
+    @FindBy(xpath = "(//*[@class='text text-left sorting'])[4]")
+    public WebElement payrollMode;
+
+    @FindBy(xpath = "(//*[@class='text text-left sorting'])[5]")
+    public WebElement payrollStatus;
+
+    @FindBy(xpath = "(//*[@class='text text-right sorting'])")
+    public WebElement payrollNetSalary;
+
+    @FindBy(xpath = "(//*[@class='text-right noExport sorting'])")
+    public WebElement payrollAction;
+
+
+
+
+
 }

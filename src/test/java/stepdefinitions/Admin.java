@@ -63,5 +63,17 @@ public class Admin {
         Assert.assertTrue(adminPage.payrollTotalDeduction.isDisplayed());
     }
 
+    @Then("The user verifies that, on the Payroll page, the Payslip List are displayed with columns \\(Month-Year, Date, Mode, Status, Net Salary, Action).")
+    public void theUserVerifiesThatOnThePayrollPageThePayslipListAreDisplayedWithColumnsMonthYearDateModeStatusNetSalaryAction() {
+        Assert.assertTrue(adminPage.payrollPayslip.isDisplayed());
+        Assert.assertTrue(adminPage.payrollMonthYear.isDisplayed());
+        Assert.assertTrue(adminPage.payrollDate.isDisplayed());
+        Assert.assertTrue(adminPage.payrollMode.isDisplayed());
+        Assert.assertTrue(adminPage.payrollStatus.isDisplayed());
+        Assert.assertTrue(adminPage.payrollNetSalary.isDisplayed());
+        Assert.assertTrue(adminPage.payrollAction.isDisplayed());
+
+    }
+
     //=====================================================
 }

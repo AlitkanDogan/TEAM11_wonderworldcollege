@@ -57,6 +57,22 @@
       When The user clicks on the payroll link button
       Then The user verifies that on the Payroll page info boards (Total Net Salary Paid, Total Gross Salary, Total Earning, Total Deduction) are visible.
 
+    @TC5_US19
+    Scenario: On the Payroll page, the Payslip List should be displayed with columns
+    (Month-Year, Date, Mode, Status, Net Salary, Action).
+
+      When The user verifies that they are on the mainLogin page
+      And The user clicks on the Admin Login button.
+      Then The user verifies that they are on the "adminSiteLoginUrl" page
+      And The user enters their mail address and password to the mailtextbox and passwordtextbox
+      And The user clicks on the Sign In button
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the profile link
+      And The user verifies that they are linked to the profile page
+      When The user clicks on the payroll link button
+      Then The user verifies that, on the Payroll page, the Payslip List are displayed with columns (Month-Year, Date, Mode, Status, Net Salary, Action).
+
+
 
 
 

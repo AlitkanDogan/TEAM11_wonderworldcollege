@@ -91,6 +91,16 @@ public class Admin {
         Assert.assertTrue(adminPage.payrollSearchBox.isDisplayed());
     }
 
+    @Then("the user verifies that,  the Payroll page allows filtering within the Paylist using menu headings.")
+    public void theUserVerifiesThatThePayrollPageAllowsFilteringWithinThePaylistUsingMenuHeadings() {
+        Assert.assertTrue(adminPage.payrollPayslip.isEnabled());
+        Assert.assertTrue(adminPage.payrollMonthYear.isEnabled());
+        Assert.assertTrue(adminPage.payrollDate.isEnabled());
+        Assert.assertTrue(adminPage.payrollMode.isEnabled());
+        Assert.assertTrue(adminPage.payrollStatus.isEnabled());
+        Assert.assertTrue(adminPage.payrollNetSalary.isEnabled());
+    }
+
 
     //=====================================================
 }

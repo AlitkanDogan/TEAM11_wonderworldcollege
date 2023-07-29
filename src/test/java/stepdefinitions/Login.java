@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Login {
@@ -52,6 +53,7 @@ public class Login {
     }
     @When("The user clicks on the Sign In button")
     public void the_user_clicks_on_the_sign_in_button() {
+
         loginPage.signInButtonUserLogin.click();
     }
 
@@ -132,6 +134,35 @@ public class Login {
     public void theUserVerifiesThatTheFrontSiteLinkRedirectsToTheHomepage() {
         Assert.assertTrue(homePage.logoCollege_header.isDisplayed());
     }
+
+
+    //=====================================================
+
+    //=======================US_19==============================
+    @When("The user verifies that they are on the mainLogin page")
+    public void the_user_verifies_that_they_are_on_the_mainLogin_page() {
+    Assert.assertTrue(loginPage.mainLoginPage.isDisplayed());
+    }
+    @When("The user clicks on the Admin Login button.")
+    public void the_user_clicks_on_the_admin_login_button() {
+        loginPage.adminLoginButton.click();
+    }
+
+    @Then("The user verifies that they are on the {string} page")
+    public void theUserVerifiesThatTheyAreOnThePage(String adminSiteLoginUrl) {
+        driver.get(ConfigReader.getProperty(adminSiteLoginUrl));
+
+    }
+
+    @When("The user enters their mail address and password to the mailtextbox and passwordtextbox")
+    public void the_user_enters_their_mail_address_and_password_to_the_mailtextbox_and_passwordtextbox(){
+        loginPage.adminLoginUsernameTextbox.sendKeys("fatma.aydin@admin.wonderworldcollege.com");
+        loginPage.adminLoginPasswordTextbox.sendKeys("wonderworld123");
+    }
+
+
+
+
 
 
     //=====================================================

@@ -3,26 +3,21 @@
 
     Background:
       Given The user goes to the "loginUrl" address
-
-    @TC1_US19
-    Scenario: The admin panel's top bar should have a visible profile icon.
-
       When The user verifies that they are on the mainLogin page
       And The user clicks on the Admin Login button.
       And The user switchs to an other new Admin Login page
       And The user enters their mail address and password to the mailtextbox and passwordtextbox
       And The user clicks on the Sign In button
+
+    @TC1_US19
+    Scenario: The admin panel's top bar should have a visible profile icon.
+
       Then The user verifies that the admin panel s top bar has a visible profile icon
 
     @TC2_US19
     Scenario: When clicking on the profile icon in the admin panel's top bar,
     a window should open displaying the account owner's name, role, and links to Profile, Password, and Logout.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       Then The user verifies that the admin panel s top bar has a visible profile icon
       And The user clicks on the profile icon on the admin panels top bar.
       Then The user verifies that a window opens displaying the account owner's name, role, and links to Profile, Password, and Logout."
@@ -32,11 +27,6 @@
     to the Profile, Payroll, Leaves, Attendance, Documents pages and the General Information,
     Address Details, Bank Account Details, and Social Media Link information should be displayed.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -46,11 +36,6 @@
     Scenario: The Payroll page should have info boards
     (Total Net Salary Paid, Total Gross Salary, Total Earning, Total Deduction) visible.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -61,11 +46,6 @@
     Scenario: On the Payroll page, the Payslip List should be displayed with columns
     (Month-Year, Date, Mode, Status, Net Salary, Action).
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -76,12 +56,6 @@
     Scenario: When clicking on the "View Payslip" link under the Action column on the Payslip List,
     the corresponding payslip for that period should be displayed.
 
-
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -92,11 +66,6 @@
     @TC7_US19
     Scenario: The Payroll page should have a search textBox for searching within the Paylist.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -106,11 +75,6 @@
     @TC8_US19
     Scenario: The Payroll page should allow filtering within the Paylist using menu headings.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -121,11 +85,6 @@
     Scenario: On the Leaves page,
     the Leave List should be displayed with columns (Leave Type, Leave Date, Days, Apply Date, Status, Action).
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -136,11 +95,6 @@
     Scenario: When clicking on the "view" icon under the Action column on the Leave List,
     the relevant leave information should be displayed.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -151,12 +105,6 @@
     @TC11_US19
     Scenario: The Attendance page should have info boards (Total Present, Total Late, Total Absent, Total Half Day, Total Holiday) visible.
 
-
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page
@@ -166,11 +114,6 @@
     @TC12_US19
     Scenario: On the Attendance page, a selectable attendance year should be available.
 
-      When The user verifies that they are on the mainLogin page
-      And The user clicks on the Admin Login button.
-      And The user switchs to an other new Admin Login page
-      And The user enters their mail address and password to the mailtextbox and passwordtextbox
-      And The user clicks on the Sign In button
       And The user clicks on the profile icon on the admin panels top bar.
       And The user clicks on the profile link
       And The user verifies that they are linked to the profile page

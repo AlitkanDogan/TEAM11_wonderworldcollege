@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="18.465" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Attendance page, a selectable attendance year should be available." time="18.149">
+<testsuite name="Cucumber" time="19.388" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Attendance page, a selectable attendance year should be available." time="19.075">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed

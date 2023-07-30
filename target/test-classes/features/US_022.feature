@@ -43,10 +43,10 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
     And The user clicks on the Student Information link in the admin panel's sidebar
     And The user clicks on the Multi Class Student link in the opened dropdown menu
     Then The user verifies that the Class and Section textboxes are visible on the opened page
-    And The user clicks on the Class textbox and selects the ""Class2"" tab from the opened dropdown menu
-    And The user clicks on the Section textbox and selects the ""A"" tab from the opened dropdown menu
+    And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu
+    And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu
     When The user clicks Search button in Multi Class Student page
-    And The user confirms that a colored circle is spinning on the user icon or that a color transition is visible at the top of the page, indicating that the search has been performed.
+    And  The user verifies that the "Select Criteria" heading is visible on the page that opens as a result of the search
     And User closes the page
 
 

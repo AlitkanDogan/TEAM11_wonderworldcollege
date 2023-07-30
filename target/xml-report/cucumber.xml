@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="20.756" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Attendance page, the Attendance List should display the staff's attendance for the selected month and days." time="20.43">
+<testsuite name="Cucumber" time="16.071" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="when clicking on the profile icon in the admin panel's top bar, the window should display the Password link." time="15.738">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed
@@ -9,11 +9,8 @@ And The user switchs to an other new Admin Login page.......................pass
 And The user enters their mail address and password to the mailtextbox and passwordtextbox.passed
 And The user clicks on the Sign In button...................................passed
 And The user clicks on the profile icon on the admin panels top bar.........passed
-And The user clicks on the profile link.....................................passed
-And The user verifies that they are linked to the profile page..............passed
-When The user clicks on the Attendance link button..........................passed
-And The user clicks on the columns icon.....................................passed
-Then The user verifies that, on the Attendance page, the Attendance List displays the staff's attendance for the selected month and days..passed
+And The user clicks on the password link....................................passed
+Then The user verifies that, the password link opens a page with Current Password, New Password, Confirm Password text boxes, and a Change Password button..passed
 ]]></system-out>
 </testcase>
 </testsuite>

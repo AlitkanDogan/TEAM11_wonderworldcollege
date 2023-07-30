@@ -139,6 +139,14 @@
       And The user clicks on the columns icon
       Then The user verifies that, on the Attendance page, the Attendance List displays the staff's attendance for the selected month and days.
 
+    @TC15_US19
+    Scenario: when clicking on the profile icon in the admin panel's top bar, the window should display the Password link.
+      when clicked, it should open a page with Current Password, New Password, Confirm Password text boxes, and a Change Password button.
+
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the password link
+      Then The user verifies that, the password link opens a page with Current Password, New Password, Confirm Password text boxes, and a Change Password button.
+
 
 
 

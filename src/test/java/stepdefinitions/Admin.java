@@ -162,7 +162,18 @@ public class Admin {
 
     }
 
+    @And("The user clicks on the password link")
+    public void theUserClicksOnThePasswordLink() {
+        adminPage.topBarAccountOwnersPassword.click();
+    }
 
+    @Then("The user verifies that, the password link opens a page with Current Password, New Password, Confirm Password text boxes, and a Change Password button.")
+    public void theUserVerifiesThatThePasswordLinkOpensAPageWithCurrentPasswordNewPasswordConfirmPasswordTextBoxesAndAChangePasswordButton() {
+        Assert.assertTrue(adminPage.passwordChangeCurrentPasswordLine.isDisplayed());
+        Assert.assertTrue(adminPage.passwordChangeNewPasswordLine.isDisplayed());
+        Assert.assertTrue(adminPage.passwordChangeConfirmPasswordLine.isDisplayed());
+        Assert.assertTrue(adminPage.passwordChangeButtonChangePasswordLine.isDisplayed());
+    }
 
 
     //=====================================================

@@ -153,6 +153,18 @@ public class AdminPage {
     @FindBy(xpath = "//*[@class='dt-button-collection']")
     public WebElement attendanceDisplayOfSelectedDateMonth;
 
+    @FindBy(xpath = "(//*[@class='form-group'])[1]")
+    public WebElement passwordChangeCurrentPasswordLine;
+
+    @FindBy(xpath = "(//*[@class='form-group'])[2]")
+    public WebElement passwordChangeNewPasswordLine;
+
+    @FindBy(xpath = "(//*[@class='form-group'])[3]")
+    public WebElement passwordChangeConfirmPasswordLine;
+
+    @FindBy(xpath = "(//*[@class='form-group'])[4]")
+    public WebElement passwordChangeButtonChangePasswordLine;
+
 
 
 

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="9.256" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;userlogin&quot; page, there should be a link for returning to the Front Site," time="8.926">
+<testsuite name="Cucumber" time="25.297" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I should be able to access the &quot;Homework&quot; page and make changes to my assignments When entering the Student Panel" name="The user should be able to view column fields in the &quot;Upcoming Homework&quot; segment" time="24.991">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
+Then The user verifies that, the Login button is visible on the homepage....passed
 When The user clicks on the Login button....................................passed
-And The user clicks on the Front Site link..................................passed
-Then The user verifies that the Front Site link redirects to the homepage...passed
+Then The user verifies that Login button redirects to the userlogin page....passed
+And The user enters their "username" in to the username textbox.............passed
+And The user enters their "password" in to the password textbox.............passed
+When The user clicks on the Sign In button..................................passed
+Then The user verifies that they are on the student panel...................passed
+When The user clicks on the Homework button link on student panel...........passed
+Then The user verifies that, on the homework page, column fields in the Upcoming Homework segment are visible..passed
 ]]></system-out>
 </testcase>
 </testsuite>

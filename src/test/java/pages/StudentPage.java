@@ -17,5 +17,14 @@ public class StudentPage {
     @FindBy(xpath = "//*[@class='skin-blue fixed sidebar-mini']")
     public WebElement userStudentDashboardPage;
 
+    @FindBy(xpath = "//*[@class='wrapper']" )
+    public WebElement studentUserPage;
+
+    @FindBy(xpath = "//*[@href = 'https://qa.wonderworldcollege.com/user/homework']")
+    public WebElement homeworkButton;
+
+    @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
+    public WebElement homeworkPage;
+
 }
 

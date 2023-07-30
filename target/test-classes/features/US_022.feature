@@ -32,7 +32,7 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
   @TC3_US22
   Scenario: On the "Multiclass" page, Class and Section textBoxes, along with a Search button,
   should be visible to search among the students in the school, and the students should be searchable
-  based on the provided criteria.
+  based on the provided criteria the list should be displayed..
 
     Given The user goes to the "loginUrl" address
     When The user clicks on the admin login tab
@@ -49,4 +49,22 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
     And  The user verifies that the "Select Criteria" heading is visible on the page that opens as a result of the search
     And User closes the page
 
+  @TC4_US22
+  Scenario: TIn the window of the selected student for the update, by clicking the "remove" button, a class should be removed for that student.
 
+    Given The user goes to the "loginUrl" address
+    When The user clicks on the admin login tab
+    And The user navigates to a new page that opens in the browser
+    And The user enters "adminUsername_dgn" into the username textbox
+    And The user enters "password_dgn" into the password textbox
+    When The user clicks the Sign In button and goes to the admin page
+    And The user clicks on the Student Information link in the admin panel's sidebar
+    And The user clicks on the Multi Class Student link in the opened dropdown menu
+    Then The user verifies that the Class and Section textboxes are visible on the opened page
+    And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu
+    And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu
+    When The user clicks Search button in Multi Class Student page
+    And The user clicks on the "+" icon in the student's window in the top-left corner
+    When The user clicks on the "Remove" button in the newly added class section.
+    Then The user verifies that the class section is removed.
+    And User closes the page

@@ -333,4 +333,15 @@ public class Home {
      }
     }
 
+    @Then("The user, on the homepage top bar, it  verify that the school's phone information is visible as Call Us")
+    public void theUserOnTheHomepageTopBarItVerifyThatTheSchoolSPhoneInformationIsVisibleAsCallUs() {
+        String expectedResult="Call Us";
+        String actualResult=homePage.callUs.getText();
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains(expectedResult));
+
+    }
+
+    //================================================================================================
+
 }

@@ -1,4 +1,4 @@
-@US13
+@US13, @d
 Feature: As a user, I want the contact information of the school to be available on the homepage for easy access.
 
   Background:
@@ -17,16 +17,16 @@ Feature: As a user, I want the contact information of the school to be available
 
 
     When The user goes to the homepage footer section
-    And The user verifies that the school's phone number information is visible in the footer section
+    Then The user verifies that the school's phone number information is visible in the footer section
     Then The user verifies that the school's email address information is visible in the footer section
-    And The user verifies that the school's school address information is visible in the footer section
+    Then The user verifies that the school's school address information is visible in the footer section
     And User closes the page
 
   @TC3_US13
   Scenario: On the homepage top bar, it should be verified that the school's phone information is visible as "Call Us."
 
 
-    Then The user, on the homepage top bar, it  verify that the school's phone information is visible as 'Call Us'
+    Then The user, on the homepage top bar, it  verify that the school's phone information is visible as Call Us
     And User closes the page
 
 

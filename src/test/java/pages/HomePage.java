@@ -220,4 +220,25 @@ public class HomePage {
     @FindBy(xpath = "//textarea[@name='description']")
     public WebElement complainPageDescriptionTextbox;
 
+    @FindBy(xpath = "//input[@name='submit']")
+    public WebElement complainPageSubmitButton;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement complainPageConfirmationMessage;
+
+
+
+    //************************* Methods ********************
+
+    public void wonderWorldCollegeSiteLogoIsVisible(){
+        WonderWorldCollegeSiteLogo.isDisplayed();
+    }
+    public void footerComplainIconIsVisiable(){
+        footerComplainIcon.isDisplayed();
+    }
+    public void footerComplainTextIsVisiable(){
+        footerComplainText.isDisplayed();
+    }
+
+
 }

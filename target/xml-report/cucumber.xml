@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="Cucumber" time="14.33" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I want a &quot;Complaints&quot; section on the website where I can submit my requests and complaints." name="On the opened page, it should be verified that there are text boxes for Name, Email, Contact No., and Description." time="13.829">
+<system-out><![CDATA[
+Given The user goes to the "url" address....................................passed
+When The user descends to the footer section of the page....................passed
+When The user waits 1 seconds...............................................passed
+When The user clicks on the "Complain" icon in the footer section...........passed
+Then The user verifies that "Name" textbox is visible on complain page......passed
+Then The user verifies that "Email" textbox is visible on complain page.....passed
+Then The user verifies that "Contact No." textbox is visible on complain page.passed
+Then The user verifies that "Description" textbox is visible on complain page.passed
+And User closes the page....................................................passed
+=======
 <testsuite name="Cucumber" time="17.412" tests="1" skipped="0" failures="1" errors="0">
 <testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="On the &quot;Multiclass&quot; page, Class and Section textBoxes, along with a Search button," time="17.176">
 <failure type="io.cucumber.core.exception.CucumberException" message="Step [The user clicks on the Class textbox and selects the &quot;&quot;Class2&quot;&quot; tab from the opened dropdown menu] is defined with 1 parameters at 'stepdefinitions.Admin.the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu(java.lang.Integer)'.
@@ -67,6 +81,7 @@ And The user clicks on the Section textbox and selects the ""A"" tab from the op
 When The user clicks Search button in Multi Class Student page..............skipped
 And The user confirms that a colored circle is spinning on the user icon or that a color transition is visible at the top of the page, indicating that the search has been performed..skipped
 And User closes the page....................................................skipped
+>>>>>>> main
 ]]></system-out>
 </testcase>
 </testsuite>

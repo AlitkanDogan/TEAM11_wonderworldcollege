@@ -46,13 +46,13 @@ public class Login {
         Assert.assertTrue(loginPage.whatsNewInWonderWorldCollege.isDisplayed());
     }
 
-    @When("The user enters their username in to the username textbox")
-    public void the_user_enters_their_username_in_to_the_username_textbox() {
-        loginPage.userNameTextbox.sendKeys("std140");
+    @When("The user enters their {string} in to the username textbox")
+    public void the_user_enters_their_username_in_to_the_username_textbox(String username) {
+        loginPage.userNameTextbox.sendKeys(ConfigReader.getProperty(username));
     }
-    @When("The user enters their password in to the password textbox")
-    public void the_user_enters_their_password_in_to_the_password_textbox() {
-        loginPage.passwordTextbox.sendKeys("wonderworld123");
+    @When("The user enters their {string} in to the password textbox")
+    public void the_user_enters_their_password_in_to_the_password_textbox(String password) {
+        loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
     }
     @When("The user clicks on the Sign In button")
     public void the_user_clicks_on_the_sign_in_button() {
@@ -178,8 +178,6 @@ public class Login {
         loginPage.adminLoginUsernameTextbox.sendKeys("fatma.aydin@admin.wonderworldcollege.com");
         loginPage.adminLoginPasswordTextbox.sendKeys("wonderworld123");
     }
-
-
 
 
     //=====================================================

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="9.256" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a registered user (student/parent), I want to have access to the login page from the homepage" name="On the &quot;userlogin&quot; page, there should be a link for returning to the Front Site," time="8.926">
+<testsuite name="Cucumber" time="14.33" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I want a &quot;Complaints&quot; section on the website where I can submit my requests and complaints." name="On the opened page, it should be verified that there are text boxes for Name, Email, Contact No., and Description." time="13.829">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
-When The user clicks on the Login button....................................passed
-And The user clicks on the Front Site link..................................passed
-Then The user verifies that the Front Site link redirects to the homepage...passed
+When The user descends to the footer section of the page....................passed
+When The user waits 1 seconds...............................................passed
+When The user clicks on the "Complain" icon in the footer section...........passed
+Then The user verifies that "Name" textbox is visible on complain page......passed
+Then The user verifies that "Email" textbox is visible on complain page.....passed
+Then The user verifies that "Contact No." textbox is visible on complain page.passed
+Then The user verifies that "Description" textbox is visible on complain page.passed
+And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

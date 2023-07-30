@@ -198,6 +198,16 @@ public class Admin {
         Assert.assertTrue(adminPage.passwordChangeSuccessfullyChangedMessage.isDisplayed());
     }
 
+    @And("The user clicks on the Logout link")
+    public void theUserClicksOnTheLogoutLink() {
+        adminPage.topBarAccountOwnersLogout.click();
+    }
+
+    @Then("The user verifies that, clicking on the Logout link in the window that opens when clicking on the profile icon in the admin panel's top bar, the admin is logged out of the admin panel.")
+    public void theUserVerifiesThatClickingOnTheLogoutLinkInTheWindowThatOpensWhenClickingOnTheProfileIconInTheAdminPanelSTopBarTheAdminIsLoggedOutOfTheAdminPanel() {
+        Assert.assertTrue(adminPage.adminLoginPage.isDisplayed());
+    }
+
 
     //=====================================================
 }

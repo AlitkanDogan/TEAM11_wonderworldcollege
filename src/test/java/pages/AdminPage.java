@@ -177,6 +177,9 @@ public class AdminPage {
     @FindBy(xpath = "//*[@class='alert alert-success']")
     public WebElement passwordChangeSuccessfullyChangedMessage;
 
+    @FindBy(xpath = "//*[@class='bgoffsetbg']")
+    public WebElement adminLoginPage;
+
 
 
 

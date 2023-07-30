@@ -157,7 +157,13 @@
       And The user clicks on the Change Password button.
       Then The user verifies that, the password is changed.
 
+    @TC17_US19
+    Scenario: When clicking on the Logout link in the window that opens when clicking on the profile icon in the admin panel's top bar,
+    the admin should be logged out of the admin panel.
 
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the Logout link
+      Then The user verifies that, clicking on the Logout link in the window that opens when clicking on the profile icon in the admin panel's top bar, the admin is logged out of the admin panel.
 
 
 

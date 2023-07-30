@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="19.388" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Attendance page, a selectable attendance year should be available." time="19.075">
+<testsuite name="Cucumber" time="20.756" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want to access and update my profile information." name="On the Attendance page, the Attendance List should display the staff's attendance for the selected month and days." time="20.43">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user verifies that they are on the mainLogin page..................passed
@@ -12,7 +12,8 @@ And The user clicks on the profile icon on the admin panels top bar.........pass
 And The user clicks on the profile link.....................................passed
 And The user verifies that they are linked to the profile page..............passed
 When The user clicks on the Attendance link button..........................passed
-Then The user verifies that on the Attendance page, a selectable attendance year is available..passed
+And The user clicks on the columns icon.....................................passed
+Then The user verifies that, on the Attendance page, the Attendance List displays the staff's attendance for the selected month and days..passed
 ]]></system-out>
 </testcase>
 </testsuite>

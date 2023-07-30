@@ -120,8 +120,24 @@
       When The user clicks on the Attendance link button
       Then The user verifies that on the Attendance page, a selectable attendance year is available.
 
+    @TC13_US19
+    Scenario: On the Attendance page, there should be an explanation of the letters (P, L, A, F, H) used for attendance marking.
 
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the profile link
+      And The user verifies that they are linked to the profile page
+      When The user clicks on the Attendance link button
+      Then The user verifies that, on the Attendance page, there is an explanation of the letters (P, L, A, F, H) used for attendance marking.
 
+    @TC14_US19
+    Scenario: On the Attendance page, the Attendance List should display the staff's attendance for the selected month and days.
+
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the profile link
+      And The user verifies that they are linked to the profile page
+      When The user clicks on the Attendance link button
+      And The user clicks on the columns icon
+      Then The user verifies that, on the Attendance page, the Attendance List displays the staff's attendance for the selected month and days.
 
 
 

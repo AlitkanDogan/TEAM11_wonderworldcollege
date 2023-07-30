@@ -144,6 +144,18 @@ public class AdminPage {
     @FindBy(xpath = "(//*[@class='form-control'])[1]")
     public WebElement selectableAttendanceYear;
 
+    @FindBy(xpath = "//*[@class='halfday pull-right']")
+    public WebElement attendanceExplanationOfTheLetters;
+
+    @FindBy(xpath = "(//*[@class='fa fa-columns'])[2]")
+    public WebElement attendanceColumnsIcon;
+
+    @FindBy(xpath = "//*[@class='dt-button-collection']")
+    public WebElement attendanceDisplayOfSelectedDateMonth;
+
+
+
+
 
 
 

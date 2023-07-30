@@ -146,6 +146,24 @@ public class Admin {
         Assert.assertTrue(adminPage.selectableAttendanceYear.isEnabled());
     }
 
+    @Then("The user verifies that, on the Attendance page, there is an explanation of the letters \\(P, L, A, F, H) used for attendance marking.")
+    public void theUserVerifiesThatOnTheAttendancePageThereIsAnExplanationOfTheLettersPLAFHUsedForAttendanceMarking() {
+        Assert.assertTrue(adminPage.attendanceExplanationOfTheLetters.isDisplayed());
+    }
+
+    @And("The user clicks on the columns icon")
+    public void theUserClicksOnTheColumnsIcon() {
+        adminPage.attendanceColumnsIcon.click();
+    }
+
+    @Then("The user verifies that, on the Attendance page, the Attendance List displays the staff's attendance for the selected month and days.")
+    public void theUserVerifiesThatOnTheAttendancePageTheAttendanceListDisplaysTheStaffSAttendanceForTheSelectedMonthAndDays() {
+        adminPage.attendanceDisplayOfSelectedDateMonth.isEnabled();
+
+    }
+
+
+
 
     //=====================================================
 }

@@ -26,9 +26,8 @@ public class AdminPage {
     public WebElement sectionDropDownBox_multiClassStudent;
 
 
-@FindBy(xpath = "//button[@class='btn btn-primary btn-sm pull-right']")
-    public WebElement selectButton_MultiClassStudent;
-
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm pull-right']")
+    public WebElement searchtButton_MultiClassStudent;
 
 
     @FindBy(xpath = "(//*[@class='dropdown-toggle'])[2]")
@@ -199,11 +198,8 @@ public class AdminPage {
     @FindBy(xpath = "//*[@class='bgoffsetbg']")
     public WebElement adminLoginPage;
 
-
-
-
-
-
+    @FindBy(xpath = "(//h3[@class=\"box-title\"])[2]")
+    public WebElement selectCriteriaTitleText;
 
 
 

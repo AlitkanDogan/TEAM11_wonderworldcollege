@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.323" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="In the footer of the homepage, it should be verified that the school's phone number, email address, and school address information are visible." time="0.055">
+<testsuite name="Cucumber" time="0.357" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="On the &quot;Multiclass&quot; page, Class and Section textBoxes, along with a Search button," time="0.047">
 <failure/>
 <system-out><![CDATA[
-Given The user goes to the 'url' address....................................passed
-When The user goes to the homepage footer section...........................undefined
-And The user verifies that the school's phone number information is visible in the footer section.skipped
-Then The user verifies that the school's email address information is visible in the footer section.skipped
-And The user verifies that the school's school address information is visible in the footer section.skipped
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the Class and Section textboxes are visible on the opened page.undefined
+And The user clicks on the Class textbox and selects the ""Class 2"" tab from the opened dropdown menu.skipped
+And The user clicks on the Section textbox and selects the ""A"" tab from the opened dropdown menu.skipped
+And The user confirms that a colored circle is spinning on the user icon or that a color transition is visible at the top of the page, indicating that the search has been performed..skipped
 And User closes the page....................................................skipped
 ]]></system-out>
 </testcase>

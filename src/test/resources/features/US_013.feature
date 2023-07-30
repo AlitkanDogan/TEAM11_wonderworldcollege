@@ -1,4 +1,4 @@
-@US13
+@US13, @d
 Feature: As a user, I want the contact information of the school to be available on the homepage for easy access.
 
   Background:

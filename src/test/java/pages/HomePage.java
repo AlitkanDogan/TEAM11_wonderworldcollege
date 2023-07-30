@@ -168,6 +168,8 @@ public class HomePage {
     @FindBy(xpath = "(//div[@class='cright'])[3]")
     public WebElement addressLink_footer;
 
+
+
     //=========================================================
 
 

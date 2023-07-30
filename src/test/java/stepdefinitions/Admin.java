@@ -83,53 +83,48 @@ public class Admin {
 
     @Then("The user verifies that the opened page goes to the {string} address")
     public void the_user_verifies_that_the_opened_page_goes_to_the_address(String string) {
-        //String expectedUrl = "https://qa.wonderworldcollege.com/student/multiclass";
-        //String actualUrl = driver.getCurrentUrl();
-        //assertEquals(expectedUrl, actualUrl);
+        String expectedUrl = "https://qa.wonderworldcollege.com/student/multiclass";
+        String actualUrl = driver.getCurrentUrl();
+        assertEquals(expectedUrl, actualUrl);
     }
 
-    /*
 
-
-     */
     @Then("The user verifies that the Class and Section textboxes are visible on the opened page")
     public void the_user_verifies_that_the_class_and_section_textboxes_are_visible_on_the_opened_page() {
-        //  assertTrue(adminPage.classTextBox_multiClassStudent.isDisplayed());
-        //  assertTrue(adminPage.sectionTextBox_multiClassStudent.isDisplayed());
+      assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
+      assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
 
     }
 
-    @Then("The user clicks on the Class textbox and selects the \"\"Class2\"\" tab from the opened dropdown menu")
-    public void the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu(Integer int1) {
-        adminPage.classDropDowntBox_multiClassStudent.click();
-
+    @Then("The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu")
+    public void the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu() {
         Select select=new Select(adminPage.classDropDowntBox_multiClassStudent);
-        ReusableMethods.bekle(3);
-        select.selectByVisibleText("Class 2");
+        select.selectByIndex(2);
         ReusableMethods.bekle(1);
+
     }
 
-    @Then("The user clicks on the Section textbox and selects the \"\"A\"\" tab from the opened dropdown menu")
+    @Then("The user clicks on the Section textbox and selects the A tab from the opened dropdown menu")
     public void the_user_clicks_on_the_section_textbox_and_selects_the_a_tab_from_the_opened_dropdown_menu() {
-
-
-        Select select = new Select(adminPage.sectionDropDownBox_multiClassStudent);
-        ReusableMethods.bekle(3);
-        select.selectByVisibleText("A");
+        Select select=new Select(adminPage.sectionDropDownBox_multiClassStudent);
+        select.selectByIndex(1);
         ReusableMethods.bekle(1);
 
     }
 
     @When("The user clicks Search button in Multi Class Student page")
     public void theUserClicksSearchButtonInMultiClassStudentPage() {
-        adminPage.selectButton_MultiClassStudent.click();
-        ReusableMethods.bekle(1);
-    }
-
-    @Then("The user confirms that a colored circle is spinning on the user icon or that a color transition is visible at the top of the page, indicating that the search has been performed.")
-    public void the_user_confirms_that_a_colored_circle_is_spinning_on_the_user_icon_or_that_a_color_transition_is_visible_at_the_top_of_the_page_indicating_that_the_search_has_been_performed() {
+        adminPage.searchtButton_MultiClassStudent.click();
 
     }
+    @And("The user verifies that the {string} heading is visible on the page that opens as a result of the search")
+    public void theUserVerifiesThatTheHeadingIsVisibleOnThePageThatOpensAsAResultOfTheSearch(String arg0) {
+       String expectesResult="Select Criteria";
+       String actualResult=adminPage.selectCriteriaTitleText.getText();
+       assertEquals(expectesResult,actualResult);
+    }
+
+
 
 
     //_________________________________________________________________________
@@ -314,6 +309,7 @@ public class Admin {
 
     @And("The user clicks on the Change Password button.")
     public void theUserClicksOnTheChangePasswordButton() {
+
         adminPage.passwordChangeChangePasswordButton.click();
     }
 
@@ -331,6 +327,8 @@ public class Admin {
     public void theUserVerifiesThatClickingOnTheLogoutLinkInTheWindowThatOpensWhenClickingOnTheProfileIconInTheAdminPanelSTopBarTheAdminIsLoggedOutOfTheAdminPanel() {
         Assert.assertTrue(adminPage.adminLoginPage.isDisplayed());
     }
+
+
 
 
     //=====================================================

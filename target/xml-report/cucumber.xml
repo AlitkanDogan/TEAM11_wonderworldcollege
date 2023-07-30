@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.323" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="In the footer of the homepage, it should be verified that the school's phone number, email address, and school address information are visible." time="0.055">
-<failure/>
+<testsuite name="Cucumber" time="22.016" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I want a &quot;Contact&quot; page on the website with contact information so that" name="" time="21.118">
 <system-out><![CDATA[
-Given The user goes to the 'url' address....................................passed
-When The user goes to the homepage footer section...........................undefined
-And The user verifies that the school's phone number information is visible in the footer section.skipped
-Then The user verifies that the school's email address information is visible in the footer section.skipped
-And The user verifies that the school's school address information is visible in the footer section.skipped
-And User closes the page....................................................skipped
+Given The user goes to the "url" address....................................passed
+When Click on the Contact menu title on the home page top bar...............passed
+Then On the Contact page, Our Location, Call Us,Verify that Working Hours information is visible.passed
+And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

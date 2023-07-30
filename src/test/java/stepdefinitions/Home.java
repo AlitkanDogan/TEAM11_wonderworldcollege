@@ -19,7 +19,7 @@ public class Home {
 
     WebDriver driver = Driver.getDriver();
 
-   Actions actions=new Actions(driver);
+    Actions actions = new Actions(driver);
 
     //VVVVVVVVVVVVVVVV  US01 VVVVVVVVVVVVVVVVVVV
     @Given("The user goes to the {string} address")
@@ -67,5 +67,57 @@ public class Home {
     public void the_user_verifies_that_the_school_s_school_address_information_is_visible_in_the_footer_section() {
         Assert.assertTrue(homePage.addressLink_footer.isDisplayed());
     }
+
+
+    /////////us09///////////
+    @When("Click on the Contact menu title on the home page top bar")
+    public void click_on_the_contact_menu_title_on_the_home_page_top_bar() {
+        homePage.contactLink_header.click();
+
+    }
+
+    @Then("It is tested that the contact page is redirected")
+    public void redirects_to_contact_page() {
+        Assert.assertTrue(homePage.contactLink_pageTitle.isDisplayed());
+    }
+
+
+        @Then("In the Send In Your Query section Name Email Subject Description textBoxes is confirmed to be visible")
+        public void in_the_send_in_your_query_section_name_email_subject_description_text_boxes_is_confirmed_to_be_visible() {
+           Assert.assertTrue(homePage.contactLink_Name.isDisplayed());
+           Assert.assertTrue(homePage.contactLink_Email.isDisplayed());
+           Assert.assertTrue(homePage.contactLink_Subject.isDisplayed());
+           Assert.assertTrue(homePage.contactLink_Description.isDisplayed());
+
+
+        }
+        @Then("Name, Email, Subject, Description textBoxes It is verified that data can be entered")
+        public void name_email_subject_description_text_boxes_it_is_verified_that_data_can_be_entered() {
+
+        homePage.contactLink_Name.sendKeys("");
+        homePage.contactLink_Email.sendKeys("");
+        homePage.contactLink_Subject.sendKeys("");
+        homePage.contactLink_Description.sendKeys("");
+        }
+    @Then("Clicking the Submit button confirms that the query has been submitted")
+    public void clicking_the_submit_button_confirms_that_the_query_has_been_submitted() {
+        homePage.contactLink_Submit.click();
+
+        //ReusableMethods.bekle(60);
+      // Assert.assertTrue(homePage.contactLink_Alert.isDisplayed());
+        //ReusableMethods.bekle(60);
+
+    }
+    @Then("On the Contact page, Our Location, Call Us,Verify that Working Hours information is visible")
+    public void on_the_contact_page_our_location_call_us_verify_that_working_hours_information_is_visible() {
+     Assert.assertTrue( homePage.contactlink_OurLocation.isDisplayed());
+     Assert.assertTrue(homePage.contactlink_CallUs.isDisplayed());
+     Assert.assertTrue(homePage.contactLink_WorkingHours.isDisplayed());
+
+    }
+
+
+
+
 
 }

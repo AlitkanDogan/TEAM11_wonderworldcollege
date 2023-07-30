@@ -7,9 +7,28 @@ import utilities.Driver;
 
 public class AdminPage {
 
-    public AdminPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+
+    public AdminPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
+
+    @FindBy(xpath = "//span[text()='Student Information']")
+    public WebElement studentInformationLink;
+
+    @FindBy(xpath = "(//a[@href='https://qa.wonderworldcollege.com/student/multiclass'])[2]")
+    public WebElement multiClassStudentLink;
+
+    @FindBy(xpath = "//select[@id='class_id']")
+    public WebElement classDropDowntBox_multiClassStudent;
+
+    @FindBy(xpath = "//select[@name='section_id']")
+    public WebElement sectionDropDownBox_multiClassStudent;
+
+
+@FindBy(xpath = "//button[@class='btn btn-primary btn-sm pull-right']")
+    public WebElement selectButton_MultiClassStudent;
+
 
 
     @FindBy(xpath = "(//*[@class='dropdown-toggle'])[2]")
@@ -179,8 +198,6 @@ public class AdminPage {
 
     @FindBy(xpath = "//*[@class='bgoffsetbg']")
     public WebElement adminLoginPage;
-
-
 
 
 

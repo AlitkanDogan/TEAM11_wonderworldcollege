@@ -1,17 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="25.297" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I should be able to access the &quot;Homework&quot; page and make changes to my assignments When entering the Student Panel" name="The user should be able to view column fields in the &quot;Upcoming Homework&quot; segment" time="24.991">
+<testsuite name="Cucumber" time="17.412" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="On the &quot;Multiclass&quot; page, Class and Section textBoxes, along with a Search button," time="17.176">
+<failure type="io.cucumber.core.exception.CucumberException" message="Step [The user clicks on the Class textbox and selects the &quot;&quot;Class2&quot;&quot; tab from the opened dropdown menu] is defined with 1 parameters at 'stepdefinitions.Admin.the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu(java.lang.Integer)'.
+However, the gherkin step has 0 arguments.
+Step text: The user clicks on the Class textbox and selects the &quot;&quot;Class2&quot;&quot; tab from the opened dropdown menu">
+<![CDATA[io.cucumber.core.exception.CucumberException: Step [The user clicks on the Class textbox and selects the ""Class2"" tab from the opened dropdown menu] is defined with 1 parameters at 'stepdefinitions.Admin.the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu(java.lang.Integer)'.
+However, the gherkin step has 0 arguments.
+Step text: The user clicks on the Class textbox and selects the ""Class2"" tab from the opened dropdown menu
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.arityMismatch(PickleStepDefinitionMatch.java:83)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:42)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:148)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:163)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:146)
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+]]>
+</failure>
 <system-out><![CDATA[
-Given The user goes to the "url" address....................................passed
-Then The user verifies that, the Login button is visible on the homepage....passed
-When The user clicks on the Login button....................................passed
-Then The user verifies that Login button redirects to the userlogin page....passed
-And The user enters their "username" in to the username textbox.............passed
-And The user enters their "password" in to the password textbox.............passed
-When The user clicks on the Sign In button..................................passed
-Then The user verifies that they are on the student panel...................passed
-When The user clicks on the Homework button link on student panel...........passed
-Then The user verifies that, on the homework page, column fields in the Upcoming Homework segment are visible..passed
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the Class and Section textboxes are visible on the opened page.passed
+And The user clicks on the Class textbox and selects the ""Class2"" tab from the opened dropdown menu.failed
+And The user clicks on the Section textbox and selects the ""A"" tab from the opened dropdown menu.skipped
+When The user clicks Search button in Multi Class Student page..............skipped
+And The user confirms that a colored circle is spinning on the user icon or that a color transition is visible at the top of the page, indicating that the search has been performed..skipped
+And User closes the page....................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

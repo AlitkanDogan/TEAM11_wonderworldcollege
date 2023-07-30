@@ -147,6 +147,17 @@
       And The user clicks on the password link
       Then The user verifies that, the password link opens a page with Current Password, New Password, Confirm Password text boxes, and a Change Password button.
 
+    @TC16_US19
+    Scenario: On the Password page, when valid values are entered in the Current Password, New Password,
+    and Confirm Password text boxes, and the Change Password button is clicked, the password should be changed.
+
+      And The user clicks on the profile icon on the admin panels top bar.
+      And The user clicks on the password link
+      And The user enters valid values in the Current Password "adminPassword", New Password "newPassword", and Confirm Password "newPasswordConfirm" text boxes
+      And The user clicks on the Change Password button.
+      Then The user verifies that, the password is changed.
+
+
 
 
 

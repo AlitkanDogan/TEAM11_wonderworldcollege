@@ -162,8 +162,24 @@ public class AdminPage {
     @FindBy(xpath = "(//*[@class='form-group'])[3]")
     public WebElement passwordChangeConfirmPasswordLine;
 
-    @FindBy(xpath = "(//*[@class='form-group'])[4]")
-    public WebElement passwordChangeButtonChangePasswordLine;
+    @FindBy(xpath = "(//*[@class='btn btn-info'])[1]")
+    public WebElement passwordChangeChangePasswordButton;
+
+    @FindBy(xpath = "(//*[@class='form-control col-md-7 col-xs-12'])[1]")
+    public WebElement passwordChangeCurrentPasswordTextbox;
+
+    @FindBy(xpath = "(//*[@class='form-control col-md-7 col-xs-12'])[2]")
+    public WebElement passwordChangeNewPasswordTextbox;
+
+    @FindBy(xpath = "(//*[@class='form-control col-md-7 col-xs-12'])[3]")
+    public WebElement passwordChangeConfirmPasswordTextbox;
+
+    @FindBy(xpath = "//*[@class='alert alert-success']")
+    public WebElement passwordChangeSuccessfullyChangedMessage;
+
+
+
+
 
 
 

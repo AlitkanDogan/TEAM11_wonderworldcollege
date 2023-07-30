@@ -4,11 +4,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import pages.AdminPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 public class Admin {
 
     AdminPage adminPage = new AdminPage();
+
+    WebDriver driver = Driver.getDriver();
 
     //=======================US_19==============================
     @Then("The user verifies that the admin panel s top bar has a visible profile icon")
@@ -172,7 +177,25 @@ public class Admin {
         Assert.assertTrue(adminPage.passwordChangeCurrentPasswordLine.isDisplayed());
         Assert.assertTrue(adminPage.passwordChangeNewPasswordLine.isDisplayed());
         Assert.assertTrue(adminPage.passwordChangeConfirmPasswordLine.isDisplayed());
-        Assert.assertTrue(adminPage.passwordChangeButtonChangePasswordLine.isDisplayed());
+        Assert.assertTrue(adminPage.passwordChangeChangePasswordButton.isDisplayed());
+    }
+
+    @And("The user enters valid values in the Current Password {string}, New Password {string}, and Confirm Password {string} text boxes")
+    public void theUserEntersValidValuesInTheCurrentPasswordNewPasswordAndConfirmPasswordTextBoxes(String adminPassword, String newPassword, String newPasswordConfirm) {
+
+        adminPage.passwordChangeCurrentPasswordTextbox.sendKeys(ConfigReader.getProperty(adminPassword));
+        adminPage.passwordChangeNewPasswordTextbox.sendKeys(ConfigReader.getProperty(newPassword));
+        adminPage.passwordChangeConfirmPasswordTextbox.sendKeys(ConfigReader.getProperty(newPasswordConfirm));
+    }
+
+    @And("The user clicks on the Change Password button.")
+    public void theUserClicksOnTheChangePasswordButton() {
+        adminPage.passwordChangeChangePasswordButton.click();
+    }
+
+    @Then("The user verifies that, the password is changed.")
+    public void theUserVerifiesThatThePasswordIsChanged() {
+        Assert.assertTrue(adminPage.passwordChangeSuccessfullyChangedMessage.isDisplayed());
     }
 
 

@@ -165,4 +165,9 @@ public class ReusableMethods {
 
         return element;
     }
+    //---------JS EXECUTER CLICK-----------------
+    public static void jseClick(WebElement element){
+        JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].click();", element);
+    }
 }

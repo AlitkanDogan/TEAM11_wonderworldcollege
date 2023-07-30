@@ -8,7 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.util.Set;
 
 public class Login {
 
@@ -42,16 +46,17 @@ public class Login {
         Assert.assertTrue(loginPage.whatsNewInWonderWorldCollege.isDisplayed());
     }
 
-    @When("The user enters their username in to the username textbox")
-    public void the_user_enters_their_username_in_to_the_username_textbox() {
-        loginPage.userNameTextbox.sendKeys("std140");
+    @When("The user enters their {string} in to the username textbox")
+    public void the_user_enters_their_username_in_to_the_username_textbox(String username) {
+        loginPage.userNameTextbox.sendKeys(ConfigReader.getProperty(username));
     }
-    @When("The user enters their password in to the password textbox")
-    public void the_user_enters_their_password_in_to_the_password_textbox() {
-        loginPage.passwordTextbox.sendKeys("wonderworld123");
+    @When("The user enters their {string} in to the password textbox")
+    public void the_user_enters_their_password_in_to_the_password_textbox(String password) {
+        loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
     }
     @When("The user clicks on the Sign In button")
     public void the_user_clicks_on_the_sign_in_button() {
+
         loginPage.signInButtonUserLogin.click();
     }
 
@@ -131,6 +136,47 @@ public class Login {
     @Then("The user verifies that the Front Site link redirects to the homepage.")
     public void theUserVerifiesThatTheFrontSiteLinkRedirectsToTheHomepage() {
         Assert.assertTrue(homePage.logoCollege_header.isDisplayed());
+    }
+
+
+    //=====================================================
+
+    //=======================US_19==============================
+    @When("The user verifies that they are on the mainLogin page")
+    public void the_user_verifies_that_they_are_on_the_mainLogin_page() {
+    Assert.assertTrue(loginPage.mainLoginPage.isDisplayed());
+    }
+    @When("The user clicks on the Admin Login button.")
+    public void the_user_clicks_on_the_admin_login_button() {
+        loginPage.adminLoginButton.click();
+    }
+
+    @Then("The user verifies that they are on the {string} page")
+    public void theUserVerifiesThatTheyAreOnThePage(String adminSiteLoginUrl) {
+        driver.get(ConfigReader.getProperty(adminSiteLoginUrl));
+
+    }
+
+    @Then("The user switchs to an other new Admin Login page")
+    public void theUserNavigatesToAnOtherNewAdminLoginPage() {
+        String firstWindowHV= Driver.getDriver().getWindowHandle();
+        Set<String> whv=Driver.getDriver().getWindowHandles();
+        String secondWHV= "";
+        for (String each:whv
+             ) {
+            if (!each.equals(firstWindowHV)){
+                secondWHV=each;
+            }
+
+        }
+        Driver.getDriver().switchTo().window(secondWHV);
+
+    }
+
+    @When("The user enters their mail address and password to the mailtextbox and passwordtextbox")
+    public void the_user_enters_their_mail_address_and_password_to_the_mailtextbox_and_passwordtextbox(){
+        loginPage.adminLoginUsernameTextbox.sendKeys("fatma.aydin@admin.wonderworldcollege.com");
+        loginPage.adminLoginPasswordTextbox.sendKeys("wonderworld123");
     }
 
 

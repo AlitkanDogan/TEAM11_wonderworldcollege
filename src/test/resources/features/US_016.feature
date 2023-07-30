@@ -25,8 +25,8 @@ Feature: As a registered user (student/parent), I want to have access to the log
   that users can log in to their panels by entering their (previously registered) information.
 
     When The user clicks on the Login button
-    And The user enters their username in to the username textbox
-    And The user enters their password in to the password textbox
+    And The user enters their "username" in to the username textbox
+    And The user enters their "password" in to the password textbox
     When The user clicks on the Sign In button
     Then The user verifies that they can log in to their panels by enterin their (previously registered) information.
 

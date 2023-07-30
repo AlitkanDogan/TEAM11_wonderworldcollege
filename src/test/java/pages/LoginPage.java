@@ -70,7 +70,7 @@ public class LoginPage {
     public WebElement adminLoginText;
 
     // Username textbox on Admin Login page.
-    @FindBy(xpath = "//input[@name='username']")
+    @FindBy(xpath = "//*[@name='username']")
     public WebElement adminLoginUsernameTextbox;
 
     // Password textbox on Admin Login page.
@@ -140,4 +140,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[@class='forgot pull-right']")
     public  WebElement frontSiteLink;
 
+    @FindBy(xpath = "//*[@class='list-item col-md-3 col-md-offset-2']")
+    public  WebElement mainLoginPage;
+
+    @FindBy(xpath = "//*[@class='bgoffsetbg']")
+    public  WebElement adminLoginPage;
 }

@@ -48,4 +48,5 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
     When The user clicks Search button in Multi Class Student page
     And The user confirms that a colored circle is spinning on the user icon or that a color transition is visible at the top of the page, indicating that the search has been performed.
     And User closes the page
+    ghghgh
 

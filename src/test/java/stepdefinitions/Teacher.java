@@ -1,32 +1,35 @@
 package stepdefinitions;
 
-<<<<<<< HEAD
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-=======
-import io.cucumber.java.en.Then;
+
 import io.cucumber.java.en.When;
-import org.checkerframework.checker.units.qual.C;
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.LoginPage;
->>>>>>> Dogan
+
 import pages.TeacherPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-<<<<<<< HEAD
+
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Teacher {
     WebDriver driver = Driver.getDriver();
+
+    LoginPage loginPage=new LoginPage();
+
+    TeacherPage teacherPage=new TeacherPage();
 
     TeacherPage tpage=new TeacherPage();
     /*US_37 Teacher*/
@@ -104,31 +107,12 @@ public class Teacher {
     {
         Driver.closeDriver();
     }
-=======
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
-public class Teacher {
-    WebDriver driver = Driver.getDriver();
-    LoginPage loginPage = new LoginPage();
-    TeacherPage teacherPage = new TeacherPage();
-    Actions actions = new Actions(driver);
+
 
 
     //------------------------US32--------------------------------------
-/*
 
-
-
-
-
-    Daha sonra kullanıcı açılan sayfanın url'sinin "examGroupUrl" olduğunu doğrular.
-    Ardından Kullanıcı, ad metin kutusunu doğrular
-    Ardından Kullanıcı, Muayene Türü açılır menüsünü doğrular
-    Sonra Kullanıcı Açıklamayı Doğrular metin kutusu
-    Ardından Kullanıcı, Kaydet düğmesinin görünür olduğunu doğrular.
-    Ve Kullanıcı sayfayı kapatır"
- */
     @When("The user clicks on the teacher login tab")
     public void the_user_clicks_on_the_teacher_login_tab() {
         loginPage.teacherLoginButton.click();
@@ -255,5 +239,5 @@ public class Teacher {
 
 
     //--------------------------------------------------------------
->>>>>>> Dogan
+
 }

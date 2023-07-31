@@ -1,14 +1,9 @@
 package pages;
 
-<<<<<<< HEAD
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-=======
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
->>>>>>> Dogan
+
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 

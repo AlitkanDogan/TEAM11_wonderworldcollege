@@ -201,6 +201,43 @@ public class AdminPage {
     @FindBy(xpath = "(//h3[@class=\"box-title\"])[2]")
     public WebElement selectCriteriaTitleText;
 
+    
+    @FindBy(xpath = "(//i[@class='fa fa-plus'])[1]")
+    public WebElement plusIconButton;
+
+    @FindBy(xpath = "//form[1]/div/div/div[2]/div/div/button")
+    public WebElement updateButton_multiClassStudent;
+
+    @FindBy(xpath = "//div[text()='Record Saved Successfully'] ")
+    public WebElement recordSavedSuccesfullyText_MultiClass;
+
+
+    //=============================us22 methods================================================
+    public WebElement classBox_ClassNewLine() {
+        List<WebElement> classElementsList = Driver.getDriver().findElements(By.xpath("//form[1]/div/div/div[1]/div[2]/div"));
+        int size = classElementsList.size();
+        String locate = "(//select[@name='class_id_" + size + "'])[1]";
+        WebElement classBox = Driver.getDriver().findElement(By.xpath(locate));
+        return classBox;
+    }
+
+    public WebElement sectionBox_ClassNewLine() {
+        List<WebElement> classElementsList = Driver.getDriver().findElements(By.xpath("//form[1]/div/div/div[1]/div[2]/div"));
+        int size = classElementsList.size();
+        String locate = "(//select[@name='section_id_" + size + "'])[1]";
+        WebElement classBox = Driver.getDriver().findElement(By.xpath(locate));
+        return classBox;
+    }
+
+    public WebElement removeButton_ClassNewLine() {
+        List<WebElement> classElementsList = Driver.getDriver().findElements(By.xpath("//form[1]/div/div/div[1]/div[2]/div"));
+        int actualSize = classElementsList.size();
+        String locate = "//form[1]/div/div/div[1]/div[2]/div[" + actualSize + "]/div[3]";
+        WebElement classBox = Driver.getDriver().findElement(By.xpath(locate));
+        return classBox;
+    }
+//===============================================================================
+
 
 
 

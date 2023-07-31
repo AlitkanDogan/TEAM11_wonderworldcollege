@@ -71,7 +71,6 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
     Then The user verifies that the class was added successfully.
     And User closes the page
 
-
   @TC5_US22
   Scenario:In the window of the selected student for the update, by clicking the "remove" button, a class should be removed for that student.
     Given The user goes to the "loginUrl" address

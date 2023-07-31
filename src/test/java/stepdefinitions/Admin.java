@@ -124,6 +124,49 @@ public class Admin {
        assertEquals(expectesResult,actualResult);
     }
 
+    @When("The user clicks on the + icon in the student's window in the top-left corner")
+    public void the_user_clicks_on_the_icon_in_the_student_s_window_in_the_top_left_corner() {
+        adminPage.plusIconButton.click();
+        ReusableMethods.bekle(3);
+
+    }
+
+    @Then("The user verifies that a new section has been added")
+    public void the_user_verifies_that_a_new_section_has_been_added() {
+
+        assertTrue(adminPage.classBox_ClassNewLine().isDisplayed());
+
+    }
+
+    @When("The user enters different class information in \"\"Class\"\" and \"\"Section\"\" constructors")
+    public void the_user_enters_different_class_information_in_class_and_section_constructors() {
+        Select select = new Select(adminPage.classBox_ClassNewLine());
+        select.selectByIndex(3);
+        ReusableMethods.bekle(1);
+
+        select = new Select(adminPage.sectionBox_ClassNewLine());
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @When("The user clicks \"\"Update\"\"\" button")
+    public void the_user_clicks_update_button() {
+        adminPage.updateButton_multiClassStudent.click();
+    }
+
+    @Then("The user verifies that the class was added successfully.")
+    public void the_user_verifies_that_the_class_was_added_successfully() {
+
+        assertTrue(adminPage.recordSavedSuccesfullyText_MultiClass.isDisplayed());
+    }
+    @And("Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini \"\"Remove\"\" butonuna tıklayarak siler.")
+    public void kullanıcıSolÜstKöşedeBulunanÖgrenciyeAitEnAlttaBulunanSınıfBilgisiniRemoveButonunaTıklayarakSiler() {
+
+        adminPage.removeButton_ClassNewLine().click();
+    }
+
 
 
 

@@ -8,15 +8,9 @@ Feature: As a user, I want a "Complaints" section on the website where I can sub
   Scenario: It should be verified that there is a "Complain" heading and icon visible in the footer of the homepage.
 
     When The user descends to the footer section of the page
-<<<<<<< HEAD
     When The user waits 1 seconds
     Then Verifies that the Comlain heading in the user footer is visible
     Then Verifies that the Comlain icon in the user footer is visible
-=======
-    Then Verifies that the “Comlain” heading in the user footer is visible
-    Then Verifies that the "Comlain" icon in the user footer is visible
-    When The user waits 1 seconds
->>>>>>> main
     And User closes the page
 
   @TC2_US11
@@ -24,21 +18,12 @@ Feature: As a user, I want a "Complaints" section on the website where I can sub
 
     When The user descends to the footer section of the page
     When The user waits 1 seconds
-<<<<<<< HEAD
     When The user clicks on the Complain heading in the footer section
     Then The user verifies that he or she was redirected to the complain page that the title is Complain
     When The user descends to the footer section of the page
     When The user waits 1 seconds
     When The user clicks on the Complain icon in the footer section
     Then The user verifies that he or she was redirected to the complain page that the title is Complain
-=======
-    When The user clicks on the "Complain" heading in the footer section
-    Then The user verifies that he or she was redirected to the complain page that the title is "Complain"
-    When The user descends to the footer section of the page
-    When The user waits 1 seconds
-    When The user clicks on the "Complain" icon in the footer section
-    Then The user verifies that he or she was redirected to the complain page that the title is "Complain"
->>>>>>> main
     And User closes the page
 
   @TC3_US11

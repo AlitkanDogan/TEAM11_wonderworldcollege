@@ -1,17 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="19.78" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I want a &quot;Complaints&quot; section on the website where I can submit my requests and complaints." name="On the &quot;Complain&quot; page, after entering data in the Name, Email, Contact No., and Description text boxes, when the Submit button is clicked, it should be verified that the complaint is successfully submitted." time="18.924">
+<testsuite name="Cucumber" time="102.189" tests="5" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="In the admin panel's sidebar, under the &quot;Student Information&quot; menu, the &quot;Multi Class Student&quot; page link should be displayed." time="15.679">
 <system-out><![CDATA[
-Given The user goes to the "url" address....................................passed
-When The user descends to the footer section of the page....................passed
-When The user waits 1 seconds...............................................passed
-When The user clicks on the Complain icon in the footer section.............passed
-When The user enters correct data in Name textbox on complain page..........passed
-When The user enters correct data in Email textbox on complain page.........passed
-When The user enters correct data in Contact No. textbox on complain page...passed
-When The user enters correct data in Description textbox on complain page...passed
-When The user clicks submit button on complain page.........................passed
-Then The user verifies that the request was sent with the confirmation message.passed
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+Then The user verifies that the dropdown menu displays the ""Multi Class Student"" link.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="Clicking on the &quot;Multi Class Student&quot; link, the &quot;Multiclass&quot; page should be displayed." time="16.09">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the opened page goes to the "multiClassUrl" address.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="On the &quot;Multiclass&quot; page, Class and Section textBoxes, along with a Search button," time="21.295">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the Class and Section textboxes are visible on the opened page.passed
+And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu.passed
+And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu.passed
+When The user clicks Search button in Multi Class Student page..............passed
+And The user verifies that the "Select Criteria" heading is visible on the page that opens as a result of the search.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="In the window of the selected student for the update, by clicking the &quot;remove&quot; button, a class should be removed for that student." time="26.182">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the Class and Section textboxes are visible on the opened page.passed
+And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu.passed
+And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu.passed
+When The user clicks Search button in Multi Class Student page..............passed
+And The user clicks on the + icon in the student's window in the top-left corner.passed
+Then The user verifies that a new section has been added....................passed
+When The user enters different class information in ""Class"" and ""Section"" constructors.passed
+And The user clicks ""Update""" button......................................passed
+Then The user verifies that the class was added successfully................passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="In the window of the selected student for the update, by clicking the &quot;remove&quot; button, a class should be removed for that student." time="22.558">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu.passed
+And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu.passed
+When The user clicks Search button in Multi Class Student page..............passed
+And Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini ""Remove"" butonuna tıklayarak siler..passed
+And The user clicks ""Update""" button......................................passed
+Then The user verifies that the class was added successfully................passed
+And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

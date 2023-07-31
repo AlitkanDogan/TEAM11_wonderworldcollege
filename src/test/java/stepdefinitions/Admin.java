@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,8 @@ import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -91,14 +94,14 @@ public class Admin {
 
     @Then("The user verifies that the Class and Section textboxes are visible on the opened page")
     public void the_user_verifies_that_the_class_and_section_textboxes_are_visible_on_the_opened_page() {
-      assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
-      assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
+        assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
+        assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
 
     }
 
     @Then("The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu")
     public void the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu() {
-        Select select=new Select(adminPage.classDropDowntBox_multiClassStudent);
+        Select select = new Select(adminPage.classDropDowntBox_multiClassStudent);
         select.selectByIndex(2);
         ReusableMethods.bekle(1);
 
@@ -106,7 +109,7 @@ public class Admin {
 
     @Then("The user clicks on the Section textbox and selects the A tab from the opened dropdown menu")
     public void the_user_clicks_on_the_section_textbox_and_selects_the_a_tab_from_the_opened_dropdown_menu() {
-        Select select=new Select(adminPage.sectionDropDownBox_multiClassStudent);
+        Select select = new Select(adminPage.sectionDropDownBox_multiClassStudent);
         select.selectByIndex(1);
         ReusableMethods.bekle(1);
 
@@ -117,14 +120,57 @@ public class Admin {
         adminPage.searchtButton_MultiClassStudent.click();
 
     }
+
     @And("The user verifies that the {string} heading is visible on the page that opens as a result of the search")
     public void theUserVerifiesThatTheHeadingIsVisibleOnThePageThatOpensAsAResultOfTheSearch(String arg0) {
-       String expectesResult="Select Criteria";
-       String actualResult=adminPage.selectCriteriaTitleText.getText();
-       assertEquals(expectesResult,actualResult);
+        String expectesResult = "Select Criteria";
+        String actualResult = adminPage.selectCriteriaTitleText.getText();
+        assertEquals(expectesResult, actualResult);
     }
 
 
+    @When("The user clicks on the + icon in the student's window in the top-left corner")
+    public void the_user_clicks_on_the_icon_in_the_student_s_window_in_the_top_left_corner() {
+        adminPage.plusIconButton.click();
+        ReusableMethods.bekle(3);
+
+    }
+
+    @Then("The user verifies that a new section has been added")
+    public void the_user_verifies_that_a_new_section_has_been_added() {
+
+        assertTrue(adminPage.classBox_ClassNewLine().isDisplayed());
+
+    }
+
+    @When("The user enters different class information in \"\"Class\"\" and \"\"Section\"\" constructors")
+    public void the_user_enters_different_class_information_in_class_and_section_constructors() {
+        Select select = new Select(adminPage.classBox_ClassNewLine());
+        select.selectByIndex(3);
+        ReusableMethods.bekle(1);
+
+        select = new Select(adminPage.sectionBox_ClassNewLine());
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @When("The user clicks \"\"Update\"\"\" button")
+    public void the_user_clicks_update_button() {
+        adminPage.updateButton_multiClassStudent.click();
+    }
+
+    @Then("The user verifies that the class was added successfully.")
+    public void the_user_verifies_that_the_class_was_added_successfully() {
+
+        assertTrue(adminPage.recordSavedSuccesfullyText_MultiClass.isDisplayed());
+    }
+    @And("Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini \"\"Remove\"\" butonuna tıklayarak siler.")
+    public void kullanıcıSolÜstKöşedeBulunanÖgrenciyeAitEnAlttaBulunanSınıfBilgisiniRemoveButonunaTıklayarakSiler() {
+
+        adminPage.removeButton_ClassNewLine().click();
+    }
 
 
     //_________________________________________________________________________
@@ -327,7 +373,6 @@ public class Admin {
     public void theUserVerifiesThatClickingOnTheLogoutLinkInTheWindowThatOpensWhenClickingOnTheProfileIconInTheAdminPanelSTopBarTheAdminIsLoggedOutOfTheAdminPanel() {
         Assert.assertTrue(adminPage.adminLoginPage.isDisplayed());
     }
-
 
 
 

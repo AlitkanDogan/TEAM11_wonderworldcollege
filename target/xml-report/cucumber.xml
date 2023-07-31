@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="8.035" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I want to be able to access the website to use it" name="The user should be able to access the website from the browser using the given URL and" time="7.842">
-<system-out><![CDATA[
-Given The user goes to the "url" address....................................passed
-And It verifies that the logo is visible on the homepage....................passed
-]]></system-out>
-</testcase>
-</testsuite>

@@ -1,4 +1,4 @@
-@US22, @d
+@US22
 Feature: As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class.
 
   @TC1_US22
@@ -50,7 +50,7 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
     And User closes the page
 
   @TC4_US22
-  Scenario: TIn the window of the selected student for the update, by clicking the "remove" button, a class should be removed for that student.
+  Scenario: In the window of the selected student for the update, by clicking the "remove" button, a class should be removed for that student.
 
     Given The user goes to the "loginUrl" address
     When The user clicks on the admin login tab
@@ -64,7 +64,28 @@ Feature: As an administrator (admin), I want a page where I can view multi-class
     And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu
     And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu
     When The user clicks Search button in Multi Class Student page
-    And The user clicks on the "+" icon in the student's window in the top-left corner
-    When The user clicks on the "Remove" button in the newly added class section.
-    Then The user verifies that the class section is removed.
+    And The user clicks on the + icon in the student's window in the top-left corner
+    Then The user verifies that a new section has been added
+    When The user enters different class information in ""Class"" and ""Section"" constructors
+    And The user clicks ""Update""" button
+    Then The user verifies that the class was added successfully.
+    And User closes the page
+
+
+  @TC5_US22
+  Scenario:In the window of the selected student for the update, by clicking the "remove" button, a class should be removed for that student.
+    Given The user goes to the "loginUrl" address
+    When The user clicks on the admin login tab
+    And The user navigates to a new page that opens in the browser
+    And The user enters "adminUsername_dgn" into the username textbox
+    And The user enters "password_dgn" into the password textbox
+    When The user clicks the Sign In button and goes to the admin page
+    And The user clicks on the Student Information link in the admin panel's sidebar
+    And The user clicks on the Multi Class Student link in the opened dropdown menu
+    And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu
+    And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu
+    When The user clicks Search button in Multi Class Student page
+    And Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini ""Remove"" butonuna tıklayarak siler.
+    And The user clicks ""Update""" button
+    Then The user verifies that the class was added successfully.
     And User closes the page

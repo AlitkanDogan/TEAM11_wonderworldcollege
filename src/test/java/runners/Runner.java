@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 
         tags = "@TC1_US1",
 
-        dryRun = false
+
 )
 
 public class Runner {

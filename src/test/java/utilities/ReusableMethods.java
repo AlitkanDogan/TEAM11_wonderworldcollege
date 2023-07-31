@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -43,6 +44,22 @@ public class ReusableMethods {
             }
         }
         Driver.getDriver().switchTo().window(origin);
+    }
+    //============Switch New Windows==========
+    public static void switchToNewWindows(String beforeWindowsHandle){
+        Set<String> whDegerleriSet = Driver.getDriver().getWindowHandles();
+        String secondWindowsHandle= "";
+
+        for (String eachWhd: whDegerleriSet
+        ) {
+
+            if (!eachWhd.equals(beforeWindowsHandle)){
+                secondWindowsHandle = eachWhd;
+            }
+        }
+        // Artik acilan 2.window'un windowHandleDegerine sahibiz
+        //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
+        Driver.getDriver().switchTo().window(secondWindowsHandle);
     }
 
     //========Hover Over=====//
@@ -147,5 +164,10 @@ public class ReusableMethods {
         });
 
         return element;
+    }
+    //---------JS EXECUTER CLICK-----------------
+    public static void jseClick(WebElement element){
+        JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].click();", element);
     }
 }

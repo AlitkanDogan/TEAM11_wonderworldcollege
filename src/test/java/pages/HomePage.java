@@ -174,7 +174,10 @@ public class HomePage {
     @FindBy(xpath = "(//div[@class='cright'])[3]")
     public WebElement addressLink_footer;
 
+
+
     //=========================================================
+
 
     @FindBy(xpath = "(//input[@id='name'])[2]")
     public WebElement contactLink_Name;
@@ -203,15 +206,79 @@ public class HomePage {
     @FindBy(xpath = "//h3[text()='Working Hours']")
     public WebElement contactLink_WorkingHours;
 
+    @FindBy(className = "toast-message")
+    public WebElement warningMessage;
+
+
+
+    //========================= US_02 ================================
+
+    // Site logo in WonderWorldCollege home page top bar.
+    @FindBy(xpath = "//img[@src='https://qa.wonderworldcollege.com/./uploads/school_content/logo/front_logo-608ff44a5f8f07.35255544.png']")
+    public WebElement WonderWorldCollegeSiteLogo;
+
+    @FindBy(xpath = "//a[text()='Facilities']")
+    public WebElement facilitiesLink;
+
+    @FindBy(xpath = "//a[text()='School Uniform']")
+    public WebElement schoolUniformLink;
+
+    @FindBy(xpath = "//a[text()='Principal Message']")
+    public WebElement principalMessageLink;
+
+    @FindBy(xpath = "//a[text()='Know Us']")
+    public WebElement knowUsLink;
+
+    @FindBy(xpath = "//a[text()='Approach']")
+    public WebElement approachLink;
+
+    @FindBy(xpath = "//a[text()='Teacher']")
+    public WebElement teacherLink;
+
+    @FindBy(xpath = "//a[text()='Houses & Mentoring']")
+    public WebElement housesMentoringLink;
+
+    @FindBy(xpath = "//a[text()='Student Council']")
+    public WebElement studentCouncilLink;
+
+    @FindBy(xpath = "//i[@class='fa fa-pencil-square-o i-plain']")
+    public WebElement footerComplainIcon;
+
+    @FindBy(xpath = "//a[@href='https://qa.wonderworldcollege.com/page/complain']")
+    public WebElement footerComplainText;
+
+    @FindBy(xpath = "(//input[@type='text'])[5]")
+    public WebElement complainPageNameTextbox;
+
+    @FindBy(xpath = "(//input[@type='email'])[2]")
+    public WebElement complainPageEmailTextbox;
+
+    @FindBy(xpath = "(//input[@type='text'])[6]")
+    public WebElement complainPageContactNoTextbox;
+
+    @FindBy(xpath = "//textarea[@name='description']")
+    public WebElement complainPageDescriptionTextbox;
+
+    @FindBy(xpath = "//input[@name='submit']")
+    public WebElement complainPageSubmitButton;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement complainPageConfirmationMessage;
 
 
 
 
+    //************************* Methods ********************
 
-
-
-
-
+    public void wonderWorldCollegeSiteLogoIsVisible(){
+        WonderWorldCollegeSiteLogo.isDisplayed();
+    }
+    public void footerComplainIconIsVisiable(){
+        footerComplainIcon.isDisplayed();
+    }
+    public void footerComplainTextIsVisiable(){
+        footerComplainText.isDisplayed();
+    }
 
 
 }

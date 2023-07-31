@@ -30,6 +30,7 @@
       Given The user goes to the "url" address
       When Click on the Contact menu title on the home page top bar
       Then Name, Email, Subject, Description textBoxes It is verified that data can be entered
+      When The user waits 1 seconds
       Then Clicking the Submit button confirms that the query has been submitted
       And User closes the page
 

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="22.016" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I want a &quot;Contact&quot; page on the website with contact information so that" name="" time="21.118">
+<testsuite name="Cucumber" time="1.269" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="As an administrator (admin), I would like to be able to view and update the fees so that I can keep the school fees up to date." name="On the &quot;feemaster&quot; page, there should be an &quot;Add Fees Master&quot; section with the following fields: Fees Group, Fees Type, Due Date, Amount Percentage (%), Fix Amount, and Fine Type (radio buttons). Additionally, there should be a &quot;Fees Master List&quot; - Example #1.1" time="0.169">
+<failure/>
 <system-out><![CDATA[
-Given The user goes to the "url" address....................................passed
-When Click on the Contact menu title on the home page top bar...............passed
-Then On the Contact page, Our Location, Call Us,Verify that Working Hours information is visible.passed
-And User closes the page....................................................passed
+Given The user goes to the "loginUrl" address...............................passed
+When User sees and clicks the Admin Login Button............................passed
+Then User enters the "kubra.tankisi@admin.wonderworldcollege.com" and "wonderworld123" and clicks the Login Button..passed
+Then Fees Master page link should be displayed under the Fees Collection menu title.passed
+Then Fees Master page link should be clicked and redirected to the feemaster page..passed
+Then Add Fees Master should be displayed....................................undefined
+Then Fees Group is displayed on the Add Fees Master page....................skipped
+Then Fees Type is displayed on the Add Fees Master page.....................skipped
+Then Due Date is displayed on the Add Fees Master page......................skipped
+Then Amount Percantage(%), is displayed on the Add Fees Master page.........skipped
+Then Fix Amount textBoxes and Fine Type radio buttons and Fees Master List, Fees Group are displayed With.skipped
+Then Fix Amount textBoxes and Fine Type radio buttons and Fees Master List, Fees Code are displayed.skipped
+Then Fix Amount textBoxes and Fine Type radio buttons and Fees Master List, Amount and Action titles are displayed.skipped
+And User closes the page....................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

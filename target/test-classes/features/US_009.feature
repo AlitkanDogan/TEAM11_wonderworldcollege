@@ -35,7 +35,8 @@
       And User closes the page
 
       @TC4_US9
-      Scenario:
+      Scenario:On the 'Contact' page, it should be verified that the information for 'Our Location',
+               'Call Us', and 'Working Hours' is visible.
         Given The user goes to the "url" address
         When Click on the Contact menu title on the home page top bar
         Then On the Contact page, Our Location, Call Us,Verify that Working Hours information is visible

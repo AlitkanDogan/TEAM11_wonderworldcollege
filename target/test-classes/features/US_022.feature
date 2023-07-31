@@ -1,4 +1,4 @@
-@US22
+@US22, @d
 Feature: As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class.
 
 

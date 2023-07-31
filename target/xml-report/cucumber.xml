@@ -1,22 +1,20 @@
-<<<<<<< HEAD
-=======
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="23.249" tests="4" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I want to be able to access the website to use it" name="The user should be able to access the website from the browser using the given URL and" time="7.226">
+<testsuite name="Cucumber" time="253.369" tests="13" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I want to be able to access the website to use it" name="The user should be able to access the website from the browser using the given URL and" time="7.132">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
 When It verifies that the logo is visible on the homepage...................passed
 And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="On the homepage navbar, it should be verified that the school's email address is visible." time="4.592">
+<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="On the homepage navbar, it should be verified that the school's email address is visible." time="6.684">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
 Given The user verifies that the "collegeMailAddress" is visible in the navbar section.passed
 Given User closes the page..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="In the footer of the homepage, it should be verified that the school's phone number, email address, and school address information are visible." time="6.655">
+<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="In the footer of the homepage, it should be verified that the school's phone number, email address, and school address information are visible." time="9.637">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
 When The user goes to the homepage footer section...........................passed
@@ -26,12 +24,164 @@ Then The user verifies that the school's school address information is visible i
 And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="On the homepage top bar, it should be verified that the school's phone information is visible as &quot;Call Us.&quot;" time="4.439">
+<testcase classname="As a user, I want the contact information of the school to be available on the homepage for easy access." name="On the homepage top bar, it should be verified that the school's phone information is visible as &quot;Call Us.&quot;" time="6.159">
 <system-out><![CDATA[
 Given The user goes to the "url" address....................................passed
 Then The user, on the homepage top bar, it  verify that the school's phone information is visible as Call Us.passed
 And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="In the admin panel's sidebar, under the &quot;Student Information&quot; menu, the &quot;Multi Class Student&quot; page link should be displayed." time="22.084">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+Then The user verifies that the dropdown menu displays the ""Multi Class Student"" link.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="Clicking on the &quot;Multi Class Student&quot; link, the &quot;Multiclass&quot; page should be displayed." time="18.672">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the opened page goes to the "multiClassUrl" address.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="On the &quot;Multiclass&quot; page, Class and Section textBoxes, along with a Search button," time="25.853">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the Class and Section textboxes are visible on the opened page.passed
+And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu.passed
+And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu.passed
+When The user clicks Search button in Multi Class Student page..............passed
+And The user verifies that the "Select Criteria" heading is visible on the page that opens as a result of the search.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="In the window of the selected student for the update, by clicking the &quot;remove&quot; button, a class should be removed for that student." time="43.715">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+Then The user verifies that the Class and Section textboxes are visible on the opened page.passed
+And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu.passed
+And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu.passed
+When The user clicks Search button in Multi Class Student page..............passed
+And The user clicks on the + icon in the student's window in the top-left corner.passed
+Then The user verifies that a new section has been added....................passed
+When The user enters different class information in ""Class"" and ""Section"" constructors.passed
+And The user clicks ""Update""" button......................................passed
+Then The user verifies that the class was added successfully................passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (admin), I want a page where I can view multi-class students and perform actions like adding or removing students from multi-class." name="In the window of the selected student for the update, by clicking the &quot;remove&quot; button, a class should be removed for that student." time="25.321">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the admin login tab.................................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "adminUsername_dgn" into the username textbox...........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user clicks on the Student Information link in the admin panel's sidebar.passed
+And The user clicks on the Multi Class Student link in the opened dropdown menu.passed
+And The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu.passed
+And The user clicks on the Section textbox and selects the A tab from the opened dropdown menu.passed
+When The user clicks Search button in Multi Class Student page..............passed
+And Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini ""Remove"" butonuna tıklayarak siler..passed
+And The user clicks ""Update""" button......................................passed
+Then The user verifies that the class was added successfully................passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (teacher), I want to be able to create exam groups for students." name="The Exam Group page link is clicked under the Examination menu title on the sidebar on" time="19.251">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the teacher login tab...............................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "teacherUsername_dgn" into the username textbox.........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user teacher clicks the Exam Group page link under the Examination menu title in the sidebar on the panel.passed
+Then The user verifies that the url of the opened page is "examGroupUrl"....passed
+Then User verifies name textbox.............................................passed
+Then User verifies Exam Type dropdown menu..................................passed
+Then User Verifies Description textbox......................................passed
+Then User verifies that the Save button is visible..........................passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (teacher), I want to be able to create exam groups for students." name="After entering the Name in the Add Exam Group window and selecting the Exam Type," time="23.734">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the teacher login tab...............................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "teacherUsername_dgn" into the username textbox.........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user teacher clicks the Exam Group page link under the Examination menu title in the sidebar on the panel.passed
+And The user enters "examName" in NameBox...................................passed
+When The user selects the relevant field from the Exam Type dropdown menu...passed
+And Adds "ExamInfo" to User DescriptionBox..................................passed
+And The user presses the Save button........................................passed
+Then The user verifies that the text Record Saved Successfully has been seen..passed
+And The user Type "examName" in the Search... box under User Exam Group List..passed
+Then The user verifies that the added "examName" is seen in the list........passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (teacher), I want to be able to create exam groups for students." name="Exam Group List (with Name, No Of Exams, Exam Type, Action headings) should be displayed in the Exam Group List" time="22.348">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the teacher login tab...............................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "teacherUsername_dgn" into the username textbox.........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user teacher clicks the Exam Group page link under the Examination menu title in the sidebar on the panel.passed
+Then The user verifies that Name appears under Exam Group List..............passed
+Then The user verifies that No Of Exams appears under Exam Group List.......passed
+Then The user verifies that under Exam Group List , the title Exam Type appears.passed
+Then The user verifies that the title Action appears under Exam Group List..passed
+Then The user user clicks the + icon under the Action heading...............passed
+Then The user, It is verified that the user redirected page is the add exam page.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As an administrator (teacher), I want to be able to create exam groups for students." name="Exam Group List The update should be done by running the Edit Exam Group opened when the edit icon" time="22.29">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks on the teacher login tab...............................passed
+And The user navigates to a new page that opens in the browser..............passed
+And The user enters "teacherUsername_dgn" into the username textbox.........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the admin page..........passed
+And The user teacher clicks the Exam Group page link under the Examination menu title in the sidebar on the panel.passed
+Then The user confirms that their page has been updated when they click the edit icon under the Action heading.passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
 </testsuite>
->>>>>>> main

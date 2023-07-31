@@ -201,6 +201,30 @@ public class AdminPage {
     @FindBy(xpath = "(//h3[@class=\"box-title\"])[2]")
     public WebElement selectCriteriaTitleText;
 
+    //======================= US_023 ==================================
+
+    @FindBy(xpath = "//span[text()='Student Information']")
+    public WebElement studentInformationButton;
+
+    @FindBy(xpath = "(//*[text()='Student Details'])[2]")
+    public WebElement studentDetailsLink;
+
+    @FindBy(xpath = "//select[@id='class_id']")
+    public WebElement studentDetailsClassDropdown;
+
+    @FindBy(xpath = "//select[@id='section_id']")
+    public WebElement studentDetailsSectionDropdown;
+
+    @FindBy(xpath = "//input[@id='search_text']")
+    public WebElement studentDetailsSearchByKeywordTextbox;
+
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    public WebElement studentDetailsFirstSearchButton;
+
+    @FindBy(xpath = "(//button[@type='submit'])[4]")
+    public WebElement studentDetailsSecondSearchButton;
+
+    //=========================================================
 
 
 

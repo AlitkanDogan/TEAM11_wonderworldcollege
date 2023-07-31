@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="19.78" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I want a &quot;Complaints&quot; section on the website where I can submit my requests and complaints." name="On the &quot;Complain&quot; page, after entering data in the Name, Email, Contact No., and Description text boxes, when the Submit button is clicked, it should be verified that the complaint is successfully submitted." time="18.924">
+<testsuite name="Cucumber" time="26.994" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator, I want to access all information about enrolled students to gather more details about them." name="On the search page, the &quot;Select Criteria&quot; section should have Class and Section dropdowns, and a Search By Keyword textBox. Two search buttons should be visible and active to perform the search based on the entered criteria." time="26.418">
 <system-out><![CDATA[
-Given The user goes to the "url" address....................................passed
-When The user descends to the footer section of the page....................passed
-When The user waits 1 seconds...............................................passed
-When The user clicks on the Complain icon in the footer section.............passed
-When The user enters correct data in Name textbox on complain page..........passed
-When The user enters correct data in Email textbox on complain page.........passed
-When The user enters correct data in Contact No. textbox on complain page...passed
-When The user enters correct data in Description textbox on complain page...passed
-When The user clicks submit button on complain page.........................passed
-Then The user verifies that the request was sent with the confirmation message.passed
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks Admin Login button on wonder world college page........passed
+When The user enters valid username in Username textbox on Admin Login page.passed
+When The user enters valid password in Password textbox on Admin Login page.passed
+When The user clicks Sing In buton..........................................passed
+When The user clicks on the Student Information menu title in the sidebar in the admin panel.passed
+When The user clicks on the Student Detalis link in the drop-down menu......passed
+Then The user verifies that Class dropdown in Select Criteria is visible....passed
+Then The user verifies that Class dropdown in Select Criteria is active.....passed
+Then The user verifies that Section dropdown in Select Criteria is visible..passed
+Then The user verifies Section dropdown in Select Criteria is active........passed
+Then The user verifies that the Search By Keyword textbox in the Select Criteria section is visible.passed
+Then The user verifies that the Search By Keyword textbox in the Select Criteria section is active.passed
+Then The user verifies that the Search buttons in the Select Criteria section are visible.passed
+Then The user verifies that the Search buttons in the Select Criteria section are active.passed
+And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -32,7 +32,7 @@
 >
 > **git commit -m"GG.AA.YY/name-2"** (-2 --> gün içinde push etme sayısına göre)
 >
-> **git push**
+
 
 ***
 > -Her islemden once mutlaka master/main branch 'inde olunmadigi kontrol edilmelidir.

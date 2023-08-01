@@ -19,8 +19,11 @@ gi# DIKKAT EDILMESI GEREKENLER
 > 3. Kendi bransh'ımıza geçiş yapacağız => git checkout ______
 > 
 > 	-git merge main
+> 
 > 	-git add .           =>(hata verirse 1 kere daha "git add .")
-> 	-git commit -m"isim_tarih_saat"  
+> 
+> 	-git commit -m"isim_tarih_saat"
+> 
 > 	-git push
 	
 

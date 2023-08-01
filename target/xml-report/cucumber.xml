@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="Cucumber" time="26.994" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As an administrator, I want to access all information about enrolled students to gather more details about them." name="On the search page, the &quot;Select Criteria&quot; section should have Class and Section dropdowns, and a Search By Keyword textBox. Two search buttons should be visible and active to perform the search based on the entered criteria." time="26.418">
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks Admin Login button on wonder world college page........passed
+When The user enters valid username in Username textbox on Admin Login page.passed
+When The user enters valid password in Password textbox on Admin Login page.passed
+When The user clicks Sing In buton..........................................passed
+When The user clicks on the Student Information menu title in the sidebar in the admin panel.passed
+When The user clicks on the Student Detalis link in the drop-down menu......passed
+Then The user verifies that Class dropdown in Select Criteria is visible....passed
+Then The user verifies that Class dropdown in Select Criteria is active.....passed
+Then The user verifies that Section dropdown in Select Criteria is visible..passed
+Then The user verifies Section dropdown in Select Criteria is active........passed
+Then The user verifies that the Search By Keyword textbox in the Select Criteria section is visible.passed
+Then The user verifies that the Search By Keyword textbox in the Select Criteria section is active.passed
+Then The user verifies that the Search buttons in the Select Criteria section are visible.passed
+Then The user verifies that the Search buttons in the Select Criteria section are active.passed
+=======
 <testsuite name="Cucumber" time="253.369" tests="13" skipped="0" failures="0" errors="0">
 <testcase classname="As a user, I want to be able to access the website to use it" name="The user should be able to access the website from the browser using the given URL and" time="7.132">
 <system-out><![CDATA[
@@ -181,6 +201,7 @@ And The user enters "password_dgn" into the password textbox................pass
 When The user clicks the Sign In button and goes to the admin page..........passed
 And The user teacher clicks the Exam Group page link under the Examination menu title in the sidebar on the panel.passed
 Then The user confirms that their page has been updated when they click the edit icon under the Action heading.passed
+>>>>>>> main
 And User closes the page....................................................passed
 ]]></system-out>
 </testcase>

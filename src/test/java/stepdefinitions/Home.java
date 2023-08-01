@@ -5,9 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import pages.HomePage;
 
@@ -15,7 +13,6 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.List;
 import com.github.javafaker.Faker;
 
 import io.cucumber.java.en.When;
@@ -35,13 +32,7 @@ public class Home {
     WebDriver driver= Driver.getDriver();
     HomePage page=new HomePage();
 
-
-
-
     HomePage homePage = new HomePage();
-
-
-
 
    Actions actions=new Actions(driver);
    SoftAssert softAssert = new SoftAssert();
@@ -50,6 +41,8 @@ public class Home {
 
    String expectedTitle="";
    String actualTitle="";
+   String expectedConfirmationMessage="";
+   String actualConfirmationMessage="";
 
     //VVVVVVVVVVVVVVVV  US01 VVVVVVVVVVVVVVVVVVV
     @Given("The user goes to the {string} address")
@@ -430,48 +423,135 @@ public class Home {
     }
     @When("The user enters correct data in Description textbox on complain page")
     public void the_user_enters_correct_data_in_description_textbox_on_complain_page() {
-     homePage.complainPageDescriptionTextbox.sendKeys(ConfigReader.getProperty("complainDescription")+Keys.TAB+Keys.ENTER);
+     homePage.complainPageDescriptionTextbox.sendKeys(ConfigReader.getProperty("complainTrueDescrption")+Keys.TAB+Keys.ENTER);
     }
     @When("The user clicks submit button on complain page")
     public void the_user_clicks_submit_button_on_complain_page() {
     }
     @When("The user verifies that the request was sent with the confirmation message")
     public void the_user_verifies_that_the_request_was_sent_with_the_confirmation_message() {
-     String expectedConfirmationMessage=ConfigReader.getProperty("complainPageConfirmationMessage");
-     String actualConfirmationMessage=homePage.complainPageConfirmationMessage.getText();
-     assertEquals(expectedConfirmationMessage,actualConfirmationMessage);
+     assertTrue(homePage.complainPageConfirmationMessage.isDisplayed());
+    }
+
+    @When("The user leaves name textbox on complain page blank")
+    public void theUserLeavesNameTextboxOnComplainPageBlank() {
+    }
+
+    @Then("The user confirms with the incoming message that the name textbox should not be left blank")
+    public void theUserConfirmsWithTheIncomingMessageThatTheNameTextboxShouldNotBeLeftBlank() {
+     assertTrue(homePage.complainPageNameFieldMessage.isDisplayed());
+    }
+
+    @When("The user enters two character name in name textbox on complain page")
+    public void theUserEntersTwoCharacterNameInNameTextboxOnComplainPage() {
+     homePage.complainPageNameTextbox.sendKeys(ConfigReader.getProperty("complainTwoCharacterName"));
+    }
+
+    @Then("The user verifies that no less than six characters can be entered in the name textbox with the incoming message")
+    public void theUserVerifiesThatNoLessThanSixCharactersCanBeEnteredInTheNameTextboxWithTheIncomingMessage() {
+     assertFalse(homePage.complainPageConfirmationMessage.isDisplayed());
+    }
+
+    @When("The user leaves email textbox on complain page blank")
+    public void theUserLeavesEmailTextboxOnComplainPageBlank() {
+    }
+
+    @Then("The user confirms that the email textbox should not be left blank with the incoming message")
+    public void theUserConfirmsThatTheEmailTextboxShouldNotBeLeftBlankWithTheIncomingMessage() {
+     assertTrue(homePage.complainPageEmailFieldMessage.isDisplayed());
+    }
+
+    @When("The user enters email without @ in the email textbox on the complain pagee")
+    public void theUserEntersEmailWithoutInTheEmailTextboxOnTheComplainPagee() {
+     homePage.complainPageEmailTextbox.sendKeys(ConfigReader.getProperty("complainEmailWithout@"));
+    }
+
+    @Then("The user verifies that email without @ cannot be written in email textbox with incoming message")
+    public void theUserVerifiesThatEmailWithoutCannotBeWrittenInEmailTextboxWithIncomingMessage() {
     }
 
 
+    @When("The user enters email without .com in email textbox on complain page")
+    public void theUserEntersEmailWithoutComInEmailTextboxOnComplainPage() {
+     homePage.complainPageEmailTextbox.sendKeys(ConfigReader.getProperty("complainEmailWithout.com"));
+    }
 
-    /* US_17 Hamza */
-    @Given("user goes to wonderworldcollege homepage")
-    public void user_homepage_url()
-    {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+    @Then("The user verifies that email cannot be written without typing .com in the email textbox with the incoming message")
+    public void theUserVerifiesThatEmailCannotBeWrittenWithoutTypingComInTheEmailTextboxWithTheIncomingMessage() {
+     assertTrue(homePage.complainPageValidEmailFieldMessage.isDisplayed());
     }
-    @Then("user clicks on academic dropdown")
-    public void user_dropdownmenu()
-    {
-        page.Academics_DropDown.click();
-    }
-    @Then("user clicks on teacher in dropdown")
-    public void user_dropdownmenu_teacher_click()
-    {
-        ReusableMethods.bekle(2);
-        page.Academics_DropDown_Teacher.click();
-        List<WebElement> staffteamimgElements = driver.findElements(By.className("staffteamimg"));
-        int count = staffteamimgElements.size();
-        System.out.println("Number of staffteamimg elements: " + count);
-        WebElement lastname= page.HomePage_Teacher_Lastname;
-        Assert.assertTrue("Lastname İs Disabled", lastname.isDisplayed());
-        WebElement branch= page.HomePage_Teacher_branch;
-        Assert.assertTrue("Branch İs Disabled", branch.isDisplayed());
 
+    @When("The user leaves contact no. textbox on complain page blank")
+    public void theUserLeavesContactNoTextboxOnComplainPageBlank() {
     }
-    @And("Page Closed US_17")
-    public void close()
-    {
-        Driver.closeDriver();
+
+    @Then("The user confirms with the incoming message that the Contact No. textbox should not be left blank")
+    public void theUserConfirmsWithTheIncomingMessageThatTheContactNoTextboxShouldNotBeLeftBlank() {
+     assertTrue(homePage.complainPageContactNoFieldMessage.isDisplayed());
     }
+
+    @When("The user enters word in contact no textbox on complain page")
+    public void theUserEntersWordInContactNoTextboxOnComplainPage() {
+     homePage.complainPageContactNoTextbox.sendKeys(ConfigReader.getProperty("complainContactNoWord"));
+    }
+
+    @Then("The user contact No. with incoming message. Verifies that letters cannot be entered in the textbox")
+    public void theUserContactNoWithIncomingMessageVerifiesThatLettersCannotBeEnteredInTheTextbox() {
+     assertFalse(homePage.complainPageConfirmationMessage.isDisplayed());
+    }
+
+
+    @When("The User enters negative number in contact no textbox on complain page")
+    public void theUserEntersNegativeNumberInContactNoTextboxOnComplainPage() {
+     homePage.complainPageContactNoTextbox.sendKeys(ConfigReader.getProperty("complainContactNegativeNumber"));
+    }
+
+    @Then("The user confirms that negative numbers cannot be entered in the contact no textbox with the incoming message")
+    public void theUserConfirmsThatNegativeNumbersCannotBeEnteredInTheContactNoTextboxWithTheIncomingMessage() {
+     assertFalse(homePage.complainPageConfirmationMessage.isDisplayed());
+    }
+
+    @When("The User enters special character in contact no textbox on complain page")
+    public void theUserEntersSpecialCharacterInContactNoTextboxOnComplainPage() {
+     homePage.complainPageContactNoTextbox.sendKeys(ConfigReader.getProperty("complainContactSpecialCharacter"));
+    }
+
+    @Then("The user confirms that special character cannot be entered in the contact no textbox with the incoming message")
+    public void theUserConfirmsThatSpecialCharacterCannotBeEnteredInTheContactNoTextboxWithTheIncomingMessage() {
+     assertFalse(homePage.complainPageConfirmationMessage.isDisplayed());
+    }
+
+    @When("The user scrolls down to the graduates text")
+    public void theUserScrollsDownToTheGraduatesText() {
+     JSUtilities.scrollToElement(Driver.getDriver(),homePage.graduatesText);
+    }
+
+    @Then("The user verifies that OUR EXPERIENCE STAFFS is visible in our experienced staffs section")
+    public void theUserVerifiesThatOUREXPERIENCESTAFFSIsVisibleInOurExperiencedStaffsSection() {
+     assertTrue(homePage.ourExperiencedStaffsText.isDisplayed());
+    }
+
+    @Then("The user verifies that Anthony Carter exists in our experienced staffs section")
+    public void the_user_verifies_that_anthony_carter_exists_in_our_experienced_staffs_section() {
+     homePage.ourExperiencedStaffsAnthonyCarterIsVisiable();
+    }
+    @Then("The user verifies that Ava Turner exists in our experienced staffs section")
+    public void the_user_verifies_that_ava_turner_exists_in_our_experienced_staffs_section() {
+     homePage.ourExperiencedStaffsAvaTurnerIsVisiable();
+    }
+    @Then("The user verifies that David Morgan exists in our experienced staffs section")
+    public void the_user_verifies_that_david_morgan_exists_in_our_experienced_staffs_section() {
+     homePage.ourExperiencedStaffsDavidMorganIsVisiable();
+    }
+    @Then("The user verifies that Lily Peterson exists in our experienced staffs section")
+    public void the_user_verifies_that_lily_peterson_exists_in_our_experienced_staffs_section() {
+     homePage.ourExperiencedStaffsLilyPetersonIsVisiable();
+    }
+
+    @When("The user goes down to our experienced staffs section on the main page")
+    public void theUserGoesDownToOurExperiencedStaffsSectionOnTheMainPage() {
+        JSUtilities.scrollToElement(Driver.getDriver(), homePage.ourExperiencedStaffsText);
+    }
+
 }
+

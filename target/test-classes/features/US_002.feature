@@ -1,7 +1,7 @@
 @US2
 Feature: As a user, I want there to be menu titles on the top bar of the Homepage that will facilitate easy navigation within the site.
 
-  Background:
+  Background: Goes to wonder world college page
     Given The user goes to the "url" address
 
   @TC1_US2

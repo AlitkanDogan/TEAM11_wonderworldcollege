@@ -25,7 +25,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+
+import java.util.Set;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import java.util.List;
+
 
 public class Admin {
     WebDriver driver = Driver.getDriver();
@@ -490,9 +495,94 @@ public class Admin {
     }
 
 
-
-
     //=====================================================
 
+
+    //======================= US_023 ==================================
+
+    @When("The user clicks Admin Login button on wonder world college page")
+    public void the_user_clicks_admin_login_button_on_wonder_world_college_page() {
+        loginPage.adminLoginButton.click();
+    }
+    @When("The user enters valid username in Username textbox on Admin Login page")
+    public void the_user_enters_valid_username_in_username_textbox_on_admin_login_page() {
+        String firstWhd = Driver.getDriver().getWindowHandle();
+        String secondsWhd = "";
+        Set<String> whd = Driver.getDriver().getWindowHandles();
+        for (String eachWhd:whd
+             ) {
+            if (!eachWhd.equals(firstWhd)) {
+               secondsWhd=eachWhd;
+            }
+        }
+
+        Driver.getDriver().switchTo().window(secondsWhd);
+
+        loginPage.adminLoginUsernameTextbox.sendKeys(ConfigReader.getProperty("adminUsername_dln"));
+    }
+    @When("The user enters valid password in Password textbox on Admin Login page")
+    public void the_user_enters_valid_password_in_password_textbox_on_admin_login_page() {
+        loginPage.adminLoginPasswordTextbox.sendKeys(ConfigReader.getProperty("adminPassword_dln"));
+    }
+    @When("The user clicks Sing In buton")
+    public void the_user_clicks_sing_in_buton() {
+        loginPage.adminLoginSignInButton.click();
+    }
+    @When("The user clicks on the Student Information menu title in the sidebar in the admin panel")
+    public void the_user_clicks_on_the_student_information_menu_title_in_the_sidebar_in_the_admin_panel() {
+        adminPage.studentInformationButton.click();
+    }
+    @Then("The user verifies that the Student Detalis link is displayed in the drop-down menu")
+    public void the_user_verifies_that_the_student_detalis_link_is_displayed_in_the_drop_down_menu() {
+        assertTrue(adminPage.studentDetailsLink.isDisplayed());
+    }
+    @When("The user clicks on the Student Detalis link in the drop-down menu")
+    public void the_user_clicks_on_the_student_detalis_link_in_the_drop_down_menu() {
+        adminPage.studentDetailsLink.click();
+    }
+    @Then("The user verifies from the url she was redirected to the search page")
+    public void the_user_verifies_from_the_url_she_was_redirected_to_the_search_page() {
+        String expectedUrl = ConfigReader.getProperty("studentDetailsUrl");
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        assertEquals(expectedUrl,actualUrl);
+    }
+
+    @Then("The user verifies that Class dropdown in Select Criteria is visible")
+    public void the_user_verifies_that_class_dropdown_in_select_criteria_is_visible() {
+        assertTrue(adminPage.studentDetailsClassDropdown.isDisplayed());
+    }
+    @Then("The user verifies that Class dropdown in Select Criteria is active")
+    public void the_user_verifies_that_class_dropdown_in_select_criteria_is_active() {
+        assertTrue(adminPage.studentDetailsClassDropdown.isEnabled());
+    }
+    @Then("The user verifies that Section dropdown in Select Criteria is visible")
+    public void the_user_verifies_that_section_dropdown_in_select_criteria_is_visible() {
+        assertTrue(adminPage.studentDetailsSectionDropdown.isDisplayed());
+    }
+    @Then("The user verifies Section dropdown in Select Criteria is active")
+    public void the_user_verifies_section_dropdown_in_select_criteria_is_active() {
+        assertTrue(adminPage.studentDetailsSectionDropdown.isEnabled());
+    }
+    @Then("The user verifies that the Search By Keyword textbox in the Select Criteria section is visible")
+    public void the_user_verifies_that_the_search_by_keyword_textbox_in_the_select_criteria_section_is_visible() {
+        assertTrue(adminPage.studentDetailsSearchByKeywordTextbox.isDisplayed());
+    }
+    @Then("The user verifies that the Search By Keyword textbox in the Select Criteria section is active")
+    public void the_user_verifies_that_the_search_by_keyword_textbox_in_the_select_criteria_section_is_active() {
+        assertTrue(adminPage.studentDetailsSearchByKeywordTextbox.isEnabled());
+    }
+    @Then("The user verifies that the Search buttons in the Select Criteria section are visible")
+    public void the_user_verifies_that_the_search_buttons_in_the_select_criteria_section_are_visible() {
+        assertTrue(adminPage.studentDetailsFirstSearchButton.isDisplayed());
+        assertTrue(adminPage.studentDetailsSecondSearchButton.isDisplayed());
+    }
+    @Then("The user verifies that the Search buttons in the Select Criteria section are active")
+    public void the_user_verifies_that_the_search_buttons_in_the_select_criteria_section_are_active() {
+        assertTrue(adminPage.studentDetailsFirstSearchButton.isEnabled());
+        assertTrue(adminPage.studentDetailsSecondSearchButton.isEnabled());
+    }
+
+
+    //=========================================================
 
 }

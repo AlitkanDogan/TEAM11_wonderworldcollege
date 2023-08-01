@@ -194,7 +194,7 @@ public class HomePage {
 
     //=========================================================
 
-    //========================= US_02 ================================
+    //========================= US_02 - US_011 - US_014================================
 
     // Site logo in WonderWorldCollege home page top bar.
     @FindBy(xpath = "//img[@src='https://qa.wonderworldcollege.com/./uploads/school_content/logo/front_logo-608ff44a5f8f07.35255544.png']")
@@ -248,7 +248,35 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement complainPageConfirmationMessage;
 
+    @FindBy(xpath = "//p[text()='The Name field is required.']")
+    public WebElement complainPageNameFieldMessage;
 
+    @FindBy(xpath = "//p[text()='The Email field is required.']")
+    public WebElement complainPageEmailFieldMessage;
+
+    @FindBy(xpath = "//p[text()='The Email field must contain a valid email address.']")
+    public WebElement complainPageValidEmailFieldMessage;
+
+    @FindBy(xpath = "//p[text()='The Contact No field is required.']")
+    public WebElement complainPageContactNoFieldMessage;
+
+    @FindBy(xpath = "//h2[text()='OUR EXPERIENCED STAFFS']")
+    public WebElement ourExperiencedStaffsText;
+
+    @FindBy(xpath = "//span[text()='Graduates']")
+    public WebElement graduatesText;
+
+    @FindBy(xpath = "(//h3[text()='Anthony Carter'])[2]")
+    public WebElement ourExperiencedStaffsAnthonyCarter;
+
+    @FindBy(xpath = "(//h3[text()='Ava Turner'])[2]")
+    public WebElement ourExperiencedStaffsAvaTurner;
+
+    @FindBy(xpath = "(//h3[text()='David Morgan'])[2]")
+    public WebElement ourExperiencedStaffsDavidMorgan;
+
+    @FindBy(xpath = "(//h3[text()='Lily Peterson'])[2]")
+    public WebElement ourExperiencedStaffsLilyPeterson;
 
     //************************* Methods ********************
 
@@ -261,5 +289,20 @@ public class HomePage {
     public void footerComplainTextIsVisiable(){
         footerComplainText.isDisplayed();
     }
+    public void ourExperiencedStaffsAnthonyCarterIsVisiable(){
+        ourExperiencedStaffsAnthonyCarter.isDisplayed();
+    }
+    public void ourExperiencedStaffsAvaTurnerIsVisiable(){
+        ourExperiencedStaffsAvaTurner.isDisplayed();
+    }
+    public void ourExperiencedStaffsDavidMorganIsVisiable(){
+        ourExperiencedStaffsDavidMorgan.isDisplayed();
+    }
+    public void ourExperiencedStaffsLilyPetersonIsVisiable(){
+        ourExperiencedStaffsLilyPeterson.isDisplayed();
+    }
+
+
+    //==================================================================
 
 }

@@ -9,6 +9,7 @@ gi# DIKKAT EDILMESI GEREKENLER
 > 1.Kendi branşımızda
 > 
 > 	-git add .           =>(hata verirse 1 kere daha "git add .")
+> 
 > 	-git commit -m"v1"
 > 
 > 2. Main'e geçiş yapacağız => git checkout main

@@ -1,16 +1,46 @@
 package pages;
 
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
+
 public class AdminPage {
-
-
-    public AdminPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+    public AdminPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    //========================Hamza=================================
+    //Admin Page Front Office
+    @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[1]/a/span")
+    public WebElement frontoffice;
+    //Admin Page Front Office -> Complain
+    @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[1]/ul/li[6]/a")
+    public WebElement frontoffice_Complain;
+    //Admin Page Front Office -> Complain -> Save Button
+    @FindBy(xpath = "//*[@id=\"submitbtn\"]")
+    public WebElement savebutton;
+    //Admin Page Front Office -> Complain -> Save Button -> Complain Search
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_filter\"]/label/input")
+    public WebElement complainsearch;
+    //Admin Page Front Office -> Complain -> Save Button -> Complain Search -> View
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[6]/a[1]/i")
+    public WebElement complainview;
+    //Admin Page Front Office -> Complain -> Save Button -> Complain Search -> View -> Close
+    @FindBy(xpath = "//*[@id=\"complaintdetails\"]/div/div/div[1]/button")
+    public WebElement complainview_close;
+    //Admin Page Front Office -> Complain -> Save Button -> Complain Search -> View -> Close -> Edit
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[6]/a[2]/i")
+    public WebElement complainview_edit;
+
+
+
+
 
 
     @FindBy(xpath = "//span[text()='Student Information']")
@@ -201,6 +231,7 @@ public class AdminPage {
     @FindBy(xpath = "(//h3[@class=\"box-title\"])[2]")
     public WebElement selectCriteriaTitleText;
 
+
     //======================= US_023 ==================================
 
     @FindBy(xpath = "//span[text()='Student Information']")
@@ -225,7 +256,41 @@ public class AdminPage {
     public WebElement studentDetailsSecondSearchButton;
 
     //=========================================================
+    
+    @FindBy(xpath = "(//i[@class='fa fa-plus'])[1]")
+    public WebElement plusIconButton;
+
+    @FindBy(xpath = "//form[1]/div/div/div[2]/div/div/button")
+    public WebElement updateButton_multiClassStudent;
+
+    @FindBy(xpath = "//div[text()='Record Saved Successfully'] ")
+    public WebElement recordSavedSuccesfullyText_MultiClass;
 
 
+    //=============================us22 methods================================================
+    public WebElement classBox_ClassNewLine() {
+        List<WebElement> classElementsList = Driver.getDriver().findElements(By.xpath("//form[1]/div/div/div[1]/div[2]/div"));
+        int size = classElementsList.size();
+        String locate = "(//select[@name='class_id_" + size + "'])[1]";
+        WebElement classBox = Driver.getDriver().findElement(By.xpath(locate));
+        return classBox;
+    }
+
+    public WebElement sectionBox_ClassNewLine() {
+        List<WebElement> classElementsList = Driver.getDriver().findElements(By.xpath("//form[1]/div/div/div[1]/div[2]/div"));
+        int size = classElementsList.size();
+        String locate = "(//select[@name='section_id_" + size + "'])[1]";
+        WebElement classBox = Driver.getDriver().findElement(By.xpath(locate));
+        return classBox;
+    }
+
+    public WebElement removeButton_ClassNewLine() {
+        List<WebElement> classElementsList = Driver.getDriver().findElements(By.xpath("//form[1]/div/div/div[1]/div[2]/div"));
+        int actualSize = classElementsList.size();
+        String locate = "//form[1]/div/div/div[1]/div[2]/div[" + actualSize + "]/div[3]";
+        WebElement classBox = Driver.getDriver().findElement(By.xpath(locate));
+        return classBox;
+    }
+//===============================================================================
 
 }

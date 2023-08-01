@@ -2,29 +2,150 @@ package stepdefinitions;
 
 import io.cucumber.java.en.And;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.*;
+import pages.AdminPage;
+
+import pages.TeacherPage;
+
+
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import pages.AdminPage;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import pages.LoginPage;
+
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.Set;
 
+import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import java.util.List;
+
 
 public class Admin {
-
     WebDriver driver = Driver.getDriver();
-    AdminPage adminPage = new AdminPage();
+    TeacherPage tpage=new TeacherPage();
+    AdminPage adminPage=new AdminPage();
+
+
+    /*US_29 Admin*/
+    @Given("{string} {string} login admin")
+    public void Us_29(String email,String sifre)
+    {
+        Driver.getDriver().get(ConfigReader.getProperty("loginUrl"));
+        tpage.Teacher_Button.click();
+        ReusableMethods.bekle(1);
+        System.out.println(driver.getTitle());
+        ReusableMethods.switchToWindow("Login : Wonder World College");
+        WebElement usertext = tpage.Teacher_UserNameTextbox;
+        usertext.click();
+        usertext.sendKeys(email);
+        tpage.Teacher_PasswordTextbox.click();
+        tpage.Teacher_PasswordTextbox.sendKeys(sifre);
+        tpage.Teacher_Login_Button.click();
+
+    }
+    @Then("The Add complain window with Complain Type, Source dropdown menus and Phone, Date, Description, Action Taken, Assigned, Note textBoxes should be displayed on the Complain page")
+    public void US_29_2()
+    {
+        ReusableMethods.switchToWindow("Wonder World College");
+        adminPage.frontoffice.click();
+        adminPage.frontoffice_Complain.click();
+        List<WebElement> cardSidebarElements = driver.findElements(By.className("form-group"));
+        int limit = Math.min(cardSidebarElements.size(), 11);
+        for (int i = 0; i < limit; i++) {
+            WebElement element = cardSidebarElements.get(i);
+            String[] terms = element.getText().split("\\s+"); // Boşluklara göre veriyi böler
+            if (terms.length > 0) {
+                System.out.println(terms[0]); // Sadece ilk terimi yazdırır
+            }
+        }
+    }
+    @Then("It should be possible to upload the document related to the complaint in the Add complain window on the Complain page")
+    public void US_29_03()
+    {
+
+        WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
+
+        // Dosya yolu belirt (örneğin, "C:\\Users\\kullanici_adi\\dosya.txt")
+        String filePath = "C://Users//griff//Downloads//x.jpg";
+        // JavaScript Executor kullanarak dosya yolu belirleme işlemini gerçekleştir
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].style.display='block';", fileInput);
+        fileInput.sendKeys(filePath);
+    }
+    @Then("The Complain List with the titles Complain, Complain Type, Name, Phone, Date, Action should be displayed in the Complain List window")
+    public void US_29_04()
+    {
+
+        System.out.println("-----------------------");
+        List<WebElement> complainSidebarElements = driver.findElements(By.className("sorting"));
+        int limit2 = Math.min(complainSidebarElements.size(), 6);
+        for (int i = 0; i < limit2; i++) {
+            WebElement element = complainSidebarElements.get(i);
+            String[] terms = element.getText().split("\\s+"); // Boşluklara göre veriyi böler
+            if (terms.length > 0) {
+                System.out.println(terms[0]); // Sadece ilk terimi yazdırır
+            }
+        }
+    }
+    @Then("The details of the complaint should be displayed in the Edit Complain window opened by clicking the Edit icon under the Action title in the Complain List, it should be updated and saved with the save button")
+    public void US_29_05()
+    {
+        WebElement ComplainBy = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[1]/div[3]/input"));
+        ComplainBy.click();
+        ComplainBy.sendKeys("ss");
+        scrollDown(driver,500);
+        adminPage.savebutton.click();
+        adminPage.complainsearch.click();
+        adminPage.complainsearch.sendKeys("ss");
+        ReusableMethods.bekle(2);
+        adminPage.complainview.click();
+        ReusableMethods.bekle(2);
+        adminPage.complainview_close.click();
+        adminPage.complainview_edit.click();
+        ReusableMethods.bekle(5);
+        WebElement complain = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[1]/div[3]/input"));
+        complain.click();
+        complain.sendKeys("2");
+        scrollDown(driver,500);
+        WebElement save= driver.findElement(By.xpath("//*[@id=\"form1\"]/div[2]/button"));
+        save.click();
+        ReusableMethods.bekle(3);
+        WebElement complaindelete=driver.findElement(By.xpath("//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[6]/a[3]"));
+        complaindelete.click();
+        Alert alert = driver.switchTo().alert();
+
+        // Onay kutusunu kabul et (OK düğmesine tıkla)
+        alert.accept();
+        ReusableMethods.bekle(5);
+    }
+    /*US_29*/
+    public static void scrollDown(WebDriver driver, int pixels) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollBy(0, " + pixels + ");");
+    }
+
+    @And("Page Closed US_29")
+    public void close()
+    {
+        Driver.closeDriver();
+    }
+
+
+
+
+
     LoginPage loginPage = new LoginPage();
 
     Actions actions = new Actions(driver);
@@ -124,6 +245,49 @@ public class Admin {
        String expectesResult="Select Criteria";
        String actualResult=adminPage.selectCriteriaTitleText.getText();
        assertEquals(expectesResult,actualResult);
+    }
+
+    @When("The user clicks on the + icon in the student's window in the top-left corner")
+    public void the_user_clicks_on_the_icon_in_the_student_s_window_in_the_top_left_corner() {
+        adminPage.plusIconButton.click();
+        ReusableMethods.bekle(3);
+
+    }
+
+    @Then("The user verifies that a new section has been added")
+    public void the_user_verifies_that_a_new_section_has_been_added() {
+
+        assertTrue(adminPage.classBox_ClassNewLine().isDisplayed());
+
+    }
+
+    @When("The user enters different class information in \"\"Class\"\" and \"\"Section\"\" constructors")
+    public void the_user_enters_different_class_information_in_class_and_section_constructors() {
+        Select select = new Select(adminPage.classBox_ClassNewLine());
+        select.selectByIndex(3);
+        ReusableMethods.bekle(1);
+
+        select = new Select(adminPage.sectionBox_ClassNewLine());
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @When("The user clicks \"\"Update\"\"\" button")
+    public void the_user_clicks_update_button() {
+        adminPage.updateButton_multiClassStudent.click();
+    }
+
+    @Then("The user verifies that the class was added successfully.")
+    public void the_user_verifies_that_the_class_was_added_successfully() {
+
+        assertTrue(adminPage.recordSavedSuccesfullyText_MultiClass.isDisplayed());
+    }
+    @And("Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini \"\"Remove\"\" butonuna tıklayarak siler.")
+    public void kullanıcıSolÜstKöşedeBulunanÖgrenciyeAitEnAlttaBulunanSınıfBilgisiniRemoveButonunaTıklayarakSiler() {
+
+        adminPage.removeButton_ClassNewLine().click();
     }
 
 
@@ -332,6 +496,7 @@ public class Admin {
 
 
     //=====================================================
+
 
     //======================= US_023 ==================================
 

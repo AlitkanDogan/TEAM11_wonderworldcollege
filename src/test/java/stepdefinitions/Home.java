@@ -1,28 +1,38 @@
 package stepdefinitions;
 
-import com.github.javafaker.Faker;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.asserts.SoftAssert;
+
 import pages.HomePage;
+
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.JSUtilities;
 import utilities.ReusableMethods;
+
+import com.github.javafaker.Faker;
+
+import io.cucumber.java.en.When;
+
+import org.openqa.selenium.Keys;
+
+import org.openqa.selenium.interactions.Actions;
+import org.testng.asserts.SoftAssert;
+
+import utilities.JSUtilities;
+
 
 import static org.junit.Assert.*;
 
 public class Home {
 
-    HomePage homePage = new HomePage();
+    WebDriver driver= Driver.getDriver();
+    HomePage page=new HomePage();
 
-    WebDriver driver = Driver.getDriver();
+    HomePage homePage = new HomePage();
 
    Actions actions=new Actions(driver);
    SoftAssert softAssert = new SoftAssert();
@@ -540,6 +550,8 @@ public class Home {
 
     @When("The user goes down to our experienced staffs section on the main page")
     public void theUserGoesDownToOurExperiencedStaffsSectionOnTheMainPage() {
-     JSUtilities.scrollToElement(Driver.getDriver(),homePage.ourExperiencedStaffsText);
+        JSUtilities.scrollToElement(Driver.getDriver(), homePage.ourExperiencedStaffsText);
     }
+
 }
+

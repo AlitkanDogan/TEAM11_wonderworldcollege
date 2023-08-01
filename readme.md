@@ -12,11 +12,11 @@
 > 
 > 	**git commit -m"v1"**
 > 
-> 2. Main'e geçiş yapacağız => git checkout main
+> 2. Main'e geçiş yapacağız => **git checkout main**
 > 
 > 	**git pull**
 > 
-> 3. Kendi bransh'ımıza geçiş yapacağız => git checkout ______
+> 3. Kendi bransh'ımıza geçiş yapacağız => **git checkout ______**
 > 
 > 	**git merge main**
 > 

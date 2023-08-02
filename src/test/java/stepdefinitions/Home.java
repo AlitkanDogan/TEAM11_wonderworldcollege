@@ -884,6 +884,16 @@ public class Home {
 
 
     }
+    //================US05=================
+    @When("The user clicks on the About Us menu button.")
+    public void theUserClicksOnTheAboutUsMenuButton() {
+        homePage.aboutUsLink_header.click();
 
+    }
+
+    @Then("The user verifies that About Us menu button redirects to the About us page.")
+    public void theUserVerifiesThatAboutUsMenuButtonRedirectsToTheAboutUsPage()  {
+        homePage.aboutUsPage.isDisplayed();
+        }
 }
 

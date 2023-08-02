@@ -48,6 +48,9 @@ public class HomePage {
 
     //====================us005=========================
 
+    @FindBy(xpath = "//*[@class='container spacet60']")
+    public WebElement aboutUsPage;
+
 
 
     //========================Hamza=================================

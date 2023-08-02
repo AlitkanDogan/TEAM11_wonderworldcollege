@@ -2,14 +2,11 @@ package pages;
 
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
-import java.util.List;
 
 public class StudentPage {
 
@@ -29,52 +26,35 @@ public class StudentPage {
     @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
     public WebElement homeworkPage;
 
-    //-------------------------US48--------------------
-    @FindBy(xpath = "//span[text()='Online Exam']")
-    public WebElement onlineExamLink;
+    //======================US_47====================
 
-        @FindBy(xpath = "//a[text()='Upcoming Exams']")
-    public WebElement upcomingExamsColumns_OnlineExam;
+    @FindBy(xpath = "//*[@class='content-wrapper']")
+    public WebElement homeworkDetailsWindow;
 
+    @FindBy(id ="assigment_message")
+    public WebElement assignmentMessageTextbox;
 
-            @FindBy(xpath = "//a[text()='Closed Exam']")
-    public WebElement closedExamColumns_OnlineExam;
+    @FindBy(xpath = "(//*[@class='fa fa-reorder'])[1]")
+    public WebElement homeworkPageViewEditIcon;
 
-            @FindBy(xpath = "(//i[@class='fa fa fa-eye'])[1]")
-    public WebElement eyeImg_view_upcomingExam;
+    @FindBy(xpath = "//*[@id='submit']")
+    public WebElement AssignmentSaveButton;
 
-            @FindBy(xpath = "//h4[@class='text-center font-weight-bold']")
-    public WebElement examTitle_view_upcomingExam;
+    @FindBy(xpath = "//*[@class='label label-warning'][1]")
+    public WebElement AssignmentSubmittedAlert;
 
+    @FindBy(xpath = "//*[@class='closed-exam']")
+    public WebElement closedHomeworkHeadline;
 
-            public void closedExamColumpVisibility(){
-                List<WebElement> tableTitles=Driver.getDriver().findElements(By.xpath("//*[@id=\"DataTables_Table_1\"]/thead/tr/th"));
-
-                for (WebElement element:tableTitles
-                     ) {
-                    Assert.assertTrue(element.isDisplayed());
-                }
-            }
-//=============US51TC1=========================
-
-    @FindBy(xpath = "//a[@href='../site/userlogin'][1]")
-    public WebElement studentLogin;
-
-    @FindBy(xpath = "//input[@type='text']    ")
-    public WebElement usernameButton;
-
-    @FindBy(xpath = "//input[@type='password']")
-    public WebElement PassordButton;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement Sign_inButton;
-
-    @FindBy(xpath = "(//a[@href='https://qa.wonderworldcollege.com/user/user/dashboard'])[3]")
-    public WebElement examinationsTitle ;
+    @FindBy(xpath = "//*[@class='content']")
+    public WebElement closedHomeworkList;
 
 
-    @FindBy(xpath = "")
-    public WebElement examinationsLink;
+
+
+    //
+
+
 
 
 

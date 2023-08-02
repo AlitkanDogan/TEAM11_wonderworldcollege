@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="39.642" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="As a user, I should be able to access the &quot;Online Exam&quot; page and make changes and view the Exam details When entering the Student Panel" name="The user should be able to access and see the column fields in the &quot;&quot;Online Exam&quot;&quot; section, &quot;&quot;Exam View&quot;&quot; from the Action section." time="21.039">
+<testsuite name="Cucumber" time="14.435" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I should be able to access the &quot;Homework&quot; page and make changes to my assignments When entering the Student Panel" name="The user should be able to access the homework details and send a message in the &quot;Action&quot; section" time="14.143">
 <system-out><![CDATA[
-Given The user goes to the "loginUrl" address...............................passed
-When The user clicks on the student login tab...............................passed
-And The user navigates to a new page that opens in the browser..............passed
-Then The user verifies that username texbox, password texbox and Sign In button are visible on the opened page.passed
-And The user enters "studentUsername_dgn" into the username textbox.........passed
-And The user enters "password_dgn" into the password textbox................passed
-When The user clicks the Sign In button and goes to the student page........passed
-And The use clicks Onleine Exam tab.........................................passed
-When The user sees the Upcoming Exam and Closed Exam columns on the page that opens..passed
-And The user clicks on the view link of the first exam under the Action column..passed
-Then The user verifies on the quiz title visible on the page that opens.....passed
-And User closes the page....................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="As a user, I should be able to access the &quot;Online Exam&quot; page and make changes and view the Exam details When entering the Student Panel" name="The user enters the &quot;&quot;Closed Exam&quot;&quot; section, they should be able to see the column fields and" time="18.262">
-<system-out><![CDATA[
-Given The user goes to the "loginUrl" address...............................passed
-When The user clicks on the student login tab...............................passed
-And The user navigates to a new page that opens in the browser..............passed
-Then The user verifies that username texbox, password texbox and Sign In button are visible on the opened page.passed
-And The user enters "studentUsername_dgn" into the username textbox.........passed
-And The user enters "password_dgn" into the password textbox................passed
-When The user clicks the Sign In button and goes to the student page........passed
-And The use clicks Onleine Exam tab.........................................passed
-When User clicks on Closed Exam button......................................passed
-Then The user verifies the visibility of Exam, Quiz, Date From, Date To, Duration, Total Attempt , Attempted, Status, Action titles on the page.passed
-And User closes the page....................................................passed
+Given The user goes to the "url" address....................................passed
+Then The user verifies that, the Login button is visible on the homepage....passed
+When The user clicks on the Login button....................................passed
+Then The user verifies that Login button redirects to the userlogin page....passed
+And The user enters their "username" in to the username textbox.............passed
+And The user enters their "password" in to the password textbox.............passed
+When The user clicks on the Sign In button..................................passed
+Then The user verifies that they are on the student panel...................passed
+When The user clicks on the Homework button link on the student panel.......passed
+And The user clicks on the viewEdit icon in the action column...............passed
+Then The user verifies that, they are able to access the homework details...passed
+And The user enters their messages in to the Assingment message textbox.....passed
+And the user clicks on the save button......................................passed
+Then The user verifies that they are able to send their messages successfully.passed
 ]]></system-out>
 </testcase>
 </testsuite>

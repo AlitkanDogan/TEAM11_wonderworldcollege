@@ -10,3 +10,5 @@ Feature:As a user, I want there to be an "About Us" page on the website so that 
     Scenario:When the 'About Us' menu title in the top bar of the homepage is clicked, it should redirect to the 'About Us' page.
 
       Then The user verifies that About Us menu button redirects to the About us page.
+
+  @TC2_US05

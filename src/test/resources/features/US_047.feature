@@ -32,9 +32,9 @@
     Scenario: The user should be able to send a message from the "Action" section in the "Closed Homework" segment
 
 
-      And The user clicks on the Closed Homework linktext
+      And The user clicks on the Closed Homework headline
       Then The user verifies that, Closed Homework list is visible
-      And The user clicks on the viewEdit icon in the action column
+      And The user clicks on the closedHomeworkViewEdit icon in the action column
       And The user enters their messages in to the Assingment message textbox
       And the user clicks on the save button
-      Then The user verifies that, they are able to send a message in the Closed Homework segment"
+      Then The user verifies that, they are able to send a message in the Closed Homework segment

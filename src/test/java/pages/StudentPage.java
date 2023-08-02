@@ -40,7 +40,7 @@ public class StudentPage {
     @FindBy(xpath = "//*[@id='submit']")
     public WebElement AssignmentSaveButton;
 
-    @FindBy(xpath = "//*[@class='label label-warning'][1]")
+    @FindBy(xpath = "(//*[@class='label label-warning'])[1]")
     public WebElement AssignmentSubmittedAlert;
 
     @FindBy(xpath = "//*[@class='closed-exam']")
@@ -48,6 +48,15 @@ public class StudentPage {
 
     @FindBy(xpath = "//*[@class='content']")
     public WebElement closedHomeworkList;
+
+    @FindBy(xpath = "(//*[@class='btn btn-default btn-xs'])[15]")
+    public WebElement closedHomeworkViewEditIcon;
+
+    @FindBy(xpath = "((//*[@class='label label-warning'])[9]")
+    public WebElement closedHomeworkSubmittedLabel;
+
+
+
 
 
 

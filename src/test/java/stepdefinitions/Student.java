@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -30,14 +31,59 @@ public class Student {
         Assert.assertTrue(studentPage.studentUserPage.isDisplayed());
     }
 
-    @When("The user clicks on the Homework button link on student panel")
-    public void theUserClicksOnTheHomeworkButtonLinkOnStudentPanel() {
+    @When("The user clicks on the Homework button link on the student panel")
+    public void theUserClicksOnTheHomeworkButtonLinkOnTheStudentPanel() {
         studentPage.homeworkButton.click();
     }
 
     @Then("The user verifies that, on the homework page, column fields in the Upcoming Homework segment are visible.")
     public void theUserVerifiesThatOnTheHomeworkPageColumnFieldsInTheUpcomingHomeworkSegmentAreVisible() {
         Assert.assertTrue(studentPage.homeworkPage.isDisplayed());
+    }
+    @And("The user clicks on the viewEdit icon in the action column")
+    public void theUserClicksOnTheViewEditIconInTheActionColumn() {
+        studentPage.homeworkPageViewEditIcon.click();
+
+    }
+
+    @Then("The user verifies that, they are able to access the homework details")
+    public void theUserVerifiesThatTheyAreAbleToAccessTheHomeworkDetails() {
+
+        Assert.assertTrue(studentPage.homeworkDetailsWindow.isDisplayed());
+        Assert.assertTrue(studentPage.assignmentMessageTextbox.isEnabled());
+    }
+
+    @And("The user enters their messages in to the Assingment message textbox")
+    public void theUserEntersTheirMessagesInToTheAssingmentMessageTextbox() {
+        studentPage.assignmentMessageTextbox.sendKeys("Hier is my homework");
+
+    }
+
+    @And("the user clicks on the save button")
+    public void theUserClicksOnTheSaveButton() {
+        studentPage.AssignmentSaveButton.click();
+
+    }
+
+    @Then("The user verifies that they are able to send their messages successfully")
+    public void theUserVerifiesThatTheyAreAbleToSendTheirMessagesSuccessfully() {
+        Assert.assertTrue(studentPage.AssignmentSubmittedAlert.isDisplayed());
+    }
+
+    @And("The user clicks on the Closed Homework linktext")
+    public void theUserClicksOnTheClosedHomeworkLinktext() {
+        studentPage.closedHomeworkHeadline.click();
+    }
+
+    @Then("The user verifies that, Closed Homework list is visible")
+    public void theUserVerifiesThatClosedHomeworkListIsVisible() {
+        studentPage.closedHomeworkList.isDisplayed();
+    }
+
+    @Then("The user verifies that, they are able to send a message in the Closed Homework segment\"")
+    public void theUserVerifiesThatTheyAreAbleToSendAMessageInTheClosedHomeworkSegment() {
+
+
     }
 
     //=====================================================

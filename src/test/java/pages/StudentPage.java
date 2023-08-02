@@ -26,5 +26,38 @@ public class StudentPage {
     @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
     public WebElement homeworkPage;
 
+    //======================US_47====================
+
+    @FindBy(xpath = "//*[@class='content-wrapper']")
+    public WebElement homeworkDetailsWindow;
+
+    @FindBy(id ="assigment_message")
+    public WebElement assignmentMessageTextbox;
+
+    @FindBy(xpath = "(//*[@class='fa fa-reorder'])[1]")
+    public WebElement homeworkPageViewEditIcon;
+
+    @FindBy(xpath = "//*[@id='submit']")
+    public WebElement AssignmentSaveButton;
+
+    @FindBy(xpath = "//*[@class='label label-warning'][1]")
+    public WebElement AssignmentSubmittedAlert;
+
+    @FindBy(xpath = "//*[@class='closed-exam']")
+    public WebElement closedHomeworkHeadline;
+
+    @FindBy(xpath = "//*[@class='content']")
+    public WebElement closedHomeworkList;
+
+
+
+
+    //
+
+
+
+
+
+
 }
 

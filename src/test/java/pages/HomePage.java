@@ -304,5 +304,87 @@ public class HomePage {
 
 
     //==================================================================
+//=====================0US7==========================================
+
+    @FindBy(xpath = "//a[@href='https://qa.wonderworldcollege.com/page/gallery']")
+    public WebElement GalleryHeader;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement ArtMusicTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[2]")
+    public WebElement CampusTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[3]")
+    public WebElement ActivitesTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement PrePrimaryTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement ClassroomsTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement SportsTitle;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement ArtMusicHeader_InPage;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement CampusPage_InPage;
+
+    @FindBy(xpath = "//h1")
+    public WebElement ActivitiesPanel_InPage;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement PrePrimaryPanel_InPage;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement ClassesPanel_InPage_InPage;
+
+    @FindBy(xpath = "(//h3)[2]")
+    public WebElement campusTitle_gallery;
+
+    @FindBy(xpath = "//h1")
+    public WebElement SportsDashboard_InPage;
+
+
+    //=============0US10=========================
+
+    //slider of images  Homepage
+    @FindBy(xpath = "//img[@src='https://qa.wonderworldcollege.com/uploads/gallery/media/top-banner2-2.jpg']")
+    public WebElement sliderOfImages_Homepage;
+    @FindBy(xpath = "//a[@class='right carousel-control']")
+    public WebElement sliderRigtButton_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[1]")
+    public WebElement slider1_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[2]")
+    public WebElement slider2_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[3]")
+    public WebElement slider3_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[4]")
+    public WebElement slider4_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[5]")
+    public WebElement slider5_Homepage;
+    @FindBy(xpath = "(//a[text()='Gallery'])[1]")
+    public WebElement galleryTitle;
+
+    @FindBy(xpath = "(//a[text()='Gallery'])[1]")
+    public WebElement galleryButton;
 
 }

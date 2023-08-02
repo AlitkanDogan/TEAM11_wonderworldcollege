@@ -42,6 +42,28 @@ public class HomePage {
     public WebElement twitterLink_footer;
 
 
+
+    //=========================================================
+
+
+    //====================us005=========================
+
+
+
+    //========================Hamza=================================
+    //WonderWorldCollege academic dropdown menu xpatch location on homepage
+    @FindBy(xpath = "//*[@id=\"navbar-collapse-3\"]/ul/li[5]/a")
+    public WebElement Academics_DropDown;
+    //WonderWorldCollege Teacher location in the Academic drop-down menu on the home page
+    @FindBy(xpath = "//*[@id=\"navbar-collapse-3\"]/ul/li[5]/ul/li[6]/a")
+    public WebElement Academics_DropDown_Teacher;
+    //WonderWorld College Homepage -> Login Button
+    @FindBy(xpath = "/html/body/div[5]/div/div/div[1]/div/div[9]/div/div[2]/h3")
+    public WebElement HomePage_Teacher_Lastname;
+    //WonderWorld College Homepage -> Login Button -> Branch
+    @FindBy(xpath = "/html/body/div[5]/div/div/div[1]/div/div[9]/div/div[2]/span")
+    public WebElement HomePage_Teacher_branch;
+
     //WonderWorldCollege "google-plus" link in the header section of the homepage.
     @FindBy(xpath = "(//i[@class='fa fa-google-plus'])[1]")
     public WebElement googlePlusLink_header;
@@ -172,12 +194,197 @@ public class HomePage {
 
     //=========================================================
 
+    //========================= US_02 - US_011 - US_014================================
+
+    // Site logo in WonderWorldCollege home page top bar.
+    @FindBy(xpath = "//img[@src='https://qa.wonderworldcollege.com/./uploads/school_content/logo/front_logo-608ff44a5f8f07.35255544.png']")
+    public WebElement WonderWorldCollegeSiteLogo;
+
+    @FindBy(xpath = "//a[text()='Facilities']")
+    public WebElement facilitiesLink;
+
+    @FindBy(xpath = "//a[text()='School Uniform']")
+    public WebElement schoolUniformLink;
+
+    @FindBy(xpath = "//a[text()='Principal Message']")
+    public WebElement principalMessageLink;
+
+    @FindBy(xpath = "//a[text()='Know Us']")
+    public WebElement knowUsLink;
+
+    @FindBy(xpath = "//a[text()='Approach']")
+    public WebElement approachLink;
+
+    @FindBy(xpath = "//a[text()='Teacher']")
+    public WebElement teacherLink;
+
+    @FindBy(xpath = "//a[text()='Houses & Mentoring']")
+    public WebElement housesMentoringLink;
+
+    @FindBy(xpath = "//a[text()='Student Council']")
+    public WebElement studentCouncilLink;
+
+    @FindBy(xpath = "//i[@class='fa fa-pencil-square-o i-plain']")
+    public WebElement footerComplainIcon;
+
+    @FindBy(xpath = "//a[@href='https://qa.wonderworldcollege.com/page/complain']")
+    public WebElement footerComplainText;
+
+    @FindBy(xpath = "(//input[@type='text'])[5]")
+    public WebElement complainPageNameTextbox;
+
+    @FindBy(xpath = "(//input[@type='email'])[2]")
+    public WebElement complainPageEmailTextbox;
+
+    @FindBy(xpath = "(//input[@type='text'])[6]")
+    public WebElement complainPageContactNoTextbox;
+
+    @FindBy(xpath = "//textarea[@name='description']")
+    public WebElement complainPageDescriptionTextbox;
+
+    @FindBy(xpath = "//input[@name='submit']")
+    public WebElement complainPageSubmitButton;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement complainPageConfirmationMessage;
+
+    @FindBy(xpath = "//p[text()='The Name field is required.']")
+    public WebElement complainPageNameFieldMessage;
+
+    @FindBy(xpath = "//p[text()='The Email field is required.']")
+    public WebElement complainPageEmailFieldMessage;
+
+    @FindBy(xpath = "//p[text()='The Email field must contain a valid email address.']")
+    public WebElement complainPageValidEmailFieldMessage;
+
+    @FindBy(xpath = "//p[text()='The Contact No field is required.']")
+    public WebElement complainPageContactNoFieldMessage;
+
+    @FindBy(xpath = "//h2[text()='OUR EXPERIENCED STAFFS']")
+    public WebElement ourExperiencedStaffsText;
+
+    @FindBy(xpath = "//span[text()='Graduates']")
+    public WebElement graduatesText;
+
+    @FindBy(xpath = "(//h3[text()='Anthony Carter'])[2]")
+    public WebElement ourExperiencedStaffsAnthonyCarter;
+
+    @FindBy(xpath = "(//h3[text()='Ava Turner'])[2]")
+    public WebElement ourExperiencedStaffsAvaTurner;
+
+    @FindBy(xpath = "(//h3[text()='David Morgan'])[2]")
+    public WebElement ourExperiencedStaffsDavidMorgan;
+
+    @FindBy(xpath = "(//h3[text()='Lily Peterson'])[2]")
+    public WebElement ourExperiencedStaffsLilyPeterson;
+
+    //************************* Methods ********************
+
+    public void wonderWorldCollegeSiteLogoIsVisible(){
+        WonderWorldCollegeSiteLogo.isDisplayed();
+    }
+    public void footerComplainIconIsVisiable(){
+        footerComplainIcon.isDisplayed();
+    }
+    public void footerComplainTextIsVisiable(){
+        footerComplainText.isDisplayed();
+    }
+    public void ourExperiencedStaffsAnthonyCarterIsVisiable(){
+        ourExperiencedStaffsAnthonyCarter.isDisplayed();
+    }
+    public void ourExperiencedStaffsAvaTurnerIsVisiable(){
+        ourExperiencedStaffsAvaTurner.isDisplayed();
+    }
+    public void ourExperiencedStaffsDavidMorganIsVisiable(){
+        ourExperiencedStaffsDavidMorgan.isDisplayed();
+    }
+    public void ourExperiencedStaffsLilyPetersonIsVisiable(){
+        ourExperiencedStaffsLilyPeterson.isDisplayed();
+    }
 
 
+    //==================================================================
+//=====================0US7==========================================
+
+    @FindBy(xpath = "//a[@href='https://qa.wonderworldcollege.com/page/gallery']")
+    public WebElement GalleryHeader;
 
 
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement ArtMusicTitle;
 
 
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[2]")
+    public WebElement CampusTitle;
 
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[3]")
+    public WebElement ActivitesTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement PrePrimaryTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement ClassroomsTitle;
+
+
+    @FindBy(xpath = "(//div[@class='evcontentfix'])[1]")
+    public WebElement SportsTitle;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement ArtMusicHeader_InPage;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement CampusPage_InPage;
+
+    @FindBy(xpath = "//h1")
+    public WebElement ActivitiesPanel_InPage;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement PrePrimaryPanel_InPage;
+
+
+    @FindBy(xpath = "//h1")
+    public WebElement ClassesPanel_InPage_InPage;
+
+    @FindBy(xpath = "(//h3)[2]")
+    public WebElement campusTitle_gallery;
+
+    @FindBy(xpath = "//h1")
+    public WebElement SportsDashboard_InPage;
+
+
+    //=============0US10=========================
+
+    //slider of images  Homepage
+    @FindBy(xpath = "//img[@src='https://qa.wonderworldcollege.com/uploads/gallery/media/top-banner2-2.jpg']")
+    public WebElement sliderOfImages_Homepage;
+    @FindBy(xpath = "//a[@class='right carousel-control']")
+    public WebElement sliderRigtButton_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[1]")
+    public WebElement slider1_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[2]")
+    public WebElement slider2_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[3]")
+    public WebElement slider3_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[4]")
+    public WebElement slider4_Homepage;
+
+    @FindBy(xpath = "//*[@id=\"bootstrap-touch-slider\"]/div/div[5]")
+    public WebElement slider5_Homepage;
+    @FindBy(xpath = "(//a[text()='Gallery'])[1]")
+    public WebElement galleryTitle;
+
+    @FindBy(xpath = "(//a[text()='Gallery'])[1]")
+    public WebElement galleryButton;
 
 }

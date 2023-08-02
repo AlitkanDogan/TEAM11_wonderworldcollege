@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 public class Student {
 
-    WebDriver driver= Driver.getDriver();
+    WebDriver driver = Driver.getDriver();
 
     StudentPage studentPage = new StudentPage();
 
@@ -25,7 +25,7 @@ public class Student {
 
     LoginPage loginPage = new LoginPage();
 
-    SoftAssert softAssert=new SoftAssert();
+    SoftAssert softAssert = new SoftAssert();
 
     //VVVVVVVVVVVVVVVV  US016 VVVVVVVVVVVVVVVVVVV
 
@@ -108,17 +108,54 @@ public class Student {
 
     @Then("The user password change screen will pop up and verify that the 'Email sending failed. Please try again' warning message does not appear")
     public void theUserPasswordChangeScreenWillPopUpAndVerifyThatTheEmailSendingFailedPleaseTryAgainWarningMessageDoesNotAppear() throws Throwable {
-        String expectedResult="Email sending failed. Please try again.";
-        String actualResult=loginPage.emailSendingFailedText.getText();
+        String expectedResult = "Email sending failed. Please try again.";
+        String actualResult = loginPage.emailSendingFailedText.getText();
         System.out.println("===================");
         System.out.println(actualResult);
         System.out.println(expectedResult);
         try {
-            assertEquals(expectedResult,actualResult,"Can't open new password creation page");
+            assertEquals(expectedResult, actualResult, "Can't open new password creation page");
         } finally {
             driver.quit();
         }
-
-
     }
+
+    //-------------------------------US_048----------------------------------
+
+    @When("The use clicks Onleine Exam tab")
+    public void the_use_clicks_onleine_exam_tab() {
+        studentPage.onlineExamLink.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Given("The user sees the Upcoming Exam and Closed Exam columns on the page that opens.")
+    public void the_user_sees_the_upcoming_exam_and_closed_exam_columns_on_the_page_that_opens() {
+
+        assertTrue(studentPage.upcomingExamsColumns_OnlineExam.isDisplayed());
+        assertTrue(studentPage.closedExamColumns_OnlineExam.isDisplayed());
+    }
+
+    @Given("The user clicks on the view link of the first exam under the Action column.")
+    public void the_user_clicks_on_the_view_link_of_the_first_exam_under_the_action_column() {
+        studentPage.eyeImg_view_upcomingExam.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Given("The user verifies on the quiz title visible on the page that opens.")
+    public void the_user_verifies_on_the_quiz_title_visible_on_the_page_that_opens() {
+        assertTrue(studentPage.examTitle_view_upcomingExam.isDisplayed());
+    }
+
+
+    @Given("User clicks on Closed Exam button")
+    public void user_clicks_on_closed_exam_button() {
+        studentPage.closedExamColumns_OnlineExam.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Given("The user verifies the visibility of Exam, Quiz, Date From, Date To, Duration, Total Attempt , Attempted, Status, Action titles on the page")
+    public void the_user_verifies_the_visibility_of_exam_quiz_date_from_date_to_duration_total_attempt_attempted_status_action_titles_on_the_page() {
+        studentPage.closedExamColumpVisibility();
+    }
+
 }

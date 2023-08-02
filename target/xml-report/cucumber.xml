@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="76.295" tests="6" skipped="0" failures="1" errors="0">
-<testcase classname="As a user, I should be able to log into the Student Panel with a username and password." name="The user must be able to log in with the correct username and password." time="19.137">
+<testsuite name="Cucumber" time="39.642" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="As a user, I should be able to access the &quot;Online Exam&quot; page and make changes and view the Exam details When entering the Student Panel" name="The user should be able to access and see the column fields in the &quot;&quot;Online Exam&quot;&quot; section, &quot;&quot;Exam View&quot;&quot; from the Action section." time="21.039">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user clicks on the student login tab...............................passed
@@ -8,72 +8,27 @@ And The user navigates to a new page that opens in the browser..............pass
 Then The user verifies that username texbox, password texbox and Sign In button are visible on the opened page.passed
 And The user enters "studentUsername_dgn" into the username textbox.........passed
 And The user enters "password_dgn" into the password textbox................passed
-When The user clicks the Sign In button and goes to the admin page..........passed
-Then The user verifies that the url of the opened page is "studendPageUserUrl"..passed
+When The user clicks the Sign In button and goes to the student page........passed
+And The use clicks Onleine Exam tab.........................................passed
+When The user sees the Upcoming Exam and Closed Exam columns on the page that opens..passed
+And The user clicks on the view link of the first exam under the Action column..passed
+Then The user verifies on the quiz title visible on the page that opens.....passed
 And User closes the page....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="As a user, I should be able to log into the Student Panel with a username and password." name="If the username and password combination is incorrect, the user should receive an error message - Example #1.1" time="11.796">
-<system-out><![CDATA[
-Given The user goes to the "loginUrl" address...............................passed
-Given The user clicks on the student login tab..............................passed
-Given The user navigates to a new page that opens in the browser............passed
-Given User enters possible wrong "studentUsername_dgn" or wrong "wrongPassword" in username texbox and in password textbox.passed
-When The user clicks the Sign In button and goes to the admin page..........passed
-Given The user should receive an error message your password or username invalid.passed
-Given User closes the page..................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="As a user, I should be able to log into the Student Panel with a username and password." name="If the username and password combination is incorrect, the user should receive an error message - Example #1.2" time="10.586">
-<system-out><![CDATA[
-Given The user goes to the "loginUrl" address...............................passed
-Given The user clicks on the student login tab..............................passed
-Given The user navigates to a new page that opens in the browser............passed
-Given User enters possible wrong "wrongUserName" or wrong "password_dgn" in username texbox and in password textbox.passed
-When The user clicks the Sign In button and goes to the admin page..........passed
-Given The user should receive an error message your password or username invalid.passed
-Given User closes the page..................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="As a user, I should be able to log into the Student Panel with a username and password." name="If the username and password combination is incorrect, the user should receive an error message - Example #1.3" time="11.438">
-<system-out><![CDATA[
-Given The user goes to the "loginUrl" address...............................passed
-Given The user clicks on the student login tab..............................passed
-Given The user navigates to a new page that opens in the browser............passed
-Given User enters possible wrong "wrongUserName" or wrong "wrongPassword" in username texbox and in password textbox.passed
-When The user clicks the Sign In button and goes to the admin page..........passed
-Given The user should receive an error message your password or username invalid.passed
-Given User closes the page..................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="As a user, I should be able to log into the Student Panel with a username and password." name="If a user forgets the password, they should be redirected to the &quot;Forgot Password&quot; page." time="11.024">
+<testcase classname="As a user, I should be able to access the &quot;Online Exam&quot; page and make changes and view the Exam details When entering the Student Panel" name="The user enters the &quot;&quot;Closed Exam&quot;&quot; section, they should be able to see the column fields and" time="18.262">
 <system-out><![CDATA[
 Given The user goes to the "loginUrl" address...............................passed
 When The user clicks on the student login tab...............................passed
 And The user navigates to a new page that opens in the browser..............passed
-And The user clicks the Forgot Password link................................passed
-Then The user verifies that the title of the page that opens is Forgot Password.passed
+Then The user verifies that username texbox, password texbox and Sign In button are visible on the opened page.passed
+And The user enters "studentUsername_dgn" into the username textbox.........passed
+And The user enters "password_dgn" into the password textbox................passed
+When The user clicks the Sign In button and goes to the student page........passed
+And The use clicks Onleine Exam tab.........................................passed
+When User clicks on Closed Exam button......................................passed
+Then The user verifies the visibility of Exam, Quiz, Date From, Date To, Duration, Total Attempt , Attempted, Status, Action titles on the page.passed
 And User closes the page....................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="As a user, I should be able to log into the Student Panel with a username and password." name="The new password should be min 6 char" time="11.854">
-<failure type="org.junit.ComparisonFailure" message="Email sending failed. Please try again. expected:&lt;[Email sending failed. Please try again.]&gt; but was:&lt;[Can't open new password creation page]&gt;">
-<![CDATA[org.junit.ComparisonFailure: Email sending failed. Please try again. expected:<[Email sending failed. Please try again.]> but was:<[Can't open new password creation page]>
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at stepdefinitions.Student.theUserPasswordChangeScreenWillPopUpAndVerifyThatTheEmailSendingFailedPleaseTryAgainWarningMessageDoesNotAppear(Student.java:117)
-	at ✽.The user password change screen will pop up and verify that the 'Email sending failed. Please try again' warning message does not appear(file:///D:/doğan/TEAM11_2agu/src/test/resources/features/US_043.feature:56)
-]]>
-</failure>
-<system-out><![CDATA[
-Given The user goes to the "loginUrl" address...............................passed
-When The user clicks on the student login tab...............................passed
-And The user navigates to a new page that opens in the browser..............passed
-And The user clicks the Forgot Password link................................passed
-When The user enters the "studentMail" address on the page that opens.......passed
-And The user clicks the studebt radioButton.................................passed
-And User clicks on Submit button............................................passed
-Then The user password change screen will pop up and verify that the 'Email sending failed. Please try again' warning message does not appear.failed
-And User closes the page....................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

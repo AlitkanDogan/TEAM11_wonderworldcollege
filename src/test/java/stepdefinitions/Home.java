@@ -5,8 +5,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 
 import utilities.ConfigReader;
@@ -24,6 +26,8 @@ import org.testng.asserts.SoftAssert;
 
 import utilities.JSUtilities;
 
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -613,6 +617,272 @@ public class Home {
     @When("The user goes down to our experienced staffs section on the main page")
     public void theUserGoesDownToOurExperiencedStaffsSectionOnTheMainPage() {
         JSUtilities.scrollToElement(Driver.getDriver(), homePage.ourExperiencedStaffsText);
+    }
+    //========================US007TC1====================================
+    @When("The User verifies Gallery tab in Home Page Header")
+    public void the_user_verifies_gallery_tab_in_home_page_header() {
+        assertTrue(homePage.gelleryLink_header.isDisplayed());
+
+    }
+
+    @Then("The User clicks Gallery tab in Home Page Header")
+    public void the_user_clicks_gallery_tab_in_home_page_header() {
+        homePage.galleryButton.click();
+    }
+
+
+    @Then("The user verifies that the url of the opened page is \"\"galleryUrl\"\".")
+    public void the_user_verifies_that_the_url_of_the_opened_page_is_gallery_url() {
+        String expectedGalleryUrl = ConfigReader.getProperty("galleryUrl");
+        String actualGalleryUrl = driver.getCurrentUrl();
+        Assert.assertEquals(expectedGalleryUrl, actualGalleryUrl);
+    }
+
+
+//=========================US7TC2================================
+
+
+    @Then("The user clicks Gallery tab in Home Page Header")
+    public void theUserClicksGalleryTabInHomePageHeader() {
+        homePage.gelleryLink_header.click();
+    }
+
+    @Then("User verifies that  Art & Music title is visible on Gallery page.")
+    public void user_verifies_that_art_music_title_is_visible_on_gallery_page() {
+        assertTrue(homePage.ArtMusicTitle.isDisplayed());
+    }
+
+    @Then("User verifies that  Campus  title is visible on Gallery page.")
+    public void user_verifies_that_campus_title_is_visible_on_gallery_page() {
+        assertTrue(homePage.campusTitle_gallery.isDisplayed());
+    }
+
+    @Then("User verifies that  Activities  title is visible on Gallery page.")
+    public void user_verifies_that_activities_title_is_visible_on_gallery_page() {
+        assertTrue(homePage.ActivitesTitle.isDisplayed());
+    }
+
+    @Then("User verifies that  Pre Primary title is visible on Gallery page.")
+    public void user_verifies_that_pre_primary_title_is_visible_on_gallery_page() {
+        assertTrue(homePage.PrePrimaryTitle.isDisplayed());
+    }
+
+    @Then("User verifies that  Classrooms  title is visible on Gallery page.")
+    public void user_verifies_that_classrooms_title_is_visible_on_gallery_page() {
+        assertTrue(homePage.ClassroomsTitle.isDisplayed());
+
+    }
+
+    @Then("User verifies that  Sports  title is visible on Gallery page.")
+    public void user_verifies_that_sports_title_is_visible_on_gallery_page() {
+        assertTrue(homePage.SportsTitle.isDisplayed());
+
+    }
+
+    @Then("User closes the page.\"")
+    public void user_closes_the_page() {
+
+    }
+
+    //=========================US7TC3================================
+
+    @Then("User clicks Gallery tab on Home Page Title.")
+    public void user_clicks_gallery_tab_on_home_page_title() {
+        homePage.galleryTitle.click();
+    }
+
+    @Then("User clicks on the \"\"Art and Music\"\" heading on the Gallery page.")
+    public void user_clicks_on_the_art_and_music_heading_on_the_gallery_page() {
+        homePage.ArtMusicTitle.click();
+
+    }
+
+    @Then("The user verifies that he or she has viewed the “Arts and Music” board.")
+    public void the_user_verifies_that_he_or_she_has_viewed_the_arts_and_music_board() {
+        assertTrue(homePage.ArtMusicHeader_InPage.isDisplayed());
+
+    }
+
+    @Then("User clicks the back button.")
+    public void user_clicks_the_back_button() {
+        driver.navigate().back();
+
+    }
+
+    @Then("User clicks on the Campus banner.")
+    public void user_clicks_on_the_campus_banner() {
+        homePage.CampusTitle.click();
+
+    }
+
+    @Then("User verifies that he or she is viewing the \"\"Campus\"\" board.")
+    public void user_verifies_that_he_or_she_is_viewing_the_campus_board() {
+        assertTrue(homePage.CampusPage_InPage.isDisplayed());
+
+
+    }
+
+    @Then("User clicks on the Activities banner.")
+    public void user_clicks_on_the_activities_banner() {
+        homePage.ArtMusicTitle.click();
+
+    }
+
+    @Then("User verifies that he or she is viewing the “Activities” board.")
+    public void user_verifies_that_he_or_she_is_viewing_the_activities_board() {
+        assertTrue(homePage.ActivitiesPanel_InPage.isDisplayed());
+
+
+    }
+
+    @Then("User clicks on the Pre Primary header.")
+    public void user_clicks_on_the_pre_primary_header() {
+        homePage.PrePrimaryTitle.click();
+
+    }
+
+    @Then("User verifies that they are viewing the “Pre Primary” board.")
+    public void user_verifies_that_they_are_viewing_the_pre_primary_board() {
+        assertTrue(homePage.PrePrimaryPanel_InPage.isDisplayed());
+
+    }
+
+    @Then("User clicks on the Classrooms header.")
+    public void user_clicks_on_the_classrooms_header() {
+        homePage.ClassroomsTitle.click();
+
+    }
+
+    @Then("User verifies that he or she has viewed the \"\"Classrooms\"\" board.")
+    public void user_verifies_that_he_or_she_has_viewed_the_classrooms_board() {
+        assertTrue(homePage.ClassesPanel_InPage_InPage.isDisplayed());
+
+
+    }
+
+    @Then("User clicks on the Sports banner.")
+    public void user_clicks_on_the_sports_banner() {
+        homePage.SportsTitle.click();
+
+
+    }
+
+    @Then("User verifies that he or she has viewed the “Sports” board.")
+    public void user_verifies_that_he_or_she_has_viewed_the_sports_board() {
+        assertTrue(homePage.SportsDashboard_InPage.isDisplayed());
+
+
+    }
+    //=========================US10================================
+
+
+    @Then("The user verifies that there is a slider of images on the Homepage")
+    public void the_user_verifies_that_there_is_a_slider_of_images_on_the_homepage() {
+
+        assertTrue(homePage.sliderRigtButton_Homepage.isDisplayed());
+
+
+    }
+
+
+    @Then("The user verifies that the pictures change after being on the screen for a certain time in the slider on the homepage")
+    public void the_user_verifies_that_the_pictures_change_after_being_on_the_screen_for_a_certain_time_in_the_slider_on_the_homepage() {
+        assertTrue(homePage.sliderRigtButton_Homepage.isDisplayed());
+
+    }
+
+
+    @Then("The user verifies that you can change the images manually on the homepage")
+    public void the_user_verifies_that_you_can_change_the_images_manually_on_the_homepage() {
+        /*
+        if (homePage.slider1_Homepage.isDisplayed()) {
+            assertTrue(homePage.slider1_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider2_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider3_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider4_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider5_Homepage.isDisplayed());
+
+        } else if (homePage.slider2_Homepage.isDisplayed()) {
+            assertTrue(homePage.slider2_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider3_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider4_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider5_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider1_Homepage.isDisplayed());
+
+        } else if (homePage.slider3_Homepage.isDisplayed()) {
+            assertTrue(homePage.slider3_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider4_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider5_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider1_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider2_Homepage.isDisplayed());
+            ReusableMethods.bekle(2);
+        } else if (homePage.slider4_Homepage.isDisplayed()) {
+            assertTrue(homePage.slider4_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider5_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider1_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider2_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider3_Homepage.isDisplayed());
+        } else if (homePage.slider5_Homepage.isDisplayed()) {
+            assertTrue(homePage.slider5_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider1_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider2_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider3_Homepage.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+            ReusableMethods.bekle(2);
+            assertTrue(homePage.slider4_Homepage.isDisplayed());
+
+        }
+*/
+        List<WebElement> sliders = driver.findElements(By.xpath("//*[@id=\"bootstrap-touch-slider\"]/div/div"));
+        for (WebElement element : sliders
+        ) {
+            ReusableMethods.waitForVisibility(element, 10000);
+            assertTrue(element.isDisplayed());
+            homePage.sliderRigtButton_Homepage.click();
+
+
+        }
+
+
     }
 
 }

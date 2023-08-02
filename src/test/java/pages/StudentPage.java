@@ -55,6 +55,27 @@ public class StudentPage {
                     Assert.assertTrue(element.isDisplayed());
                 }
             }
+//=============US51TC1=========================
+
+    @FindBy(xpath = "//a[@href='../site/userlogin'][1]")
+    public WebElement studentLogin;
+
+    @FindBy(xpath = "//input[@type='text']    ")
+    public WebElement usernameButton;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement PassordButton;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement Sign_inButton;
+
+    @FindBy(xpath = "(//a[@href='https://qa.wonderworldcollege.com/user/user/dashboard'])[3]")
+    public WebElement examinationsTitle ;
+
+
+    @FindBy(xpath = "")
+    public WebElement examinationsLink;
+
 
 
 

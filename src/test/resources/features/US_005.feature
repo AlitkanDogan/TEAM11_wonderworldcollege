@@ -10,11 +10,13 @@ Feature:As a user, I want there to be an "About Us" page on the website so that 
     Scenario:When the 'About Us' menu title in the top bar of the homepage is clicked, it should redirect to the 'About Us' page.
 
       Then The user verifies that About Us menu button redirects to the About us page.
+      And User closes the page
 
   @TC2_US05
     Scenario:On the 'About Us' page, it should be verified that there are sections titled 'Who We Are' and 'Why Choose Our Institution?'.
 
       Then The user verifies that the sections titled Who We Are and Why Choose Our Institution are displayed.
+      And User closes the page
 
   @TC3_US05
     Scenario: In the 'Why Choose Our Institution?' section on the 'About Us' page,
@@ -22,7 +24,7 @@ Feature:As a user, I want there to be an "About Us" page on the website so that 
               Scholarship Facility, Skilled Lecturers, Book Library & Store, Library Facilities, Book Collection, Digital Resources.
 
       Then The user verifies that Scholarship Facility, Skilled Lecturers, Book Library & Store, Library Facilities, Book Collection, Digital Resources headings are visible in the Why Choose Our Institution? section.
-
+      And User closes the page
 
 
 

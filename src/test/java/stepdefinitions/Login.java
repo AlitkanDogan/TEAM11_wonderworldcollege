@@ -71,7 +71,7 @@ public class Login {
         loginPage.passwordTextbox.sendKeys("fatma");
     }
 
-    @Then("The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information.\"")
+    @Then("The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information.")
     public void theUserVerifiesThatTheyCanNotLogInInToTheirPanelsIfTheyEnterIncorrectMissingOrUnregisteredInformation(){
         Assert.assertTrue(loginPage.invalidUsernameOrPasswordAlert.isDisplayed());
     }

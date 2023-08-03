@@ -12,6 +12,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     Then The user verifies that, the Login button is visible on the homepage.
     When The user clicks on the Login button
     Then The user verifies that Login button redirects to the userlogin page.
+    And User closes the page
 
   @TC2_US16
   Scenario: On the "userlogin" page, there should be a login window on the left side
@@ -19,6 +20,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
 
     When The user clicks on the Login button
     Then The user verifies that there are a login window on the left side and information about What's New In Wonder World College on the right side.
+    And User closes the page
 
   @TC3_US16
   Scenario: On the "userlogin" page, it should be verified
@@ -29,6 +31,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user enters their "password" in to the password textbox
     When The user clicks on the Sign In button
     Then The user verifies that they can log in to their panels by enterin their (previously registered) information.
+    And User closes the page
 
   @TC4_US16
   Scenario:On the "userlogin" page, it should be verified that users cannot log in to
@@ -38,7 +41,8 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user enters incorrect username in to the username textbox
     And The user enters incorrect password in to the password textbox
     When The user clicks on the Sign In button
-    Then The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information."
+    Then The user verifies that they can not log in in to their panels if they enter incorrect, missing, or unregistered information.
+    And User closes the page
 
   @TC5_US16
   Scenario: The "userlogin" page should contain a "forget password" link, and when clicked, it should redirect to the "ufpassword" page.
@@ -48,6 +52,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     Then The user verifies that Login button redirects to the userlogin page.
     And The user clicks on forgot password link
     Then The user verifies that the forgot password link redirects to the ufpassword page.
+    And User closes the page
 
   @TC6_US16
   Scenario: On the "ufpassword" (forgot password) page, it should be verified that users can enter
@@ -56,6 +61,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     When The user clicks on the Login button
     And The user clicks on forgot password link
     Then The user verifies that they can enter their email addresses in the relavent textbox on the ufpassword page to reset their password and select the appropriate panels.
+    And User closes the page
 
   @TC7_US16
   Scenario: On the "ufpassword" (forgot password) page,
@@ -68,6 +74,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user selects the appropriate panel.
     And clicks on submit button.
     Then the user verifies that they receive 'password reset email.
+    And User closes the page
 
   @TC8_US16
   Scenario: The "ufpassword" (forgot password) page should contain a "user login" link to return to the login page,
@@ -78,6 +85,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user verifies that  there is a user login link on the ufpassword page to return to the login page
     And The user clicks on the user login link
     Then The user verifies that the link redirects to the userlogin page.
+    And User closes the page
 
   @TC9_US16
   Scenario: On the "userlogin" page, there should be a link for returning to the Front Site,
@@ -86,6 +94,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     When The user clicks on the Login button
     And The user clicks on the Front Site link
     Then The user verifies that the Front Site link redirects to the homepage.
+    And User closes the page
 
 
 

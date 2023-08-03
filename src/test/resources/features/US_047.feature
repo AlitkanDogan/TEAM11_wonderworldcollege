@@ -17,6 +17,7 @@
 
 
       Then The user verifies that, on the homework page, column fields in the Upcoming Homework segment are visible.
+      And User closes the page
 
     @TC2_US47
     Scenario: The user should be able to access the homework details and send a message in the "Action" section
@@ -26,6 +27,7 @@
       And The user enters their messages in to the Assingment message textbox
       And The user clicks on the save button
       Then The user verifies that they are able to send their messages successfully
+      And User closes the page
 
 
     @TC3_US47
@@ -38,6 +40,7 @@
       And The user enters their messages in to the Assingment message textbox
       And The user clicks on the save button
       Then The user verifies that, they are able to send a message in the Closed Homework segment
+      And User closes the page
 
     @TC4_US47
     Scenario: The user should be able to enter the "Daily Assignment" segment, click on the "New Assignment" button, and add a new assignment
@@ -45,6 +48,7 @@
       And The user clicks on the Daily Assignment link button
       Then The user verifies that they are in the Daily Assignment segment
       And The user clicks on the New Assignment button
+      And User closes the page
 
     @TC5_US47
     Scenario: The user should be able to update assignments from the "Action" section
@@ -55,6 +59,7 @@
       And The user enters their updated  messages in to the Assingment message textbox
       And The user clicks on the save button
       Then The user verifies that, they are able to update their assignments
+      And User closes the page
 
     @TC6_US47
     Scenario: The user should be able to delete an assignment from the "Action" section
@@ -64,12 +69,14 @@
       And The user deletes their assignments
       And The user clicks on the save button
       Then The user verifies that, they are able to delete their assignments
+      And User closes the page
 
     @TC7_US47
     Scenario: The user should verify the column fields in the "Daily Assignment List" page
 
       And The user clicks on the Daily Assignment link button
       Then The user verifies that, the column fields in the Daily Assignment List page are visible in the Daily Assignment segment
+      And User closes the page
 
 
 

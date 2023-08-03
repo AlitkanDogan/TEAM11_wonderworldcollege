@@ -311,7 +311,7 @@ public class Admin {
             adminPage.topBarAdminProfileIcon.click();
         }
 
-        @Then("The user verifies that a window opens displaying the account owner's name, role, and links to Profile, Password, and Logout.\"")
+        @Then("The user verifies that a window opens displaying the account owner's name, role, and links to Profile, Password, and Logout.")
         public void the_user_verifies_that_a_window_opens_displaying_the_account_owner_s_name_role_and_links_to_profile_password_and_logout
         () {
             Assert.assertTrue(adminPage.topBarAccountOwnersName.isDisplayed());

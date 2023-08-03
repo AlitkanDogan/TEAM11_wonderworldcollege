@@ -19,7 +19,8 @@ Feature: As an administrator (teacher), I want to access the attendance record o
   @TC1_US36
   Scenario:In the teacher panel's sidebar, under the "Attendance" menu, the "Period Attendance By Date" page link should be displayed,
   and when clicked, it should redirect to the "reportbydate" page.
-    Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
+      Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
+      And User closes the page
 
   @TC2_US36
   Scenario: On the "reportbydate" page, there should be a "Select Criteria" section with Class,
@@ -27,6 +28,7 @@ Feature: As an administrator (teacher), I want to access the attendance record o
 
       Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
       Then The user verifies that, on the reportbydate page, there are a Select Criteria section with Class, Section dropdown menus, a Date box, and a Search button visible and active.
+      And User closes the page
 
   @TC3_US36
   Scenario: Based on the selected criteria in the "Select Criteria" section,
@@ -35,11 +37,13 @@ Feature: As an administrator (teacher), I want to access the attendance record o
       When The user selects class, section and date
       And The user clicks on the search button
       Then The user verifies that, based on the selected criteria in the Select Criteria section, a Student List is generated with columns for each student and their respective subjects.
+      And User closes the page
 
   @TC4_US36
   Scenario: The "Student List" should display the attendance records of all students in the selected class for the specified date.
 
-    Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
-    When The user selects class, section and date
-    And The user clicks on the search button
-    Then The user verifies that, the Student List displays the attendance records of all students in the selected class for the specified date.
+      Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
+      When The user selects class, section and date
+      And The user clicks on the search button
+      Then The user verifies that, the Student List displays the attendance records of all students in the selected class for the specified date.
+      And User closes the page

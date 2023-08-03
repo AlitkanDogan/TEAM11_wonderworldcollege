@@ -185,6 +185,9 @@ public class AdminPage {
 
     @FindBy(xpath = "(//div[@class='staffprofile'])[8]")
     public WebElement attendanceTotalHalfDay;
+    /*
+    mhmt
+     */
 
     @FindBy(xpath = "(//div[@class='staffprofile'])[9]")
     public WebElement attendanceTotalHoliday;

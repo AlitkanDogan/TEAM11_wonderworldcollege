@@ -5,9 +5,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.StudentPage;
 import utilities.Driver;
+
+import static org.junit.Assert.*;
 
 public class Student {
 
@@ -21,24 +24,25 @@ public class Student {
 
     @Then("The user verifies that they can log in to their panels by enterin their \\(previously registered) information.")
     public void the_user_verifies_that_they_can_log_in_to_their_panels_by_enterin_their_previously_registered_information() {
-        Assert.assertTrue(studentPage.userStudentDashboardPage.isDisplayed());
+        assertTrue(studentPage.userStudentDashboardPage.isDisplayed());
     }
 
 
     //=======================US_47==============================
     @Then("The user verifies that they are on the student panel")
     public void theUserVerifiesThatTheyAreOnTheStudentPanel() {
-        Assert.assertTrue(studentPage.studentUserPage.isDisplayed());
+        assertTrue(studentPage.studentUserPage.isDisplayed());
     }
 
     @When("The user clicks on the Homework button link on the student panel")
     public void theUserClicksOnTheHomeworkButtonLinkOnTheStudentPanel() {
+
         studentPage.homeworkButton.click();
     }
 
     @Then("The user verifies that, on the homework page, column fields in the Upcoming Homework segment are visible.")
     public void theUserVerifiesThatOnTheHomeworkPageColumnFieldsInTheUpcomingHomeworkSegmentAreVisible() {
-        Assert.assertTrue(studentPage.homeworkPage.isDisplayed());
+        assertTrue(studentPage.homeworkPage.isDisplayed());
     }
     @And("The user clicks on the viewEdit icon in the action column")
     public void theUserClicksOnTheViewEditIconInTheActionColumn() {
@@ -49,8 +53,8 @@ public class Student {
     @Then("The user verifies that, they are able to access the homework details")
     public void theUserVerifiesThatTheyAreAbleToAccessTheHomeworkDetails() {
 
-        Assert.assertTrue(studentPage.homeworkDetailsWindow.isDisplayed());
-        Assert.assertTrue(studentPage.assignmentMessageTextbox.isEnabled());
+        assertTrue(studentPage.homeworkDetailsWindow.isDisplayed());
+        assertTrue(studentPage.assignmentMessageTextbox.isEnabled());
     }
 
     @And("The user enters their messages in to the Assingment message textbox")
@@ -63,28 +67,55 @@ public class Student {
     public void theUserClicksOnTheSaveButton() {
         studentPage.AssignmentSaveButton.click();
 
+
     }
 
     @Then("The user verifies that they are able to send their messages successfully")
     public void theUserVerifiesThatTheyAreAbleToSendTheirMessagesSuccessfully() {
-        Assert.assertTrue(studentPage.AssignmentSubmittedAlert.isDisplayed());
+        assertTrue(studentPage.AssignmentSubmittedAlert.isDisplayed());
     }
 
-    @And("The user clicks on the Closed Homework linktext")
-    public void theUserClicksOnTheClosedHomeworkLinktext() {
+    @And("The user clicks on the Closed Homework headline")
+    public void theUserClicksOnTheClosedHomeworkHeadline() {
+
         studentPage.closedHomeworkHeadline.click();
     }
 
     @Then("The user verifies that, Closed Homework list is visible")
     public void theUserVerifiesThatClosedHomeworkListIsVisible() {
+
         studentPage.closedHomeworkList.isDisplayed();
     }
 
-    @Then("The user verifies that, they are able to send a message in the Closed Homework segment\"")
+    @And("The user clicks on the closedHomeworkViewEdit icon in the action column")
+    public void theUserClicksOnTheClosedHomeworkViewEditIconInTheActionColumn() {
+        studentPage.closedHomeworkViewEditIcon.click();
+    }
+
+    @Then("The user verifies that, they are able to send a message in the Closed Homework segment")
     public void theUserVerifiesThatTheyAreAbleToSendAMessageInTheClosedHomeworkSegment() {
 
+       Assert.assertTrue(studentPage.closedHomeworkSubmittedLabel.isDisplayed());
+    }
+
+    @And("The user clicks on the Daily Assignment link button")
+    public void theUserClicksOnTheDailyAssignmentLinkButton() {
+        studentPage.dailyAssignmentLinkButton.click();
 
     }
+
+    @Then("The user verifies that they are in the Daily Assignment segment")
+    public void theUserVerifiesThatTheyAreInTheDailyAssignmentSegment() {
+        studentPage.dailyAssignmentListPage.isDisplayed();
+
+    }
+
+    @And("The user clicks on the New Assignment button")
+    public void theUserClicksOnTheNewAssignmentButton() {
+        Assert.assertTrue(studentPage.buttonIsDisplayed(false));
+
+    }
+
 
     //=====================================================
 }

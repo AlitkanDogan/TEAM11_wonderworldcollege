@@ -1,8 +1,6 @@
 package pages;
 
-import io.cucumber.java.en.Then;
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,7 +38,7 @@ public class StudentPage {
     @FindBy(xpath = "//*[@id='submit']")
     public WebElement AssignmentSaveButton;
 
-    @FindBy(xpath = "//*[@class='label label-warning'][1]")
+    @FindBy(xpath = "(//*[@class='label label-warning'])[1]")
     public WebElement AssignmentSubmittedAlert;
 
     @FindBy(xpath = "//*[@class='closed-exam']")
@@ -48,6 +46,33 @@ public class StudentPage {
 
     @FindBy(xpath = "//*[@class='content']")
     public WebElement closedHomeworkList;
+
+    @FindBy(xpath = "(//*[@class='btn btn-default btn-xs'])[15]")
+    public WebElement closedHomeworkViewEditIcon;
+
+    @FindBy(xpath = "((//*[@class='label label-warning'])[9]")  //(//*[@class='label label-warning'])[11]
+    public WebElement closedHomeworkSubmittedLabel;
+
+    @FindBy(xpath = "//*[@class='btn btn-sm btn-primary']")
+    public WebElement dailyAssignmentLinkButton;
+
+    @FindBy(xpath = "//*[@class='box box-info']")
+    public WebElement dailyAssignmentListPage;
+
+    public boolean buttonIsDisplayed(boolean newAssignmentButton){
+        try {
+            return true;
+        } catch (NoSuchElementException e){
+            return false;
+        }
+    }
+
+
+
+
+
+
+
 
 
 

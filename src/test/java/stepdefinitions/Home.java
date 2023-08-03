@@ -884,6 +884,35 @@ public class Home {
 
 
     }
+    //================US05=================
+    @When("The user clicks on the About Us menu button.")
+    public void theUserClicksOnTheAboutUsMenuButton() {
+        homePage.aboutUsLink_header.click();
 
+    }
+
+    @Then("The user verifies that About Us menu button redirects to the About us page.")
+    public void theUserVerifiesThatAboutUsMenuButtonRedirectsToTheAboutUsPage()  {
+
+        homePage.aboutUsPage.isDisplayed();
+        }
+
+    @Then("The user verifies that the sections titled Who We Are and Why Choose Our Institution are displayed.")
+    public void theUserVerifiesThatTheSectionsTitledWhoWeAreAndWhyChooseOurInstitutionAreDisplayed() {
+
+        homePage.aboutUsPageWWA_WCOI.isDisplayed();
+    }
+
+
+    @Then("The user verifies that Scholarship Facility, Skilled Lecturers, Book Library & Store, Library Facilities, Book Collection, Digital Resources headings are visible in the Why Choose Our Institution? section.")
+    public void theUserVerifiesThatScholarshipFacilitySkilledLecturersBookLibraryStoreLibraryFacilitiesBookCollectionDigitalResourcesHeadingsAreVisibleInTheWhyChooseOurInstitutionSection() {
+        assertTrue(homePage.aboutUsPageScholarshipFacility.isDisplayed());
+        assertTrue(homePage.aboutUsPageSkilledLecturers.isDisplayed());
+        assertTrue(homePage.aboutUsPageBookLibraryStore.isDisplayed());
+        assertTrue(homePage.aboutUsPageLibraryFacilities.isDisplayed());
+        assertTrue(homePage.aboutUsPageBookCollection.isDisplayed());
+        assertTrue(homePage.aboutUsPageDigitalResources.isDisplayed());
+
+    }
 }
 

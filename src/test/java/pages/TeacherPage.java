@@ -155,8 +155,11 @@ public class TeacherPage {
     @FindBy(xpath = "//*[@class='btn btn-primary btn-sm pull-right checkbox-toggle']")
     public WebElement attendancePageSCSearchButton;
 
-    @FindBy(xpath = "(//*[@class='box-body'])[2]")
+    @FindBy(xpath = "//thead/tr")
     public WebElement attendanceSelectCriteriaStudentList;
+
+    @FindBy(xpath = "(//*[@class='box-body'])[2]")
+    public WebElement attendanceSelectCriteriaStudentListAttendanceRecord;
 
 
 }

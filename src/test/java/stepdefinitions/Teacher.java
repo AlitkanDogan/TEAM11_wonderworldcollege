@@ -304,6 +304,11 @@ public class Teacher {
         teacherPage.attendanceSelectCriteriaStudentList.isDisplayed();
     }
 
+    @Then("The user verifies that, the Student List displays the attendance records of all students in the selected class for the specified date.")
+    public void theUserVerifiesThatTheStudentListDisplaysTheAttendanceRecordsOfAllStudentsInTheSelectedClassForTheSpecifiedDate() {
+        teacherPage.attendanceSelectCriteriaStudentListAttendanceRecord.isDisplayed();
+    }
+
 
     //--------------------------------------------------------------
 

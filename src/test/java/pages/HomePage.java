@@ -54,6 +54,22 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='col-md-12 spacet60 pt-0-mobile']")
     public WebElement aboutUsPageWWA_WCOI;
 
+    @FindBy(xpath = "(//*[@class='col-lg-4 col-md-4 col-sm-4'])[1]")
+    public WebElement aboutUsPageScholarshipFacility;
+
+    @FindBy(xpath = "(//*[@class='col-lg-4 col-md-4 col-sm-4'])[2]")
+    public WebElement aboutUsPageSkilledLecturers;
+    @FindBy(xpath = "(//*[@class='col-lg-4 col-md-4 col-sm-4'])[3]")
+    public WebElement aboutUsPageBookLibraryStore;
+    @FindBy(xpath = "(//*[@class='col-lg-4 col-md-4 col-sm-4'])[4]")
+    public WebElement aboutUsPageLibraryFacilities;
+    @FindBy(xpath = "(//*[@class='col-lg-4 col-md-4 col-sm-4'])[5]")
+    public WebElement aboutUsPageBookCollection;
+    @FindBy(xpath = "(//*[@class='col-lg-4 col-md-4 col-sm-4'])[6]")
+    public WebElement aboutUsPageDigitalResources;
+
+
+
 
 
     //========================Hamza=================================

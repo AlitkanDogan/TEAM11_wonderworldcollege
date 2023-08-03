@@ -902,5 +902,17 @@ public class Home {
 
         homePage.aboutUsPageWWA_WCOI.isDisplayed();
     }
+
+
+    @Then("The user verifies that Scholarship Facility, Skilled Lecturers, Book Library & Store, Library Facilities, Book Collection, Digital Resources headings are visible in the Why Choose Our Institution? section.")
+    public void theUserVerifiesThatScholarshipFacilitySkilledLecturersBookLibraryStoreLibraryFacilitiesBookCollectionDigitalResourcesHeadingsAreVisibleInTheWhyChooseOurInstitutionSection() {
+        assertTrue(homePage.aboutUsPageScholarshipFacility.isDisplayed());
+        assertTrue(homePage.aboutUsPageSkilledLecturers.isDisplayed());
+        assertTrue(homePage.aboutUsPageBookLibraryStore.isDisplayed());
+        assertTrue(homePage.aboutUsPageLibraryFacilities.isDisplayed());
+        assertTrue(homePage.aboutUsPageBookCollection.isDisplayed());
+        assertTrue(homePage.aboutUsPageDigitalResources.isDisplayed());
+
+    }
 }
 

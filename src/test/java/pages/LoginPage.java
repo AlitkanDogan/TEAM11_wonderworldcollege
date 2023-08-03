@@ -161,8 +161,11 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton_forgotPasswordPage;
 
-      @FindBy(xpath = "//div[text()='Email sending failed. Please try again.']")
+    @FindBy(xpath = "//div[text()='Email sending failed. Please try again.']")
     public WebElement emailSendingFailedText;
+
+    @FindBy(xpath = "//*[@name = 'username']")
+    public WebElement teacherUsernameTextbox;
 
 
 

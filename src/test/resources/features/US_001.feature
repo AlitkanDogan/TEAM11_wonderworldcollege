@@ -1,4 +1,4 @@
-@US1,@d
+@US1 @d
 Feature: As a user, I want to be able to access the website to use it
 
   @TC1_US1

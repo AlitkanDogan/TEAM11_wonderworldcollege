@@ -1,4 +1,4 @@
-@US32
+@US32, @d
 Feature: As an administrator (teacher), I want to be able to create exam groups for students.
 
   Background:

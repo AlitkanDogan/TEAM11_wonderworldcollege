@@ -169,5 +169,6 @@ public class ReusableMethods {
     public static void jseClick(WebElement element){
         JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].click();", element);
+        bekle(1);
     }
 }

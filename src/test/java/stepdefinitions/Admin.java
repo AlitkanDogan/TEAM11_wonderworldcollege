@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import pages.LoginPage;
 
 import utilities.ConfigReader;
@@ -26,17 +27,17 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.List;
+import java.util.Set;
 
 public class Admin {
     WebDriver driver = Driver.getDriver();
-    TeacherPage tpage=new TeacherPage();
-    AdminPage adminPage=new AdminPage();
+    TeacherPage tpage = new TeacherPage();
+    AdminPage adminPage = new AdminPage();
 
 
     /*US_29 Admin*/
     @Given("{string} {string} login admin")
-    public void Us_29(String email,String sifre)
-    {
+    public void Us_29(String email, String sifre) {
         Driver.getDriver().get(ConfigReader.getProperty("loginUrl"));
         tpage.Teacher_Button.click();
         ReusableMethods.bekle(1);
@@ -50,9 +51,9 @@ public class Admin {
         tpage.Teacher_Login_Button.click();
 
     }
+
     @Then("The Add complain window with Complain Type, Source dropdown menus and Phone, Date, Description, Action Taken, Assigned, Note textBoxes should be displayed on the Complain page")
-    public void US_29_2()
-    {
+    public void US_29_2() {
         ReusableMethods.switchToWindow("Wonder World College");
         adminPage.frontoffice.click();
         adminPage.frontoffice_Complain.click();
@@ -66,9 +67,9 @@ public class Admin {
             }
         }
     }
+
     @Then("It should be possible to upload the document related to the complaint in the Add complain window on the Complain page")
-    public void US_29_03()
-    {
+    public void US_29_03() {
 
         WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
 
@@ -79,9 +80,9 @@ public class Admin {
         jsExecutor.executeScript("arguments[0].style.display='block';", fileInput);
         fileInput.sendKeys(filePath);
     }
+
     @Then("The Complain List with the titles Complain, Complain Type, Name, Phone, Date, Action should be displayed in the Complain List window")
-    public void US_29_04()
-    {
+    public void US_29_04() {
 
         System.out.println("-----------------------");
         List<WebElement> complainSidebarElements = driver.findElements(By.className("sorting"));
@@ -94,13 +95,13 @@ public class Admin {
             }
         }
     }
+
     @Then("The details of the complaint should be displayed in the Edit Complain window opened by clicking the Edit icon under the Action title in the Complain List, it should be updated and saved with the save button")
-    public void US_29_05()
-    {
+    public void US_29_05() {
         WebElement ComplainBy = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[1]/div[3]/input"));
         ComplainBy.click();
         ComplainBy.sendKeys("ss");
-        scrollDown(driver,500);
+        scrollDown(driver, 500);
         adminPage.savebutton.click();
         adminPage.complainsearch.click();
         adminPage.complainsearch.sendKeys("ss");
@@ -113,11 +114,11 @@ public class Admin {
         WebElement complain = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[1]/div[3]/input"));
         complain.click();
         complain.sendKeys("2");
-        scrollDown(driver,500);
-        WebElement save= driver.findElement(By.xpath("//*[@id=\"form1\"]/div[2]/button"));
+        scrollDown(driver, 500);
+        WebElement save = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[2]/button"));
         save.click();
         ReusableMethods.bekle(3);
-        WebElement complaindelete=driver.findElement(By.xpath("//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[6]/a[3]"));
+        WebElement complaindelete = driver.findElement(By.xpath("//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[6]/a[3]"));
         complaindelete.click();
         Alert alert = driver.switchTo().alert();
 
@@ -125,6 +126,7 @@ public class Admin {
         alert.accept();
         ReusableMethods.bekle(5);
     }
+
     /*US_29*/
     public static void scrollDown(WebDriver driver, int pixels) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -132,13 +134,9 @@ public class Admin {
     }
 
     @And("Page Closed US_29")
-    public void close()
-    {
+    public void close() {
         Driver.closeDriver();
     }
-
-
-
 
 
     LoginPage loginPage = new LoginPage();
@@ -209,14 +207,14 @@ public class Admin {
 
     @Then("The user verifies that the Class and Section textboxes are visible on the opened page")
     public void the_user_verifies_that_the_class_and_section_textboxes_are_visible_on_the_opened_page() {
-      assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
-      assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
+        assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
+        assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
 
     }
 
     @Then("The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu")
     public void the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu() {
-        Select select=new Select(adminPage.classDropDowntBox_multiClassStudent);
+        Select select = new Select(adminPage.classDropDowntBox_multiClassStudent);
         select.selectByIndex(2);
         ReusableMethods.bekle(1);
 
@@ -224,7 +222,7 @@ public class Admin {
 
     @Then("The user clicks on the Section textbox and selects the A tab from the opened dropdown menu")
     public void the_user_clicks_on_the_section_textbox_and_selects_the_a_tab_from_the_opened_dropdown_menu() {
-        Select select=new Select(adminPage.sectionDropDownBox_multiClassStudent);
+        Select select = new Select(adminPage.sectionDropDownBox_multiClassStudent);
         select.selectByIndex(1);
         ReusableMethods.bekle(1);
 
@@ -235,11 +233,12 @@ public class Admin {
         adminPage.searchtButton_MultiClassStudent.click();
 
     }
+
     @And("The user verifies that the {string} heading is visible on the page that opens as a result of the search")
     public void theUserVerifiesThatTheHeadingIsVisibleOnThePageThatOpensAsAResultOfTheSearch(String arg0) {
-       String expectesResult="Select Criteria";
-       String actualResult=adminPage.selectCriteriaTitleText.getText();
-       assertEquals(expectesResult,actualResult);
+        String expectesResult = "Select Criteria";
+        String actualResult = adminPage.selectCriteriaTitleText.getText();
+        assertEquals(expectesResult, actualResult);
     }
 
     @When("The user clicks on the + icon in the student's window in the top-left corner")
@@ -279,13 +278,12 @@ public class Admin {
 
         assertTrue(adminPage.recordSavedSuccesfullyText_MultiClass.isDisplayed());
     }
+
     @And("Kullanıcı sol üst köşede bulunan ögrenciye ait en altta bulunan sınıf bilgisini \"\"Remove\"\" butonuna tıklayarak siler.")
     public void kullanıcıSolÜstKöşedeBulunanÖgrenciyeAitEnAlttaBulunanSınıfBilgisiniRemoveButonunaTıklayarakSiler() {
 
         adminPage.removeButton_ClassNewLine().click();
     }
-
-
 
 
     //_________________________________________________________________________
@@ -489,10 +487,232 @@ public class Admin {
         Assert.assertTrue(adminPage.adminLoginPage.isDisplayed());
     }
 
+    @When("User sees and clicks the Admin Login Button.")
+    public void user_sees_and_clicks_the_admin_login_button() {
+        loginPage.adminLoginButton.click();
+
+    }
+
+    @Then("User enters the {string} and {string} and clicks the Login Button.")
+    public void userEntersTheAndAndClicksTheLoginButton(String email, String password) {
+        String firstWhd = Driver.getDriver().getWindowHandle();
+        String secondsWhd = "";
+        Set<String> whd = Driver.getDriver().getWindowHandles();
+        for (String each : whd
+
+        ) {
+            if (!each.equals(firstWhd)) {
+                secondsWhd = each;
+            }
+        }
+        Driver.getDriver().switchTo().window(secondsWhd);
+        loginPage.adminLoginUsernameTextbox.sendKeys(email);
+        loginPage.adminLoginPasswordTextbox.sendKeys(password);
+        loginPage.adminLoginSignInButton.click();
+    }
 
 
+    @Then("Fees Master page link should be displayed under the Fees Collection menu title")
+    public void fees_master_page_link_should_be_displayed_under_the_fees_collection_menu_title() {
+        adminPage.feesCollectionClick.click();
+    }
 
-    //=====================================================
+    @Then("Fees Master page link should be clicked and redirected to the feemaster page.")
+    public void fees_master_page_link_should_be_clicked_and_redirected_to_the_feemaster_page() {
+        adminPage.feesMasterClicl.click();
+        String expectedUrl = ConfigReader.getProperty("feesMasterUrl");
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
+    }
+
+    @Then("Add Fees Master should be displayed")
+    public void add_fees_master_should_be_displayed() {
+        Assert.assertTrue(adminPage.addFeesMaster.isDisplayed());
 
 
+    }
+
+    @Then("Fees Group is displayed on the Add Fees Master page")
+    public void fees_group_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.feesGroup.isDisplayed());
+
+    }
+
+    @Then("Fees Type is displayed on the Add Fees Master page")
+    public void fees_type_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.feesType.isDisplayed());
+
+
+    }
+
+    @Then("Due Date is displayed on the Add Fees Master page")
+    public void due_date_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.dueDate.isDisplayed());
+    }
+
+    @Then("Amount Percantage\\(%), is displayed on the Add Fees Master page")
+    public void amount_percantage_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.amount.isDisplayed());
+
+    }
+
+    @Then("Fees Master \\(Fees Group, Fees Type, Due Date, Amount Percantage\\(%), Fix Amount textBoxes and Fine Type radio buttons should be seen")
+    public void fees_master_fees_group_fees_type_due_date_amount_percantage_fix_amount_text_boxes_and_fine_type_radio_buttons_should_be_seen() {
+        Assert.assertTrue(adminPage.fixAmount.isDisplayed());
+        Assert.assertTrue(adminPage.FineTypeNone.isDisplayed());
+        Assert.assertTrue(adminPage.percentageButon.isDisplayed());
+        Assert.assertTrue(adminPage.finePencere.isDisplayed());
+        Assert.assertTrue(adminPage.finePencere.isDisplayed());
+        Assert.assertTrue(adminPage.fineAmount.isDisplayed());
+
+    }
+
+    @Then("Fees Master List \\(with Fees Group, Fees Code, Amount, Action titles) should be displayed.")
+    public void fees_master_list_with_fees_group_fees_code_amount_action_titles_should_be_displayed() {
+        Assert.assertTrue(adminPage.feesGroupList.isDisplayed());
+        Assert.assertTrue(adminPage.feesCodeList.isDisplayed());
+        Assert.assertTrue(adminPage.amountList.isDisplayed());
+        Assert.assertTrue(adminPage.actionList.isDisplayed());
+
+    }
+
+    @Then("A searchBox appears to search through the Fees Master List")
+    public void a_search_box_appears_to_search_through_the_fees_master_list() {
+        Assert.assertTrue(adminPage.searchboxList.isDisplayed());
+
+    }
+
+    @Then("Valid values are entered in the Add Fees Master window.")
+    public void valid_values_are_entered_in_the_add_fees_master_window() {
+
+        Select select = new Select(adminPage.dropdownMenuElementi);
+        select.selectByVisibleText("SDK2");
+        Select select1 = new Select(adminPage.dropDowntBoxFeetype);
+        select1.selectByVisibleText("6th Installment Fees");
+        adminPage.dueDate.click();
+        adminPage.date.click();
+        adminPage.amount.sendKeys(ConfigReader.getProperty("Amount"));
+
+
+    }
+
+    @Then("After the valid values are entered in the Add Fees Master window, the Save button is clicked.")
+    public void after_the_valid_values_are_entered_in_the_add_fees_master_window_the_save_button_is_clicked() {
+        adminPage.addFeesMasterSave.click();
+
+    }
+
+    @Then("After clicking the Save button, a new Fees Master record is made.")
+    public void after_clicking_the_save_button_a_new_fees_master_record_is_made() {
+        Assert.assertTrue(adminPage.addFeesRecordSaved.isDisplayed());
+    }
+
+    // ======US25 TC5==
+    @Then("Click on the edit icon in the Fees Main List.")
+    public void click_on_the_edit_icon_in_the_fees_main_list() {
+        adminPage.feesMasterListEdit.click();
+    }
+
+    @Then("Click on the edit icon in the Fees Master List and the Edit Fees Master window opens.")
+    public void click_on_the_edit_icon_in_the_fees_master_list_and_the_edit_fees_master_window_opens() {
+        Assert.assertTrue(adminPage.editFeesMaster.isDisplayed());
+    }
+
+    @Then("Update data in Edit Fees Master window and click the Save button")
+    public void update_data_in_edit_fees_master_window_and_click_the_save_button() {
+        Select select = new Select(adminPage.dropdownMenuElementi);
+        select.selectByVisibleText("Certificate Fee");
+        Select select1 = new Select(adminPage.dropDowntBoxFeetype);
+        select1.selectByVisibleText("FERO");
+        adminPage.dueDate.click();
+        adminPage.date.click();
+        adminPage.addFeesMasterSave.click();
+
+        // adminPage.amount.sendKeys(ConfigReader.getProperty("Amount1"));
+
+    }
+
+    @Then("In the Edit Fees Master window, the registered fees are updated.")
+    public void in_the_edit_fees_master_window_the_registered_fees_are_updated() {
+
+
+    }
+
+    @Then("Click the delete icon in the Fees Master List and the registered fees are deleted.")
+    public void click_the_delete_icon_in_the_fees_master_list_and_the_registered_fees_are_deleted() {
+        adminPage.feesMasterListDelete.click();
+        Assert.assertTrue(adminPage.feesMasterListDelete.isDisplayed());
+
+
+    }
+
+    //=====uS30 TC1========
+    @When("Move menu appears and clicked in sidebar in admin panel")
+    public void move_menu_appears_and_clicked_in_sidebar_in_admin_panel() {
+        adminPage.transport.isDisplayed();
+        adminPage.transport.click();
+    }
+
+    @When("The Routes page link is displayed under the Transport menu title and")
+    public void the_routes_page_link_is_displayed_under_the_transport_menu_title_and() {
+        Assert.assertTrue(adminPage.routesClick.isDisplayed());
+
+
+    }
+
+    @When("Clicking the Routes page link under the Transport menu title leads to the route page")
+    public void clicking_the_routes_page_link_under_the_transport_menu_title_leads_to_the_route_page() {
+        adminPage.routesClick.click();
+        String expectedUrl = ConfigReader.getProperty("routeUrl");
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
+    }
+
+    //US30 TC2
+
+    @Then("Route Title textBox is active and visible in the Create Route window on the Route page")
+    public void route_title_text_box_is_active_and_visible_in_the_create_route_window_on_the_route_page() {
+
+        Assert.assertTrue(adminPage.Route_Title.isDisplayed());
+        Assert.assertTrue(adminPage.Route_Title.isEnabled());
+
+    }
+
+    @Then("On the Route page, the Save button is active and visible in the Create Route window.")
+    public void on_the_route_page_the_save_button_is_active_and_visible_in_the_create_route_window() {
+        Assert.assertTrue(adminPage.saveRoute.isDisplayed());
+        Assert.assertTrue(adminPage.saveRoute.isEnabled());
+
+    }
+
+    @Then("In the Create Route window, data is entered in the Route Title text box and saved")
+    public void in_the_create_route_window_data_is_entered_in_the_route_title_text_box_and_saved() {
+        adminPage.Route_Title.sendKeys("KÜBRA");
+        adminPage.saveRoute.click();
+    }
+
+    @Then("Data is entered in the Route Title textBox, click on the Save button, and save the route.")
+    public void data_is_entered_in_the_route_title_text_box_click_on_the_save_button_and_save_the_route() {
+        Assert.assertTrue(adminPage.RecordSaved.isDisplayed());
+    }
+
+    @When("Route List should be displayed with Route Title and Action title")
+    public void route_list_should_be_displayed_with_route_title_and_action_title() {
+        Assert.assertTrue(adminPage.routeList.isDisplayed());
+        Assert.assertTrue(adminPage.Route_Title.isDisplayed());
+        Assert.assertTrue(adminPage.routeAction.isDisplayed());
+    }
+
+    @When("Necessary updates can be made and saved in the Edit Route window")
+    public void necessary_updates_can_be_made_and_saved_in_the_edit_route_window() {
+        adminPage.routeEdit.click();
+        adminPage.Route_Title.sendKeys("TAN");
+        adminPage.saveRoute.click();
+
+
+    }
+    @When("When the delete icon under the Action title is clicked, the record should be deleted.")
+    public void when_the_delete_icon_under_the_action_title_is_clicked_the_record_should_be_deleted() {
+     adminPage.routeDelete.click();
+    }
 }

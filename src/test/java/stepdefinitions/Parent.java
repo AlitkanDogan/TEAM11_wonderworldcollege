@@ -1,21 +1,26 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.AdminPage;
-import pages.HomePage;
-import pages.ParentPage;
-import pages.TeacherPage;
+import org.openqa.selenium.interactions.Actions;
+import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Set;
+
 public class Parent {
     WebDriver driver = Driver.getDriver();
     ParentPage parentPage =new ParentPage();
+    LoginPage loginPage=new LoginPage();
 
 
     /*US_53 Parent*/
@@ -54,4 +59,44 @@ public class Parent {
     {
         Driver.closeDriver();
     }
+
+
+
+    @When("User clicks parent login button")
+    public void userClicksParentLoginButton() {
+        loginPage.parentLoginButton.click();
+
+    }
+   @Then("User enters the email and password and clicks the Login Button")
+    public void userEntersTheEmailAndPasswordAndClicksTheLoginButton() {
+
+       String firstWhd=Driver.getDriver().getWindowHandle();
+       String secondWhd="";
+       Set<String> whd = Driver.getDriver().getWindowHandles();
+       for (String each:whd
+       ) {
+           if (!each.equals(firstWhd)) {
+               secondWhd=each;
+           }
+       }
+
+       Driver.getDriver().switchTo().window(secondWhd);
+       loginPage.adminLoginUsernameTextbox.sendKeys(ConfigReader.getProperty("parentUsername_kbr"));
+        loginPage.adminLoginPasswordTextbox.sendKeys(ConfigReader.getProperty("password_kbr"));
+        loginPage.parentLoginSignInButton.click();
+    }
+
+
+
+
+    @When("User must have an access to Change Username button from Profile Picture")
+    public void userMustHaveAnAccessToChangeUsernameButtonFromProfilePicture() {
+        parentPage.imageClick.click();
+        String expected="Change Username";
+        String actual=parentPage.changePassword.getText();
+        Assert.assertEquals(expected,actual);
+    }
+
+
+
 }

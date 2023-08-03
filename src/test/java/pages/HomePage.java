@@ -248,6 +248,43 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement complainPageConfirmationMessage;
 
+    //=========================================================
+
+
+    @FindBy(xpath = "(//input[@id='name'])[2]")
+    public WebElement contactLink_Name;
+
+    @FindBy(xpath = "(//input[@id='email'])[3]")
+    public WebElement contactLink_Email;
+
+    @FindBy(xpath = "//input[@id='subject']")
+    public WebElement contactLink_Subject;
+
+    @FindBy(xpath = "//textarea[@id='description'] ")
+    public WebElement contactLink_Description;
+
+    @FindBy(xpath = "//input[@name='submit']")
+    public WebElement contactLink_Submit;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public  WebElement contactLink_Alert;
+
+    @FindBy(xpath = "//h3[text()='Our Location']")
+    public WebElement contactlink_OurLocation;
+
+    @FindBy(xpath = "//h3[text()='CALL US']")
+    public WebElement contactlink_CallUs;
+
+    @FindBy(xpath = "//h3[text()='Working Hours']")
+    public WebElement contactLink_WorkingHours;
+
+    @FindBy(className = "toast-message")
+    public WebElement warningMessage;
+
+    @FindBy(xpath = "//h2[text()='Send In Your Query']")
+    public WebElement contactLink_pageTitle;
+
+
 
 
     //************************* Methods ********************

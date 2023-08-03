@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 
 import io.cucumber.java.en.Given;
@@ -24,6 +25,7 @@ import pages.LoginPage;
 
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtilities;
 import utilities.ReusableMethods;
 
 
@@ -32,13 +34,17 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+
 import java.util.List;
 
 
 public class Admin {
     WebDriver driver = Driver.getDriver();
-    TeacherPage tpage = new TeacherPage();
-    AdminPage adminPage = new AdminPage();
+
+    TeacherPage tpage=new TeacherPage();
+    AdminPage adminPage=new AdminPage();
+    Faker faker = new Faker();
+
 
 
     /*US_29 Admin*/
@@ -216,11 +222,171 @@ public class Admin {
             assertEquals(expectedUrl, actualUrl);
         }
 
+    @When("The user selects relevant criteria from Class dropdown on Select Criteria page")
+    public void the_user_selects_relevant_criteria_from_class_dropdown_on_select_criteria_page() {
+        Select select = new Select(adminPage.studentDetailsClassDropdown);
+        select.selectByVisibleText("Class 2");
+    }
+    @When("The user selects the relevant criteria from the Section dropdown on the Select Criteria page")
+    public void the_user_selects_the_relevant_criteria_from_the_section_dropdown_on_the_select_criteria_page() {
+        Select select = new Select(adminPage.studentDetailsSectionDropdown);
+        select.selectByVisibleText("A");
+    }
+    @When("The user clicks Search button on Select Criteria page")
+    public void the_user_clicks_search_button_on_select_criteria_page() {
+        adminPage.studentDetailsFirstSearchButton.click();
+    }
+    @Then("The user verifies that a List has been created in the List View according to the relevant criteria")
+    public void the_user_verifies_that_a_list_has_been_created_in_the_list_view_according_to_the_relevant_criteria() {
+        for (WebElement each:adminPage.studentDetailsListView
+             ) {
+            assertTrue(each.isDisplayed());
+        }
+    }
+
+
+    @When("The user clicks on the student name from the list in the List View")
+    public void the_user_clicks_on_the_student_name_from_the_list_in_the_list_view() {
+        adminPage.studentDetailsListViewStudentName.click();
+    }
+    @Then("The user verifies from the student name that he or she is redirected to the profile page of the relevant student")
+    public void the_user_verifies_from_the_student_name_that_he_or_she_is_redirected_to_the_profile_page_of_the_relevant_student() {
+        assertTrue(adminPage.studentDetailsStudentName.isDisplayed());
+    }
+
+    @When("The user clicks the View icon under the Action heading from the list in the List View")
+    public void the_user_clicks_the_view_icon_under_the_action_heading_from_the_list_in_the_list_view() {
+        adminPage.studentDetailsViewIcon.click();
+    }
+
+    @When("The user clicks the Edit icon under the Action title from the list in the List View")
+    public void the_user_clicks_the_edit_icon_under_the_action_title_from_the_list_in_the_list_view() {
+        adminPage.studentDetailsEditIcon.click();
+    }
+    @Then("The user verifies from the Edit Student article on the page where the relevant student is directed to the edit page")
+    public void the_user_verifies_from_the_edit_student_article_on_the_page_where_the_relevant_student_is_directed_to_the_edit_page() {
+        assertTrue(adminPage.studentDetailsEditStudentText.isDisplayed());
+    }
+
+    @When("The user enters the relevant data in the textboxes in the Edit Student section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_edit_student_section_of_the_edit_page() {
+        adminPage.studentDetailsEditStudentRollNumberTextbox.clear();
+        adminPage.studentDetailsEditStudentRollNumberTextbox.sendKeys(ConfigReader.getProperty("editStudentRollNumber"));
+
+        Select select = new Select(adminPage.studentDetailsEditStudentClassDropdown);
+        select.selectByVisibleText("Class 1");
+
+        Select select1 = new Select(adminPage.studentDetailsEditStudentSectionDropdown);
+        select1.selectByVisibleText("B");
+
+        adminPage.studentDetailsEditStudentFirstNameTextbox.clear();
+        adminPage.studentDetailsEditStudentFirstNameTextbox.sendKeys(faker.name().firstName());
+        adminPage.studentDetailsEditStudentLastNameTextbox.sendKeys(faker.name().lastName());
+
+        Select select2 = new Select(adminPage.studentDetailsEditStudentGenderDropdown);
+        select2.selectByVisibleText("Female");
+
+        adminPage.studentDetailsEditStudentDateOfBirthTextbox.click();
+        adminPage.studentDetailsEditStudentDateOfBirth.click();
+
+        Select select3 = new Select(adminPage.studentDetailsEditStudentCategoryDropdown);
+        select3.selectByVisibleText("Special");
+
+        adminPage.studentDetailsEditStudentReligionTextbox.clear();
+        adminPage.studentDetailsEditStudentReligionTextbox.sendKeys(ConfigReader.getProperty("editStudentReligion"));
+        adminPage.studentDetailsEditStudentMobileNumberTextbox.clear();
+        adminPage.studentDetailsEditStudentMobileNumberTextbox.sendKeys(ConfigReader.getProperty("editStudentMobileNumber"));
+        adminPage.studentDetailsEditStudentEmailTextbox.clear();
+        adminPage.studentDetailsEditStudentEmailTextbox.sendKeys(faker.internet().emailAddress());
+        adminPage.studentDetailsEditStudentAdmissionDateTextbox.click();
+        adminPage.studentDetailsEditStudentDate.click();
+
+        Select select4 = new Select(adminPage.studentDetailsEditStudentBloodGroupDropdown);
+        select4.selectByVisibleText("A+");
+
+        Select select5 = new Select(adminPage.studentDetailsEditStudentHouseDropdown);
+        select5.selectByVisibleText("Blue");
+
+        adminPage.studentDetailsEditStudentHeightTextbox.clear();
+        adminPage.studentDetailsEditStudentHeightTextbox.sendKeys(ConfigReader.getProperty("editStudentHeight"));
+        adminPage.studentDetailsEditStudentWeightTextbox.clear();
+        adminPage.studentDetailsEditStudentWeightTextbox.sendKeys(ConfigReader.getProperty("editStudentWeight"));
+        adminPage.studentDetailsEditStudentMeasurementDateTextbox.click();
+        adminPage.studentDetailsEditStudentMeasurementDate.click();
+        adminPage.studentDetailsEditStudentMedicalHistoryTextbox.sendKeys(ConfigReader.getProperty("editStudentMedicalHistory"));
+    }
+    @When("The user enters the relevant data in the textboxes in the Transport Details section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_transport_details_section_of_the_edit_page() {
+        JSUtilities.scrollToElement(Driver.getDriver(),adminPage.studentDetailsEditStudentMedicalHistoryTextbox);
+
+        adminPage.studentDetailsTransportDetailsRouteListDropdown.click();
+        adminPage.studentDetailsTransportDetailsRouteList.click();
+    }
+    @When("The user selects corresponding checkboxes in Fees Details on edit page")
+    public void the_user_selects_corresponding_checkboxes_in_fees_details_on_edit_page() {
+        adminPage.studentDetailsFeesDetails.click();
+    }
+    @When("The user enters the relevant data in the textboxes in the Parent Guardian Detail section on the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_parent_guardian_detail_section_on_the_edit_page() {
+        adminPage.studentDetailsParentGuardianDetailFatherNameTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailFatherNameTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailFatherName"));
+        adminPage.studentDetailsParentGuardianDetailPhoneNoTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailPhoneNoTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailPhoneNo"));
+        adminPage.studentDetailsParentGuardianDetailFatherOccupationTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailFatherOccupationTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailFatherOccupation"));
+        adminPage.studentDetailsParentGuardianDetailMotherNameTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailMotherNameTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailMotherName"));
+        adminPage.studentDetailsParentGuardianDetailMotherPhoneTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailMotherPhoneTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailMotherPhone"));
+        adminPage.studentDetailsParentGuardianDetailMotherOccupationTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailMotherOccupationTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailMotherOccupation"));
+        adminPage.studentDetailsParentGuardianDetailIfGuardianIsRadioButton.click();
+    }
+    @When("The user enters the relevant data in the textboxes in the Address Details section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_address_details_section_of_the_edit_page() {
+        adminPage.studentDetailsAddressDetailsCurrentAddressTextbox.clear();
+        adminPage.studentDetailsAddressDetailsCurrentAddressTextbox.sendKeys(ConfigReader.getProperty("addressDetailsCurrentAddress"));
+        adminPage.studentDetailsAddressDetailsPermanentAddressTextbox.clear();
+        adminPage.studentDetailsAddressDetailsPermanentAddressTextbox.sendKeys(ConfigReader.getProperty("addressDetailsPermanentAddress"));
+    }
+    @When("The user enters the relevant data in the textboxes in the Miscellaneous Details section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_miscellaneous_details_section_of_the_edit_page() {
+        adminPage.studentDetailsMiscellaneousDetailsBankAccountNumberTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsBankAccountNumberTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsBankAccountNumber"));
+        adminPage.studentDetailsMiscellaneousDetailsIFSCCodeTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsIFSCCodeTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsIFSCCode"));
+        adminPage.studentDetailsMiscellaneousDetailsNationalIdentificationNumberTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsNationalIdentificationNumberTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsNationalIdentificationNumber"));
+        adminPage.studentDetailsMiscellaneousDetailsLocalIdentificationNumberTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsLocalIdentificationNumberTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsLocalIdentificationNumber"));
+        adminPage.studentDetailsMiscellaneousDetailsPreviousSchoolDetailsTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsPreviousSchoolDetailsTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsPreviousSchoolDetails"));
+        adminPage.studentDetailsMiscellaneousDetailsNoteTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsNote"));
+    }
+    @When("The user clicks the Save button on the edit page")
+    public void the_user_clicks_the_save_button_on_the_edit_page() {
+        adminPage.studentDetailsSaveButton.click();
+    }
+    @Then("The user verifies that the edited information has been recorded")
+    public void the_user_verifies_that_the_edited_information_has_been_recorded() {
+        assertTrue(adminPage.studentDetailsRecordUpdatedSuccessfullyText.isDisplayed());
+    }
+
+    @When("The user clicks Add Fees icon under Action from List in List View")
+    public void the_user_clicks_add_fees_icon_under_action_from_list_in_list_view() {
+        adminPage.selectCriteriaAddFeesLink.click();
+    }
+    @Then("The user verifies from the Student Fees article on the page where the relevant student is directed to the edit page")
+    public void the_user_verifies_from_the_student_fees_article_on_the_page_where_the_relevant_student_is_directed_to_the_edit_page() {
+        assertTrue(adminPage.selectCriteriaAddFeesStudentFeesText.isDisplayed());
+    }
+    //=========================================================
 
         @Then("The user verifies that the Class and Section textboxes are visible on the opened page")
         public void the_user_verifies_that_the_class_and_section_textboxes_are_visible_on_the_opened_page () {
             assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
             assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
+
 
         }
 

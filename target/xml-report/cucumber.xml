@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="26.465" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Bir Kullanici olarak Student Panel e giris yaptiktan sonra password u Change Password sayfasindan değiştirebilmeliyim." name="When the user enters the correct password combination in the new password, &quot;password has been changed successfully.&quot; should receive your message" time="25.701">
+<failure type="java.lang.AssertionError">
+<![CDATA[java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.Student.the_user_verifies_that_the_password_has_been_changed_successfully_message_has_been_received_because_the_correct_password_combination_has_been_entered(Student.java:133)
+	at ✽.The user verifies that the password has been changed successfully message has been received because the correct password combination has been entered(file:///C:/Users/ACER/IdeaProjects/TEAM11_wonderworldcollegee/src/test/resources/features/US_044.feature:60)
+]]>
+</failure>
+<system-out><![CDATA[
+Given The user goes to the "loginUrl" address...............................passed
+When The user clicks Student Login button on wonder world college page......passed
+When The user enters valid username in Username textbox on User Login page..passed
+When The user enters valid password in Password textbox on User Login page..passed
+When The user clicks Sing In buton..........................................passed
+When The user clicks profile image on the opened page.......................passed
+When The user clicks the Change Password button in the drop-down menu.......passed
+When The user types the current password into the Current Password textbox on the Change Password page.passed
+When The user types a new password in the New Password textbox on the Change Password page, not less than six characters, with the correct password combination containing uppercase letters and one special character.passed
+When The user correctly retypes the newly created password into the Confirm Password textbox on the Change Password page.passed
+When The user clicks save button on Change Password page....................passed
+Then The user verifies that the password has been changed successfully message has been received because the correct password combination has been entered.failed
+And User closes the page....................................................skipped
+]]></system-out>
+</testcase>
+</testsuite>

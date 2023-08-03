@@ -28,6 +28,33 @@ public class StudentPage {
     @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
     public WebElement homeworkPage;
 
+
+    //=======================US_44==============================
+
+    @FindBy(xpath = "//img[@class='topuser-image']")
+    public WebElement studentLoginProfileImage;
+
+    @FindBy(xpath = "//*[text()=' Change Password']")
+    public WebElement studentLoginProfileImageChangePasswordLink;
+
+    @FindBy(xpath = "//a[text()='Change Password']")
+    public WebElement studentLoginProfileImageChangePasswordText;
+
+    @FindBy(xpath = "(//input[@class='form-control col-md-7 col-xs-12'])[1]")
+    public WebElement studentLoginChangePasswordCurrentPasswordTextbox;
+
+    @FindBy(xpath = "(//input[@class='form-control col-md-7 col-xs-12'])[2]")
+    public WebElement studentLoginChangePasswordNewPasswordTextbox;
+
+    @FindBy(xpath = "(//input[@class='form-control col-md-7 col-xs-12'])[3]")
+    public WebElement studentLoginChangePasswordConfirmPasswordTextbox;
+
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public WebElement studentLoginChangePasswordSaveButton;
+
+    @FindBy(xpath = "//div[@class='nav-tabs-custom theme-shadow']")
+    public WebElement studentLoginChangePasswordPage;
+
     //======================US_47====================
 
     @FindBy(xpath = "//*[@class='content-wrapper']")
@@ -97,22 +124,6 @@ public class StudentPage {
             Assert.assertTrue(element.isDisplayed());
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-    //
-
-
-
-
 
 
 }

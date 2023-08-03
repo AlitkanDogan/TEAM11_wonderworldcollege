@@ -300,6 +300,7 @@ public class HomePage {
     @FindBy(xpath = "(//h3[text()='Lily Peterson'])[2]")
     public WebElement ourExperiencedStaffsLilyPeterson;
 
+
     //************************* Methods ********************
 
     public void wonderWorldCollegeSiteLogoIsVisible(){
@@ -408,5 +409,6 @@ public class HomePage {
 
     @FindBy(xpath = "(//a[text()='Gallery'])[1]")
     public WebElement galleryButton;
+
 
 }

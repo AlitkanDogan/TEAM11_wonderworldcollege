@@ -119,4 +119,18 @@ public class TeacherPage {
     //WonderWorld College Teacher -> Quick Links -> Human Resource -> Apply Leave -> Button -> Submit -> Error Message
     @FindBy(xpath = "//*[@id=\"toast-container\"]")
     public WebElement error;
+
+    //---------------------------US36--------------------------------
+
+    @FindBy(xpath = "//*[@class='skin-blue fixed sidebar-mini']")
+    public WebElement teacherPanel;
+
+    @FindBy(xpath = "(//*[@class='treeview '])[3]")
+    public WebElement teacherPanelAttendanceLinkButton;
+
+    @FindBy(xpath = "(//*[@href='https://qa.wonderworldcollege.com/admin/subjectattendence/reportbydate'])[2]")
+    public WebElement periodAttendanceByDateLinkButton;
+
+    @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
+    public WebElement reportByDatePage;
 }

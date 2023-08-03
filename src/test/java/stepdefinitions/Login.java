@@ -181,4 +181,23 @@ public class Login {
 
 
     //=====================================================
+
+
+    //=======================US_36==============================
+
+    @When("The user clicks on the Teacher Login button.")
+    public void the_user_clicks_on_the_teacher_login_button() {
+        loginPage.teacherLoginButton.click();
+    }
+
+    @When("The user enters their {string} to the mailtextbox")
+    public void the_user_enters_their_to_the_mailtextbox(String teacherLoginFatma) {
+        loginPage.teacherUsernameTextbox.sendKeys(ConfigReader.getProperty(teacherLoginFatma));
+    }
+    @When("The user enters their {string} to the passwordtextbox")
+    public void the_user_enters_their_to_the_passwordtextbox(String password) {
+        loginPage.adminLoginPasswordTextbox.sendKeys(ConfigReader.getProperty(password));
+    }
+
+    //=====================================================
 }

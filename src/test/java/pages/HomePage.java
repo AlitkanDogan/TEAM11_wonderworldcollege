@@ -51,6 +51,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='container spacet60']")
     public WebElement aboutUsPage;
 
+    @FindBy(xpath = "//*[@class='col-md-12 spacet60 pt-0-mobile']")
+    public WebElement aboutUsPageWWA_WCOI;
+
 
 
     //========================Hamza=================================

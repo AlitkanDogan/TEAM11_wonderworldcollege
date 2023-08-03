@@ -896,5 +896,11 @@ public class Home {
 
         homePage.aboutUsPage.isDisplayed();
         }
+
+    @Then("The user verifies that the sections titled Who We Are and Why Choose Our Institution are displayed.")
+    public void theUserVerifiesThatTheSectionsTitledWhoWeAreAndWhyChooseOurInstitutionAreDisplayed() {
+
+        homePage.aboutUsPageWWA_WCOI.isDisplayed();
+    }
 }
 

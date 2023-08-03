@@ -38,3 +38,10 @@
       And The user enters their messages in to the Assingment message textbox
       And the user clicks on the save button
       Then The user verifies that, they are able to send a message in the Closed Homework segment
+
+    @TC4_US47
+    Scenario: The user should be able to enter the "Daily Assignment" segment, click on the "New Assignment" button, and add a new assignment
+
+      And The user clicks on the Daily Assignment link button
+      Then The user verifies that they are in the Daily Assignment segment
+      And The user clicks on the New Assignment button

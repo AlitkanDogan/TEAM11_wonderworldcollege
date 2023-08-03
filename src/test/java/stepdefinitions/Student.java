@@ -3,7 +3,9 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.StudentPage;
 import utilities.Driver;
@@ -34,6 +36,7 @@ public class Student {
 
     @When("The user clicks on the Homework button link on the student panel")
     public void theUserClicksOnTheHomeworkButtonLinkOnTheStudentPanel() {
+
         studentPage.homeworkButton.click();
     }
 
@@ -64,6 +67,7 @@ public class Student {
     public void theUserClicksOnTheSaveButton() {
         studentPage.AssignmentSaveButton.click();
 
+
     }
 
     @Then("The user verifies that they are able to send their messages successfully")
@@ -79,6 +83,7 @@ public class Student {
 
     @Then("The user verifies that, Closed Homework list is visible")
     public void theUserVerifiesThatClosedHomeworkListIsVisible() {
+
         studentPage.closedHomeworkList.isDisplayed();
     }
 
@@ -89,9 +94,27 @@ public class Student {
 
     @Then("The user verifies that, they are able to send a message in the Closed Homework segment")
     public void theUserVerifiesThatTheyAreAbleToSendAMessageInTheClosedHomeworkSegment() {
-        assertTrue(studentPage.closedHomeworkSubmittedLabel.isDisplayed());
+
+       Assert.assertTrue(studentPage.closedHomeworkSubmittedLabel.isDisplayed());
     }
 
+    @And("The user clicks on the Daily Assignment link button")
+    public void theUserClicksOnTheDailyAssignmentLinkButton() {
+        studentPage.dailyAssignmentLinkButton.click();
+
+    }
+
+    @Then("The user verifies that they are in the Daily Assignment segment")
+    public void theUserVerifiesThatTheyAreInTheDailyAssignmentSegment() {
+        studentPage.dailyAssignmentListPage.isDisplayed();
+
+    }
+
+    @And("The user clicks on the New Assignment button")
+    public void theUserClicksOnTheNewAssignmentButton() {
+        Assert.assertTrue(studentPage.buttonIsDisplayed(false));
+
+    }
 
 
     //=====================================================

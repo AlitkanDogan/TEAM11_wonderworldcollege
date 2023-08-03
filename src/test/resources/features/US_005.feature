@@ -11,4 +11,6 @@ Feature:As a user, I want there to be an "About Us" page on the website so that 
 
       Then The user verifies that About Us menu button redirects to the About us page.
 
-  @TC2_US05
+  @TC1_US05
+    Scenario:
+

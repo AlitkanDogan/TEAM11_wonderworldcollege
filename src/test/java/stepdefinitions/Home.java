@@ -893,6 +893,7 @@ public class Home {
 
     @Then("The user verifies that About Us menu button redirects to the About us page.")
     public void theUserVerifiesThatAboutUsMenuButtonRedirectsToTheAboutUsPage()  {
+
         homePage.aboutUsPage.isDisplayed();
         }
 }

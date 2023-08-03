@@ -1,4 +1,4 @@
-@US43
+@US43 @d
 Feature: As a user, I should be able to log into the Student Panel with a username and password.
 
 

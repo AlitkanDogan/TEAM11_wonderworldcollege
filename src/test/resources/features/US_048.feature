@@ -1,4 +1,4 @@
-@US48
+@US48 @d
 Feature: As a user, I should be able to access the "Online Exam" page and make changes and view the Exam details When entering the Student Panel
 
   Background:

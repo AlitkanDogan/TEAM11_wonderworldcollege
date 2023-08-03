@@ -138,7 +138,23 @@ public class Student {
         assertTrue(studentPage.upcominHomeworkSubmittedLabel.isDisplayed());
     }
 
+    @And("The user deletes their assignments")
+    public void theUserDeletesTheirAssignments() {
+        studentPage.assignmentMessageTextbox.clear();
+    }
 
+    @Then("The user verifies that, they are able to delete their assignments")
+    public void theUserVerifiesThatTheyAreAbleToDeleteTheirAssignments() {
+        assertFalse(studentPage.homeworkDeleteWarningMessage.isDisplayed());
+
+
+    }
+
+    @Then("The user verifies that, the column fields in the Daily Assignment List page are visible in the Daily Assignment segment")
+    public void theUserVerifiesThatTheColumnFieldsInTheDailyAssignmentListPageAreVisibleInTheDailyAssignmentSegment() {
+        studentPage.dailyAssignmentListColumns.isDisplayed();
+
+    }
 
 
     //=====================================================

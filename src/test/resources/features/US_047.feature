@@ -56,4 +56,21 @@
       And The user clicks on the save button
       Then The user verifies that, they are able to update their assignments
 
+    @TC6_US47
+    Scenario: The user should be able to delete an assignment from the "Action" section
+
+      And The user clicks on the viewEdit icon in the action column
+      Then The user verifies that, they are able to access the homework details
+      And The user deletes their assignments
+      And The user clicks on the save button
+      Then The user verifies that, they are able to delete their assignments
+
+    @TC7_US47
+    Scenario: The user should verify the column fields in the "Daily Assignment List" page
+
+      And The user clicks on the Daily Assignment link button
+      Then The user verifies that, the column fields in the Daily Assignment List page are visible in the Daily Assignment segment
+
+
+
 

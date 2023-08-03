@@ -62,11 +62,17 @@ public class StudentPage {
     @FindBy(xpath = "//*[@class='btn btn-sm btn-primary']")
     public WebElement addDailyAssignment;
 
-    @FindBy(xpath = "//*[@class='form-control']")
-    public WebElement assignmentText;
+    @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
+    public WebElement dailyAssignmentListColumns;
 
     @FindBy(xpath = "(//*[@class='label label-warning'])[1]")
     public WebElement upcominHomeworkSubmittedLabel;
+
+
+    @FindBy(xpath = "//p[text()='The Message field is required.']")
+    public WebElement homeworkDeleteWarningMessage;
+
+
 
 
 

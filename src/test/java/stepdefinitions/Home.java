@@ -97,8 +97,7 @@ public class Home {
 
     @Then("The user verifies that the site logo in the home page top bar is displayed")
     public void the_user_verifies_that_the_site_logo_in_the_home_page_top_bar_is_displayed() {
-     //softAssert.assertTrue(homePage.WonderWorldCollegeSiteLogo.isDisplayed());
-     homePage.wonderWorldCollegeSiteLogoIsVisible();
+     softAssert.assertTrue(homePage.WonderWorldCollegeSiteLogo.isDisplayed());
     }
     @Then("The user verifies that the Home menu title on the home page top bar is displayed")
     public void the_user_verifies_that_the_home_menu_title_on_the_home_page_top_bar_is_displayed() {
@@ -377,11 +376,11 @@ public class Home {
 
     @Then("Verifies that the Comlain heading in the user footer is visible")
     public void verifies_that_the_comlain_heading_in_the_user_footer_is_visible() {
-     homePage.footerComplainIconIsVisiable();
+     assertTrue(homePage.footerComplainIcon.isDisplayed());
     }
     @Then("Verifies that the Comlain icon in the user footer is visible")
     public void verifies_that_the_comlain_icon_in_the_user_footer_is_visible() {
-     homePage.footerComplainTextIsVisiable();
+     assertTrue(homePage. footerComplainText.isDisplayed());
     }
 
     @When("The user clicks on the Complain heading in the footer section")
@@ -533,19 +532,19 @@ public class Home {
 
     @Then("The user verifies that Anthony Carter exists in our experienced staffs section")
     public void the_user_verifies_that_anthony_carter_exists_in_our_experienced_staffs_section() {
-     homePage.ourExperiencedStaffsAnthonyCarterIsVisiable();
+     assertTrue(homePage.ourExperiencedStaffsAnthonyCarter.isDisplayed());
     }
     @Then("The user verifies that Ava Turner exists in our experienced staffs section")
     public void the_user_verifies_that_ava_turner_exists_in_our_experienced_staffs_section() {
-     homePage.ourExperiencedStaffsAvaTurnerIsVisiable();
+     assertTrue(homePage.ourExperiencedStaffsAvaTurner.isDisplayed());
     }
     @Then("The user verifies that David Morgan exists in our experienced staffs section")
     public void the_user_verifies_that_david_morgan_exists_in_our_experienced_staffs_section() {
-     homePage.ourExperiencedStaffsDavidMorganIsVisiable();
+     assertTrue(homePage.ourExperiencedStaffsDavidMorgan.isDisplayed());
     }
     @Then("The user verifies that Lily Peterson exists in our experienced staffs section")
     public void the_user_verifies_that_lily_peterson_exists_in_our_experienced_staffs_section() {
-     homePage.ourExperiencedStaffsLilyPetersonIsVisiable();
+     assertTrue(homePage.ourExperiencedStaffsLilyPeterson.isDisplayed());
     }
 
     @When("The user goes down to our experienced staffs section on the main page")

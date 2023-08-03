@@ -255,6 +255,173 @@ public class AdminPage {
     @FindBy(xpath = "(//button[@type='submit'])[4]")
     public WebElement studentDetailsSecondSearchButton;
 
+    @FindBy(xpath = "//tbody/tr/td[1]")
+    public List<WebElement> studentDetailsListView;
+
+    @FindBy(xpath = "//a[text()='aleyna.dilan.ciftcier']")
+    public WebElement studentDetailsListViewStudentName;
+
+    @FindBy(xpath = "//h3[text()='aleyna.dilan.ciftcier']")
+    public WebElement studentDetailsStudentName;
+
+    @FindBy(xpath = "(//i[@class='fa fa-reorder'])[39]")
+    public WebElement studentDetailsViewIcon;
+
+    @FindBy(xpath = "(//i[@class='fa fa-pencil'])[39]")
+    public WebElement studentDetailsEditIcon;
+
+    @FindBy(xpath = "//h3[text()='Edit Student']")
+    public WebElement studentDetailsEditStudentText;
+
+    @FindBy(xpath = "//input[@id='admission_no']")
+    public WebElement studentDetailsEditStudentAdmissionNoTextbox;
+
+    @FindBy(xpath = "//input[@id='roll_no']")
+    public WebElement studentDetailsEditStudentRollNumberTextbox;
+
+    @FindBy(xpath = "//select[@id='class_id']")
+    public WebElement studentDetailsEditStudentClassDropdown;
+
+    @FindBy(xpath = "//select[@id='section_id']")
+    public WebElement studentDetailsEditStudentSectionDropdown;
+
+    @FindBy(xpath = "//input[@id='firstname']")
+    public WebElement studentDetailsEditStudentFirstNameTextbox;
+
+    @FindBy(xpath = "//input[@id='lastname']")
+    public WebElement studentDetailsEditStudentLastNameTextbox;
+
+    @FindBy(xpath = "(//select[@class='form-control'])[3]")
+    public WebElement studentDetailsEditStudentGenderDropdown;
+
+    @FindBy(xpath = "//input[@id='dob']")
+    public WebElement studentDetailsEditStudentDateOfBirthTextbox;
+    @FindBy(xpath = "(//tbody/tr/td)[12]")
+    public WebElement studentDetailsEditStudentDateOfBirth;
+
+    @FindBy(xpath = "(//select[@class='form-control'])[4]")
+    public WebElement studentDetailsEditStudentCategoryDropdown;
+
+    @FindBy(xpath = "//input[@id='religion']")
+    public WebElement studentDetailsEditStudentReligionTextbox;
+
+    @FindBy(xpath = "//input[@id='mobileno']")
+    public WebElement studentDetailsEditStudentMobileNumberTextbox;
+
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement studentDetailsEditStudentEmailTextbox;
+
+    @FindBy(xpath = "//input[@id='admission_date']")
+    public WebElement studentDetailsEditStudentAdmissionDateTextbox;
+
+    @FindBy(xpath = "(//tbody/tr/td)[33]")
+    public WebElement studentDetailsEditStudentDate;
+
+    @FindBy(xpath = "(//select[@class='form-control'])[5]")
+    public WebElement studentDetailsEditStudentBloodGroupDropdown;
+
+    @FindBy(xpath = "(//select[@class='form-control'])[6]")
+    public WebElement studentDetailsEditStudentHouseDropdown;
+
+    @FindBy(xpath = "(//input[@type='text'])[12]")
+    public WebElement studentDetailsEditStudentHeightTextbox;
+
+    @FindBy(xpath = "(//input[@type='text'])[13]")
+    public WebElement studentDetailsEditStudentWeightTextbox;
+
+    @FindBy(xpath = "(//input[@type='text'])[14]")
+    public WebElement studentDetailsEditStudentMeasurementDateTextbox;
+
+    @FindBy(xpath = "(//tbody/tr/td)[38]")
+    public WebElement studentDetailsEditStudentMeasurementDate;
+
+    @FindBy(xpath = "//textarea[@id='custom_fields[students][1]']")
+    public WebElement studentDetailsEditStudentMedicalHistoryTextbox;
+
+    @FindBy(xpath = "(//select[@class='form-control'])[7]")
+    public WebElement studentDetailsTransportDetailsRouteListDropdown;
+
+    @FindBy(xpath = "(//option[@value='4'])[4]")
+    public WebElement studentDetailsTransportDetailsRouteList;
+
+    @FindBy(xpath = "(//select[@class='form-control'])[8]")
+    public WebElement studentDetailsTransportDetailsPickupPointDropdown;
+
+    @FindBy(xpath = "//option[text()='Brooklyn Central']")
+    public WebElement studentDetailsTransportDetailsPickupPoint;
+
+    @FindBy(xpath = "//button[@autocomplete='off']")
+    public WebElement studentDetailsTransportDetailsMonthButton;
+
+    @FindBy(xpath = "//label[@for='ms-opt-1']")
+    public WebElement studentDetailsTransportDetailsMonthLabel;
+
+    @FindBy(xpath = "//input[@id='father_name']")
+    public WebElement studentDetailsParentGuardianDetailFatherNameTextbox;
+
+    @FindBy(xpath = "//input[@id='father_phone']")
+    public WebElement studentDetailsParentGuardianDetailPhoneNoTextbox;
+
+    @FindBy(xpath = "//input[@id='father_occupation']")
+    public WebElement studentDetailsParentGuardianDetailFatherOccupationTextbox;
+
+    @FindBy(xpath = "//input[@id='mother_name']")
+    public WebElement studentDetailsParentGuardianDetailMotherNameTextbox;
+
+    @FindBy(xpath = "//input[@id='mother_phone']")
+    public WebElement studentDetailsParentGuardianDetailMotherPhoneTextbox;
+
+    @FindBy(xpath = "//input[@id='mother_occupation']")
+    public WebElement studentDetailsParentGuardianDetailMotherOccupationTextbox;
+
+    @FindBy(xpath = "(//input[@type='radio'])[2]")
+    public WebElement studentDetailsParentGuardianDetailIfGuardianIsRadioButton;
+
+    @FindBy(xpath = "//textarea[@id='current_address']")
+    public WebElement studentDetailsAddressDetailsCurrentAddressTextbox;
+
+    @FindBy(xpath = "//textarea[@id='permanent_address']")
+    public WebElement studentDetailsAddressDetailsPermanentAddressTextbox;
+
+    @FindBy(xpath = "//input[@id='bank_account_no']")
+    public WebElement studentDetailsMiscellaneousDetailsBankAccountNumberTextbox;
+
+    @FindBy(xpath = "//input[@id='wonderworld123']")
+    public WebElement studentDetailsMiscellaneousDetailsBankNameTextbox;
+
+    @FindBy(xpath = "//input[@id='ifsc_code']")
+    public WebElement studentDetailsMiscellaneousDetailsIFSCCodeTextbox;
+
+    @FindBy(xpath = "//input[@id='adhar_no']")
+    public WebElement studentDetailsMiscellaneousDetailsNationalIdentificationNumberTextbox;
+
+    @FindBy(xpath = "//input[@id='samagra_id']")
+    public WebElement studentDetailsMiscellaneousDetailsLocalIdentificationNumberTextbox;
+
+    @FindBy(xpath = "(//textarea[@class='form-control'])[5]")
+    public WebElement studentDetailsMiscellaneousDetailsPreviousSchoolDetailsTextbox;
+
+    @FindBy(xpath = "(//textarea[@class='form-control'])[6]")
+    public WebElement studentDetailsMiscellaneousDetailsNoteTextbox;
+
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    public WebElement studentDetailsSaveButton;
+
+    @FindBy(xpath = "(//input[@type='checkbox'])[14]")
+    public WebElement studentDetailsFeesDetails;
+
+    @FindBy(xpath = "//div[text()='Record Updated Successfully']")
+    public WebElement studentDetailsRecordUpdatedSuccessfullyText;
+
+    @FindBy(xpath = "(//h3[@class='pagetitleh2'])[2]")
+    public WebElement studentDetailsTransportDetailsText;
+
+    @FindBy(xpath = "(//span[text()='$'])[43]")
+    public WebElement selectCriteriaAddFeesLink;
+
+    @FindBy(xpath = "//h3[text()='Student Fees']")
+    public WebElement selectCriteriaAddFeesStudentFeesText;
+
     //=========================================================
     
     @FindBy(xpath = "(//i[@class='fa fa-plus'])[1]")

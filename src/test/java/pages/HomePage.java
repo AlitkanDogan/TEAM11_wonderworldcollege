@@ -278,31 +278,5 @@ public class HomePage {
     @FindBy(xpath = "(//h3[text()='Lily Peterson'])[2]")
     public WebElement ourExperiencedStaffsLilyPeterson;
 
-    //************************* Methods ********************
-
-    public void wonderWorldCollegeSiteLogoIsVisible(){
-        WonderWorldCollegeSiteLogo.isDisplayed();
-    }
-    public void footerComplainIconIsVisiable(){
-        footerComplainIcon.isDisplayed();
-    }
-    public void footerComplainTextIsVisiable(){
-        footerComplainText.isDisplayed();
-    }
-    public void ourExperiencedStaffsAnthonyCarterIsVisiable(){
-        ourExperiencedStaffsAnthonyCarter.isDisplayed();
-    }
-    public void ourExperiencedStaffsAvaTurnerIsVisiable(){
-        ourExperiencedStaffsAvaTurner.isDisplayed();
-    }
-    public void ourExperiencedStaffsDavidMorganIsVisiable(){
-        ourExperiencedStaffsDavidMorgan.isDisplayed();
-    }
-    public void ourExperiencedStaffsLilyPetersonIsVisiable(){
-        ourExperiencedStaffsLilyPeterson.isDisplayed();
-    }
-
-
-    //==================================================================
 
 }

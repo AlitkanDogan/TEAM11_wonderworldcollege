@@ -133,4 +133,27 @@ public class TeacherPage {
 
     @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
     public WebElement reportByDatePage;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")
+    public WebElement attendanceSelectClass;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[2]")
+    public WebElement attendanceSectionClass;
+
+    @FindBy(xpath = "(//*[@value='2'])[1]")
+    public WebElement attendanceValueSelectClass;
+
+    @FindBy(xpath = "(//*[@value='1'])[2]")
+    public WebElement attendanceValueSelectSection;
+
+    @FindBy(xpath = "//*[@class='form-control date']")
+    public WebElement attendanceDate;
+
+    @FindBy(xpath = "(//*[@class='day'])[1]")
+    public WebElement attendanceCalenderSelectDate;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary btn-sm pull-right checkbox-toggle']")
+    public WebElement attendancePageSCSearchButton;
+
+
 }

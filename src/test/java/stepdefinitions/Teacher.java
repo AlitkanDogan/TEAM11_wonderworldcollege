@@ -260,6 +260,31 @@ public class Teacher {
         assertTrue(teacherPage.reportByDatePage.isDisplayed());
     }
 
+    @Then("The user verifies that, on the reportbydate page, there are a Select Criteria section with Class, Section dropdown menus, a Date box, and a Search button visible and active.")
+    public void theUserVerifiesThatOnTheReportbydatePageThereAreASelectCriteriaSectionWithClassSectionDropdownMenusADateBoxAndASearchButtonVisibleAndActive() {
+        assertTrue(teacherPage.attendanceSelectClass.isDisplayed());
+        assertTrue(teacherPage.attendanceSelectClass.isEnabled());
+        teacherPage.attendanceSelectClass.click();
+        teacherPage.attendanceValueSelectClass.click();
+
+        assertTrue(teacherPage.attendanceSectionClass.isDisplayed());
+        assertTrue(teacherPage.attendanceSectionClass.isEnabled());
+        teacherPage.attendanceSelectClass.click();
+        teacherPage.attendanceValueSelectSection.click();
+
+        assertTrue(teacherPage.attendanceDate.isDisplayed());
+        assertTrue(teacherPage.attendanceDate.isEnabled());
+        teacherPage.attendanceDate.click();
+        teacherPage.attendanceCalenderSelectDate.click();
+
+        assertTrue(teacherPage.attendancePageSCSearchButton.isDisplayed());
+        teacherPage.attendancePageSCSearchButton.click();
+
+
+
+
+    }
+
 
     //--------------------------------------------------------------
 

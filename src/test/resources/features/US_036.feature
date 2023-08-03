@@ -22,4 +22,9 @@ Feature: As an administrator (teacher), I want to access the attendance record o
     Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
 
   @TC2_US36
+  Scenario: On the "reportbydate" page, there should be a "Select Criteria" section with Class,
+            Section dropdown menus, a Date box, and a Search button visible and active.
+
+    Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
+    Then The user verifies that, on the reportbydate page, there are a Select Criteria section with Class, Section dropdown menus, a Date box, and a Search button visible and active.
 

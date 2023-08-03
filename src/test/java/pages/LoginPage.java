@@ -145,4 +145,30 @@ public class LoginPage {
 
     @FindBy(xpath = "//*[@class='bgoffsetbg']")
     public  WebElement adminLoginPage;
+
+    //----------------------us43-------------------
+    @FindBy(xpath = "//div[text()='Invalid Username Or Password']")
+    public WebElement invalidUsernameOrPassword_Text;
+
+    @FindBy(xpath = "//h3[text()='Forgot Password']")
+    public WebElement forgotPaswordPageTitle;
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement userNameBox_forgotPasswordPage;
+
+    @FindBy(xpath = "(//input[@name='user[]'])[1]")
+    public WebElement studentRadioButton_forgotPasswordPage;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement submitButton_forgotPasswordPage;
+
+    @FindBy(xpath = "//div[text()='Email sending failed. Please try again.']")
+    public WebElement emailSendingFailedText;
+
+    @FindBy(xpath = "//*[@name = 'username']")
+    public WebElement teacherUsernameTextbox;
+
+
+
 }
+
+

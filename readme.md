@@ -1,19 +1,38 @@
-gi# DIKKAT EDILMESI GEREKENLER
+# DIKKAT EDILMESI GEREKENLER
 
 ***
 
 ***GITHUB DA DIKKAT EDILMESI GEREKENLER***
-> Projede calismaya baslamadan once mutlaka
->
->      1- master/main branch 'inde "git pull" islemi yapilmalidir
->      2- kendi branch 'imize gecip "git merge master/main" islemi yapilmalidir.
+> 
+> **PUSH YAPMA İŞLEMİ**
+> 
+> ***1.*** Kendi branşımızda
+> 
+> 	**git add .**           =>(hata verirse 1 kere daha "git add .")
+> 
+> 	**git commit -m"v1"**
+> 
+> ***2.*** Main'e geçiş yapacağız => **git checkout main**
+> 
+> 	**git pull**
+> 
+> ***3.*** Kendi bransh'ımıza geçiş yapacağız => **git checkout ______**
+> 
+> 	**git merge main**
+> 
+> 	**git add .**           =>(hata verirse 1 kere daha "git add .")
+> 
+> 	**git commit -m"isim_tarih_saat"**
+> 
+> 	**git push**
+	
 
 ***COMMIT ETME ISLEMI***
 > **git add .** seklinde yapilacak!
 >
 > **git commit -m"GG.AA.YY/name-2"** (-2 --> gün içinde push etme sayısına göre)
 >
-> **git push**
+
 
 ***
 > -Her islemden once mutlaka master/main branch 'inde olunmadigi kontrol edilmelidir.

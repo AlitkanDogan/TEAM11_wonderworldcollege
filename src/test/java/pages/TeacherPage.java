@@ -119,4 +119,47 @@ public class TeacherPage {
     //WonderWorld College Teacher -> Quick Links -> Human Resource -> Apply Leave -> Button -> Submit -> Error Message
     @FindBy(xpath = "//*[@id=\"toast-container\"]")
     public WebElement error;
+
+    //---------------------------US36--------------------------------
+
+    @FindBy(xpath = "//*[@class='skin-blue fixed sidebar-mini']")
+    public WebElement teacherPanel;
+
+    @FindBy(xpath = "(//*[@class='treeview '])[3]")
+    public WebElement teacherPanelAttendanceLinkButton;
+
+    @FindBy(xpath = "(//*[@href='https://qa.wonderworldcollege.com/admin/subjectattendence/reportbydate'])[2]")
+    public WebElement periodAttendanceByDateLinkButton;
+
+    @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
+    public WebElement reportByDatePage;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")
+    public WebElement attendanceSelectClass;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[2]")
+    public WebElement attendanceSectionClass;
+
+    @FindBy(xpath = "(//*[@value='2'])[1]")
+    public WebElement attendanceValueSelectClass;
+
+    @FindBy(xpath = "(//*[@value='1'])[2]")
+    public WebElement attendanceValueSelectSection;
+
+    @FindBy(xpath = "//*[@class='form-control date']")
+    public WebElement attendanceDate;
+
+    @FindBy(xpath = "(//*[@class='day'])[1]")
+    public WebElement attendanceCalenderSelectDate;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary btn-sm pull-right checkbox-toggle']")
+    public WebElement attendancePageSCSearchButton;
+
+    @FindBy(xpath = "//thead/tr")
+    public WebElement attendanceSelectCriteriaStudentList;
+
+    @FindBy(xpath = "(//*[@class='box-body'])[2]")
+    public WebElement attendanceSelectCriteriaStudentListAttendanceRecord;
+
+
 }

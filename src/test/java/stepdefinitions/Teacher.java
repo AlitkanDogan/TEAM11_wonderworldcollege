@@ -237,6 +237,78 @@ public class Teacher {
 
     }
 
+    //==========================US_36=============================
+
+    @Then("The user verifies that they are on the Teacher panel")
+    public void the_user_verifies_that_they_are_on_the_teacher_panel() {
+        assertTrue(teacherPage.teacherPanel.isDisplayed());
+    }
+    @Then("The user clicks on the Attendance menu button, in the teacher panel's sidebar")
+    public void the_user_clicks_on_the_attendance_menu_button_in_the_teacher_panel_s_sidebar() {
+        teacherPage.teacherPanelAttendanceLinkButton.click();
+    }
+    @Then("The user verifies that the Period Attendance By Date page link is displayed.")
+    public void the_user_verifies_that_the_page_link_is_displayed() {
+        assertTrue(teacherPage.teacherPanelAttendanceLinkButton.isDisplayed());
+    }
+    @When("The user clicks on the Period Attendance By Date page link")
+    public void the_user_clicks_on_the_period_attendance_by_date_page_link() {
+        teacherPage.periodAttendanceByDateLinkButton.click();
+    }
+    @Then("The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.")
+    public void the_user_verifies_that_the_page_link_redirects_to_the_page() {
+        assertTrue(teacherPage.reportByDatePage.isDisplayed());
+    }
+
+    @Then("The user verifies that, on the reportbydate page, there are a Select Criteria section with Class, Section dropdown menus, a Date box, and a Search button visible and active.")
+    public void theUserVerifiesThatOnTheReportbydatePageThereAreASelectCriteriaSectionWithClassSectionDropdownMenusADateBoxAndASearchButtonVisibleAndActive() {
+        assertTrue(teacherPage.attendanceSelectClass.isDisplayed());
+        assertTrue(teacherPage.attendanceSelectClass.isEnabled());
+
+
+        assertTrue(teacherPage.attendanceSectionClass.isDisplayed());
+        assertTrue(teacherPage.attendanceSectionClass.isEnabled());
+
+
+        assertTrue(teacherPage.attendanceDate.isDisplayed());
+        assertTrue(teacherPage.attendanceDate.isEnabled());
+
+
+        assertTrue(teacherPage.attendancePageSCSearchButton.isDisplayed());
+        teacherPage.attendancePageSCSearchButton.isEnabled();
+
+    }
+
+    @When("The user selects class, section and date")
+    public void theUserSelectsClassSectionAndDate() {
+        teacherPage.attendanceSelectClass.click();
+        teacherPage.attendanceValueSelectClass.click();
+
+        teacherPage.attendanceSelectClass.click();
+        teacherPage.attendanceValueSelectSection.click();
+
+        teacherPage.attendanceDate.click();
+        teacherPage.attendanceCalenderSelectDate.click();
+
+    }
+
+    @And("The user clicks on the search button")
+    public void theUserClicksOnTheSearchButton() {
+
+        teacherPage.attendancePageSCSearchButton.click();
+
+    }
+
+    @Then("The user verifies that, based on the selected criteria in the Select Criteria section, a Student List is generated with columns for each student and their respective subjects.")
+    public void theUserVerifiesThatBasedOnTheSelectedCriteriaInTheSelectCriteriaSectionAStudentListIsGeneratedWithColumnsForEachStudentAndTheirRespectiveSubjects() {
+        teacherPage.attendanceSelectCriteriaStudentList.isDisplayed();
+    }
+
+    @Then("The user verifies that, the Student List displays the attendance records of all students in the selected class for the specified date.")
+    public void theUserVerifiesThatTheStudentListDisplaysTheAttendanceRecordsOfAllStudentsInTheSelectedClassForTheSpecifiedDate() {
+        teacherPage.attendanceSelectCriteriaStudentListAttendanceRecord.isDisplayed();
+    }
+
 
     //--------------------------------------------------------------
 

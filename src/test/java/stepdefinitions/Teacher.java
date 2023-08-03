@@ -264,25 +264,44 @@ public class Teacher {
     public void theUserVerifiesThatOnTheReportbydatePageThereAreASelectCriteriaSectionWithClassSectionDropdownMenusADateBoxAndASearchButtonVisibleAndActive() {
         assertTrue(teacherPage.attendanceSelectClass.isDisplayed());
         assertTrue(teacherPage.attendanceSelectClass.isEnabled());
-        teacherPage.attendanceSelectClass.click();
-        teacherPage.attendanceValueSelectClass.click();
+
 
         assertTrue(teacherPage.attendanceSectionClass.isDisplayed());
         assertTrue(teacherPage.attendanceSectionClass.isEnabled());
-        teacherPage.attendanceSelectClass.click();
-        teacherPage.attendanceValueSelectSection.click();
+
 
         assertTrue(teacherPage.attendanceDate.isDisplayed());
         assertTrue(teacherPage.attendanceDate.isEnabled());
+
+
+        assertTrue(teacherPage.attendancePageSCSearchButton.isDisplayed());
+        teacherPage.attendancePageSCSearchButton.isEnabled();
+
+    }
+
+    @When("The user selects class, section and date")
+    public void theUserSelectsClassSectionAndDate() {
+        teacherPage.attendanceSelectClass.click();
+        teacherPage.attendanceValueSelectClass.click();
+
+        teacherPage.attendanceSelectClass.click();
+        teacherPage.attendanceValueSelectSection.click();
+
         teacherPage.attendanceDate.click();
         teacherPage.attendanceCalenderSelectDate.click();
 
-        assertTrue(teacherPage.attendancePageSCSearchButton.isDisplayed());
+    }
+
+    @And("The user clicks on the search button")
+    public void theUserClicksOnTheSearchButton() {
+
         teacherPage.attendancePageSCSearchButton.click();
 
+    }
 
-
-
+    @Then("The user verifies that, based on the selected criteria in the Select Criteria section, a Student List is generated with columns for each student and their respective subjects.")
+    public void theUserVerifiesThatBasedOnTheSelectedCriteriaInTheSelectCriteriaSectionAStudentListIsGeneratedWithColumnsForEachStudentAndTheirRespectiveSubjects() {
+        teacherPage.attendanceSelectCriteriaStudentList.isDisplayed();
     }
 
 

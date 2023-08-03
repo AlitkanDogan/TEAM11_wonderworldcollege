@@ -25,6 +25,13 @@ Feature: As an administrator (teacher), I want to access the attendance record o
   Scenario: On the "reportbydate" page, there should be a "Select Criteria" section with Class,
             Section dropdown menus, a Date box, and a Search button visible and active.
 
-    Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
-    Then The user verifies that, on the reportbydate page, there are a Select Criteria section with Class, Section dropdown menus, a Date box, and a Search button visible and active.
+      Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
+      Then The user verifies that, on the reportbydate page, there are a Select Criteria section with Class, Section dropdown menus, a Date box, and a Search button visible and active.
 
+  @TC3_US36
+  Scenario: Based on the selected criteria in the "Select Criteria" section,
+            a "Student List" should be generated with columns for each student and their respective subjects.
+      Then The user verifies that, the Period Attendance By Date page link redirects to the reportbydate page.
+      When The user selects class, section and date
+      And The user clicks on the search button
+      Then The user verifies that, based on the selected criteria in the Select Criteria section, a Student List is generated with columns for each student and their respective subjects.

@@ -1,52 +1,64 @@
 package stepdefinitions;
 
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.WebElement;
-import pages.HomePage;
-
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-
-import com.github.javafaker.Faker;
-
 import io.cucumber.java.en.When;
-
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
-
+import pages.HomePage;
+import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.JSUtilities;
+import utilities.ReusableMethods;
+
+import static org.junit.Assert.*;
+
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebElement;
 
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+
 
 public class Home {
 
-    WebDriver driver = Driver.getDriver();
-    HomePage page = new HomePage();
+
+    WebDriver driver= Driver.getDriver();
+    HomePage page=new HomePage();
 
     HomePage homePage = new HomePage();
 
-    Actions actions = new Actions(driver);
-    SoftAssert softAssert = new SoftAssert();
+ String expectedTitle="";
+ String actualTitle="";
 
-    Faker faker = new Faker();
 
-    String expectedTitle = "";
-    String actualTitle = "";
+   Actions actions=new Actions(driver);
+   SoftAssert softAssert = new SoftAssert();
+
+   Faker faker = new Faker();
+
+
+
+
+
+
+
+
+
+
+
     String expectedConfirmationMessage = "";
     String actualConfirmationMessage = "";
+
 
     //VVVVVVVVVVVVVVVV  US01 VVVVVVVVVVVVVVVVVVV
     @Given("The user goes to the {string} address")
@@ -942,5 +954,57 @@ public class Home {
         assertTrue(homePage.aboutUsPageDigitalResources.isDisplayed());
 
     }
+
+
+ /////////us09///////////
+ @When("Click on the Contact menu title on the home page top bar")
+ public void click_on_the_contact_menu_title_on_the_home_page_top_bar() {
+  homePage.contactLink_header.click();
+
+ }
+
+ @Then("It is tested that the contact page is redirected")
+ public void redirects_to_contact_page() {
+  Assert.assertTrue(homePage.contactLink_pageTitle.isDisplayed());
+ }
+
+
+ @Then("In the Send In Your Query section Name Email Subject Description textBoxes is confirmed to be visible")
+ public void in_the_send_in_your_query_section_name_email_subject_description_text_boxes_is_confirmed_to_be_visible() {
+  Assert.assertTrue(homePage.contactLink_Name.isDisplayed());
+  Assert.assertTrue(homePage.contactLink_Email.isDisplayed());
+  Assert.assertTrue(homePage.contactLink_Subject.isDisplayed());
+  Assert.assertTrue(homePage.contactLink_Description.isDisplayed());
+
+
+ }
+ @Then("Name, Email, Subject, Description textBoxes It is verified that data can be entered")
+ public void name_email_subject_description_text_boxes_it_is_verified_that_data_can_be_entered() {
+
+  homePage.contactLink_Name.sendKeys(faker.name().firstName());
+  homePage.contactLink_Email.sendKeys(faker.internet().emailAddress());
+  homePage.contactLink_Subject.sendKeys(ConfigReader.getProperty("contactLink_Subject"));
+  homePage.contactLink_Description.sendKeys(ConfigReader.getProperty("complainDescription"));
+ }
+ @Then("Clicking the Submit button confirms that the query has been submitted")
+ public void clicking_the_submit_button_confirms_that_the_query_has_been_submitted() {
+  homePage.contactLink_Submit.click();
+  String expectedMesaj=ConfigReader.getProperty("complainPageConfirmationMessage");
+  String actualMesaj=homePage.complainPageConfirmationMessage.getText();
+  Assert.assertEquals(expectedMesaj,actualMesaj);
+
+
+
+ }
+ @Then("On the Contact page, Our Location, Call Us,Verify that Working Hours information is visible")
+ public void on_the_contact_page_our_location_call_us_verify_that_working_hours_information_is_visible() {
+  Assert.assertTrue( homePage.contactlink_OurLocation.isDisplayed());
+  Assert.assertTrue(homePage.contactlink_CallUs.isDisplayed());
+  Assert.assertTrue(homePage.contactLink_WorkingHours.isDisplayed());
+
+ }
+
+
+
 }
 

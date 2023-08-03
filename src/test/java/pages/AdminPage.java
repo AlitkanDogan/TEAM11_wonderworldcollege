@@ -1,6 +1,7 @@
 package pages;
 
 
+import org.apache.commons.compress.archivers.zip.X000A_NTFS;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -463,4 +464,139 @@ public class AdminPage {
     }
 //===============================================================================
 
+
+
+    @FindBy(xpath = "//span[text()='Fees Collection']")
+    public WebElement feesCollectionClick;
+
+    @FindBy(xpath = "(//*[text()='Fees Master'])[2]")
+    public  WebElement feesMasterClicl;
+    @FindBy(xpath = "//h3[@class='box-title']")
+    public WebElement addFeesMaster;
+    @FindBy(xpath = "//select[@id='fee_groups_id']")
+    public WebElement feesGroup;
+
+    @FindBy(xpath = "//select[@id='feetype_id']")
+    public WebElement feesType;
+
+    @FindBy(xpath = "//input[@id='due_date']")
+    public WebElement dueDate;
+    @FindBy(xpath = "//input[@id='amount']")
+    public WebElement amount;
+
+    @FindBy(xpath = "(//input[@name='account_type'])[1]")
+    public  WebElement FineTypeNone;
+
+    @FindBy(xpath = "(//input[@name='account_type'])[2]")
+    public  WebElement percentageButon;
+
+    @FindBy(xpath = "(//input[@name='account_type'])[3]")
+    public WebElement fixAmount;
+
+    @FindBy(xpath = "//input[@id='fine_percentage']")
+    public WebElement finePencere;
+
+    @FindBy(xpath = "//input[@id='fine_amount']")
+    public WebElement fineAmount;
+
+
+    @FindBy(xpath = "(//th[@class='sorting'])[1]")
+    public WebElement feesGroupList;
+
+    @FindBy(xpath = "(//div[@class='col-md-6'])[3]") // (//div[@class="col-md-6"])[3]
+    public WebElement feesCodeList;
+
+    @FindBy(xpath = "(//div[@class='col-md-6'])[4]")
+    public WebElement amountList;
+
+    @FindBy(xpath = "//*[@class='text-right noExport sorting']")
+    public WebElement actionList;
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement searchboxList;
+
+    @FindBy(xpath = "//select[@name='fee_groups_id']")
+    public WebElement dropdownMenuElementi;
+    @FindBy(xpath = "//select[@name='feetype_id']")
+    public WebElement dropDowntBoxFeetype;
+   @FindBy(xpath = "(//tbody/tr/td)[10]")
+   public  WebElement date;
+
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    public WebElement addFeesMasterSave;
+    @FindBy(xpath = "//div[text()='Record Saved Successfully']")
+    public WebElement addFeesRecordSaved;
+
+
+    @FindBy(xpath = "(//i[@class='fa fa-pencil'])[5]")
+    public WebElement feesMasterListEdit;
+    @FindBy(xpath = "//h3[@class='box-title']")
+    public WebElement editFeesMaster;
+    @FindBy(xpath = "//div[text()='Record Updated Successfully']")
+    public WebElement editRecord;
+
+    @FindBy(xpath = "(//i[@class='fa fa-remove'])[1]")
+    public WebElement feesMasterListDelete;
+
+    @FindBy(xpath = "//span[text()='Transport']")
+    public WebElement transport;
+
+    @FindBy(xpath = "(//*[text()='Routes'])[2]")
+    public WebElement routesClick;
+    @FindBy(xpath = "(//*[text()='Create Route'])")
+    public WebElement createRoute;
+
+
+    @FindBy(xpath = "//input[@id=\"route_title\"]")
+    public WebElement Route_Title;
+
+    @FindBy(xpath = "(//button[@type=\"submit\"])[3]")
+    public WebElement saveRoute;
+
+  @FindBy(xpath = "//div[text()='Record Saved Successfully']")
+    public WebElement RecordSaved;
+
+  @FindBy(xpath = "//h3[@class=\"box-title titlefix\"]")
+  public WebElement routeList;
+
+  @FindBy(xpath = "//th[@class=\"sorting_desc\"]")
+  public  WebElement routeTitle;
+
+  @FindBy(xpath = "//th[@class=\"text-right noExport sorting\"]")
+  public WebElement routeAction;
+  @FindBy(xpath = "(//i[@class='fa fa-pencil'])[2]")
+  public WebElement routeEdit;
+
+    @FindBy(xpath = "(//i[@class='fa fa-remove'])[1]")
+    public WebElement routeDelete;
+
+
+    /*
+    @FindBy(xpath = "//*[@id=\"form1\"]/div[1]/div/label")
+    public WebElement Route_Title;
+    //Admin->login button->submit button -> Transport ->Routes ->Route_Title_TextBox
+    @FindBy(xpath = "//*[@id=\"route_title\"]")
+    public WebElement Route_Title_TextBox;
+    //Admin->login button->submit button -> Transport ->Routes ->Route_Title_Save
+    @FindBy(xpath = "//*[@id=\"form1\"]/div[2]/button")
+    public WebElement Route_Title_Save;
+    //Admin->login button->submit button -> Transport ->Routes ->RouteList_h1
+    @FindBy(xpath = "//*[@id=\"route\"]/div[1]/h3")
+    public WebElement RouteList_h1;
+    //Admin->login button->submit button -> Transport ->Routes ->Route_Title_DropDown
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/thead/tr/th[1]")
+    public WebElement Route_Title_DropDown;
+    //Admin->login button->submit button -> Transport ->Routes ->Action
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/thead/tr/th[2]")
+    public WebElement Action;
+    //Admin->login button->submit button -> Transport ->Routes ->Search
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_filter\"]/label/input")
+    public WebElement Search;
+    //Admin->login button->submit button -> Transport ->Routes ->Remove
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/tbody/tr/td[2]/a[2]/i")
+    public WebElement remove;
+
+     */
 }
+
+

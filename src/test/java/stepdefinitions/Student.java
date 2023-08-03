@@ -63,7 +63,7 @@ public class Student {
 
     }
 
-    @And("the user clicks on the save button")
+    @And("The user clicks on the save button")
     public void theUserClicksOnTheSaveButton() {
         studentPage.AssignmentSaveButton.click();
 
@@ -112,9 +112,33 @@ public class Student {
 
     @And("The user clicks on the New Assignment button")
     public void theUserClicksOnTheNewAssignmentButton() {
-        Assert.assertTrue(studentPage.buttonIsDisplayed(false));
+        String expectedText = "New Assignment";
+        String actualText = "";
+        actualText = studentPage.addDailyAssignment.getText().toString();
+
+        assertEquals(expectedText,actualText);
 
     }
+
+    @When("The user verifies that submitted label is visible below the status")
+    public void theUserVerifiesThatSubmittedLabelIsVisibleBelowTheStatus() {
+        assertTrue(studentPage.upcominHomeworkSubmittedLabel.isDisplayed());
+    }
+
+    @And("The user enters their updated  messages in to the Assingment message textbox")
+    public void theUserEntersTheirUpdatedMessagesInToTheAssingmentMessageTextbox() {
+
+        studentPage.assignmentMessageTextbox.sendKeys("Updated Homework");
+
+    }
+
+
+    @Then("The user verifies that, they are able to update their assignments")
+    public void theUserVerifiesThatTheyAreAbleToUpdateTheirAssignments() {
+        assertTrue(studentPage.upcominHomeworkSubmittedLabel.isDisplayed());
+    }
+
+
 
 
     //=====================================================

@@ -24,7 +24,7 @@
       And The user clicks on the viewEdit icon in the action column
       Then The user verifies that, they are able to access the homework details
       And The user enters their messages in to the Assingment message textbox
-      And the user clicks on the save button
+      And The user clicks on the save button
       Then The user verifies that they are able to send their messages successfully
 
 
@@ -36,7 +36,7 @@
       Then The user verifies that, Closed Homework list is visible
       And The user clicks on the closedHomeworkViewEdit icon in the action column
       And The user enters their messages in to the Assingment message textbox
-      And the user clicks on the save button
+      And The user clicks on the save button
       Then The user verifies that, they are able to send a message in the Closed Homework segment
 
     @TC4_US47
@@ -45,3 +45,15 @@
       And The user clicks on the Daily Assignment link button
       Then The user verifies that they are in the Daily Assignment segment
       And The user clicks on the New Assignment button
+
+    @TC5_US47
+    Scenario: The user should be able to update assignments from the "Action" section
+
+      When The user verifies that submitted label is visible below the status
+      And The user clicks on the viewEdit icon in the action column
+      Then The user verifies that, they are able to access the homework details
+      And The user enters their updated  messages in to the Assingment message textbox
+      And The user clicks on the save button
+      Then The user verifies that, they are able to update their assignments
+
+

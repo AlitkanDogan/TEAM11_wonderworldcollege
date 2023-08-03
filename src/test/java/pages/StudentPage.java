@@ -32,7 +32,7 @@ public class StudentPage {
     @FindBy(id ="assigment_message")
     public WebElement assignmentMessageTextbox;
 
-    @FindBy(xpath = "(//*[@class='fa fa-reorder'])[1]")
+    @FindBy(xpath = "(//*[@class='btn btn-default btn-xs'])[1]")
     public WebElement homeworkPageViewEditIcon;
 
     @FindBy(xpath = "//*[@id='submit']")
@@ -50,7 +50,7 @@ public class StudentPage {
     @FindBy(xpath = "(//*[@class='btn btn-default btn-xs'])[15]")
     public WebElement closedHomeworkViewEditIcon;
 
-    @FindBy(xpath = "((//*[@class='label label-warning'])[9]")  //(//*[@class='label label-warning'])[11]
+    @FindBy(xpath = "(//*[@class='label label-warning'])[9]")
     public WebElement closedHomeworkSubmittedLabel;
 
     @FindBy(xpath = "//*[@class='btn btn-sm btn-primary']")
@@ -59,25 +59,18 @@ public class StudentPage {
     @FindBy(xpath = "//*[@class='box box-info']")
     public WebElement dailyAssignmentListPage;
 
-    public boolean buttonIsDisplayed(boolean newAssignmentButton){
-        try {
-            return true;
-        } catch (NoSuchElementException e){
-            return false;
-        }
-    }
+    @FindBy(xpath = "//*[@class='btn btn-sm btn-primary']")
+    public WebElement addDailyAssignment;
+
+    @FindBy(xpath = "//*[@class='form-control']")
+    public WebElement assignmentText;
+
+    @FindBy(xpath = "(//*[@class='label label-warning'])[1]")
+    public WebElement upcominHomeworkSubmittedLabel;
 
 
 
 
-
-
-
-
-
-
-
-    //
 
 
 

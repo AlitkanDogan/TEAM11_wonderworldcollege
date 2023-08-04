@@ -161,5 +161,28 @@ public class TeacherPage {
     @FindBy(xpath = "(//*[@class='box-body'])[2]")
     public WebElement attendanceSelectCriteriaStudentListAttendanceRecord;
 
+    //@FindBy (xpath = "//a[@class='btn btn-default btn-lg']")
+    //public WebElement TeacherLogin;
+
+    //Hatice US35
+
+    @FindBy(xpath = "//input[@id='form-username']")
+    public WebElement TeacherUsername;
+
+    @FindBy(xpath = "//input[@id='form-password']")
+    public WebElement TeacherPassword;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement TeacherPageSignIn;
+
+    @FindBy (xpath = "//span[text()='Attendance']")
+    public WebElement TeacherPageAttandance;
+
+    @FindBy(xpath = "(//*[text()='Period Attendance'])[2]")
+    public WebElement PeriodAttandence;
+
+    @FindBy(xpath = "//*[text()=' Select Criteria']")
+    public WebElement SelectCriteria;
+
 
 }

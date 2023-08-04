@@ -597,6 +597,81 @@ public class AdminPage {
     public WebElement remove;
 
      */
+
+
+    //################################# US_27 ############################################
+
+    @FindBy(xpath = "//a[@href='../site/login']")
+    public WebElement adminLoginButton;
+
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement adminNameBox;
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement adminPasswordBox;
+    @FindBy(xpath = "//span[@href='#']")
+    public WebElement adminPanelVerification;
+    @FindBy(xpath = "(//li[@class='treeview '])[3]")
+    public WebElement adminFeesCollectionButton;
+    @FindBy(xpath = "//span[text()='Fees Collection']")
+    public WebElement adminFeesTypeButton;
+
+    @FindBy(xpath = "(//a[@href=\"https://qa.wonderworldcollege.com/admin/feetype\"])[2]")
+    public WebElement getAdminFeesCollectionButton;
+
+
+    @FindBy(xpath = "//h3[@class='box-title']")
+    public WebElement adminFeesTypeVerification;
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement adminFeesTypeNameBox;
+    @FindBy(xpath = "//input[@id='code']")
+    public WebElement adminFeesTypeCodeBox;
+    @FindBy(xpath = "//textarea[@id='description']")
+    public WebElement adminFeesTypeDescriptionBox;
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    public WebElement adminFeesTypeSaveButton;
+    @FindBy(xpath = "(//th[@class='sorting'])[1]")
+    public WebElement adminFeesTypeListName;
+    @FindBy(xpath = "(//th[@class='sorting'])[2]")
+    public WebElement adminFeesTypeListFeesCode;
+    @FindBy(xpath = "//th[@class='text-right noExport sorting']")
+    public WebElement adminFeesTypeListAction;
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    public WebElement adminFeesTypeListSaveButton;
+    @FindBy(xpath = "//div[@class='alert alert-success text-left']")
+    public WebElement adminRecordUpdatedSuccessfully;
+    @FindBy(xpath = "//i[@class='fa fa-pencil']")
+    public WebElement adminEditButton;
+    @FindBy(xpath = "//i[@class='fa fa-remove']")
+    public WebElement adminDeleteButton;
+    @FindBy(xpath = "//span[text()='Academics']")
+    public WebElement adminAcademicsButton;
+    @FindBy(xpath = "(//a[@href='https://qa.wonderworldcollege.com/admin/teacher/assign_class_teacher'])[2]")
+    public WebElement adminAssignClassTeacherButton;
+    @FindBy(xpath = "//input[@name='teachers[]']")
+    public WebElement adminClassTeacherList;
+    @FindBy(xpath = "(//select[@class='form-control'])[1]")
+    public WebElement adminClassSelectBox;
+    @FindBy(xpath = "(//select[@class='form-control'])[2]")
+    public WebElement adminSectionSelectBox;
+    @FindBy(xpath = "//*[@id=\"form1\"]/div[2]/button")
+    public WebElement adminAssignClassTeacherSaveButton;
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement adminRecordSavedSuccessfully;
+    @FindBy(xpath = "(//input[@type='checkbox'])[3]")
+    public WebElement adminTeacherBox;
+    @FindBy(xpath = "(//th[@class='sorting'])[1]")
+    public WebElement adminClassTeacherListClassText;
+    @FindBy(xpath = "(//th[@class='sorting'])[2]")
+    public WebElement adminClassTeacherListSectionText;
+    @FindBy(xpath = "(//th[@class='sorting'])[3]")
+    public WebElement adminClassTeacherListClassTeacherText;
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement adminAssignRecordUpdatedSuccessfully;
+    @FindBy(xpath = "//div[@class='alert alert-success text-center']")
+    public WebElement adminRecordDeleteSuccessfully;
+    @FindBy(xpath = "//i[@class='fa fa-remove']")
+    public WebElement adminDeleteTeacherButton;
 }
 
 

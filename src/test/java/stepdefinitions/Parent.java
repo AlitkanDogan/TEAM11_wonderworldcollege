@@ -96,6 +96,41 @@ public class Parent {
         Assert.assertEquals(expected,actual);
     }
 
+// ########################################### US_50 ###################################################
+
+    @Given("The user opens the Browser.")
+    public void the_user_opens_the_browser() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("User goes to Url.")
+    public void user_goes_to_url() {
+
+    }
+    @Then("User clicks Parent Login button on Wonder world college page.")
+    public void user_clicks_parent_login_button_on_wonder_world_college_page() {
+
+    }
+    @Then("User enters valid username in Username textbox on User Login page.")
+    public void user_enters_valid_username_in_username_textbox_on_user_login_page() {
+
+    }
+    @Then("User enters valid password in Password textbox on User Login page.")
+    public void user_enters_valid_password_in_password_textbox_on_user_login_page() {
+
+    }
+    @Then("The user clicks the Sign In button.")
+    public void the_user_clicks_the_sign_ın_button() {
+
+    }
+    @Then("The user clicks on the {string} link in the Sidebar of the panel.")
+    public void the_user_clicks_on_the_link_in_the_sidebar_of_the_panel(String string) {
+
+    }
+    @Then("The user is verified that the text {string} is displayed on the page that opens")
+    public void the_user_is_verified_that_the_text_is_displayed_on_the_page_that_opens(String string) {
+
+    }
 
 
 }

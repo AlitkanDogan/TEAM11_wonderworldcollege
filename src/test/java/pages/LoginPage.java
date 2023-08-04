@@ -176,6 +176,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[@name = 'username']")
     public WebElement teacherUsernameTextbox;
 
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement adminNameBox;
+
 
 
 }

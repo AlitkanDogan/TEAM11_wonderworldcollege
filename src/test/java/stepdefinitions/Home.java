@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import utilities.ConfigReader;
@@ -1121,5 +1122,377 @@ public class Home {
 
     }
 
+    //================================================================================================
+    //US_03
+    @Then("Online Admission button is clicked and displayed on the menu")
+    public void onlineAdmissionButtonIsClickedAndDisplayedOnTheMenu() {
+        softAssert.assertTrue(homePage.OnlineAdmissionButton.isDisplayed());
+
+
+    }
+
+
+    @Then("The user clicks Online Admission button")
+    public void theUserClicksOnlineAdmissionButton() {
+        homePage.OnlineAdmissionButton.click();
+    }
+
+    @Then("When user opens the “Online Admission” page, the instruction section should be displayed.")
+    public void whenUserOpensTheOnlineAdmissionPageTheInstructionSectionShouldBeDisplayed() {
+        softAssert.assertTrue(homePage.InstructionSection.isDisplayed());
+    }
+
+    @Then("User completes  Basic details section and writes down under request sections such as; class, first name, last name, gender, date of birth and email.")
+    public void userCompletesBasicDetailsSectionAndWritesDownUnderRequestSectionsSuchAsClassFirstNameLastNameGenderDateOfBirthAndEmail() {
+
+        Select select= new Select(homePage.BasicSectionClassButonu);
+        select.selectByVisibleText("Class 1");
+
+        homePage.fisrtnamesection.sendKeys("Hatice");
+        String expFirstname= "Hatice";
+        String actFirstname= homePage.BasicSecFirstName.getText();
+        softAssert.assertEquals(expFirstname,actFirstname );
+
+        homePage.lastnamesection.sendKeys("Ciftci");
+        String expLastname= "Ciftci";
+        String actLastname= homePage.BasicSecFirstName.getText();
+        softAssert.assertEquals(expLastname,actLastname );
+
+        homePage.GenderFemailbutonu.click();
+        softAssert.assertTrue(homePage.GenderFemailbutonu.isSelected());
+
+
+        homePage.DateofbirthButonu.click();
+        homePage.OnlineAddmissionDOB.click();
+        softAssert.assertTrue(homePage.DateofbirthButonu.isSelected());
+
+        homePage.BasicSecEmail.sendKeys("hatice@gmail.com");
+        String expEmail="hatice@gmail.com";
+        String actEmail= homePage.BasicSecEmail.getText();
+        softAssert.assertEquals(expEmail,actEmail);
+
+    }
+
+    @Then("User completes mobile number and student photo sections")
+    public void userCompletesMobileNumberAndStudentPhotoSections() {
+
+        homePage.BasicSecMobileNumber.click();
+        homePage.BasicSecMobileNumber.sendKeys("123456789");
+        String expMobile= "123456789";
+        String actMobile= homePage.BasicSecMobileNumber.getText();
+
+        softAssert.assertEquals(expMobile,actMobile);
+
+    }
+
+    @Then("All of sections which under the “Basic Details” are checked to visibility.")
+    public void allOfSectionsWhichUnderTheBasicDetailsAreCheckedToVisibility() {
+
+        softAssert.assertTrue(homePage.BasicSectionClassButonu.isDisplayed());
+        softAssert.assertTrue(homePage.BasicSecFirstName.isDisplayed());
+        softAssert.assertTrue(homePage.BasicSecLastName.isDisplayed());
+        softAssert.assertTrue(homePage.BasicSecEmail.isDisplayed());
+        softAssert.assertTrue(homePage.BasicSecGender.isDisplayed());
+        softAssert.assertTrue(homePage.DateofbirthButonu.isDisplayed());
+
+    }
+
+    @Then("User see “Mother and Father” section under the”Basic Details” section in the “Online Admission page” and completes these sections properly.")
+    public void userSeeMotherAndFatherSectionUnderTheBasicDetailsSectionInTheOnlineAdmissionPageAndCompletesTheseSectionsProperly() {
+
+        homePage.FatherName.sendKeys("Mehmet");
+        String expFatherName="Mehmet";
+        String actFatherName=homePage.FatherName.getText();
+        softAssert.assertEquals(expFatherName,actFatherName);
+
+        homePage.MotherName.sendKeys("Ayse");
+        String expMotherName="Ayse";
+        String actMotherName=homePage.MotherName.getText();
+        softAssert.assertEquals(expMotherName,actMotherName);
+
+        softAssert.assertTrue(homePage.FatherName.isDisplayed());
+        softAssert.assertTrue(homePage.FatherName.isEnabled());
+        softAssert.assertTrue(homePage.MotherName.isDisplayed());
+        softAssert.assertTrue(homePage.MotherName.isEnabled());
+
+    }
+
+    @Then("User clicks “Student Photo” sections where under “Basic Section” and user uploads photo what user wants on the Online Admission Page.")
+    public void userClicksStudentPhotoSectionsWhereUnderBasicSectionAndUserUploadsPhotoWhatHeSheWantsOnTheOnlineAdmissionPage() {
+    }
+
+    @Then("User check to visibility the sections which under the “Guardian Details”  on the  Online Admission Page.")
+    public void userCheckToVisibilityTheSectionsWhichUnderTheGuardianDetailsOnTheOnlineAdmissionPage() {
+        softAssert.assertTrue(homePage.GuardMother.isDisplayed());
+        softAssert.assertTrue(homePage.GuardianName.isDisplayed());
+        softAssert.assertTrue(homePage.GuardionRel.isDisplayed());
+        softAssert.assertTrue(homePage.GuardEmail.isDisplayed());
+        softAssert.assertTrue(homePage.GuardianPhoto.isDisplayed());
+        softAssert.assertTrue(homePage.GuardianPhone.isDisplayed());
+        softAssert.assertTrue(homePage.GuardianAddress.isDisplayed());
+
+
+    }
+
+    @Then("User completes properly Guardian Name, Guardian Relation, Guardian Email, Guardian Phone, Guardian Occupation, and Guardian Address text boxes")
+    public void userCompletesProperlyGuardianNameGuardianRelationGuardianEmailGuardianPhoneGuardianOccupationAndGuardianAddressTextBoxes() {
+
+        homePage.GuardMother.click();
+        softAssert.assertTrue(homePage.GuardMother.isSelected());
+
+        homePage.GuardianName.sendKeys("Hatice Ciftci");
+        String expGuardName= "Hatice Ciftci";
+        String actGuardName=homePage.GuardianName.getText();
+        softAssert.assertEquals(expGuardName,actGuardName);
+
+        homePage.GuardionRel.sendKeys("Mother");
+        String expGuardRel="Mother";
+        String actGuardRel= homePage.GuardionRel.getText();
+        softAssert.assertEquals(expGuardName,actGuardName);
+
+        homePage.GuardEmail.sendKeys("hatice@gmail.com");
+        String expGuardEmail="hatice@gmail.com";
+        String actGuardEmail=homePage.GuardEmail.getText();
+        softAssert.assertEquals(expGuardEmail,actGuardEmail);
+
+        homePage.GuardianPhone.sendKeys("12345");
+        String expGuardPhone= "12345";
+        String actGuardPhone= homePage.GuardianPhone.getText();
+        softAssert.assertEquals(expGuardPhone,actGuardPhone);
+
+        homePage.GuardianOcc.sendKeys("Pt");
+        String ecpGuardOcc= "Pt";
+        String actGuardOcc= homePage.GuardianOcc.getText();
+        softAssert.assertEquals(ecpGuardOcc,actGuardOcc);
+
+        homePage.GuardianAddress.sendKeys("Toronto");
+        String expGuardAddress= "Toronto";
+        String actGuardAddress=homePage.GuardianAddress.getText();
+        softAssert.assertEquals(expGuardAddress,actGuardAddress);
+
+
+
+
+
+
+    }
+
+    @Then("User completes properly If Guardian is, Guardian Name, Guardian Relation textboxes")
+    public void userCompletesProperlyIfGuardianIsGuardianNameGuardianRelationTextboxes() {
+
+        homePage.GuardMother.click();
+        softAssert.assertTrue(homePage.GuardMother.isSelected());
+
+        homePage.GuardianName.sendKeys("Hatice Ciftci");
+        String expGuardName= "Hatice Ciftci";
+        String actGuardName=homePage.GuardianName.getText();
+        softAssert.assertEquals(expGuardName,actGuardName);
+
+        homePage.GuardionRel.sendKeys("Mother");
+        String expGuardRel="Mother";
+        String actGuardRel= homePage.GuardionRel.getText();
+        softAssert.assertEquals(expGuardName,actGuardName);
+    }
+
+
+
+    @Then("User checks Mother,Father,Other sections for visibility")
+    public void userChecksMotherFatherOtherSectionsForVisibility() {
+
+        softAssert.assertTrue(homePage.GuardFather.isDisplayed());
+        softAssert.assertTrue(homePage.GuardMother.isDisplayed());
+        softAssert.assertTrue(homePage.GuardOther.isDisplayed());
+
+
+    }
+
+    @Then("User clicks one of “If Guardian Is “ section depends on user relation.")
+    public void userClicksOneOfIfGuardianIsSectionDependsOnHerHisRelation() {
+
+        homePage.GuardMother.click();
+        softAssert.assertTrue(homePage.GuardMother.isSelected());
+
+    }
+
+    @Then("User checks visibility about National Identification Number and Previous School Details text boxes under the Miscellaneous Details.")
+    public void userChecksVisibilityAboutNationalIdentificationNumberAndPreviousSchoolDetailsTextBoxesUnderTheMiscellaneousDetails() {
+
+        softAssert.assertTrue(homePage.NIdNumber.isDisplayed());
+        softAssert.assertTrue(homePage.PreSchoolDetails.isDisplayed());
+
+    }
+
+    @Then("User writes down information properly.")
+    public void userWritesDownInformationProperly() {
+
+        homePage.NIdNumber.sendKeys("12345");
+        String expNIdNumber= "12345";
+        String actNIdNubmer=homePage.NIdNumber.getText();
+        softAssert.assertEquals(expNIdNumber, actNIdNubmer);
+
+        homePage.PreSchoolDetails.sendKeys("Toronto School");
+        String expSchoolDetails= "Toronto School";
+        String actSchoolDetails= homePage.PreSchoolDetails.getText();
+        softAssert.assertEquals(expSchoolDetails,actSchoolDetails);
+    }
+
+    @Then("User completes informations, user clicks “Submit” button.")
+    public void afterCompletingInformationsUserClicksSubmitButton() {
+
+
+        Select select= new Select(homePage.BasicSectionClassButonu);
+        select.selectByVisibleText("Class 1");
+
+        homePage.fisrtnamesection.sendKeys("Hatice");
+        String expFirstname= "Hatice";
+        String actFirstname= homePage.BasicSecFirstName.getText();
+        softAssert.assertEquals(expFirstname,actFirstname );
+
+        homePage.lastnamesection.sendKeys("Ciftci");
+        String expLastname= "Ciftci";
+        String actLastname= homePage.BasicSecFirstName.getText();
+        softAssert.assertEquals(expLastname,actLastname );
+
+        homePage.GenderFemailbutonu.click();
+        softAssert.assertTrue(homePage.GenderFemailbutonu.isSelected());
+
+
+        homePage.DateofbirthButonu.click();
+        homePage.OnlineAddmissionDOB.click();
+        softAssert.assertTrue(homePage.DateofbirthButonu.isSelected());
+
+        homePage.BasicSecEmail.sendKeys("hatice@gmail.com");
+        String expEmail="hatice@gmail.com";
+        String actEmail= homePage.BasicSecEmail.getText();
+
+        homePage.SubmitButonu.click();
+
+        softAssert.assertTrue(homePage.SubmitButonu.isSelected());
+
+
+
+    }
+
+    @Then("After that  User becomes register and user can see Registration number on the Review Entered Details and Status page.")
+    public void afterThatUserBecomesRegisterAndUserCanSeeRegistrationNumberOnTheReviewEnteredDetailsAndStatusPage() {
+
+
+        softAssert.assertTrue(homePage.RefNumber.isDisplayed());
+    }
+
+    @Then("The user can see {string} on the Review Entered Details and Status page")
+    public void theUserCanSeeOnTheReviewEnteredDetailsAndStatusPage(String arg0) {
+
+        String expStatus= "Not Submitted";
+        String actStatus= homePage.FormStatus.getText();
+        softAssert.assertEquals(expStatus,actStatus);
+    }
+
+    @Then("The user check that Application Date is the date when the submission was made on the {string} page.")
+    public void theUserCheckThatApplicationDateIsTheDateWhenTheSubmissionWasMadeOnTheOnlineAdmissionPage() {
+
+
+    }
+
+    @Then("User checks the 'I Agree To The Terms And Conditions’ button besides the “Submit” button.")
+    public void userChecksTheIAgreeToTheTermsAndConditionsButtonBesidesTheSubmitButton() {
+
+        softAssert.assertTrue(homePage.IAgreeYazisi.isDisplayed());
+
+
+    }
+
+    @Then("User clicks 'I Agree To The Terms And Conditions’ button.")
+    public void userClicksIAgreeToTheTermsAndConditionsButton() {
+
+        homePage.IAgreeCheckBox.click();
+        softAssert.assertTrue(homePage.IAgreeCheckBox.isSelected());
+
+
+    }
+
+    @Then("User can see display the message{string}")
+    public void userCanSeeDisplayTheMessageFormHasBeenSubmittedSuccessfully() {
+
+        String expSuccessYazi= "Form Has Been Submitted Successfully..!!";
+        String actSuccessYazisi= homePage.SuccessfulYazisi.getText();
+
+        softAssert.assertEquals(expSuccessYazi,actSuccessYazisi);
+
+
+    }
+
+    @Then("User clicks Submit button.")
+    public void userClicksSubmitButton() {
+
+        homePage.IAgreeSubmit.click();
+
+    }
+
+    @Then("Form Status should change to {string}")
+    public void formStatusShouldChangeToSubmitted() {
+
+        String expSubmittedYazisi= "Submitted";
+        String actSubmittedYazisi= homePage.SubmittedYazisi.getText();
+        softAssert.assertEquals(expSubmittedYazisi,actSubmittedYazisi);
+
+
+    }
+
+    @Then("User clicks “Exam Result” on the homepage and goes through the Exam Results page.")
+    public void userClicksExamResultOnTheHomepageAndGoesThroughTheExamResultsPage() {
+
+        homePage.ExamResult.click();
+        softAssert.assertTrue(homePage.ExamResultYazisi.isDisplayed());
+    }
+
+    @Then("User verifies that Admission No and Exam text boxes are visible")
+    public void userVerifiesThatAdmissionNoAndExamTextBoxesAreVisible() {
+
+        softAssert.assertTrue(homePage.AdmissionNo.isDisplayed());
+        softAssert.assertTrue(homePage.ExamSelect.isDisplayed());
+    }
+
+    @Then("User completes properly Admission No and Exam text boxes.")
+    public void userCompletesProperlyAdmissionNoAndExamTextBoxes() {
+
+        homePage.AdmissionNo.sendKeys();
+    }
+
+
+    //US15
+
+    @Then("User checks “WHAT PEOPLE SAY” section is visible.")
+    public void userChecksWHATPEOPLESAYSectionIsVisible() {
+
+        softAssert.assertTrue(homePage.WhatPeopleSay.isDisplayed());
+
+    }
+
+    @Then("User checks “WHAT PEOPLE SAY” section , user can see people who share their experiences and their comments.")
+    public void userChecksWHATPEOPLESAYSectionUserCanSeePeopleWhoShareTheirExperiencesAndTheirComments() {
+
+
+
+    }
+
+    @Then("User scrolls down until “WHAT PEOPLE SAY” text")
+    public void userScrollsDownUntilWHATPEOPLESAYText() {
+
+        JSUtilities.scrollToElement(Driver.getDriver(),homePage.scrolltoWPS);
+    }
+
+
+    @Then("User clicks “Student Photo” sections where under “Basic Section” and user uploads photo what user wants on the Online Admission Page.")
+    public void userClicksStudentPhotoSectionsWhereUnderBasicSectionAndUserUploadsPhotoWhatUserWantsOnTheOnlineAdmissionPage() {
+
+        String herkesteFarkliOlan = System.getProperty("user.home");
+    }
+
+    @Then("User scrolls down to Upload Documents text")
+    public void userScrollsDownToUploadDocumentsText() {
+
+        JSUtilities.scrollToElement(Driver.getDriver(),homePage.scrollsToSubmittedYazisi);
+    }
 }
 

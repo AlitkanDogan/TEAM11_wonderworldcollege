@@ -496,6 +496,148 @@ public class HomePage {
     public WebElement englishandLiteratureTitle;
 
 
+    //========================= US_03================================
+
+    @FindBy(xpath = "//*[text()='Online Admission']")
+    public WebElement OnlineAdmissionButton;
+
+    @FindBy(xpath = "//*[text()='Instructions']")
+    public WebElement InstructionSection;
+
+    //BasicSection Class,First name,last name, gender, date of birth and email.
+    @FindBy(xpath = "//*[text()='Class']")
+    public WebElement BasicSectionClassButonu;
+
+    @FindBy(xpath = "//option[text()='Class 1']")
+    public WebElement BasicSecClass1;
+
+    @FindBy(xpath = "//*[text()='First Name']")
+    public WebElement BasicSecFirstName;
+
+    @FindBy(xpath = "//input[@id='firstname']")
+    public WebElement fisrtnamesection;
+
+    @FindBy(xpath = "//*[text()='Last Name']")
+    public WebElement BasicSecLastName;
+
+    @FindBy(xpath = "//input[@id='lastname']")
+    public WebElement lastnamesection;
+
+
+    @FindBy(xpath = "//*[text()='Gender']")
+    public WebElement BasicSecGender;
+
+    @FindBy(xpath = "//option[text()='Female']")
+    public WebElement GenderFemailbutonu;
+
+
+    @FindBy(xpath = "(//tbody/tr/td)[7]")
+    public WebElement OnlineAddmissionDOB;
+
+    @FindBy(xpath ="(//input[@class='form-control date2'])[1]")
+    public WebElement DateofbirthButonu;
+
+
+
+    @FindBy(xpath = "//input[@name='mobileno']")
+    public WebElement BasicSecMobileNumber;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[6]")
+    public WebElement BasicSecEmail;
+
+    @FindBy(xpath = "//div/input[@name='father_name']" )
+    public WebElement FatherName;
+
+    @FindBy(xpath = "//div/input[@name='mother_name']" )
+    public WebElement MotherName;
+
+    @FindBy(xpath = "//div/label[@class='radio-inline'][2]")
+    public WebElement GuardMother;
+
+    @FindBy(xpath = "//div/label[@class='radio-inline'][1]")
+    public WebElement GuardFather;
+
+    @FindBy(xpath = "//div/label[@class='radio-inline'][3]")
+    public WebElement GuardOther;
+
+    @FindBy(xpath = "//div/input[@id='guardian_name']")
+    public WebElement GuardianName;
+
+    @FindBy(xpath = "//div/input[@id='guardian_relation']")
+    public WebElement GuardionRel;
+
+    @FindBy(xpath = "//div/input[@id='guardian_email']")
+    public WebElement GuardEmail;
+
+    @FindBy(xpath = "//div/label[text()='Guardian Photo']")
+    public WebElement GuardianPhoto;
+
+    @FindBy(xpath = "//div/input[@id='guardian_phone']")
+    public WebElement GuardianPhone;
+
+    @FindBy(xpath = "//div/input[@id='guardian_occupation']")
+    public WebElement GuardianOcc;
+
+    @FindBy(xpath = "//div/textarea[@id='guardian_address']")
+    public WebElement GuardianAddress;
+
+    @FindBy(xpath ="//div/input[@id='adhar_no']" )
+    public WebElement NIdNumber;
+
+    @FindBy(xpath = "//div/textarea[@name='previous_school']")
+    public WebElement PreSchoolDetails;
+
+    @FindBy(xpath = "//div/button[@class='onlineformbtn mt10']")
+    public WebElement SubmitButonu;
+
+    @FindBy(xpath = "//div/ul/li[text()='Reference No']")
+    public WebElement RefNumber;
+
+    @FindBy(xpath = "//span[text()='Not Submitted']")
+    public WebElement FormStatus;
+
+    @FindBy(xpath = "//div/input[@type='checkbox']")
+    public WebElement IAgreeCheckBox;
+
+    @FindBy(xpath = "//a[text()='I Agree To The Terms And Conditions']")
+    public WebElement IAgreeYazisi;
+
+    @FindBy(xpath = "//button[@id='submitbtn']")
+    public WebElement IAgreeSubmit;
+
+    @FindBy(xpath = "//div[text()='Form Has Been Submitted Successfully..!! ']")
+    public WebElement SuccessfulYazisi;
+
+    @FindBy(xpath = "//span[text()='Submitted']")
+    public WebElement SubmittedYazisi;
+
+    @FindBy(xpath = "//h4[text()='Upload Documents']")
+    public WebElement scrollsToSubmittedYazisi;
+
+
+
+    //US4
+
+    @FindBy(xpath ="//li/a[text()='Exam Result']")
+    public WebElement ExamResult;
+
+    @FindBy(xpath = "//div/h3[@class='entered mt0']")
+    public WebElement ExamResultYazisi;
+
+    @FindBy(xpath ="//input[@id='admission_no']")
+    public WebElement AdmissionNo;
+
+    @FindBy(xpath = "//select[@class='form-control']")
+    public WebElement ExamSelect;
+
+    //US15
+
+    @FindBy(xpath = "//div/h2[text()='WHAT PEOPLE SAYS']")
+    public WebElement WhatPeopleSay;
+
+    @FindBy(xpath = "(//h3[text()='Ava Turner'])[2]")
+    public WebElement scrolltoWPS;
+
 
 
 

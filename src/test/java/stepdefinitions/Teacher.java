@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,7 @@ import utilities.ReusableMethods;
 
 
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -308,7 +310,54 @@ public class Teacher {
     public void theUserVerifiesThatTheStudentListDisplaysTheAttendanceRecordsOfAllStudentsInTheSelectedClassForTheSpecifiedDate() {
         teacherPage.attendanceSelectCriteriaStudentListAttendanceRecord.isDisplayed();
     }
+    //Teacher Page -Hatice/Us35
+    @Then("User clicks Teacher Login and writes username and password properly")
+    public void userClicksTeacherLoginAndWritesUsernameAndPasswordProperly() {
 
+        loginPage.teacherLoginButton.click();
+
+        String firstWhd= Driver.getDriver().getWindowHandle();
+        String secondWhd= "";
+        Set<String> windowHandle= Driver.getDriver().getWindowHandles();
+
+        for (String each: windowHandle
+        ) {
+            if (!each.equals(firstWhd)){
+                secondWhd=each;
+            }
+        }
+
+        Driver.getDriver().switchTo().window(secondWhd);
+
+        loginPage.adminLoginUsernameTextbox.sendKeys(ConfigReader.getProperty("teacherUsername_htc"));
+
+        loginPage.adminLoginPasswordTextbox.sendKeys(ConfigReader.getProperty("password_htc"));
+
+
+
+    }
+    @Then("The user clicks Sign in button")
+    public void theUserClicksSignInButton() {
+
+        teacherPage.TeacherPageSignIn.click();
+
+    }
+
+    @Then("User clicks Attandence button")
+    public void userClicsAttandenceButton() {
+
+        teacherPage.TeacherPageAttandance.click();
+
+
+
+
+    }
+
+    @Then("User clicks Period Attandence button and goes through subjectattendance page")
+    public void userClicksPeriodAttandenceButtonAndGoesThroughSubjectattendancePage() {
+        teacherPage.PeriodAttandence.click();
+        Assert.assertTrue(teacherPage.SelectCriteria.isDisplayed());
+    }
 
     //--------------------------------------------------------------
 

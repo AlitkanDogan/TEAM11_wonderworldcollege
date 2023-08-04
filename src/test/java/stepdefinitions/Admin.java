@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 
 import io.cucumber.java.en.Given;
@@ -24,6 +25,7 @@ import pages.LoginPage;
 
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtilities;
 import utilities.ReusableMethods;
 
 
@@ -32,13 +34,20 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+
 import java.util.List;
+import java.util.Set;
 
 
 public class Admin {
     WebDriver driver = Driver.getDriver();
+
     TeacherPage tpage = new TeacherPage();
     AdminPage adminPage = new AdminPage();
+
+    Faker faker = new Faker();
+
+
 
 
     /*US_29 Admin*/
@@ -216,22 +225,205 @@ public class Admin {
             assertEquals(expectedUrl, actualUrl);
         }
 
+    @When("The user selects relevant criteria from Class dropdown on Select Criteria page")
+    public void the_user_selects_relevant_criteria_from_class_dropdown_on_select_criteria_page() {
+        Select select = new Select(adminPage.studentDetailsClassDropdown);
+        select.selectByVisibleText("Class 2");
+    }
+    @When("The user selects the relevant criteria from the Section dropdown on the Select Criteria page")
+    public void the_user_selects_the_relevant_criteria_from_the_section_dropdown_on_the_select_criteria_page() {
+        Select select = new Select(adminPage.studentDetailsSectionDropdown);
+        select.selectByVisibleText("A");
+    }
+    @When("The user clicks Search button on Select Criteria page")
+    public void the_user_clicks_search_button_on_select_criteria_page() {
+        adminPage.studentDetailsFirstSearchButton.click();
+    }
+    @Then("The user verifies that a List has been created in the List View according to the relevant criteria")
+    public void the_user_verifies_that_a_list_has_been_created_in_the_list_view_according_to_the_relevant_criteria() {
+        for (WebElement each:adminPage.studentDetailsListView
+             ) {
+            assertTrue(each.isDisplayed());
+        }
+    }
+
+
+
+
+    @Then("The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu")
+    public void the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu() {
+        Select select = new Select(adminPage.classDropDowntBox_multiClassStudent);
+        select.selectByIndex(2);
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("The user clicks on the Section textbox and selects the A tab from the opened dropdown menu")
+    public void the_user_clicks_on_the_section_textbox_and_selects_the_a_tab_from_the_opened_dropdown_menu() {
+        Select select = new Select(adminPage.sectionDropDownBox_multiClassStudent);
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+    }
+
+    @When("The user clicks on the student name from the list in the List View")
+    public void the_user_clicks_on_the_student_name_from_the_list_in_the_list_view() {
+        adminPage.studentDetailsListViewStudentName.click();
+    }
+    @Then("The user verifies from the student name that he or she is redirected to the profile page of the relevant student")
+    public void the_user_verifies_from_the_student_name_that_he_or_she_is_redirected_to_the_profile_page_of_the_relevant_student() {
+        assertTrue(adminPage.studentDetailsStudentName.isDisplayed());
+    }
+
+    @When("The user clicks the View icon under the Action heading from the list in the List View")
+    public void the_user_clicks_the_view_icon_under_the_action_heading_from_the_list_in_the_list_view() {
+        adminPage.studentDetailsViewIcon.click();
+    }
+
+    @When("The user clicks the Edit icon under the Action title from the list in the List View")
+    public void the_user_clicks_the_edit_icon_under_the_action_title_from_the_list_in_the_list_view() {
+        adminPage.studentDetailsEditIcon.click();
+    }
+    @Then("The user verifies from the Edit Student article on the page where the relevant student is directed to the edit page")
+    public void the_user_verifies_from_the_edit_student_article_on_the_page_where_the_relevant_student_is_directed_to_the_edit_page() {
+        assertTrue(adminPage.studentDetailsEditStudentText.isDisplayed());
+
+    }
+
+    @When("The user enters the relevant data in the textboxes in the Edit Student section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_edit_student_section_of_the_edit_page() {
+        adminPage.studentDetailsEditStudentRollNumberTextbox.clear();
+        adminPage.studentDetailsEditStudentRollNumberTextbox.sendKeys(ConfigReader.getProperty("editStudentRollNumber"));
+
+        Select select = new Select(adminPage.studentDetailsEditStudentClassDropdown);
+        select.selectByVisibleText("Class 1");
+
+        Select select1 = new Select(adminPage.studentDetailsEditStudentSectionDropdown);
+        select1.selectByVisibleText("B");
+
+        adminPage.studentDetailsEditStudentFirstNameTextbox.clear();
+        adminPage.studentDetailsEditStudentFirstNameTextbox.sendKeys(faker.name().firstName());
+        adminPage.studentDetailsEditStudentLastNameTextbox.sendKeys(faker.name().lastName());
+
+        Select select2 = new Select(adminPage.studentDetailsEditStudentGenderDropdown);
+        select2.selectByVisibleText("Female");
+
+        adminPage.studentDetailsEditStudentDateOfBirthTextbox.click();
+        adminPage.studentDetailsEditStudentDateOfBirth.click();
+
+        Select select3 = new Select(adminPage.studentDetailsEditStudentCategoryDropdown);
+        select3.selectByVisibleText("Special");
+
+        adminPage.studentDetailsEditStudentReligionTextbox.clear();
+        adminPage.studentDetailsEditStudentReligionTextbox.sendKeys(ConfigReader.getProperty("editStudentReligion"));
+        adminPage.studentDetailsEditStudentMobileNumberTextbox.clear();
+        adminPage.studentDetailsEditStudentMobileNumberTextbox.sendKeys(ConfigReader.getProperty("editStudentMobileNumber"));
+        adminPage.studentDetailsEditStudentEmailTextbox.clear();
+        adminPage.studentDetailsEditStudentEmailTextbox.sendKeys(faker.internet().emailAddress());
+        adminPage.studentDetailsEditStudentAdmissionDateTextbox.click();
+        adminPage.studentDetailsEditStudentDate.click();
+
+        Select select4 = new Select(adminPage.studentDetailsEditStudentBloodGroupDropdown);
+        select4.selectByVisibleText("A+");
+
+        Select select5 = new Select(adminPage.studentDetailsEditStudentHouseDropdown);
+        select5.selectByVisibleText("Blue");
+
+        adminPage.studentDetailsEditStudentHeightTextbox.clear();
+        adminPage.studentDetailsEditStudentHeightTextbox.sendKeys(ConfigReader.getProperty("editStudentHeight"));
+        adminPage.studentDetailsEditStudentWeightTextbox.clear();
+        adminPage.studentDetailsEditStudentWeightTextbox.sendKeys(ConfigReader.getProperty("editStudentWeight"));
+        adminPage.studentDetailsEditStudentMeasurementDateTextbox.click();
+        adminPage.studentDetailsEditStudentMeasurementDate.click();
+        adminPage.studentDetailsEditStudentMedicalHistoryTextbox.sendKeys(ConfigReader.getProperty("editStudentMedicalHistory"));
+    }
+
+/*
+    @And("The user verifies that the {string} heading is visible on the page that opens as a result of the search")
+    public void theUserVerifiesThatTheHeadingIsVisibleOnThePageThatOpensAsAResultOfTheSearch(String arg0) {
+        String expectesResult = "Select Criteria";
+        String actualResult = adminPage.selectCriteriaTitleText.getText();
+        assertEquals(expectesResult, actualResult);
+
+
+ */
+    @When("The user enters the relevant data in the textboxes in the Transport Details section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_transport_details_section_of_the_edit_page() {
+        JSUtilities.scrollToElement(Driver.getDriver(),adminPage.studentDetailsEditStudentMedicalHistoryTextbox);
+
+        adminPage.studentDetailsTransportDetailsRouteListDropdown.click();
+        adminPage.studentDetailsTransportDetailsRouteList.click();
+    }
+    @When("The user selects corresponding checkboxes in Fees Details on edit page")
+    public void the_user_selects_corresponding_checkboxes_in_fees_details_on_edit_page() {
+        adminPage.studentDetailsFeesDetails.click();
+    }
+    @When("The user enters the relevant data in the textboxes in the Parent Guardian Detail section on the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_parent_guardian_detail_section_on_the_edit_page() {
+        adminPage.studentDetailsParentGuardianDetailFatherNameTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailFatherNameTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailFatherName"));
+        adminPage.studentDetailsParentGuardianDetailPhoneNoTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailPhoneNoTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailPhoneNo"));
+        adminPage.studentDetailsParentGuardianDetailFatherOccupationTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailFatherOccupationTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailFatherOccupation"));
+        adminPage.studentDetailsParentGuardianDetailMotherNameTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailMotherNameTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailMotherName"));
+        adminPage.studentDetailsParentGuardianDetailMotherPhoneTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailMotherPhoneTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailMotherPhone"));
+        adminPage.studentDetailsParentGuardianDetailMotherOccupationTextbox.clear();
+        adminPage.studentDetailsParentGuardianDetailMotherOccupationTextbox.sendKeys(ConfigReader.getProperty("parentGuardianDetailMotherOccupation"));
+        adminPage.studentDetailsParentGuardianDetailIfGuardianIsRadioButton.click();
+    }
+    @When("The user enters the relevant data in the textboxes in the Address Details section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_address_details_section_of_the_edit_page() {
+        adminPage.studentDetailsAddressDetailsCurrentAddressTextbox.clear();
+        adminPage.studentDetailsAddressDetailsCurrentAddressTextbox.sendKeys(ConfigReader.getProperty("addressDetailsCurrentAddress"));
+        adminPage.studentDetailsAddressDetailsPermanentAddressTextbox.clear();
+        adminPage.studentDetailsAddressDetailsPermanentAddressTextbox.sendKeys(ConfigReader.getProperty("addressDetailsPermanentAddress"));
+    }
+    @When("The user enters the relevant data in the textboxes in the Miscellaneous Details section of the edit page")
+    public void the_user_enters_the_relevant_data_in_the_textboxes_in_the_miscellaneous_details_section_of_the_edit_page() {
+        adminPage.studentDetailsMiscellaneousDetailsBankAccountNumberTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsBankAccountNumberTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsBankAccountNumber"));
+        adminPage.studentDetailsMiscellaneousDetailsIFSCCodeTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsIFSCCodeTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsIFSCCode"));
+        adminPage.studentDetailsMiscellaneousDetailsNationalIdentificationNumberTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsNationalIdentificationNumberTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsNationalIdentificationNumber"));
+        adminPage.studentDetailsMiscellaneousDetailsLocalIdentificationNumberTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsLocalIdentificationNumberTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsLocalIdentificationNumber"));
+        adminPage.studentDetailsMiscellaneousDetailsPreviousSchoolDetailsTextbox.clear();
+        adminPage.studentDetailsMiscellaneousDetailsPreviousSchoolDetailsTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsPreviousSchoolDetails"));
+        adminPage.studentDetailsMiscellaneousDetailsNoteTextbox.sendKeys(ConfigReader.getProperty("miscellaneousDetailsNote"));
+    }
+    @When("The user clicks the Save button on the edit page")
+    public void the_user_clicks_the_save_button_on_the_edit_page() {
+        adminPage.studentDetailsSaveButton.click();
+    }
+    @Then("The user verifies that the edited information has been recorded")
+    public void the_user_verifies_that_the_edited_information_has_been_recorded() {
+        assertTrue(adminPage.studentDetailsRecordUpdatedSuccessfullyText.isDisplayed());
+
+    }
+
+    @When("The user clicks Add Fees icon under Action from List in List View")
+    public void the_user_clicks_add_fees_icon_under_action_from_list_in_list_view() {
+        adminPage.selectCriteriaAddFeesLink.click();
+    }
+    @Then("The user verifies from the Student Fees article on the page where the relevant student is directed to the edit page")
+    public void the_user_verifies_from_the_student_fees_article_on_the_page_where_the_relevant_student_is_directed_to_the_edit_page() {
+        assertTrue(adminPage.selectCriteriaAddFeesStudentFeesText.isDisplayed());
+    }
+    //=========================================================
 
         @Then("The user verifies that the Class and Section textboxes are visible on the opened page")
         public void the_user_verifies_that_the_class_and_section_textboxes_are_visible_on_the_opened_page () {
             assertTrue(adminPage.classDropDowntBox_multiClassStudent.isDisplayed());
             assertTrue(adminPage.sectionDropDownBox_multiClassStudent.isDisplayed());
 
-        }
-
-        @Then("The user clicks on the Class textbox and selects the Class 2 tab from the opened dropdown menu")
-        public void the_user_clicks_on_the_class_textbox_and_selects_the_class_tab_from_the_opened_dropdown_menu () {
-            Select select = new Select(adminPage.classDropDowntBox_multiClassStudent);
-            select.selectByIndex(2);
-            ReusableMethods.bekle(1);
 
         }
 
+
+/*
         @Then("The user clicks on the Section textbox and selects the A tab from the opened dropdown menu")
         public void the_user_clicks_on_the_section_textbox_and_selects_the_a_tab_from_the_opened_dropdown_menu () {
             Select select = new Select(adminPage.sectionDropDownBox_multiClassStudent);
@@ -239,6 +431,8 @@ public class Admin {
             ReusableMethods.bekle(1);
 
         }
+
+ */
 
         @When("The user clicks Search button in Multi Class Student page")
         public void theUserClicksSearchButtonInMultiClassStudentPage () {
@@ -258,6 +452,7 @@ public class Admin {
             ReusableMethods.bekle(3);
 
         }
+        /*
 
         @Then("The user verifies that a new section has been added")
         public void the_user_verifies_that_a_new_section_has_been_added () {
@@ -265,6 +460,8 @@ public class Admin {
             assertTrue(adminPage.classBox_ClassNewLine().isDisplayed());
 
         }
+
+
 
         @When("The user enters different class information in \"\"Class\"\" and \"\"Section\"\" constructors")
         public void the_user_enters_different_class_information_in_class_and_section_constructors () {
@@ -278,6 +475,8 @@ public class Admin {
 
 
         }
+
+         */
 
         @When("The user clicks \"\"Update\"\"\" button")
         public void the_user_clicks_update_button () {
@@ -504,8 +703,7 @@ public class Admin {
         }
 
         @Then("The user verifies that, clicking on the Logout link in the window that opens when clicking on the profile icon in the admin panel's top bar, the admin is logged out of the admin panel.")
-        public void theUserVerifiesThatClickingOnTheLogoutLinkInTheWindowThatOpensWhenClickingOnTheProfileIconInTheAdminPanelSTopBarTheAdminIsLoggedOutOfTheAdminPanel
-        () {
+        public void theUserVerifiesThatClickingOnTheLogoutLinkInTheWindowThatOpensWhenClickingOnTheProfileIconInTheAdminPanelSTopBarTheAdminIsLoggedOutOfTheAdminPanel() {
             Assert.assertTrue(adminPage.adminLoginPage.isDisplayed());
         }
 
@@ -600,4 +798,491 @@ public class Admin {
 
         //=========================================================
 
+
+
+
+    @Then("The user verifies that a new section has been added")
+    public void the_user_verifies_that_a_new_section_has_been_added() {
+
+        assertTrue(adminPage.classBox_ClassNewLine().isDisplayed());
+
     }
+
+    @When("The user enters different class information in \"\"Class\"\" and \"\"Section\"\" constructors")
+    public void the_user_enters_different_class_information_in_class_and_section_constructors() {
+        Select select = new Select(adminPage.classBox_ClassNewLine());
+        select.selectByIndex(3);
+        ReusableMethods.bekle(1);
+
+        select = new Select(adminPage.sectionBox_ClassNewLine());
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+
+
+    }
+
+
+
+
+
+
+
+    //_________________________________________________________________________
+
+
+    //=======================US_19==============================
+
+    @When("User sees and clicks the Admin Login Button.")
+    public void user_sees_and_clicks_the_admin_login_button() {
+        loginPage.adminLoginButton.click();
+
+    }
+
+    @Then("User enters the {string} and {string} and clicks the Login Button.")
+    public void userEntersTheAndAndClicksTheLoginButton(String email, String password) {
+        String firstWhd = Driver.getDriver().getWindowHandle();
+        String secondsWhd = "";
+        Set<String> whd = Driver.getDriver().getWindowHandles();
+        for (String each : whd
+
+        ) {
+            if (!each.equals(firstWhd)) {
+                secondsWhd = each;
+            }
+        }
+        Driver.getDriver().switchTo().window(secondsWhd);
+        loginPage.adminLoginUsernameTextbox.sendKeys(email);
+        loginPage.adminLoginPasswordTextbox.sendKeys(password);
+        loginPage.adminLoginSignInButton.click();
+    }
+
+
+    @Then("Fees Master page link should be displayed under the Fees Collection menu title")
+    public void fees_master_page_link_should_be_displayed_under_the_fees_collection_menu_title() {
+        adminPage.feesCollectionClick.click();
+    }
+
+    @Then("Fees Master page link should be clicked and redirected to the feemaster page.")
+    public void fees_master_page_link_should_be_clicked_and_redirected_to_the_feemaster_page() {
+        adminPage.feesMasterClicl.click();
+        String expectedUrl = ConfigReader.getProperty("feesMasterUrl");
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
+    }
+
+    @Then("Add Fees Master should be displayed")
+    public void add_fees_master_should_be_displayed() {
+        Assert.assertTrue(adminPage.addFeesMaster.isDisplayed());
+
+
+    }
+
+    @Then("Fees Group is displayed on the Add Fees Master page")
+    public void fees_group_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.feesGroup.isDisplayed());
+
+    }
+
+    @Then("Fees Type is displayed on the Add Fees Master page")
+    public void fees_type_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.feesType.isDisplayed());
+
+
+    }
+
+    @Then("Due Date is displayed on the Add Fees Master page")
+    public void due_date_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.dueDate.isDisplayed());
+    }
+
+    @Then("Amount Percantage\\(%), is displayed on the Add Fees Master page")
+    public void amount_percantage_is_displayed_on_the_add_fees_master_page() {
+        Assert.assertTrue(adminPage.amount.isDisplayed());
+
+    }
+
+    @Then("Fees Master \\(Fees Group, Fees Type, Due Date, Amount Percantage\\(%), Fix Amount textBoxes and Fine Type radio buttons should be seen")
+    public void fees_master_fees_group_fees_type_due_date_amount_percantage_fix_amount_text_boxes_and_fine_type_radio_buttons_should_be_seen() {
+        Assert.assertTrue(adminPage.fixAmount.isDisplayed());
+        Assert.assertTrue(adminPage.FineTypeNone.isDisplayed());
+        Assert.assertTrue(adminPage.percentageButon.isDisplayed());
+        Assert.assertTrue(adminPage.finePencere.isDisplayed());
+        Assert.assertTrue(adminPage.finePencere.isDisplayed());
+        Assert.assertTrue(adminPage.fineAmount.isDisplayed());
+
+    }
+
+    @Then("Fees Master List \\(with Fees Group, Fees Code, Amount, Action titles) should be displayed.")
+    public void fees_master_list_with_fees_group_fees_code_amount_action_titles_should_be_displayed() {
+        Assert.assertTrue(adminPage.feesGroupList.isDisplayed());
+        Assert.assertTrue(adminPage.feesCodeList.isDisplayed());
+        Assert.assertTrue(adminPage.amountList.isDisplayed());
+        Assert.assertTrue(adminPage.actionList.isDisplayed());
+
+    }
+
+    @Then("A searchBox appears to search through the Fees Master List")
+    public void a_search_box_appears_to_search_through_the_fees_master_list() {
+        Assert.assertTrue(adminPage.searchboxList.isDisplayed());
+
+    }
+
+    @Then("Valid values are entered in the Add Fees Master window.")
+    public void valid_values_are_entered_in_the_add_fees_master_window() {
+
+        Select select = new Select(adminPage.dropdownMenuElementi);
+        select.selectByVisibleText("SDK2");
+        Select select1 = new Select(adminPage.dropDowntBoxFeetype);
+        select1.selectByVisibleText("6th Installment Fees");
+        adminPage.dueDate.click();
+        adminPage.date.click();
+        adminPage.amount.sendKeys(ConfigReader.getProperty("Amount"));
+
+
+    }
+
+    @Then("After the valid values are entered in the Add Fees Master window, the Save button is clicked.")
+    public void after_the_valid_values_are_entered_in_the_add_fees_master_window_the_save_button_is_clicked() {
+        adminPage.addFeesMasterSave.click();
+
+    }
+
+    @Then("After clicking the Save button, a new Fees Master record is made.")
+    public void after_clicking_the_save_button_a_new_fees_master_record_is_made() {
+        Assert.assertTrue(adminPage.addFeesRecordSaved.isDisplayed());
+    }
+
+    // ======US25 TC5==
+    @Then("Click on the edit icon in the Fees Main List.")
+    public void click_on_the_edit_icon_in_the_fees_main_list() {
+        adminPage.feesMasterListEdit.click();
+    }
+
+    @Then("Click on the edit icon in the Fees Master List and the Edit Fees Master window opens.")
+    public void click_on_the_edit_icon_in_the_fees_master_list_and_the_edit_fees_master_window_opens() {
+        Assert.assertTrue(adminPage.editFeesMaster.isDisplayed());
+    }
+
+    @Then("Update data in Edit Fees Master window and click the Save button")
+    public void update_data_in_edit_fees_master_window_and_click_the_save_button() {
+        Select select = new Select(adminPage.dropdownMenuElementi);
+        select.selectByVisibleText("Certificate Fee");
+        Select select1 = new Select(adminPage.dropDowntBoxFeetype);
+        select1.selectByVisibleText("FERO");
+        adminPage.dueDate.click();
+        adminPage.date.click();
+        adminPage.addFeesMasterSave.click();
+
+        // adminPage.amount.sendKeys(ConfigReader.getProperty("Amount1"));
+
+    }
+
+    @Then("In the Edit Fees Master window, the registered fees are updated.")
+    public void in_the_edit_fees_master_window_the_registered_fees_are_updated() {
+
+
+    }
+
+    @Then("Click the delete icon in the Fees Master List and the registered fees are deleted.")
+    public void click_the_delete_icon_in_the_fees_master_list_and_the_registered_fees_are_deleted() {
+        adminPage.feesMasterListDelete.click();
+        Assert.assertTrue(adminPage.feesMasterListDelete.isDisplayed());
+
+
+    }
+
+    //=====uS30 TC1========
+    @When("Move menu appears and clicked in sidebar in admin panel")
+    public void move_menu_appears_and_clicked_in_sidebar_in_admin_panel() {
+        adminPage.transport.isDisplayed();
+        adminPage.transport.click();
+    }
+
+    @When("The Routes page link is displayed under the Transport menu title and")
+    public void the_routes_page_link_is_displayed_under_the_transport_menu_title_and() {
+        Assert.assertTrue(adminPage.routesClick.isDisplayed());
+
+
+    }
+
+    @When("Clicking the Routes page link under the Transport menu title leads to the route page")
+    public void clicking_the_routes_page_link_under_the_transport_menu_title_leads_to_the_route_page() {
+        adminPage.routesClick.click();
+        String expectedUrl = ConfigReader.getProperty("routeUrl");
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
+    }
+
+    //US30 TC2
+
+    @Then("Route Title textBox is active and visible in the Create Route window on the Route page")
+    public void route_title_text_box_is_active_and_visible_in_the_create_route_window_on_the_route_page() {
+
+        Assert.assertTrue(adminPage.Route_Title.isDisplayed());
+        Assert.assertTrue(adminPage.Route_Title.isEnabled());
+
+    }
+
+    @Then("On the Route page, the Save button is active and visible in the Create Route window.")
+    public void on_the_route_page_the_save_button_is_active_and_visible_in_the_create_route_window() {
+        Assert.assertTrue(adminPage.saveRoute.isDisplayed());
+        Assert.assertTrue(adminPage.saveRoute.isEnabled());
+
+    }
+
+    @Then("In the Create Route window, data is entered in the Route Title text box and saved")
+    public void in_the_create_route_window_data_is_entered_in_the_route_title_text_box_and_saved() {
+        adminPage.Route_Title.sendKeys("KÜBRA");
+        adminPage.saveRoute.click();
+    }
+
+    @Then("Data is entered in the Route Title textBox, click on the Save button, and save the route.")
+    public void data_is_entered_in_the_route_title_text_box_click_on_the_save_button_and_save_the_route() {
+        Assert.assertTrue(adminPage.RecordSaved.isDisplayed());
+    }
+
+    @When("Route List should be displayed with Route Title and Action title")
+    public void route_list_should_be_displayed_with_route_title_and_action_title() {
+        Assert.assertTrue(adminPage.routeList.isDisplayed());
+        Assert.assertTrue(adminPage.Route_Title.isDisplayed());
+        Assert.assertTrue(adminPage.routeAction.isDisplayed());
+    }
+
+    @When("Necessary updates can be made and saved in the Edit Route window")
+    public void necessary_updates_can_be_made_and_saved_in_the_edit_route_window() {
+        adminPage.routeEdit.click();
+        adminPage.Route_Title.sendKeys("TAN");
+        adminPage.saveRoute.click();
+
+
+    }
+    @When("When the delete icon under the Action title is clicked, the record should be deleted.")
+    public void when_the_delete_icon_under_the_action_title_is_clicked_the_record_should_be_deleted() {
+     adminPage.routeDelete.click();
+    }
+
+    //################################# US_27 #############################################
+
+
+
+    @Given("The user goes to the {string} address.")
+    public void the_user_goes_to_the_address(String string) {
+        Driver.getDriver().get(ConfigReader.getProperty("loginUrl"));
+
+    }
+    @When("Clicks on User Admin Login Button.")
+    public void clicks_on_user_admin_login_button() throws InterruptedException {
+        adminPage.adminLoginButton.click();
+        Thread.sleep(1000);
+
+
+    }
+    @Then("User Click the Login button to protect the username and password.")
+    public void user_click_the_login_button_to_protect_the_username_and_password() {
+        loginPage.adminNameBox.sendKeys(ConfigReader.getProperty("adminUsername_dgn"));
+
+    }
+
+
+    @Then("In the sidebar in the Admin panel, the user clicks on the {string} table under the {string} menu heading.")
+    public void ın_the_sidebar_in_the_admin_panel_the_user_clicks_on_the_table_under_the_menu_heading(String string, String string2) {
+        adminPage.adminFeesTypeButton.click();
+        adminPage.getAdminFeesCollectionButton.click();
+
+
+
+    }
+    @Then("User verifies that the {string} window opens.")
+    public void user_verifies_that_the_window_opens(String string) {
+        assertTrue(adminPage.adminFeesTypeVerification.isDisplayed());
+
+    }
+    @Then("The user closes the page.")
+    public void turn_off_user_security() {
+        Driver.closeDriver();
+
+    }
+
+
+    @Then("The user should verify that there are {string},{string},{string},{string} buttons in the {string} section of the page that opens.")
+    public void the_user_should_verify_that_there_are_buttons_in_the_section_of_the_page_that_opens(String string, String string2, String string3, String string4, String string5) {
+        assertTrue(adminPage.adminFeesTypeNameBox.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeCodeBox.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeDescriptionBox.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeSaveButton.isDisplayed());
+
+    }
+
+    @Then("The user additionally verifies that there are columns {string},{string},{string} in the {string} section of the same page.")
+    public void the_user_additionally_verifies_that_there_are_columns_in_the_section_of_the_same_page(String string, String string2, String string3, String string4) {
+        assertTrue(adminPage.adminFeesTypeListName.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeListFeesCode.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeListAction.isDisplayed());
+
+    }
+
+    @When("The user clicks on the Fees Collection menu item on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_fees_collection_menu_item_on_the_sidebar_in_the_admin_panel() {
+        adminPage.adminFeesTypeButton.click();
+
+    }
+    @Then("User must enter valid data in Add Fees Type window and click Save button.")
+    public void user_must_enter_valid_data_in_add_fees_type_window_and_click_save_button() {
+        adminPage.adminFeesTypeNameBox.sendKeys("Tala");
+        actions.sendKeys(Keys.TAB);
+        adminPage.adminFeesTypeCodeBox.sendKeys("123456");
+        adminPage.adminFeesTypeListSaveButton.click();
+
+    }
+    @Then("The user should confirm that a new Add Fees Type is created when he clicks the {string} button.")
+    public void the_user_should_confirm_that_a_new_add_fees_type_is_created_when_he_clicks_the_button(String string) {
+        assertTrue(adminPage.adminRecordUpdatedSuccessfully.isDisplayed());
+
+    }
+
+
+
+    @When("User clicks {string} icon in {string} section.")
+    public void user_clicks_icon_in_section(String string, String string2) {
+        adminPage.adminEditButton.click();
+    }
+
+    @When("The user updates the data in the {string} window that opens.")
+    public void the_user_updates_the_data_in_the_window_that_opens(String string) {
+        adminPage.adminFeesTypeNameBox.clear();
+        adminPage.adminFeesTypeCodeBox.clear();
+        adminPage.adminFeesTypeNameBox.sendKeys("Nalan");
+        actions.sendKeys(Keys.TAB);
+        adminPage.adminFeesTypeCodeBox.sendKeys("654321");
+
+    }
+    @When("The user clicks the {string} button and confirms that the changes have been saved.")
+    public void the_user_clicks_the_button_and_confirms_that_the_changes_have_been_saved(String string) {
+        adminPage.adminFeesTypeListSaveButton.click();
+
+    }
+    @Then("The user should verify that the {string} section has been refreshed.")
+    public void the_user_should_verify_that_the_section_has_been_refreshed(String string) {
+        assertTrue(adminPage.adminRecordUpdatedSuccessfully.isDisplayed());
+    }
+
+    @Then("The user clicks the {string} icon in the {string} section.")
+    public void the_user_clicks_the_icon_in_the_section(String string, String string2) throws InterruptedException {
+        adminPage.adminDeleteButton.click();
+        Thread.sleep(1000);
+
+    }
+    @Then("The user deletes the selected Fee Type from the list.")
+    public void the_user_deletes_the_selected_fee_type_from_the_list() {
+        driver.switchTo().alert().accept();
+
+    }
+
+    //############################################### US_31 #########################################################
+
+
+
+    @Then("The user clicks on the {string} menu item on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_menu_item_on_the_sidebar_in_the_admin_panel(String string) {
+        adminPage.adminAcademicsButton.click();
+
+    }
+    @Then("The user clicks on the {string} page displayed under the {string} menu title on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_page_displayed_under_the_menu_title_on_the_sidebar_in_the_admin_panel(String string, String string2) {
+        adminPage.adminAssignClassTeacherButton.click();
+
+    }
+    @Then("The user confirms that the page that opens is {string}.")
+    public void the_user_confirms_that_the_page_that_opens_is(String string) {
+        Driver.getDriver().getTitle().equalsIgnoreCase("assign_class_teacher");
+
+    }
+    @Then("The user verifies that in the {string} section, all teachers with checkboxes under the {string} column are displayed.")
+    public void the_user_verifies_that_in_the_section_all_teachers_with_checkboxes_under_the_column_are_displayed(String string, String string2) {
+        assertTrue(adminPage.adminClassTeacherList.isDisplayed());
+    }
+
+    @Then("The user verifies that the {string} and {string} drop-down menus are visible on the page that opens.")
+    public void the_user_verifies_that_the_and_drop_down_menus_are_visible_on_the_page_that_opens(String string, String string2) {
+        assertTrue(adminPage.adminClassSelectBox.isDisplayed());
+        assertTrue(adminPage.adminSectionSelectBox.isDisplayed());
+
+    }
+
+    @Then("User verifies being displayed from the {string} control in the {string} section.")
+    public void user_verifies_being_displayed_from_the_control_in_the_section(String string, String string2) {
+        actions.sendKeys(Keys.END).perform();
+        assertTrue(adminPage.adminAssignClassTeacherSaveButton.isDisplayed());
+
+    }
+
+    @Then("The user confirms that the teacher has been assigned to the selected class by selecting the {string} and {string} in the {string} section, marking the teacher to be assigned, clicking the {string} button.")
+    public void the_user_confirms_that_the_teacher_has_been_assigned_to_the_selected_class_by_selecting_the_and_in_the_section_marking_the_teacher_to_be_assigned_clicking_the_button(String string, String string2, String string3, String string4) {
+        Select select = new Select(adminPage.adminClassSelectBox);
+        select.selectByIndex(1);
+        select= new Select(adminPage.adminSectionSelectBox);
+        select.selectByIndex(1);
+        adminPage.adminTeacherBox.click();
+        actions.sendKeys(Keys.END).perform();
+        adminPage.adminAssignClassTeacherSaveButton.click();
+        actions.sendKeys(Keys.HOME).perform();
+        assertTrue(adminPage.adminRecordSavedSuccessfully.isDisplayed());
+
+    }
+
+    @Then("It is verified that there are Class, Department, Class Teacher and Action columns on the {string} side in the User {string} section.")
+    public void ıt_is_verified_that_there_are_class_department_class_teacher_and_action_columns_on_the_side_in_the_user_section(String string, String string2) {
+        assertTrue(adminPage.adminClassTeacherListClassText.isDisplayed());
+        assertTrue(adminPage.adminClassTeacherListSectionText.isDisplayed());
+        assertTrue(adminPage.adminClassTeacherListClassTeacherText.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeListAction.isDisplayed());
+    }
+
+
+    @Then("The user clicks the {string} icon under the {string} column in the {string} in the {string} section.")
+    public void the_user_clicks_the_icon_under_the_column_in_the_in_the_section(String string, String string2, String string3, String string4) {
+        adminPage.adminEditButton.click();
+        ReusableMethods.bekle(2);
+    }
+
+
+    @Then("The user confirms that the classroom teacher assignment has been updated in the {string} window.")
+    public void the_user_confirms_that_the_classroom_teacher_assignment_has_been_updated_in_the_window(String string) {
+        Select select = new Select(adminPage.adminClassSelectBox);
+        select.selectByIndex(2);
+        select= new Select(adminPage.adminSectionSelectBox);
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+        ReusableMethods.jseClick(adminPage.adminTeacherBox);
+
+        ReusableMethods.bekle(1);
+        actions.sendKeys(Keys.END).perform();
+        ReusableMethods.bekle(1);
+        ReusableMethods.jseClick(adminPage.adminAssignClassTeacherSaveButton);
+
+        ReusableMethods.bekle(3);
+
+        String expected = "Record Updated Successfully";
+        String actual = adminPage.adminAssignRecordUpdatedSuccessfully.getText();
+
+        assertEquals(expected,actual);
+
+    }
+
+
+    @Then("The user class-teacher assignment is deleted.")
+    public void the_user_class_teacher_assignment_is_deleted() {
+        String expected = "Record Delete Successfully";
+        String actual = adminPage.adminRecordDeleteSuccessfully.getText();
+
+        assertEquals(expected,actual);
+    }
+
+    @Then("The user clicks the Delete icon under the Action column in the Classroom List in the Assign Classroom Teacher section")
+    public void theUserClicksTheDeleteIconUnderTheActionColumnInTheClassroomListInTheAssignClassroomTeacherSection() {
+        adminPage.adminDeleteTeacherButton.click();
+    }
+
+}
+
+

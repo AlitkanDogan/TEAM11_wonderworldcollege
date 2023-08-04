@@ -72,6 +72,15 @@ public class LoginPage {
     // Username textbox on Admin Login page.
     @FindBy(xpath = "//*[@name='username']")
     public WebElement adminLoginUsernameTextbox;
+    @FindBy(xpath = "//*[@name='username']")
+    public WebElement parentLoginUsernameTextbox;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement parentLoginPasswordTextbox;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement parentLoginSignInButton;
+
 
     // Password textbox on Admin Login page.
     @FindBy(xpath = "//input[@name='password']")
@@ -166,6 +175,9 @@ public class LoginPage {
 
     @FindBy(xpath = "//*[@name = 'username']")
     public WebElement teacherUsernameTextbox;
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement adminNameBox;
 
 
 

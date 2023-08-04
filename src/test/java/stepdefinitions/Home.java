@@ -1,52 +1,50 @@
 package stepdefinitions;
 
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.WebElement;
-import pages.HomePage;
-
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-
-import com.github.javafaker.Faker;
-
 import io.cucumber.java.en.When;
-
-import org.openqa.selenium.Keys;
-
+import org.junit.Assert;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
-
+import pages.HomePage;
+import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.JSUtilities;
+import utilities.ReusableMethods;
+
+import static org.junit.Assert.*;
 
 
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 public class Home {
+
 
     WebDriver driver = Driver.getDriver();
     HomePage page = new HomePage();
 
     HomePage homePage = new HomePage();
 
+    String expectedTitle = "";
+    String actualTitle = "";
+
+    JavascriptExecutor js;
+
+
     Actions actions = new Actions(driver);
     SoftAssert softAssert = new SoftAssert();
 
     Faker faker = new Faker();
 
-    String expectedTitle = "";
-    String actualTitle = "";
+
     String expectedConfirmationMessage = "";
     String actualConfirmationMessage = "";
+
 
     //VVVVVVVVVVVVVVVV  US01 VVVVVVVVVVVVVVVVVVV
     @Given("The user goes to the {string} address")
@@ -101,8 +99,12 @@ public class Home {
 
     @Then("The user verifies that the site logo in the home page top bar is displayed")
     public void the_user_verifies_that_the_site_logo_in_the_home_page_top_bar_is_displayed() {
+
+        softAssert.assertTrue(homePage.WonderWorldCollegeSiteLogo.isDisplayed());
+
         //softAssert.assertTrue(homePage.WonderWorldCollegeSiteLogo.isDisplayed());
         homePage.wonderWorldCollegeSiteLogoIsVisible();
+
     }
 
     @Then("The user verifies that the Home menu title on the home page top bar is displayed")
@@ -429,12 +431,20 @@ public class Home {
 
     @Then("Verifies that the Comlain heading in the user footer is visible")
     public void verifies_that_the_comlain_heading_in_the_user_footer_is_visible() {
+
+        assertTrue(homePage.footerComplainIcon.isDisplayed());
+
         homePage.footerComplainIconIsVisiable();
+
     }
 
     @Then("Verifies that the Comlain icon in the user footer is visible")
     public void verifies_that_the_comlain_icon_in_the_user_footer_is_visible() {
+
+        assertTrue(homePage.footerComplainText.isDisplayed());
+
         homePage.footerComplainTextIsVisiable();
+
     }
 
     @When("The user clicks on the Complain heading in the footer section")
@@ -596,28 +606,45 @@ public class Home {
 
     @Then("The user verifies that Anthony Carter exists in our experienced staffs section")
     public void the_user_verifies_that_anthony_carter_exists_in_our_experienced_staffs_section() {
+
+        assertTrue(homePage.ourExperiencedStaffsAnthonyCarter.isDisplayed());
+
         homePage.ourExperiencedStaffsAnthonyCarterIsVisiable();
+
     }
 
     @Then("The user verifies that Ava Turner exists in our experienced staffs section")
     public void the_user_verifies_that_ava_turner_exists_in_our_experienced_staffs_section() {
+
+        assertTrue(homePage.ourExperiencedStaffsAvaTurner.isDisplayed());
+
         homePage.ourExperiencedStaffsAvaTurnerIsVisiable();
+
     }
 
     @Then("The user verifies that David Morgan exists in our experienced staffs section")
     public void the_user_verifies_that_david_morgan_exists_in_our_experienced_staffs_section() {
+
+        assertTrue(homePage.ourExperiencedStaffsDavidMorgan.isDisplayed());
+
         homePage.ourExperiencedStaffsDavidMorganIsVisiable();
+
     }
 
     @Then("The user verifies that Lily Peterson exists in our experienced staffs section")
     public void the_user_verifies_that_lily_peterson_exists_in_our_experienced_staffs_section() {
+
+        assertTrue(homePage.ourExperiencedStaffsLilyPeterson.isDisplayed());
+
         homePage.ourExperiencedStaffsLilyPetersonIsVisiable();
+
     }
 
     @When("The user goes down to our experienced staffs section on the main page")
     public void theUserGoesDownToOurExperiencedStaffsSectionOnTheMainPage() {
         JSUtilities.scrollToElement(Driver.getDriver(), homePage.ourExperiencedStaffsText);
     }
+
     //========================US007TC1====================================
     @When("The User verifies Gallery tab in Home Page Header")
     public void the_user_verifies_gallery_tab_in_home_page_header() {
@@ -884,6 +911,7 @@ public class Home {
 
 
     }
+
     //================US05=================
     @When("The user clicks on the About Us menu button.")
     public void theUserClicksOnTheAboutUsMenuButton() {
@@ -892,10 +920,10 @@ public class Home {
     }
 
     @Then("The user verifies that About Us menu button redirects to the About us page.")
-    public void theUserVerifiesThatAboutUsMenuButtonRedirectsToTheAboutUsPage()  {
+    public void theUserVerifiesThatAboutUsMenuButtonRedirectsToTheAboutUsPage() {
 
         homePage.aboutUsPage.isDisplayed();
-        }
+    }
 
     @Then("The user verifies that the sections titled Who We Are and Why Choose Our Institution are displayed.")
     public void theUserVerifiesThatTheSectionsTitledWhoWeAreAndWhyChooseOurInstitutionAreDisplayed() {
@@ -914,5 +942,184 @@ public class Home {
         assertTrue(homePage.aboutUsPageDigitalResources.isDisplayed());
 
     }
+
+
+    /////////us09///////////
+    @When("Click on the Contact menu title on the home page top bar")
+    public void click_on_the_contact_menu_title_on_the_home_page_top_bar() {
+        homePage.contactLink_header.click();
+
+    }
+
+    @Then("It is tested that the contact page is redirected")
+    public void redirects_to_contact_page() {
+        Assert.assertTrue(homePage.contactLink_pageTitle.isDisplayed());
+    }
+
+
+    @Then("In the Send In Your Query section Name Email Subject Description textBoxes is confirmed to be visible")
+    public void in_the_send_in_your_query_section_name_email_subject_description_text_boxes_is_confirmed_to_be_visible() {
+        Assert.assertTrue(homePage.contactLink_Name.isDisplayed());
+        Assert.assertTrue(homePage.contactLink_Email.isDisplayed());
+        Assert.assertTrue(homePage.contactLink_Subject.isDisplayed());
+        Assert.assertTrue(homePage.contactLink_Description.isDisplayed());
+
+
+    }
+
+    @Then("Name, Email, Subject, Description textBoxes It is verified that data can be entered")
+    public void name_email_subject_description_text_boxes_it_is_verified_that_data_can_be_entered() {
+
+        homePage.contactLink_Name.sendKeys(faker.name().firstName());
+        homePage.contactLink_Email.sendKeys(faker.internet().emailAddress());
+        homePage.contactLink_Subject.sendKeys(ConfigReader.getProperty("contactLink_Subject"));
+        homePage.contactLink_Description.sendKeys(ConfigReader.getProperty("complainDescription"));
+    }
+
+    @Then("Clicking the Submit button confirms that the query has been submitted")
+    public void clicking_the_submit_button_confirms_that_the_query_has_been_submitted() {
+        homePage.contactLink_Submit.click();
+        String expectedMesaj = ConfigReader.getProperty("complainPageConfirmationMessage");
+        String actualMesaj = homePage.complainPageConfirmationMessage.getText();
+        Assert.assertEquals(expectedMesaj, actualMesaj);
+
+
+    }
+
+    @Then("On the Contact page, Our Location, Call Us,Verify that Working Hours information is visible")
+    public void on_the_contact_page_our_location_call_us_verify_that_working_hours_information_is_visible() {
+        Assert.assertTrue(homePage.contactlink_OurLocation.isDisplayed());
+        Assert.assertTrue(homePage.contactlink_CallUs.isDisplayed());
+        Assert.assertTrue(homePage.contactLink_WorkingHours.isDisplayed());
+
+    }
+
+    // US_06
+
+    @When("The user verifies that the {string} heading is visible in the main page header section")
+    public void the_user_verifies_that_the_heading_is_visible_in_the_main_page_header_section(String string) {
+        assertTrue(homePage.courseTitle.isDisplayed());
+
+    }
+
+    @Then("The user confirms that the title information of the opened page is {string}")
+    public void the_user_confirms_that_the_title_information_of_the_opened_page_is(String string) {
+        homePage.courseTitle.getText();
+
+    }
+
+    @When("The user clicks on the {string} heading link.")
+    public void the_user_clicks_on_the_heading_link(String string) {
+        homePage.courseLink_header.click();
+
+    }
+
+    @Then("User verifies that the {string} course title is visible")
+    public void user_verifies_that_the_course_title_is_visible(String string) {
+
+        assertTrue(homePage.englishandLiteratureText.isDisplayed());
+
+        assertTrue(homePage.mathematicsText.isDisplayed());
+
+        assertTrue(homePage.sciencesText.isDisplayed());
+
+        assertTrue(homePage.scialSciencesText.isDisplayed());
+
+        assertTrue(homePage.historyText.isDisplayed());
+
+        assertTrue(homePage.artsAndMusicText.isDisplayed());
+
+        assertTrue(homePage.healthAndExerciseSciencesText.isDisplayed());
+
+        assertTrue(homePage.foreignLanguaText.isDisplayed());
+
+        assertTrue(homePage.computerSciencesText.isDisplayed());
+    }
+
+
+    @When("The user clicks on the Course heading link.")
+    public void the_user_clicks_on_the_course_heading_link() {
+        homePage.courseLink_header.click();
+    }
+
+    @Then("User verifies that the DETAILS button is visible under the English and Literature course title")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_english_and_literature_course_title() {
+        assertTrue(homePage.englishandLiteratureDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under the Mathematics course title")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_mathematics_course_title() {
+        assertTrue(homePage.mathematicsDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under  the Sciences course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_sciences_course_title_is_visible() {
+        assertTrue(homePage.scialSciencesDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under  the Social Sciences course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_social_sciences_course_title_is_visible() {
+        assertTrue(homePage.scialSciencesDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under  the History course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_history_course_title_is_visible() {
+        assertTrue(homePage.historyDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under  the Arts and Music course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_arts_and_music_course_title_is_visible() {
+        assertTrue(homePage.artsAndMusicDetails.isDisplayed());
+
+    }
+
+    @When("The user scrolls down to the Foreign Language text.")
+    public void the_user_scrolls_down_to_the_foreign_language_text() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", homePage.foreignLanguaText);
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under  the Health and Exercise Sciences course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_health_and_exercise_sciences_course_title_is_visible() {
+        assertTrue(homePage.healthAndExerciseSciencesDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under  the Foreign Language course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_foreign_language_course_title_is_visible() {
+        assertTrue(homePage.foreignLanguaDetails.isDisplayed());
+
+    }
+
+    @Then("User verifies that the DETAILS button is visible under the Computer Science course title is visible")
+    public void user_verifies_that_the_detaıls_button_is_visible_under_the_computer_science_course_title_is_visible() {
+        assertTrue(homePage.computerSciencesDetails.isDisplayed());
+
+    }
+
+    @When("The user scrolls down to the History text.")
+    public void theUserScrollsDownToTheHistoryText() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", homePage.historyText);
+    }
+
+    @Then("User clicks DETAILS button under English and Literature lesson")
+    public void user_clicks_detaıls_button_under_english_and_literature_lesson() {
+        homePage.englishandLiteratureDetails.click();
+
+    }
+
+    @Then("It is verified that the title of the user opened page is English and Literature")
+    public void ıt_is_verified_that_the_title_of_the_user_opened_page_is_english_and_literature() {
+        homePage.englishandLiteratureTitle.isDisplayed();
+
+    }
+
 }
 

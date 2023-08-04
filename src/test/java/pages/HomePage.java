@@ -270,6 +270,45 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement complainPageConfirmationMessage;
 
+
+    //=========================================================
+
+
+    @FindBy(xpath = "(//input[@id='name'])[2]")
+    public WebElement contactLink_Name;
+
+    @FindBy(xpath = "(//input[@id='email'])[3]")
+    public WebElement contactLink_Email;
+
+    @FindBy(xpath = "//input[@id='subject']")
+    public WebElement contactLink_Subject;
+
+    @FindBy(xpath = "//textarea[@id='description'] ")
+    public WebElement contactLink_Description;
+
+    @FindBy(xpath = "//input[@name='submit']")
+    public WebElement contactLink_Submit;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public  WebElement contactLink_Alert;
+
+    @FindBy(xpath = "//h3[text()='Our Location']")
+    public WebElement contactlink_OurLocation;
+
+    @FindBy(xpath = "//h3[text()='CALL US']")
+    public WebElement contactlink_CallUs;
+
+    @FindBy(xpath = "//h3[text()='Working Hours']")
+    public WebElement contactLink_WorkingHours;
+
+    @FindBy(className = "toast-message")
+    public WebElement warningMessage;
+
+    @FindBy(xpath = "//h2[text()='Send In Your Query']")
+    public WebElement contactLink_pageTitle;
+
+
+
     @FindBy(xpath = "//p[text()='The Name field is required.']")
     public WebElement complainPageNameFieldMessage;
 
@@ -299,6 +338,8 @@ public class HomePage {
 
     @FindBy(xpath = "(//h3[text()='Lily Peterson'])[2]")
     public WebElement ourExperiencedStaffsLilyPeterson;
+
+
 
     //************************* Methods ********************
 
@@ -408,5 +449,55 @@ public class HomePage {
 
     @FindBy(xpath = "(//a[text()='Gallery'])[1]")
     public WebElement galleryButton;
+
+    //########################## US_06 ###############################
+
+    @FindBy(xpath = "//h4[text()='English and Literature']")
+    public WebElement englishandLiteratureText;
+
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][2])")
+    public WebElement mathematicsText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][3])")
+    public WebElement sciencesText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][4])")
+    public WebElement scialSciencesText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][5])")
+    public WebElement historyText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][6])")
+    public WebElement artsAndMusicText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][7])")
+    public WebElement healthAndExerciseSciencesText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][8])")
+    public WebElement foreignLanguaText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][9])")
+    public WebElement computerSciencesText;
+
+    @FindBy(xpath = "(//a[@href='https://qa.wonderworldcollege.com/page/course'][1])")
+    public WebElement courseTitle;
+    @FindBy(xpath = "(//a[@class='btn-read'])[1]")
+    public WebElement englishandLiteratureDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[2]")
+    public WebElement mathematicsDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[3]")
+    public WebElement sciencesDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[4]")
+    public WebElement scialSciencesDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[5]")
+    public WebElement historyDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[6]")
+    public WebElement artsAndMusicDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[7]")
+    public WebElement healthAndExerciseSciencesDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[8]")
+    public WebElement foreignLanguaDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[9]")
+    public WebElement computerSciencesDetails;
+    @FindBy(xpath = "//img[@class='img-responsive img-rounded']")
+    public WebElement englishandLiteratureTitle;
+
+
+
+
+
 
 }

@@ -73,7 +73,7 @@ Feature: As a registered user (student/parent), I want to have access to the log
     And The user enters their emailadress in to the mailtextbox
     And The user selects the appropriate panel.
     And clicks on submit button.
-    Then the user verifies that they receive 'password reset email.
+    Then the user verifies that they receive password reset email.
     And User closes the page
 
   @TC8_US16

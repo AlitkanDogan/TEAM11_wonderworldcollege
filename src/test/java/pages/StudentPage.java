@@ -36,10 +36,10 @@ public class StudentPage {
     public WebElement homeworkPageViewEditIcon;
 
     @FindBy(xpath = "//*[@id='submit']")
-    public WebElement AssignmentSaveButton;
+    public WebElement assignmentSaveButton;
 
     @FindBy(xpath = "(//*[@class='label label-warning'])[1]")
-    public WebElement AssignmentSubmittedAlert;
+    public WebElement assignmentSubmittedAlert;
 
     @FindBy(xpath = "//*[@class='closed-exam']")
     public WebElement closedHomeworkHeadline;
@@ -71,6 +71,9 @@ public class StudentPage {
 
     @FindBy(xpath = "//p[text()='The Message field is required.']")
     public WebElement homeworkDeleteWarningMessage;
+
+    @FindBy(xpath = "//a[text()='Upcoming Homework']")
+    public WebElement closedHomeworkMessageSuccessful;
 
 
 

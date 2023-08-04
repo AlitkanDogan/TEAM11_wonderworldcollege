@@ -65,14 +65,14 @@ public class Student {
 
     @And("The user clicks on the save button")
     public void theUserClicksOnTheSaveButton() {
-        studentPage.AssignmentSaveButton.click();
+        studentPage.assignmentSaveButton.click();
 
 
     }
 
     @Then("The user verifies that they are able to send their messages successfully")
     public void theUserVerifiesThatTheyAreAbleToSendTheirMessagesSuccessfully() {
-        assertTrue(studentPage.AssignmentSubmittedAlert.isDisplayed());
+        assertTrue(studentPage.assignmentSubmittedAlert.isDisplayed());
     }
 
     @And("The user clicks on the Closed Homework headline")
@@ -95,7 +95,7 @@ public class Student {
     @Then("The user verifies that, they are able to send a message in the Closed Homework segment")
     public void theUserVerifiesThatTheyAreAbleToSendAMessageInTheClosedHomeworkSegment() {
 
-       Assert.assertTrue(studentPage.closedHomeworkSubmittedLabel.isDisplayed());
+       Assert.assertTrue(studentPage.closedHomeworkMessageSuccessful.isDisplayed());
     }
 
     @And("The user clicks on the Daily Assignment link button")

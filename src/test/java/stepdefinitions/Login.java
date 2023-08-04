@@ -107,9 +107,9 @@ public class Login {
         loginPage.resetEmailSubmitButton.click();
     }
 
-    @Then("the user verifies that they receive 'password reset email.")
+    @Then("the user verifies that they receive password reset email.")
     public void theUserVerifiesThatTheyReceivePasswordResetEmail() {
-        Assert.assertTrue(loginPage.resetEmailSendingFailAlert.isDisplayed());
+        Assert.assertFalse(loginPage.resetEmailSendingFailAlert.isDisplayed());
     }
 
     @And("The user verifies that  there is a user login link on the ufpassword page to return to the login page")

@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "stepdefinitions",
 
 
-        tags = "@TC1_US55",
+        tags = "not @TC1_US1                                                          ",
 
 
 

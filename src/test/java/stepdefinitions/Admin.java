@@ -1060,6 +1060,229 @@ public class Admin {
     public void when_the_delete_icon_under_the_action_title_is_clicked_the_record_should_be_deleted() {
      adminPage.routeDelete.click();
     }
+
+    //################################# US_27 #############################################
+
+
+
+    @Given("The user goes to the {string} address.")
+    public void the_user_goes_to_the_address(String string) {
+        Driver.getDriver().get(ConfigReader.getProperty("loginUrl"));
+
+    }
+    @When("Clicks on User Admin Login Button.")
+    public void clicks_on_user_admin_login_button() throws InterruptedException {
+        adminPage.adminLoginButton.click();
+        Thread.sleep(1000);
+
+
+    }
+    @Then("User Click the Login button to protect the username and password.")
+    public void user_click_the_login_button_to_protect_the_username_and_password() {
+        loginPage.adminNameBox.sendKeys(ConfigReader.getProperty("adminUsername_dgn"));
+
+    }
+
+
+    @Then("In the sidebar in the Admin panel, the user clicks on the {string} table under the {string} menu heading.")
+    public void ın_the_sidebar_in_the_admin_panel_the_user_clicks_on_the_table_under_the_menu_heading(String string, String string2) {
+        adminPage.adminFeesTypeButton.click();
+        adminPage.getAdminFeesCollectionButton.click();
+
+
+
+    }
+    @Then("User verifies that the {string} window opens.")
+    public void user_verifies_that_the_window_opens(String string) {
+        assertTrue(adminPage.adminFeesTypeVerification.isDisplayed());
+
+    }
+    @Then("The user closes the page.")
+    public void turn_off_user_security() {
+        Driver.closeDriver();
+
+    }
+
+
+    @Then("The user should verify that there are {string},{string},{string},{string} buttons in the {string} section of the page that opens.")
+    public void the_user_should_verify_that_there_are_buttons_in_the_section_of_the_page_that_opens(String string, String string2, String string3, String string4, String string5) {
+        assertTrue(adminPage.adminFeesTypeNameBox.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeCodeBox.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeDescriptionBox.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeSaveButton.isDisplayed());
+
+    }
+
+    @Then("The user additionally verifies that there are columns {string},{string},{string} in the {string} section of the same page.")
+    public void the_user_additionally_verifies_that_there_are_columns_in_the_section_of_the_same_page(String string, String string2, String string3, String string4) {
+        assertTrue(adminPage.adminFeesTypeListName.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeListFeesCode.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeListAction.isDisplayed());
+
+    }
+
+    @When("The user clicks on the Fees Collection menu item on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_fees_collection_menu_item_on_the_sidebar_in_the_admin_panel() {
+        adminPage.adminFeesTypeButton.click();
+
+    }
+    @Then("User must enter valid data in Add Fees Type window and click Save button.")
+    public void user_must_enter_valid_data_in_add_fees_type_window_and_click_save_button() {
+        adminPage.adminFeesTypeNameBox.sendKeys("Tala");
+        actions.sendKeys(Keys.TAB);
+        adminPage.adminFeesTypeCodeBox.sendKeys("123456");
+        adminPage.adminFeesTypeListSaveButton.click();
+
+    }
+    @Then("The user should confirm that a new Add Fees Type is created when he clicks the {string} button.")
+    public void the_user_should_confirm_that_a_new_add_fees_type_is_created_when_he_clicks_the_button(String string) {
+        assertTrue(adminPage.adminRecordUpdatedSuccessfully.isDisplayed());
+
+    }
+
+
+
+    @When("User clicks {string} icon in {string} section.")
+    public void user_clicks_icon_in_section(String string, String string2) {
+        adminPage.adminEditButton.click();
+    }
+
+    @When("The user updates the data in the {string} window that opens.")
+    public void the_user_updates_the_data_in_the_window_that_opens(String string) {
+        adminPage.adminFeesTypeNameBox.clear();
+        adminPage.adminFeesTypeCodeBox.clear();
+        adminPage.adminFeesTypeNameBox.sendKeys("Nalan");
+        actions.sendKeys(Keys.TAB);
+        adminPage.adminFeesTypeCodeBox.sendKeys("654321");
+
+    }
+    @When("The user clicks the {string} button and confirms that the changes have been saved.")
+    public void the_user_clicks_the_button_and_confirms_that_the_changes_have_been_saved(String string) {
+        adminPage.adminFeesTypeListSaveButton.click();
+
+    }
+    @Then("The user should verify that the {string} section has been refreshed.")
+    public void the_user_should_verify_that_the_section_has_been_refreshed(String string) {
+        assertTrue(adminPage.adminRecordUpdatedSuccessfully.isDisplayed());
+    }
+
+    @Then("The user clicks the {string} icon in the {string} section.")
+    public void the_user_clicks_the_icon_in_the_section(String string, String string2) throws InterruptedException {
+        adminPage.adminDeleteButton.click();
+        Thread.sleep(1000);
+
+    }
+    @Then("The user deletes the selected Fee Type from the list.")
+    public void the_user_deletes_the_selected_fee_type_from_the_list() {
+        driver.switchTo().alert().accept();
+
+    }
+
+    //############################################### US_31 #########################################################
+
+
+
+    @Then("The user clicks on the {string} menu item on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_menu_item_on_the_sidebar_in_the_admin_panel(String string) {
+        adminPage.adminAcademicsButton.click();
+
+    }
+    @Then("The user clicks on the {string} page displayed under the {string} menu title on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_page_displayed_under_the_menu_title_on_the_sidebar_in_the_admin_panel(String string, String string2) {
+        adminPage.adminAssignClassTeacherButton.click();
+
+    }
+    @Then("The user confirms that the page that opens is {string}.")
+    public void the_user_confirms_that_the_page_that_opens_is(String string) {
+        Driver.getDriver().getTitle().equalsIgnoreCase("assign_class_teacher");
+
+    }
+    @Then("The user verifies that in the {string} section, all teachers with checkboxes under the {string} column are displayed.")
+    public void the_user_verifies_that_in_the_section_all_teachers_with_checkboxes_under_the_column_are_displayed(String string, String string2) {
+        assertTrue(adminPage.adminClassTeacherList.isDisplayed());
+    }
+
+    @Then("The user verifies that the {string} and {string} drop-down menus are visible on the page that opens.")
+    public void the_user_verifies_that_the_and_drop_down_menus_are_visible_on_the_page_that_opens(String string, String string2) {
+        assertTrue(adminPage.adminClassSelectBox.isDisplayed());
+        assertTrue(adminPage.adminSectionSelectBox.isDisplayed());
+
+    }
+
+    @Then("User verifies being displayed from the {string} control in the {string} section.")
+    public void user_verifies_being_displayed_from_the_control_in_the_section(String string, String string2) {
+        actions.sendKeys(Keys.END).perform();
+        assertTrue(adminPage.adminAssignClassTeacherSaveButton.isDisplayed());
+
+    }
+
+    @Then("The user confirms that the teacher has been assigned to the selected class by selecting the {string} and {string} in the {string} section, marking the teacher to be assigned, clicking the {string} button.")
+    public void the_user_confirms_that_the_teacher_has_been_assigned_to_the_selected_class_by_selecting_the_and_in_the_section_marking_the_teacher_to_be_assigned_clicking_the_button(String string, String string2, String string3, String string4) {
+        Select select = new Select(adminPage.adminClassSelectBox);
+        select.selectByIndex(1);
+        select= new Select(adminPage.adminSectionSelectBox);
+        select.selectByIndex(1);
+        adminPage.adminTeacherBox.click();
+        actions.sendKeys(Keys.END).perform();
+        adminPage.adminAssignClassTeacherSaveButton.click();
+        actions.sendKeys(Keys.HOME).perform();
+        assertTrue(adminPage.adminRecordSavedSuccessfully.isDisplayed());
+
+    }
+
+    @Then("It is verified that there are Class, Department, Class Teacher and Action columns on the {string} side in the User {string} section.")
+    public void ıt_is_verified_that_there_are_class_department_class_teacher_and_action_columns_on_the_side_in_the_user_section(String string, String string2) {
+        assertTrue(adminPage.adminClassTeacherListClassText.isDisplayed());
+        assertTrue(adminPage.adminClassTeacherListSectionText.isDisplayed());
+        assertTrue(adminPage.adminClassTeacherListClassTeacherText.isDisplayed());
+        assertTrue(adminPage.adminFeesTypeListAction.isDisplayed());
+    }
+
+
+    @Then("The user clicks the {string} icon under the {string} column in the {string} in the {string} section.")
+    public void the_user_clicks_the_icon_under_the_column_in_the_in_the_section(String string, String string2, String string3, String string4) {
+        adminPage.adminEditButton.click();
+        ReusableMethods.bekle(2);
+    }
+
+
+    @Then("The user confirms that the classroom teacher assignment has been updated in the {string} window.")
+    public void the_user_confirms_that_the_classroom_teacher_assignment_has_been_updated_in_the_window(String string) {
+        Select select = new Select(adminPage.adminClassSelectBox);
+        select.selectByIndex(2);
+        select= new Select(adminPage.adminSectionSelectBox);
+        select.selectByIndex(1);
+        ReusableMethods.bekle(1);
+        ReusableMethods.jseClick(adminPage.adminTeacherBox);
+
+        ReusableMethods.bekle(1);
+        actions.sendKeys(Keys.END).perform();
+        ReusableMethods.bekle(1);
+        ReusableMethods.jseClick(adminPage.adminAssignClassTeacherSaveButton);
+
+        ReusableMethods.bekle(3);
+
+        String expected = "Record Updated Successfully";
+        String actual = adminPage.adminAssignRecordUpdatedSuccessfully.getText();
+
+        assertEquals(expected,actual);
+
+    }
+
+
+    @Then("The user class-teacher assignment is deleted.")
+    public void the_user_class_teacher_assignment_is_deleted() {
+        String expected = "Record Delete Successfully";
+        String actual = adminPage.adminRecordDeleteSuccessfully.getText();
+
+        assertEquals(expected,actual);
+    }
+
+    @Then("The user clicks the Delete icon under the Action column in the Classroom List in the Assign Classroom Teacher section")
+    public void theUserClicksTheDeleteIconUnderTheActionColumnInTheClassroomListInTheAssignClassroomTeacherSection() {
+        adminPage.adminDeleteTeacherButton.click();
+    }
+
 }
 
 

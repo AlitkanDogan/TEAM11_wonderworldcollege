@@ -450,5 +450,54 @@ public class HomePage {
     @FindBy(xpath = "(//a[text()='Gallery'])[1]")
     public WebElement galleryButton;
 
+    //########################## US_06 ###############################
+
+    @FindBy(xpath = "//h4[text()='English and Literature']")
+    public WebElement englishandLiteratureText;
+
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][2])")
+    public WebElement mathematicsText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][3])")
+    public WebElement sciencesText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][4])")
+    public WebElement scialSciencesText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][5])")
+    public WebElement historyText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][6])")
+    public WebElement artsAndMusicText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][7])")
+    public WebElement healthAndExerciseSciencesText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][8])")
+    public WebElement foreignLanguaText;
+    @FindBy(xpath = "(//div[@class='col-md-4 col-sm-4'][9])")
+    public WebElement computerSciencesText;
+
+    @FindBy(xpath = "(//a[@href='https://qa.wonderworldcollege.com/page/course'][1])")
+    public WebElement courseTitle;
+    @FindBy(xpath = "(//a[@class='btn-read'])[1]")
+    public WebElement englishandLiteratureDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[2]")
+    public WebElement mathematicsDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[3]")
+    public WebElement sciencesDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[4]")
+    public WebElement scialSciencesDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[5]")
+    public WebElement historyDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[6]")
+    public WebElement artsAndMusicDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[7]")
+    public WebElement healthAndExerciseSciencesDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[8]")
+    public WebElement foreignLanguaDetails;
+    @FindBy(xpath = "(//a[@class='btn-read'])[9]")
+    public WebElement computerSciencesDetails;
+    @FindBy(xpath = "//img[@class='img-responsive img-rounded']")
+    public WebElement englishandLiteratureTitle;
+
+
+
+
+
 
 }

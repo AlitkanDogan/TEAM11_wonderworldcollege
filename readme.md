@@ -4,13 +4,13 @@
 
 ***GITHUB DA DIKKAT EDILMESI GEREKENLER***
 > 
-> **PUSH YAPMA İŞLEMİ**
+> **PUSH İŞLEMİ**
 > 
 > ***1.*** Kendi branşımızda
 > 
-> 	**git add .**           =>(hata verirse 1 kere daha "git add .")
+> 	**git add .**          
 > 
-> 	**git commit -m"v1"**
+> 	**git commit -m"version"**
 > 
 > ***2.*** Main'e geçiş yapacağız => **git checkout main**
 > 
@@ -28,7 +28,7 @@
 	
 
 ***COMMIT ETME ISLEMI***
-> **git add .** seklinde yapilacak!
+> **git add .** 
 >
 > **git commit -m"GG.AA.YY/name-2"** (-2 --> gün içinde push etme sayısına göre)
 >

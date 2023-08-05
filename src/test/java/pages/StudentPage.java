@@ -124,6 +124,56 @@ public class StudentPage {
             Assert.assertTrue(element.isDisplayed());
         }
     }
+//=============US51=========================
+
+    @FindBy(xpath = "//a[@href='../site/userlogin'][1]")
+    public WebElement studentLogin;
+
+    @FindBy(xpath = "//input[@type='text']    ")
+    public WebElement usernameButton;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement PassordButton;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement Sign_inButton;
+
+    @FindBy(xpath = "//*[@id=\"sibe-box\"]/li[8]/a/span")
+    public WebElement examinationsTitle;
+
+
+    @FindBy(xpath = "(//a[@href='#'])[5]")
+    public WebElement examinationsLink;
+
+    @FindBy(xpath = "//*[text()=' Exam Schedule']")
+    public WebElement examScheduleTitle;
+
+
+    @FindBy(xpath = "//h3")
+    public WebElement examScheduleheaderMenu;
+
+    @FindBy(xpath = "//h3")
+    public WebElement examScheduleheader_text;
+
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_filter\"]")
+    public WebElement examScheduleSearch_textbox;
+
+    @FindBy(xpath = "//section/div/div")
+    public WebElement examScheduleSearch_iframe;
+
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement getExamScheduleSearch_textbox_Title;
+
+    @FindBy(xpath = "//*[@id=\"sibe-box\"]/li[8]/ul/li[1]/a")
+    public WebElement examSchedule;
+
+    @FindBy(xpath = "//html/body/div[2]/aside/div/section/ul[2]/li[8]/ul/li[2]/a")
+    public WebElement examResultTitle;
+
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/tbody/tr/td")
+    public WebElement searchResultTextBox;
+
 
 
 }

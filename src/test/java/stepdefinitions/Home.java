@@ -1483,11 +1483,6 @@ public class Home {
     }
 
 
-    @Then("User clicks “Student Photo” sections where under “Basic Section” and user uploads photo what user wants on the Online Admission Page.")
-    public void userClicksStudentPhotoSectionsWhereUnderBasicSectionAndUserUploadsPhotoWhatUserWantsOnTheOnlineAdmissionPage() {
-
-        String herkesteFarkliOlan = System.getProperty("user.home");
-    }
 
     @Then("User scrolls down to Upload Documents text")
     public void userScrollsDownToUploadDocumentsText() {

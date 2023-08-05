@@ -571,33 +571,6 @@ public class AdminPage {
     public WebElement routeDelete;
 
 
-    /*
-    @FindBy(xpath = "//*[@id=\"form1\"]/div[1]/div/label")
-    public WebElement Route_Title;
-    //Admin->login button->submit button -> Transport ->Routes ->Route_Title_TextBox
-    @FindBy(xpath = "//*[@id=\"route_title\"]")
-    public WebElement Route_Title_TextBox;
-    //Admin->login button->submit button -> Transport ->Routes ->Route_Title_Save
-    @FindBy(xpath = "//*[@id=\"form1\"]/div[2]/button")
-    public WebElement Route_Title_Save;
-    //Admin->login button->submit button -> Transport ->Routes ->RouteList_h1
-    @FindBy(xpath = "//*[@id=\"route\"]/div[1]/h3")
-    public WebElement RouteList_h1;
-    //Admin->login button->submit button -> Transport ->Routes ->Route_Title_DropDown
-    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/thead/tr/th[1]")
-    public WebElement Route_Title_DropDown;
-    //Admin->login button->submit button -> Transport ->Routes ->Action
-    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/thead/tr/th[2]")
-    public WebElement Action;
-    //Admin->login button->submit button -> Transport ->Routes ->Search
-    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_filter\"]/label/input")
-    public WebElement Search;
-    //Admin->login button->submit button -> Transport ->Routes ->Remove
-    @FindBy(xpath = "//*[@id=\"DataTables_Table_0\"]/tbody/tr/td[2]/a[2]/i")
-    public WebElement remove;
-
-     */
-
 
     //################################# US_27 ############################################
 
@@ -672,6 +645,18 @@ public class AdminPage {
     public WebElement adminRecordDeleteSuccessfully;
     @FindBy(xpath = "//i[@class='fa fa-remove']")
     public WebElement adminDeleteTeacherButton;
+
+    //=====================================US_028==========================================
+
+    @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[4]/a/span")
+    public WebElement income_adminPage;
+
+    @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[4]/ul/li[1]/a")
+    public WebElement addIncome_income;
+
+    @FindBy(xpath = "//a [@href='https://qa.wonderworldcollege.com/admin/income'])[2] ")
+    public WebElement addIncomeIncome;
+
 }
 
 

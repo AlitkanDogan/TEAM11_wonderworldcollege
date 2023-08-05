@@ -1282,6 +1282,65 @@ public class Admin {
     public void theUserClicksTheDeleteIconUnderTheActionColumnInTheClassroomListInTheAssignClassroomTeacherSection() {
         adminPage.adminDeleteTeacherButton.click();
     }
+    //===========================US_TC1028==============================
+
+    @When("The user clicks on the Income menu title on the sidebar in the Admin panel")
+    public void the_user_clicks_on_the_ıncome_menu_title_on_the_sidebar_in_the_admin_panel() {
+        adminPage.income_adminPage.click();
+    }
+
+    @Then("The user verifies that the Add Income page appears in the dropdown header")
+    public void the_user_verifies_that_the_add_ıncome_page_appears_in_the_dropdown_header() {
+        assertTrue(adminPage.addIncome_income.isDisplayed());
+
+
+        //===========================US_TC2028==============================
+    }
+
+    @When("The user clicks on the Add Income page menu under the Income section in the Admin panel's sidebar.")
+    public void the_user_clicks_on_the_add_income_page_menu_under_the_income_section_in_the_admin_panel_s_sidebar() {
+        adminPage.addIncomeIncome.click();
+
+    }
+    @When("The user displays the Add Income page link under the Income menu title on the sidebar in the Admin panel.")
+    public void the_user_displays_the_add_income_page_link_under_the_income_menu_title_on_the_sidebar_in_the_admin_panel() {
+        adminPage.addIncomeIncome.isDisplayed();
+
+    }
+    @When("The user clicks on the Add Income page displayed under the Income menu title on the sidebar in the Admin panel.")
+    public void the_user_clicks_on_the_add_income_page_displayed_under_the_income_menu_title_on_the_sidebar_in_the_admin_panel() {
+        adminPage.addIncome_income.click();
+    }
+    @Then("The user verifies that the Add Income page has opened.")
+    public void the_user_verifies_that_the_add_income_page_has_opened() {
+
+    }
+    @Then("The user verifies that the Income Head dropdown menu opens.")
+    public void the_user_verifies_that_the_income_head_dropdown_menu_opens() {
+
+    }
+    @Then("The user Verifies that the Name textBox is opened.")
+    public void the_user_verifies_that_the_name_text_box_is_opened() {
+
+    }
+    @Then("The user verifies that the Invoice Number textBox is opened.")
+    public void the_user_verifies_that_the_invoice_number_text_box_is_opened() {
+
+    }
+    @Then("The user verifies that the Date texBox is opened.")
+    public void the_user_verifies_that_the_date_tex_box_is_opened() {
+
+    }
+    @Then("The user verifies that Amount\\(*) textBox is opened.")
+    public void the_user_verifies_that_amount_text_box_is_opened() {
+
+    }
+    @Then("The user Confirms Description textBox is opened.")
+    public void the_user_confirms_description_text_box_is_opened() {
+
+    }
+
+
 
 }
 

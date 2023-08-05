@@ -341,7 +341,6 @@ public class HomePage {
 
 
 
-    //************************* Methods ********************
 
     public void wonderWorldCollegeSiteLogoIsVisible(){
         WonderWorldCollegeSiteLogo.isDisplayed();
@@ -366,7 +365,6 @@ public class HomePage {
     }
 
 
-    //==================================================================
 //=====================0US7==========================================
 
     @FindBy(xpath = "//a[@href='https://qa.wonderworldcollege.com/page/gallery']")
@@ -508,8 +506,6 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Class']")
     public WebElement BasicSectionClassButonu;
 
-    @FindBy(xpath = "//option[text()='Class 1']")
-    public WebElement BasicSecClass1;
 
     @FindBy(xpath = "//*[text()='First Name']")
     public WebElement BasicSecFirstName;
